@@ -138,7 +138,12 @@
   "Get married with your own officiant, or in person before a Cook County judge at the Marriage and Civil Union Court, 119 W. Randolph St. (lower level), Tuesday to Friday, no appointment; bring the license, ID and the $10 administrative fee.",
   "Make sure the signed license is returned to the Clerk within 10 days after the ceremony; a certified copy of the certificate is $15."
  ],
- "facts_note": "Not shown because no official page states it: Whether witnesses are required: not stated on the Clerk or Circuit Court pages read; Opening hours of the Clerk's downtown Vital Records office: the locations page only says to click a location for hours; Whether the Chicago courtroom takes cash only: only the Rolling Meadows and Bridgeview rows say cash only; the Chicago row does not say; Any Clerk-run civil ceremony or ceremony fee: the Clerk's page sends couples to the Circuit Court's Marriage and Civil Union Court, so the $10 fee is quoted from the court's page; Wait-time or capacity for guests at the downtown courtroom: not stated on the court page.",
+ "facts_note_list": [
+  "Whether witnesses are required",
+  "The Clerk's downtown opening hours",
+  "Whether the Chicago courtroom takes cash only"
+ ],
+ "facts_note_head": "Not shown, because no official page states it:",
  "ideas": [
   {
    "ref": "gown:wedding-dresses-under-500:brand=BHLDN"

@@ -50,8 +50,15 @@ def dress_pages():
         ("wedding-dresses-under-1000", "under1000", 1000, "Designer Wedding Dresses Under $1,000 (This Week)",
          "Designer Wedding Dresses Under $1,000", "Under $1,000", 14),
     ]
+    import re as _re
+    gn = json.loads((CONTENT / "_gown_names.json").read_text())
     for path, band, cap, title, h1, em, order in specs:
         gowns = d[band]
+        for _g in gowns:
+            _m = _re.search(r"([0-9a-f]{24})$", _g["url"])
+            _n = gn.get(_m.group(1)) if _m else None
+            if _n:
+                _g["brand"], _g["model"] = _n["brand"], _n["model"]
         if not gowns:
             continue
         n = len(gowns)
@@ -85,7 +92,7 @@ def dress_pages():
                   "Compare the seller's measurements with yours, and tap the dresses you love in Rachel's List so she can watch Poshmark and Etsy for your size every week."},
             {"q": "What does \"seller's original\" mean?",
              "a": "It is the original price the seller typed into the listing, shown exactly as printed. "
-                  "We cannot check what a gown cost new, so we never call it a retail price."},
+                  "We cannot check what a gown cost new, so we show it only as the seller's original price."},
             {"q": "How often is this list updated?",
              "a": "Every Tuesday. We re-open each gown, drop the ones that are sold or repriced, and change the date at the top. "
                   "The list you see was last checked on {date}.".format(date=fdate(TODAY))},
@@ -101,7 +108,7 @@ def dress_pages():
             "answer_html": answer, "oneliner": oneliner,
             "card_title": em, "card_line": "{} gowns, from {}".format(n, money(cheapest["price"])),
             "facts_heading": "This week's <em>gowns</em>",
-            "facts_intro": "Biggest gap between price now and seller's original first. Prices are the listing prices on the day we read them; shipping and tax are not included.",
+            "facts_intro": "Source: Poshmark listings, each re-opened on {} and still available at the price shown. Tap a gown to open its listing. Biggest gap between price now and seller's original first; shipping and tax are not included.".format(fdate(TODAY)),
             "gowns": gowns,
             "ideas": [
                 {"ref": "find:houston.florist"}, {"ref": "find:houston.photographer"},
@@ -190,6 +197,19 @@ def faqs_for(key):
     return faqs.get(key)
 
 
+FIND_DISPLAY = {
+    ("houston", "photographer"): dict(name="Brit Fine Photography", package="micro wedding coverage, 5 hours (starting price)", includes="5 hours of shooting, split as you wish"),
+    ("houston", "florist"): dict(name="KVITKAFA", item="Burgundy bridal bouquet (pre-order)"),
+    ("chicago", "photographer"): dict(name="The Adri Photo Co.", package="courthouse and small-ceremony coverage, 2 hours (starts at)", includes="a full edited gallery"),
+    ("chicago", "florist"): dict(name="Flowers for Dreams", item="bridal bouquet, white and cream (self-service shop)"),
+    ("new-york", "photographer"): dict(name="Erica Morris Photography", package="City Hall ceremony plus a 30-minute shoot", includes="50+ edited images"),
+    ("new-york", "florist"): dict(name="NYC Flower Pop", item="elopement bouquet, 8 to 10 inch, seasonal (pickup)"),
+    ("los-angeles", "photographer"): dict(name="Golden Vibes Photo", package="courthouse weddings, 1 hour, 10 guests or fewer (starting at)", includes="50+ images"),
+    ("los-angeles", "florist"): dict(name="Hanamate Floral Design", item="bridal bouquet, customizable"),
+    ("dallas", "photographer"): dict(name="Shelly Voss Photography", package="courthouse ceremony coverage, 1-hour minimum ($400 an hour)", includes=""),
+}
+
+
 def finds_file():
     out = {}
     for slug, _ in CITIES:
@@ -202,6 +222,7 @@ def finds_file():
             if v and v.get("amount") is not None and v.get("url"):
                 out[slug][k] = {x: v[x] for x in v if x != "quote"}
                 out[slug][k]["quote"] = v.get("quote", "")
+                out[slug][k].update({a: b for a, b in FIND_DISPLAY.get((slug, k), {}).items()})
     (CONTENT / "_finds.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print("wrote content/_finds.json:", {k: sorted(v) for k, v in out.items()})
 
@@ -262,10 +283,10 @@ def courthouse_page(slug, name):
     else:
         return
     answer = "<p>As of {d}, {lead}</p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>".format(d=fdate(TODAY), lead=lead)
-    left = c.get("left_out") or []
-    note = ""
-    if left:
-        note = "Not shown because no official page states it: " + "; ".join(x.rstrip(".") for x in left) + "."
+    left = [x.strip().rstrip(".") for x in (c.get("left_out") or []) if x.strip()]
+    sys.path.insert(0, str(ROOT / "tools"))
+    import display as _d
+    left = _d.LEFT_OUT.get(slug, left)
     faq = faqs_for("courthouse-wedding-" + slug)
     if not faq:
         print("no FAQ yet for", slug); return
@@ -286,7 +307,8 @@ def courthouse_page(slug, name):
         "office": office,
         "facts_heading": "The fees and the <em>steps</em>, from the official pages",
         "facts_intro": "Copied word for word from {}. Each row links to the page it came from.".format(office),
-        "facts": facts, "steps": c.get("steps", []), "facts_note": note,
+        "facts": facts, "steps": c.get("steps", []), "facts_note_list": left,
+        "facts_note_head": "Not shown, because no official page states it:",
         "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:{}.florist".format(slug)}]
                  + ([{"ref": "find:{}.photographer".format(slug)}] if (r.get("photographer") or {}).get("hours", 9) <= 2 else [])
                  + [{"ref": "venue:small-wedding-venues-{}:cheapest10".format(slug)}],
@@ -314,10 +336,15 @@ def venue_page(slug, name):
     if not faq:
         print("no FAQ yet for venues", slug); return
     ten = [v for v in totals if v.get("max_guests", 0) >= 10]
-    ten_txt = " For a group of 10 or more, the lowest is <strong>{}</strong> ({}).".format(ten[0]["price_display"], e(ten[0]["name"])) if ten else ""
-    answer = ("<p>As of {d}, {n} small and micro wedding venues in {c} print their own prices, from <strong>{lp}</strong> ({ln}) to <strong>{hp}</strong> ({hn}).{ten}</p>"
-              "<p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>").format(
-        d=fdate(TODAY), n=len(vs), c=name, lp=lo["price_display"], ln=e(lo["name"]), hp=hi["price_display"], hn=e(hi["name"]), ten=ten_txt)
+    if ten:
+        answer = ("<p>As of {d}, small wedding venues in {c} start at <strong>{tp}</strong> for a group of 10 or more ({tn}). "
+                  "Couple-only chapels start at {lp}, and the {n} venues we verified go up to {hp}.</p>"
+                  "<p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>").format(
+            d=fdate(TODAY), c=name, tp=ten[0]["price_display"], tn=e(ten[0]["name"]), lp=lo["price_display"], n=len(vs), hp=hi["price_display"])
+    else:
+        answer = ("<p>As of {d}, {n} small and micro wedding venues in {c} print their own prices, from <strong>{lp}</strong> ({ln}) to <strong>{hp}</strong> ({hn}).</p>"
+                  "<p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>").format(
+            d=fdate(TODAY), n=len(vs), c=name, lp=lo["price_display"], ln=e(lo["name"]), hp=hi["price_display"], hn=e(hi["name"]))
     path = "small-wedding-venues-" + slug
     page = {
         "path": path, "type": "venues", "medium": "venues", "order": ORDER["venues"][slug],
@@ -376,9 +403,9 @@ def hub_pages():
         for slug, name, v in venues:
             rows.append({
                 "th": '<a href="{}" rel="noopener">{}</a><small><a href="@small-wedding-venues-{}/">{}</a></small>'.format(e(v["url"]), e(v["name"]), slug, name),
-                "td": '<span class="price">{}</span><span class="was">{} &middot; {}</span><q class="quote">{}</q>'.format(
+                "td": '<span class="price">{}</span><span class="was">{} &middot; {}</span><details class="words"><summary>Their exact words</summary><q class="quote">{}</q></details>'.format(
                     e(v["price_display"]), e(v["guests"]), e(v["price_for"]), e(v["quote"])),
-                "src": "Venue's own page<br>Read {}".format(fdate(v["date_read"])),
+                "src": '<a href="{}" rel="noopener">Venue\'s own page</a><br>Read {}'.format(e(v["url"]), fdate(v["date_read"])),
                 "amount": v["amount"], "source_url": v["url"], "date_read": v["date_read"]})
             items.append({"name": "{} ({})".format(v["name"], name), "url": v["url"]})
         page = {
@@ -418,10 +445,10 @@ def hub_pages():
     for x in pk:
         rows.append({
             "th": '<a href="{}" rel="noopener">{}</a><small>{} &middot; {}</small>'.format(e(x["url"]), e(x["name"]), e(x.get("provider") or ""), e(x.get("place") or "")),
-            "td": '<span class="price">{}</span><span class="was">{}</span>{}<q class="quote">{}</q>'.format(
+            "td": '<span class="price">{}</span><span class="was">{}</span>{}<details class="words"><summary>Their exact words</summary><q class="quote">{}</q></details>'.format(
                 e(x["price_display"]), e(x.get("guests") or ""),
                 '<span class="was">Includes: {}</span>'.format(e(x["includes"])) if x.get("includes") else "", e(x["quote"])),
-            "src": "Provider's own page<br>Read {}".format(fdate(x["date_read"])),
+            "src": '<a href="{}" rel="noopener">Provider\'s own page</a><br>Read {}'.format(e(x["url"]), fdate(x["date_read"])),
             "amount": x["amount"], "source_url": x["url"], "date_read": x["date_read"]})
         items.append({"name": "{} ({})".format(x["name"], x.get("provider", "")), "url": x["url"]})
     lo, hi = pk[0], pk[-1]
@@ -486,6 +513,29 @@ def home_page():
         "oneliner": "Real wedding prices for five US cities, each checked on its source page and dated {}.".format(fdate(TODAY)),
         "ideas": [], "faq": [], "related": [],
     }
+    fees = []
+    for slug, name in CITIES:
+        c = read_page("courthouse-wedding-" + slug)
+        if c:
+            tot = sum(f["amount"] for f in c["facts"] if f.get("allin") and f.get("amount") is not None)
+            if tot:
+                fees.append(tot)
+    ten = []
+    for slug, name in CITIES:
+        v = read_page("small-wedding-venues-" + slug)
+        if v:
+            ten += [x["amount"] for x in v["venues"] if x.get("max_guests", 0) >= 10 and not x.get("per_person")]
+    chips = []
+    if fees:
+        chips.append({"target": "courthouse", "label": "Courthouse from", "value": money(min(fees))})
+    if ten:
+        chips.append({"target": "venues", "label": "Venues for 10+ from", "value": money(min(ten))})
+    if d5:
+        chips.append({"target": "dresses", "label": "Dresses from", "value": money(min(g["price"] for g in d5["gowns"]))})
+    pkj = CACHE / "research" / "packages.json"
+    if pkj.exists():
+        chips.append({"target": "packages", "label": "Packages from", "value": money(min(x["amount"] for x in json.loads(pkj.read_text())["packages"]))})
+    page["chips"] = chips
     save("home", page)
 
 

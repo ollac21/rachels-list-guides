@@ -14,6 +14,28 @@
  "ideas": [],
  "faq": [],
  "related": [],
+ "chips": [
+  {
+   "target": "courthouse",
+   "label": "Courthouse from",
+   "value": "$60"
+  },
+  {
+   "target": "venues",
+   "label": "Venues for 10+ from",
+   "value": "$380"
+  },
+  {
+   "target": "dresses",
+   "label": "Dresses from",
+   "value": "$65"
+  },
+  {
+   "target": "packages",
+   "label": "Packages from",
+   "value": "$159"
+  }
+ ],
  "last_checked": "2026-10-28",
  "first_published": "2026-10-28"
 }

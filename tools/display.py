@@ -39,6 +39,9 @@ DISPLAY = {
     ("dallas", "Heirloom Hideaway & Arboreum - 'Just"): dict(name="Heirloom Hideaway: Just the 2 of You", area="Fort Worth", guests="couple only", price_for="60-minute elopement, Monday to Thursday", includes="elopement at the Stone House"),
     ("dallas", "Heirloom Hideaway & Arboreum - '2+12"): dict(name="Heirloom Hideaway: 2+12+CAKE=JOY", area="Fort Worth", guests="up to 12 guests", price_for="2-hour elopement package, starting price", includes="time for a toast, cake, dancing and photos"),
     ("dallas", "Drive Up & Wed - 'Intimate"): dict(name="Drive Up & Wed: Intimate Ceremony", area="Hurst", guests="up to 45 guests, Monday to Thursday", price_for="3-hour weekday micro wedding", includes="officiant, 2 hours of photography, bouquet, two small cakes, venue use"),
+    ("dallas", "Blush Event Garden - 'Essential'"): dict(name="Blush Event Garden: Essential elopement", area="Addison and 3 other Dallas-area sites", guests="couple only (up to 2 guests)", price_for="Monday to Friday, 30 minutes of venue access", includes="licensed officiant (or bring yours), ceremony script, stage, sound system, parking"),
+    ("dallas", "Blush Event Garden - 'Classic'"): dict(name="Blush Event Garden: Classic elopement", area="Addison and 3 other Dallas-area sites", guests="seating for up to 20 guests", price_for="Monday to Friday, 1 hour of venue access", includes="decorated aisle and backdrop, officiant, chairs for 20, sound system"),
+    ("dallas", "Flourish Events Dallas"): dict(name="Flourish Events: Silver micro wedding", area="Mesquite", guests="up to 40 guests", price_for="pavilion ceremony, 2 hours, Sunday to Friday", includes="40 white chairs, indoor restrooms"),
     ("dallas", "The Penrose House"): dict(name="The Penrose House: DIY elopement", area="Princeton, 45 minutes from Dallas", guests="a small number of guests", price_for="'DIY elopement' package, starting price", includes="private ceremony space, overnight suite, resort amenities"),
     # ---- Los Angeles
     ("los-angeles", "Cecile Trattoria"): dict(area="Glendale", guests="25 to 50 guests", price_for="semi-private dining, per person", includes="Italian menus, cocktail packages, event coordination", price_display="$75 per person"),
@@ -46,9 +49,26 @@ DISPLAY = {
     ("los-angeles", "Lucky Wedding Day Chapel"): dict(area="Encino", guests="1 to 10 people", price_for="Sweet Package (couple-only Happy Package $399.99)", includes="chapel, officiant, music, marriage license, notary"),
     ("los-angeles", "Cute Little Wedding Chapel"): dict(area="Long Beach", guests="0 to 4 guests (5 to 15 guests $550)", price_for="license and ceremony, lowest tier (+$50 on weekends)", includes="marriage license, ceremony and certificate"),
     ("los-angeles", "Orcutt Ranch"): dict(name="Orcutt Ranch: weekday rental", area="West Hills, Los Angeles", guests="events up to 175 people", price_for="Monday to Thursday, first 3 hours ($110 per extra hour)", includes="historic ranch house and gardens; $500 refundable deposit is part of the fee"),
+    ("los-angeles", "La Venta Inn"): dict(area="Palos Verdes Estates", guests="ceremony only, up to 100 guests", price_for="weekday ceremony-only package, 2 hours (Fri to Sun $5,500)", includes="private use of the grounds, chairs, sound system, day-of director, light refreshments"),
+    ("los-angeles", "Heritage Square Museum"): dict(area="Montecito Heights, Los Angeles", guests="50 guests or fewer", price_for="outdoor boutique wedding, 'starting at' price", includes="historic homes and gardens"),
     ("los-angeles", "Greystone Mansion"): dict(name="Greystone Mansion: ceremony only", area="Beverly Hills", guests="1 to 75 people", price_for="one-hour Formal Garden ceremony, non-resident rate (Beverly Hills residents $2,200)", includes="Formal Garden; no food or beverages except water", price_display="$2,600"),
 }
 
 # The Reserve on Cypress Creek prints two packages; told apart by the researched price_for text
 RESERVE = {"Elopement": dict(name="The Reserve on Cypress Creek: Elopement", area="Cypress", guests="up to 30 guests", price_for="2-hour elopement package, 'starting at' price", includes="seated ceremony, photos on the property, high-top tables"),
            "Micro": dict(name="The Reserve on Cypress Creek: Micro Wedding", area="Cypress", guests="up to 50 guests", price_for="micro wedding package, up to 4 hours, 'starting at' price", includes="seated ceremony, covered cocktail-hour tent, chairs and tables")}
+
+# What the official pages do not state, in short lines (shown under the fees table). Key: city.
+LEFT_OUT = {
+    "houston": ["How to pay the license fee (the Clerk's page names no payment methods for licenses)",
+                "Whether the Clerk needs an appointment for a license",
+                "The ceremony fee of other Justice of the Peace courts (each sets its own; only Precinct 1, Place 1 prints one)"],
+    "dallas": ["One county-wide ceremony fee (each Justice of the Peace court prints its own)",
+               "Whether an appointment is required at the Clerk's office (the official pages disagree)",
+               "A residency rule (only one court's page states one)"],
+    "chicago": ["Whether witnesses are required", "The Clerk's downtown opening hours", "Whether the Chicago courtroom takes cash only"],
+    "new-york": ["The fee for a certified copy of the marriage certificate",
+                 "Appointment times and lead times (the booking system is not readable as a web page)"],
+    "los-angeles": ["The waiting period (no page says in words that there is none)", "The fee for a certified copy of the marriage certificate",
+                    "Which weekdays each branch office holds ceremonies"],
+}

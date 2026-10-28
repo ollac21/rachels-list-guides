@@ -28,6 +28,7 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
 AI_BOTS = ["Googlebot", "Bingbot", "OAI-SearchBot", "GPTBot", "ChatGPT-User", "ClaudeBot",
            "PerplexityBot", "Google-Extended"]
 SAVE_HEADING = "Make it feel like a wedding, for less"
+TOP_PROMISE = "Tap the wedding photos you love and Rachel finds them for less, every week: dresses, flowers, venues."
 
 
 # ----------------------------------------------------------------------------- helpers
@@ -116,8 +117,7 @@ def resolve_idea(spec, pages, finds):
             g = next((x for x in gl if x["brand"] == idx[6:]), gl[0])
         else:
             g = gl[int(idx)]
-        gname = g["title"] if g["title"].lower().startswith(g["brand"].lower()) else "{}: {}".format(g["brand"], g["title"])
-        out = dict(label="The dress", name=gname, url=g["url"],
+        out = dict(label="The dress", name=gown_name(g), url=g["url"],
                    amount=g["price"], source_url=g["url"], date_read=g["date_read"],
                    meta="Seller's original {} &middot; size {} &middot; {}".format(
                        money(g["old_price"]), esc(g["size"]), src_line("Poshmark listing", g["date_read"])))
@@ -217,7 +217,7 @@ def facts_table(page):
         if f.get("amount") is not None:
             m = re.match(r"^(\$[\d,]+(?:\.\d\d)?)\s*(.*)$", f["display"])
             detail = '<span class="price">{}</span>{}'.format(esc(m.group(1) if m else f["display"]),
-                                                              '<span class="was">{}</span>'.format(esc(m.group(2))) if m and m.group(2) else "")
+                                                              '<span class="was">{}</span>'.format(esc(m.group(2).lstrip(" ,;:"))) if m and m.group(2).lstrip(" ,;:") else "")
         else:
             detail = "<strong>{}</strong>".format(esc(f["display"]))
         rows.append(
@@ -229,14 +229,32 @@ def facts_table(page):
 def venues_table(page):
     rows = []
     for v in page["venues"]:
-        inc = '<span class="was">Includes: {}</span>'.format(esc(v["includes"])) if v.get("includes") else ""
+        inc = "<p>Includes: {}</p>".format(esc(v["includes"])) if v.get("includes") else ""
         rows.append(
             '<tr><th scope="row"><a href="{}" rel="noopener">{}</a><small>{}</small></th>'
-            '<td><span class="price">{}</span><span class="was">{} &middot; {}</span>{}<q class="quote">{}</q></td>'
-            '<td class="src">Venue\'s own page<br>Read {}</td></tr>'.format(
+            '<td><span class="price">{}</span><span class="was">{} &middot; {}</span>'
+            '<details class="words"><summary>Their exact words</summary>{}<q class="quote">{}</q></details></td>'
+            '<td class="src"><a href="{}" rel="noopener">Venue\'s own page</a><br>Read {}</td></tr>'.format(
                 esc(v["url"]), esc(v["name"]), esc(v.get("area", "")), esc(v["price_display"]), esc(v["guests"]),
-                esc(v["price_for"]), inc, esc(v["quote"]), fmt_date(v["date_read"])))
+                esc(v["price_for"]), inc, esc(v["quote"]), esc(v["url"]), fmt_date(v["date_read"])))
     return table(["Venue", "Price on its own page", "Source"], rows)
+
+
+def gown_name(g):
+    if g.get("model"):
+        return "{} \u00b7 {}".format(g["brand"], g["model"])
+    return g["title"] if g["title"].lower().startswith(g["brand"].lower()) else "{}: {}".format(g["brand"], g["title"])
+
+
+def gown_cards(gowns, cls=""):
+    out = []
+    for g in gowns:
+        out.append(
+            '<a class="gown" href="{}" rel="noopener"><span class="gown-brand">{}</span><span class="gown-model">{}</span>'
+            '<span class="price">{}</span><span class="was">seller\'s original {}</span><span class="gown-size">{}</span><span class="gown-go">View on Poshmark &rarr;</span></a>'.format(
+                esc(g["url"]), esc(g["brand"]), esc(g.get("model") or g["title"]), money(g["price"]), money(g["old_price"]),
+                esc(g["size"] if str(g["size"]).lower().startswith(("size", "us", "various")) else "Size " + str(g["size"]))))
+    return '<div class="gowns {}">{}</div>'.format(cls, "".join(out))
 
 
 def gowns_rows(page, start=0, stop=None):
@@ -265,6 +283,10 @@ def render_facts(page, site, pages):
     head = "<h2>{}</h2>".format(page["facts_heading"]) if page.get("facts_heading") else ""
     intro = '<p class="lead">{}</p>'.format(page["facts_intro"]) if page.get("facts_intro") else ""
     note = '<p class="note">{}</p>'.format(page["facts_note"]) if page.get("facts_note") else ""
+    if page.get("facts_note_list"):
+        note = '<p class="note">{}</p><ul class="note-list">{}</ul>'.format(
+            esc(page.get("facts_note_head", "Not shown, because no official page states it:")),
+            "".join("<li>{}</li>".format(esc(x)) for x in page["facts_note_list"]))
     if t == "courthouse":
         steps = ""
         if page.get("steps"):
@@ -273,15 +295,10 @@ def render_facts(page, site, pages):
     if t == "venues":
         return "<section>{}{}{}{}</section>".format(head, intro, venues_table(page), note)
     if t == "dresses":
-        rows = gowns_rows(page)
-        first, rest = rows[:5], rows[5:]
+        g = page["gowns"]
         mid = fill(template("cta.html"), promise=page.get("cta_mid", "Not your size or style? Tap the dresses you love; Rachel watches Poshmark and Etsy for your size every week."),
-                   app_url=esc(app_link(site, page)), position="after-5")
-        body = table(["Gown", "Price now", "Source"], first)
-        if rest:
-            body += mid + table(["Gown", "Price now", "Source"], rest)
-        else:
-            body += mid
+                   app_url=esc(app_link(site, page)), position="after-6")
+        body = gown_cards(g[:6]) + (mid + gown_cards(g[6:]) if len(g) > 6 else mid)
         return "<section>{}{}{}{}</section>".format(head, intro, body, note)
     if t in ("hub", "packages", "home", "trust"):
         tbl = generic_table(page) if page.get("table") else ""
@@ -296,11 +313,10 @@ def render_dress_bridge(page, site, pages, finds):
     d = pages.get("wedding-dresses-under-500")
     if not d or not d.get("gowns"):
         return ""
-    rows = gowns_rows(d, 0, 3)
     return ('<section><h2>Venue sorted? The <em>dress</em> is next</h2>'
-            '<p class="lead">Three secondhand designer gowns at $500 or less, each re-opened on {} before it went on this page. '
+            '<p class="lead">Three secondhand designer gowns at $500 or less from Poshmark, each re-opened on {} before it went on this page. '
             '<a href="@wedding-dresses-under-500/">See all of them</a>.</p>{}{}</section>').format(
-        fmt_date(d["last_checked"]), table(["Gown", "Price now", "Source"], rows),
+        fmt_date(d["last_checked"]), gown_cards(d["gowns"][:3], "three"),
         fill(template("cta.html"), promise="Venue sorted? Rachel finds the rest for less, every week.",
              app_url=esc(app_link(site, page)), position="dress-bridge"))
 
@@ -330,6 +346,13 @@ MENU = [(("courthouse",), "Courthouse weddings: what they really cost", "The off
         (("packages",), "Elopement & micro wedding packages", "All-in packages with the price on the provider's own page.")]
 
 
+def render_chips(page):
+    if not page.get("chips"):
+        return ""
+    return '<div class="chips">{}</div>'.format("".join(
+        '<a class="chip" href="#{}">{}<b>{}</b></a>'.format(c["target"], esc(c["label"]), esc(c["value"])) for c in page["chips"]))
+
+
 def render_home_menu(page, pages):
     out = []
     for t, heading, blurb in MENU:
@@ -339,7 +362,7 @@ def render_home_menu(page, pages):
         cards = "".join('<a class="mcard" href="@{}/"><span class="mcard-t">{}</span><span class="mcard-l">{}</span></a>'.format(
             p["path"], esc(p.get("card_title", p["h1"])), esc(p.get("card_line", p.get("oneliner", "")))) for p in ps)
         cls = "mcards one" if len(ps) == 1 else "mcards"
-        out.append('<section class="menu"><h2>{}</h2><p class="lead">{}</p><div class="{}">{}</div></section>'.format(heading, esc(blurb), cls, cards))
+        out.append('<section class="menu" id="{}"><h2>{}</h2><p class="lead">{}</p><div class="{}">{}</div></section>'.format(t[0], heading, esc(blurb), cls, cards))
     return "".join(out)
 
 
@@ -381,7 +404,7 @@ def jsonld_blocks(page, site, pages):
     if page["type"] == "venues":
         items = [(v["name"], v["url"]) for v in page["venues"]]
     elif page["type"] == "dresses":
-        items = [(g["title"] if g["title"].lower().startswith(g["brand"].lower()) else "{}: {}".format(g["brand"], g["title"]), g["url"]) for g in page["gowns"]]
+        items = [(gown_name(g).replace(" \u00b7 ", ": "), g["url"]) for g in page["gowns"]]
     elif page["type"] == "home":
         items = [(p["h1"], page_url(site, p["path"])) for p in sorted(pages.values(), key=lambda x: x.get("order", 0)) if p["path"] not in ("", "/")]
     elif page["type"] in ("hub", "packages") and page.get("items"):
@@ -403,6 +426,20 @@ def h1_html(page):
     return h
 
 
+HERO_BY_TYPE = {"home": "home", "trust": "home", "courthouse": "courthouse", "venues": "venues", "hub": "venues",
+                "packages": "packages", "dresses": "dresses"}
+
+
+def render_hero(page, site, root):
+    key = page.get("hero") or HERO_BY_TYPE.get(page["type"])
+    im = (site.get("images") or {}).get(key)
+    if not im:
+        return ""
+    return ('<!-- Hero photo: {credit}. Pexels License: free to use, no attribution required. -->'
+            '<figure class="hero"><img src="{root}img/{file}" width="1000" height="600" alt="{alt}" fetchpriority="high"></figure>').format(
+        credit=im["credit"].replace("--", "-"), root=root, file=im["file"], alt=esc(im["alt"]))
+
+
 def render_page(page, site, pages, finds):
     root = root_of(page["path"])
     app = esc(app_link(site, page))
@@ -411,23 +448,28 @@ def render_page(page, site, pages, finds):
     checked = '<p class="checked">Last checked: <time datetime="{}">{}</time>. {}</p>'.format(
         page["last_checked"], fmt_date(page["last_checked"]), esc(page.get("refresh_note", "")))
     answer = '<div class="answer" id="answer">{}</div>'.format(page["answer_html"])
+    top_cta = fill(template("cta.html"), promise=TOP_PROMISE, app_url=app, position="top")
     facts = render_facts(page, site, pages)
     ideas = render_ideas(page, pages, finds)
     bridge = render_dress_bridge(page, site, pages, finds)
     card = fill(template("rachel_card.html"), root=root, app_url=app)
     if page["type"] == "home":
         body = "\n".join([
-            '<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
-            "<h1>{}</h1>".format(h1_html(page)), checked, answer, card, render_home_menu(page, pages),
+            '<div class="home-top">{}<div class="home-copy">{}</div></div>'.format(
+                render_hero(page, site, root),
+                "\n".join(['<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
+                           "<h1>{}</h1>".format(h1_html(page)), checked, answer, render_chips(page), card])),
+            render_home_menu(page, pages),
             '<p class="trust">Every price on these pages links to the page it came from and shows the day we read it. '
             'No affiliate links: we earn nothing from these sellers or venues. <a href="@how-we-check/">How we check</a>.</p>'])
         body = internal(body, root)
         return finish_page(page, site, pages, body, root, app)
     body = "\n".join([
+        render_hero(page, site, root),
         crumbs,
         '<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
         "<h1>{}</h1>".format(h1_html(page)),
-        checked, answer, facts, bridge, ideas, card, render_faq(page), render_related(page, pages),
+        checked, answer, top_cta, facts, bridge, ideas, card, render_faq(page), render_related(page, pages),
         render_home_index(page, pages) if page["type"] == "home" else "",
         '<p class="trust">Every price on this page links to the page it came from and shows the day we read it. '
         'No affiliate links: we earn nothing from these sellers or venues. <a href="@how-we-check/">How we check</a>.</p>',
@@ -444,7 +486,8 @@ def finish_page(page, site, pages, body, root, app):
                 canonical=page_url(site, page["path"]), base_url=site["base_url"], root=root,
                 last_checked=page["last_checked"], jsonld=ld, posthog_key=site["posthog_key"],
                 posthog_host=site["posthog_host"], app_url=app, body=body,
-                slug=page["path"].strip("/") or "home", medium=page["medium"])
+                slug=page["path"].strip("/") or "home", medium=page["medium"],
+                main_class=" home" if page["type"] == "home" else "", body_class="is-home" if page["type"] == "home" else "")
 
 
 # ----------------------------------------------------------------------------- site files
@@ -472,6 +515,8 @@ def write_site_files(site, pages):
         (DOCS / "CNAME").write_text(site["domain"] + "\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     shutil.copyfile(ROOT / "site.css", DOCS / "site.css")
+    if (ROOT / "img").is_dir():
+        shutil.copytree(ROOT / "img", DOCS / "img", dirs_exist_ok=True)
     (DOCS / "404.html").write_text(
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
         '<title>Page not found: Rachel\'s List Guides</title><meta name="robots" content="noindex">'
@@ -562,6 +607,11 @@ def check(do_links=True):
             problems.append("{}: {} buttons (need 1 to 3)".format(w, n_btn))
         if "utm_campaign=" + (p["path"].strip("/") or "home") not in h or "utm_medium=" + p["medium"] not in h:
             problems.append("{}: the button link lacks its utm tags".format(w))
+        if p["type"] == "dresses":
+            vis = strip_tags(re.sub(r"(?is)<script.*?</script>", " ", h))
+            for bad in (r"%", r"\bretail\b", r"\bsave[sd]?\b", r"\bdiscount"):
+                if re.search(bad, vis, re.I):
+                    problems.append("{}: dress pages must not say {!r}".format(w, bad))
         if "Last checked:" not in h:
             problems.append("{}: no visible 'Last checked'".format(w))
         if len(re.findall(r"<h1[ >]", h)) != 1:

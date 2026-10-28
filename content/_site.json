@@ -4,5 +4,32 @@
  "app_url": "https://rachelslist.co/start",
  "posthog_key": "phc_C3bCNNda9BTyU4jpdhCSDNuyFhSwiRjoNkRBBb4GVzYf",
  "posthog_host": "https://us.i.posthog.com",
- "indexnow_key": "f7073a937a66e29ea186f69216239465"
+ "indexnow_key": "f7073a937a66e29ea186f69216239465",
+ "images": {
+  "home": {
+   "file": "hero-home.jpg",
+   "alt": "A bridal bouquet of roses (stock photo)",
+   "credit": "photo 1808178 by rquiros, https://www.pexels.com/@rquiros/, via Pexels"
+  },
+  "courthouse": {
+   "file": "hero-courthouse.jpg",
+   "alt": "A bride and groom on courthouse steps (stock photo)",
+   "credit": "photo 10123211 by David Guerrero, https://www.pexels.com/@davidguerrero/, via Pexels"
+  },
+  "dresses": {
+   "file": "hero-dresses.jpg",
+   "alt": "A bride admiring a wedding gown on a hanger (stock photo)",
+   "credit": "photo 28863325 by Reborn Filmes, https://www.pexels.com/@rebornfilmes/, via Pexels"
+  },
+  "venues": {
+   "file": "hero-venues.jpg",
+   "alt": "A couple embracing under a floral arch (stock photo)",
+   "credit": "photo 9197331 by Yuliana, https://www.pexels.com/@yulianaphoto/, via Pexels"
+  },
+  "packages": {
+   "file": "hero-packages.jpg",
+   "alt": "A couple embracing in a forest (stock photo)",
+   "credit": "photo 38794410 by Teodora Popa, https://www.pexels.com/@teodorapopa/, via Pexels"
+  }
+ }
 }

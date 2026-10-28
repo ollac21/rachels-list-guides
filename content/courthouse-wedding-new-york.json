@@ -138,7 +138,11 @@
   "Bring the license, at least one witness over 18 and the same type of photo ID used for the license; no more than 6 attendees in all.",
   "After the ceremony you receive your Marriage Certificate the same day."
  ],
- "facts_note": "Not shown because no official page states it: Certified copy fee for a marriage certificate: not stated on the NYC311 license or ceremony pages that were read; Project Cupid appointment availability, lead times and any online booking fee: the Project Cupid booking system and cityclerk.nyc.gov pages are rendered by JavaScript, so nothing could be downloaded or quoted from them.",
+ "facts_note_list": [
+  "The fee for a certified copy of the marriage certificate",
+  "Appointment times and lead times (the booking system is not readable as a web page)"
+ ],
+ "facts_note_head": "Not shown, because no official page states it:",
  "ideas": [
   {
    "ref": "gown:wedding-dresses-under-500:brand=BHLDN"

@@ -30,12 +30,12 @@
 if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("{{posthog_key}}",{api_host:"{{posthog_host}}",persistence:"memory",autocapture:false,capture_pageview:true,disable_session_recording:true});
 </script>
 </head>
-<body>
+<body class="{{body_class}}">
 <header class="site-head"><div class="wrap">
 <a class="wordmark" href="{{root}}">Rachel's List</a>
 <a class="rl-btn-sm" href="{{app_url}}" data-cta="header">Build my free board</a>
 </div></header>
-<main class="wrap">
+<main class="wrap{{main_class}}">
 {{body}}
 </main>
 <footer class="site-foot"><div class="wrap">

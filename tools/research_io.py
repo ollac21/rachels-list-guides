@@ -13,6 +13,7 @@ DROP_VENUES = {
     "new-york": ["Brooklyn Bridge Park"],
     "chicago": ["Park District of Oak Park - outdoor park ceremony permit", "Berger Park Cultural Center"],
     "dallas": ["City of Dallas park", "Soma Winery"],
+    "los-angeles": ["Get Married Today"],
 }
 # venues read by hand from the researchers' cached pages after their JSON was written
 ADD_VENUES = {

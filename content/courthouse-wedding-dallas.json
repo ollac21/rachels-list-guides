@@ -32,12 +32,12 @@
   {
    "key": "ceremony_fee",
    "label": "Civil ceremony at a Dallas County courthouse (JP 2-2, Mesquite, weekday by appointment)",
-   "display": "$80 by appointment ($100 walk-in), cash only",
+   "display": "$80 CASH ONLY - By appointment",
    "amount": 80,
    "quote": "Monday thru Friday from 10:30a-3:30p: $80 CASH ONLY - By appointment",
    "source_url": "https://www.dallascounty.org/government/jpcourts/2-2/weddings.php",
    "date_read": "2026-10-28",
-   "note": "Fees are set court by court. Other Dallas County JP courts print different fees (see the extra facts: JP 5-1 $60, JP 3-1 $150).",
+   "note": "The same page prints '$100 CASH ONLY - Walk-in' on the next line. Fees are set court by court. Other Dallas County JP courts print different fees (see the extra facts: JP 5-1 $60, JP 3-1 $150).",
    "source_name": "Dallas County Clerk",
    "allin": true
   },
@@ -93,7 +93,7 @@
    "key": "how_to_book",
    "label": "How to get the license / book the ceremony",
    "display": "Fill in the application online first (you get an order number), then both of you go to the County Clerk's office at 500 Elm St., Suite 2100 with that number",
-   "quote": "Marriage license applications must be completed on-line. Once you’ve completed the application, you will be provided with an order number.",
+   "quote": "Marriage license applications must be completed on-line.",
    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
    "date_read": "2026-10-28",
    "source_name": "Dallas County Clerk"
@@ -143,7 +143,12 @@
   "Book a ceremony with a Dallas County Justice of the Peace court; each court sets its own fee (JP 5-1 $60, JP 2-2 $80 by appointment, JP 3-1 $150 on its pages).",
   "Hold the ceremony within 90 days of the day the license was issued, or the license expires."
  ],
- "facts_note": "Not shown because no official page states it: A single county-wide courthouse ceremony fee: the County Clerk does not perform ceremonies; each Justice of the Peace court prints its own fee (or none) on its own page; JP 3-2 (Judge Seider) regular weekday ceremony fee: its page prints only '$400 ceremony fee' for holiday and holiday-weekend dates (dated July and August of an earlier year) and says other times are 'fee to be determined'; Whether an appointment is required at the Clerk's office: the FAQ says a marriage license appointment must be scheduled, the marriage-license page speaks of a 'walk-in' with the order number, and the JP 3-1 page says no appointment is required, so no single fact is given; A residency rule: the JP 3-2 page says 'Only Dallas County residents, based on the address shown on applicants' state issued identification', but the County Clerk's own pages do not state it (see notes); A 'courthouse ceremony' room inside the County Clerk's Records Building: no official page states one.",
+ "facts_note_list": [
+  "One county-wide ceremony fee (each Justice of the Peace court prints its own)",
+  "Whether an appointment is required at the Clerk's office (the official pages disagree)",
+  "A residency rule (only one court's page states one)"
+ ],
+ "facts_note_head": "Not shown, because no official page states it:",
  "ideas": [
   {
    "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
@@ -178,7 +183,7 @@
   },
   {
    "q": "Is it cheaper to get married at a courthouse?",
-   "a": "The official fees here run $141 to $231. The lowest Dallas venue price we verified for a group of 10 or more is $450 (Blush Event Garden - 'Classic' elopement), so the courthouse is the cheaper start; compare both pages before you decide."
+   "a": "The official fees here run $141 to $231. The lowest Dallas venue price we verified for a group of 10 or more is $450 (Blush Event Garden: Classic elopement), so the courthouse is the cheaper start; compare both pages before you decide."
   }
  ],
  "related": [

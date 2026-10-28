@@ -139,13 +139,21 @@
   "Marry within 90 days of getting the license.",
   "Return the signed license to the Norwalk office so it can be recorded."
  ],
- "facts_note": "Not shown because no official page states it: Waiting period: no lavote.gov page (and the California state license page) says in words that there is no waiting period, so it is not quoted; Fee for a certified copy of the marriage certificate: not on the lavote.gov marriage pages read (the Recorder's records pages were not read); Which weekdays each branch office holds ceremonies, beyond the branch list (ceremonies by appointment only): the branch page lists days per office; not summarised here.",
+ "facts_note_list": [
+  "The waiting period (no page says in words that there is none)",
+  "The fee for a certified copy of the marriage certificate",
+  "Which weekdays each branch office holds ceremonies"
+ ],
+ "facts_note_head": "Not shown, because no official page states it:",
  "ideas": [
   {
    "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
   },
   {
    "ref": "find:los-angeles.florist"
+  },
+  {
+   "ref": "find:los-angeles.photographer"
   },
   {
    "ref": "venue:small-wedding-venues-los-angeles:cheapest10"

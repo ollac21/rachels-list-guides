@@ -14,7 +14,7 @@
  "card_title": "Under $1,000",
  "card_line": "14 gowns, from $576",
  "facts_heading": "This week's <em>gowns</em>",
- "facts_intro": "Biggest gap between price now and seller's original first. Prices are the listing prices on the day we read them; shipping and tax are not included.",
+ "facts_intro": "Source: Poshmark listings, each re-opened on Oct 28, 2026 and still available at the price shown. Tap a gown to open its listing. Biggest gap between price now and seller's original first; shipping and tax are not included.",
  "gowns": [
   {
    "title": "Dante Ronald Joyce Ivory Wedding Dress 18",
@@ -23,7 +23,8 @@
    "old_price": 3800,
    "size": "US 18",
    "brand": "Ronald Joyce",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Dante wedding dress"
   },
   {
    "title": "Maggie Sottero Strapless Satin Wedding Gown in Alabaster",
@@ -32,7 +33,8 @@
    "old_price": 3400,
    "size": "US 4",
    "brand": "Maggie Sottero",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Strapless satin gown"
   },
   {
    "title": "Martina Liana wedding gown",
@@ -41,7 +43,8 @@
    "old_price": 2700,
    "size": "US 12",
    "brand": "Martina Liana",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Wedding gown"
   },
   {
    "title": "Demetrios Ivory Beaded Satin Ball Gown Wedding Dress Sweetheart Bodice Size 20",
@@ -50,7 +53,8 @@
    "old_price": 2690,
    "size": "US 20",
    "brand": "Demetrios",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Beaded satin ball gown"
   },
   {
    "title": "Calla Blanche Lucy LA22105 Wedding Gown Size 12 NEW",
@@ -59,7 +63,8 @@
    "old_price": 2775,
    "size": "US 12",
    "brand": "Calla Blanche",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Lucy gown"
   },
   {
    "title": "Mikaella M2504 Fit and Flare Crepe Wedding Gown Size 10",
@@ -68,7 +73,8 @@
    "old_price": 2300,
    "size": "US 10",
    "brand": "Mikaella",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "M2504 crepe gown"
   },
   {
    "title": "Maggie sottero 6STI79 Light Gold Pewter Mermaid Wedding Dress",
@@ -77,7 +83,8 @@
    "old_price": 2200,
    "size": "US 8",
    "brand": "Maggie Sottero",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "6STI79 mermaid gown"
   },
   {
    "title": "Maggie Sottero Adriana Ivory Crepe Bead Embroidered V-Neck Wedding Dress Gown",
@@ -86,7 +93,8 @@
    "old_price": 1830,
    "size": "US 20",
    "brand": "Maggie Sottero",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Adriana V-neck gown"
   },
   {
    "title": "Sophia Tolli Strapless Sweetheart Tulle Wedding Gown in Ivory Silver Size 12 Sty",
@@ -95,7 +103,8 @@
    "old_price": 2000,
    "size": "US 12",
    "brand": "Sophia Tolli",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Strapless tulle gown"
   },
   {
    "title": "NEW Justin Alexander Strapless Lace Tulle Ball Gown Wedding Dress in Ivory Size",
@@ -104,7 +113,8 @@
    "old_price": 1600,
    "size": "US 6",
    "brand": "Justin Alexander",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Lace ball gown"
   },
   {
    "title": "SIZE 8 Jenny by Jenny Yoo Preston Gown",
@@ -113,7 +123,8 @@
    "old_price": 1695,
    "size": "US 8",
    "brand": "Jenny Yoo",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Preston gown"
   },
   {
    "title": "Birdy Bridal Soreya Wedding Dress Black Floral Wedding Gown 18 US NEW",
@@ -121,8 +132,9 @@
    "price": 650,
    "old_price": 999,
    "size": "US 18",
-   "brand": "Birdy Grey",
-   "date_read": "2026-10-28"
+   "brand": "Birdy Bridal",
+   "date_read": "2026-10-28",
+   "model": "Soreya floral gown"
   },
   {
    "title": "Alfred Angelo Bridal Wedding Gown in White Size 18 NWT",
@@ -131,7 +143,8 @@
    "old_price": 1200,
    "size": "US 18",
    "brand": "Alfred Angelo",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Bridal gown"
   },
   {
    "title": "Brand New Nox Anabel Satin V-Neck A-line Bridal Gown Wedding Gown Size 8",
@@ -140,7 +153,8 @@
    "old_price": 1100,
    "size": "US 8",
    "brand": "Nox Anabel",
-   "date_read": "2026-10-28"
+   "date_read": "2026-10-28",
+   "model": "Satin V-neck gown"
   }
  ],
  "ideas": [
@@ -173,7 +187,7 @@
   },
   {
    "q": "What does \"seller's original\" mean?",
-   "a": "It is the original price the seller typed into the listing, shown exactly as printed. We cannot check what a gown cost new, so we never call it a retail price."
+   "a": "It is the original price the seller typed into the listing, shown exactly as printed. We cannot check what a gown cost new, so we show it only as the seller's original price."
   },
   {
    "q": "How often is this list updated?",

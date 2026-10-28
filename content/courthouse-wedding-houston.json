@@ -138,7 +138,12 @@
   "Book a courthouse ceremony with a Harris County Justice of the Peace; Precinct 1, Place 1 charges $100 on weekday slots (cash only), $200 on Saturdays when available, and takes appointments or walk-ins at the judge's availability. Bring the license and the cash.",
   "Have the officiant sign within 90 days of the issue date, then return the signed license to the Clerk for recording (in person or by mail)."
  ],
- "facts_note": "Not shown because no official page states it: Payment methods for the marriage license itself: the Clerk page names cash / check / credit card only for assumed-name filings, not for marriage licenses; Whether the Clerk needs an appointment for a marriage license: the page does not say; it says to apply in person at one of 11 locations; A courthouse ceremony fee at the Clerk's office: the Clerk issues licenses only; ceremonies at courthouses are by Justices of the Peace, and only JP Precinct 1, Place 1 (Judge Eric William Carter) has a fee sheet I could read. Other JP precincts set their own fees; no official page found for them; Date of the JP Precinct 1, Place 1 fee sheet: the PDF is undated; the JP site's own Weddings page (linked as ../info/weddings.htm) would not load from curl; Cost of a certified copy of a ceremonial marriage license: the page's $6.00 certified-copy figure sits under the informal-marriage declaration, so it is not used; Residency requirement wording for non-Texans: the page only gives the $181 fee when no applicant shows Texas residency; it states no other rule.",
+ "facts_note_list": [
+  "How to pay the license fee (the Clerk's page names no payment methods for licenses)",
+  "Whether the Clerk needs an appointment for a license",
+  "The ceremony fee of other Justice of the Peace courts (each sets its own; only Precinct 1, Place 1 prints one)"
+ ],
+ "facts_note_head": "Not shown, because no official page states it:",
  "ideas": [
   {
    "ref": "gown:wedding-dresses-under-500:brand=BHLDN"

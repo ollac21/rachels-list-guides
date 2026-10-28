@@ -4,15 +4,15 @@
  "medium": "venues",
  "order": 10,
  "title": "Small & Micro Wedding Venues in LA, With Prices",
- "description": "6 small and micro wedding venues in Los Angeles, $320 to $2,600, each price from the venue's own site. Checked Oct 28, 2026.",
+ "description": "8 small and micro wedding venues in Los Angeles, $320 to $4,500, each price from the venue's own site. Checked Oct 28, 2026.",
  "h1": "Small & micro wedding venues in Los Angeles",
  "h1_em": "Los Angeles",
  "eyebrow": "Los Angeles · prices from the venues' own pages",
  "refresh_note": "Venue pages are re-checked monthly.",
- "answer_html": "<p>As of Oct 28, 2026, 6 small and micro wedding venues in Los Angeles print their own prices, from <strong>$320</strong> (Albertson Wedding Chapel) to <strong>$2,600</strong> (Greystone Mansion: ceremony only). For a group of 10 or more, the lowest is <strong>$449.99</strong> (Lucky Wedding Day Chapel).</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
- "oneliner": "6 venues with printed prices, $320 to $2,600 (checked Oct 28, 2026).",
+ "answer_html": "<p>As of Oct 28, 2026, small wedding venues in Los Angeles start at <strong>$449.99</strong> for a group of 10 or more (Lucky Wedding Day Chapel). Couple-only chapels start at $320, and the 8 venues we verified go up to $4,500.</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
+ "oneliner": "8 venues with printed prices, $320 to $4,500 (checked Oct 28, 2026).",
  "card_title": "Los Angeles",
- "card_line": "6 venues, $320 to $2,600",
+ "card_line": "8 venues, $320 to $4,500",
  "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
  "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
  "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
@@ -88,8 +88,36 @@
    "_researched_name": "Greystone Mansion: ceremony only"
   },
   {
+   "name": "La Venta Inn",
+   "url": "https://laventa.com/ceremony-only-package/",
+   "area": "Palos Verdes Estates",
+   "guests": "ceremony only, up to 100 guests",
+   "max_guests": 100,
+   "price_display": "$4,000",
+   "amount": 4000,
+   "price_for": "weekday ceremony-only package, 2 hours (Fri to Sun $5,500)",
+   "includes": "private use of the grounds, chairs, sound system, day-of director, light refreshments",
+   "quote": "Friday – Sunday: $5,500 Monday – Thursday: $4,000",
+   "date_read": "2026-10-28",
+   "_researched_name": "La Venta Inn"
+  },
+  {
+   "name": "Heritage Square Museum",
+   "url": "https://www.heritagesquare.org/site-rentals",
+   "area": "Montecito Heights, Los Angeles",
+   "guests": "50 guests or fewer",
+   "max_guests": 50,
+   "price_display": "$4,500",
+   "amount": 4500,
+   "price_for": "outdoor boutique wedding, 'starting at' price",
+   "includes": "historic homes and gardens",
+   "quote": "Heritage Square Museum is the perfect place for a one-of-a-kind boutique wedding (50 or less guests) experience. Stunning architecture. Beautiful gardens. Professional staff. With prices starting at $4,500",
+   "date_read": "2026-10-28",
+   "_researched_name": "Heritage Square Museum"
+  },
+  {
    "name": "Cecile Trattoria",
-   "url": "https://ceciletrattoria.com/private-events",
+   "url": "https://ceciletrattoria.com/engagements-%26-weddings",
    "area": "Glendale",
    "guests": "25 to 50 guests",
    "max_guests": 0,
@@ -97,9 +125,9 @@
    "amount": 75,
    "price_for": "semi-private dining, per person",
    "includes": "Italian menus, cocktail packages, event coordination",
-   "quote": "Semi-private dining from $75 per person (25 to 50 guests)",
+   "quote": "The room hosts 25 to 85 guests for everything from a rehearsal dinner to a full ceremony-and-reception. Per-guest wedding packages start at $75, with full buyouts from $120.",
    "date_read": "2026-10-28",
-   "price_unit": "per person",
+   "price_unit": "per guest",
    "per_person": true,
    "_researched_name": "Cecile Trattoria"
   }
@@ -122,11 +150,11 @@
  "faq": [
   {
    "q": "What is a normal cost for a wedding venue in Los Angeles?",
-   "a": "We do not quote an average, because an average hides what each venue actually prints. On this page 5 venues print prices from $320 to $2,600, each quoted from its own website on Oct 28, 2026."
+   "a": "We do not quote an average, because an average hides what each venue actually prints. On this page 7 venues print prices from $320 to $4,500, each quoted from its own website on Oct 28, 2026."
   },
   {
    "q": "What are some cheap wedding venues in Los Angeles under $1,000?",
-   "a": "4 of the 5 venues print a price under $1,000: Albertson Wedding Chapel $320; Lucky Wedding Day Chapel $449.99; Cute Little Wedding Chapel $450; Orcutt Ranch: weekday rental $900. Prices are for the package or hours each venue names, so read the row before you book."
+   "a": "4 of the 7 venues print a price under $1,000: Albertson Wedding Chapel $320; Lucky Wedding Day Chapel $449.99; Cute Little Wedding Chapel $450; Orcutt Ranch: weekday rental $900. Prices are for the package or hours each venue names, so read the row before you book."
   },
   {
    "q": "What is a small wedding considered?",
@@ -134,11 +162,11 @@
   },
   {
    "q": "How much does a micro wedding cost in Los Angeles?",
-   "a": "The venue prices we verified run $320 to $2,600. Add the sample finds on this page (a $250 dress) to the cheapest venue and you get about $570 before catering, rings and tax."
+   "a": "The venue prices we verified run $320 to $4,500. Add the sample finds on this page (a $250 dress, $98 flowers, $900 photos) to the cheapest venue and you get about $1,568 before catering, rings and tax."
   },
   {
    "q": "Is $5,000 enough for a wedding in Los Angeles?",
-   "a": "For a small group it can be: the cheapest verified venue ($320) plus the sample finds comes to about $570, and even the most expensive venue here is $2,600. A 100-guest wedding is a different budget, because this page prices small groups only."
+   "a": "For a small group it can be: the cheapest verified venue ($320) plus the sample finds comes to about $1,568, and even the most expensive venue here is $4,500. A 100-guest wedding is a different budget, because this page prices small groups only."
   }
  ],
  "related": [

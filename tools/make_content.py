@@ -245,7 +245,12 @@ CREDIT = {"houston": "license: Harris County Clerk; ceremony: Harris County Just
 
 def source_name(url, fallback):
     from urllib.parse import urlparse
-    host = urlparse(url).netloc.lower()
+    u = urlparse(url)
+    host = u.netloc.lower()
+    if host == "jp.hctx.net":
+        return "Harris County Justice of the Peace, Pct. 1"
+    if host.endswith("dallascounty.org") and "/jpcourts/" in u.path:
+        return "Dallas County Justice of the Peace court"
     for k, v in DOMAIN_NAME.items():
         if host == k or host.endswith("." + k):
             return v

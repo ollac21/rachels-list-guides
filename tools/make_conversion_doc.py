@@ -41,7 +41,7 @@ DO = {
   8: "Image answers: the strip uses photos (the app's own AI-made style pictures, labelled Example styles). Weak evidence; measured.",
   9: "Context: a head start feels like progress; the strip is the head start.",
   10: "Foot-in-the-door: a small first yes can lead to a bigger one (secondhand). A hypothesis to measure, not a promise.",
-  11: "Calibration: in the 1983 meta-analysis about half of the groups had no or a negative effect, so we log both clicks and compare.",
+  11: "Calibration: in the 1983 meta-analysis about half of the groups had no or a negative effect, so we log both and compare.",
   12: "First person: the button says 'my'.",
   13: "Never 'your' on the button (it lost 24.95%).",
   14: "Name what you get: the button and the reason line name the outcome ('Dream Board', dress, flowers, dinner spot).",
@@ -103,8 +103,8 @@ def main():
         no_ev += ["{}: {}".format(title, x) for x in d.get("no_evidence", [])]
     out += ["## No evidence found (so no number is claimed)", ""] + ["- " + md(x) for x in no_ev] + [""]
     out += ["## What we measure (PostHog, cookieless)", "",
-            "- `$pageview` per guide; `guide_cta_click` with `position` = header, top, text, card, sticky, after-6, closing, or style; `guide_style_click` with `style`.",
-            "- Compare click-through by position and by page type; compare the style strip's taps against button clicks; poster-only vs looping video can be compared by switching `data-autoplay` off.",
+            "- `$pageview` per guide; `guide_cta_click` with `position` = header, top, text, mid-text, card, sticky, after-6, dress-bridge, closing, or style (a style tap also carries `style` = the tag).",
+            "- Compare click-through by position and by page type; compare `position=style` taps against the button clicks; poster-only vs looping video can be compared by switching `data-autoplay` off.",
             "- Calibration: GoodUI counts only 169 significant winners in about 650 published UI tests, so none of the choices above is treated as proven for our pages until our own numbers say so.", ""]
     (ROOT / "GUIDES-CONVERSION.md").write_text("\n".join(out), encoding="utf-8")
     print("wrote GUIDES-CONVERSION.md", len("\n".join(out)), "chars")

@@ -9,7 +9,7 @@
  "h1_em": "checked",
  "eyebrow": "Rachel's List Guides",
  "refresh_note": "Pages refresh weekly, monthly or every 3 months; each shows its own date.",
- "answer_html": "<p>Courthouse fees, small venues, designer dresses and elopement packages for 5 US cities, each from the official or seller's page and dated (Oct 28, 2026). Rachel's List is the free app that finds cheaper dresses, flowers and venues for your style.</p>",
+ "answer_html": "<p>Real prices for 5 US cities, each taken from the official or seller's own page and dated (Oct 28, 2026): courthouse fees, small venues, designer dresses and elopement packages. Rachel's List is the free app that finds cheaper dresses, flowers and venues for your style.</p>",
  "oneliner": "Real wedding prices for five US cities, each checked on its source page and dated Oct 28, 2026.",
  "ideas": [],
  "faq": [],
@@ -28,28 +28,7 @@
    "ref": "venue:small-wedding-venues-houston:cheapest10"
   }
  ],
- "chips": [
-  {
-   "target": "courthouse",
-   "label": "Courthouse fees from",
-   "value": "$60"
-  },
-  {
-   "target": "venues",
-   "label": "Venues seating 10+ from",
-   "value": "$380"
-  },
-  {
-   "target": "dresses",
-   "label": "Dresses from",
-   "value": "$65"
-  },
-  {
-   "target": "packages",
-   "label": "Packages from",
-   "value": "$350"
-  }
- ],
+ "chips": [],
  "last_checked": "2026-10-28",
  "first_published": "2026-10-28"
 }

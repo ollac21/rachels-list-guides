@@ -1,0 +1,139 @@
+{
+ "date_read": "2026-10-28",
+ "pool_week": "2026-W44",
+ "dresses": [
+  {
+   "id": "553d473b6adf4c35",
+   "band": "2-4",
+   "name": "Two Sisters",
+   "style": "lace mini",
+   "size": "4",
+   "price": 39.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Two-Sisters-the-Label-White-Lace-Mini-Dress-Size-4-Romantic-Boho-Bridal-6adeadb724cc8783b80fcc32",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "6f341754d445e495",
+   "band": "2-4",
+   "name": "White satin mini",
+   "style": "satin mini",
+   "size": "2",
+   "price": 180.0,
+   "old_price": 200.0,
+   "url": "https://poshmark.com/listing/Elegant-White-Satin-Bridal-Mini-Dress-with-Sheer-Gloves-6ade943d1b53fe639437a8c9",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "4255c2e22c409dcd",
+   "band": "2-4",
+   "name": "Few Moda",
+   "style": "top and skirt set",
+   "size": "2",
+   "price": 125.0,
+   "old_price": 297.0,
+   "url": "https://poshmark.com/listing/Few-Moda-Jade-Set-6adffac87aaa6431bf91dbe8",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "795ef496f2cf40be",
+   "band": "6-8",
+   "name": "Angel Biba",
+   "style": "crochet sundress",
+   "size": "6",
+   "price": 32.0,
+   "old_price": 75.0,
+   "url": "https://poshmark.com/listing/Angel-Biba-White-Crochet-Bodice-Handkerchief-Hem-Dress-6adec09a51d13a547825e3ee",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "089c100b836ece7d",
+   "band": "6-8",
+   "name": "Reformation",
+   "style": "cream maxi",
+   "size": "8",
+   "price": 50.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Reformation-Cream-TieStrap-SquareNeck-Maxi-Dress-6adfec55441b1962d9ace8f1",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "95aa7abfd8282ab4",
+   "band": "10-12",
+   "name": "The Limited",
+   "style": "sleeveless dress",
+   "size": "10",
+   "price": 26.0,
+   "old_price": 119.0,
+   "url": "https://poshmark.com/listing/The-Limited-Size-10-White-New-Wedding-Summer-Formal-6adf949d95154f9c8f65e6b3",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "c48fe95a5748504d",
+   "band": "10-12",
+   "name": "White beaded maxi",
+   "style": "beaded maxi",
+   "size": "10",
+   "price": 65.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Wedding-Maxi-Dress-in-White-Like-New-6adfa9c7b55223217ef461a4",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "b161c22da1d1e4a0",
+   "band": "14+",
+   "name": "Azazie",
+   "style": "satin mini",
+   "size": "16",
+   "price": 179.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Azazie-Granville-Diamond-White-Satin-Strapless-Mini-Wedding-Dress-Size-16-NWT-6ae01533a2c5401cc4f34312",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "5383ac670c49511b",
+   "band": "14+",
+   "name": "Adrianna Papell",
+   "style": "sheath",
+   "size": "18",
+   "price": 100.0,
+   "old_price": 179.0,
+   "url": "https://poshmark.com/listing/Adrianna-Papell-White-Sleeveless-Sheath-Wedding-Dress-6adbb01d83b26cc4c7ac499a",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "f2ddf004c892dd93",
+   "band": "14+",
+   "name": "David's Bridal",
+   "style": "lace midi",
+   "size": "22",
+   "price": 100.0,
+   "old_price": 215.0,
+   "url": "https://poshmark.com/listing/Davids-Bridal-Lace-Midi-Dress-in-White-Women-6adfb7ff24cc876735b59247",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "367af18c872d8ed3",
+   "band": "14+",
+   "name": "Jessica London",
+   "style": "lace tea-length",
+   "size": "22",
+   "price": 65.0,
+   "old_price": 99.0,
+   "url": "https://poshmark.com/listing/NWT-Jessica-London-Ivory-Lace-TeaLength-Dress-with-ThreeQuarter-Sleeves-6adc2d93e912b367309aa9be",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  }
+ ],
+ "dropped": []
+}

@@ -14,7 +14,7 @@
  "card_title": "Dallas",
  "card_line": "11 venues, $250 to $2,500",
  "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
- "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+ "facts_intro": "Each card shows the price as the venue prints it, who it fits, and what comes with it. Tap the name to open the venue's own page.",
  "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
  "venues": [
   {
@@ -241,5 +241,27 @@
   }
  ],
  "last_checked": "2026-10-28",
- "first_published": "2026-10-28"
+ "first_published": "2026-10-28",
+ "pay_less": [
+  {
+   "h": "Book a weekday",
+   "t": "Many venues print a lower price for Monday to Thursday. Blush Event Garden&#x27;s elopements run Monday to Friday ($250 for 30 minutes, $450 for an hour). Heirloom Hideaway&#x27;s 60-minute elopement is $675 Monday to Thursday."
+  },
+  {
+   "h": "Ask for the room only",
+   "t": "A package adds an officiant, photos or decor you may not need, and its price shows it. Ask what the room costs on its own."
+  },
+  {
+   "h": "Book fewer hours",
+   "t": "A ceremony and a toast fit in an hour or two. Blush Event Garden&#x27;s Essential elopement is 30 minutes for $250. Drive Up &amp; Wed&#x27;s Sweet &amp; Simple is a 30-minute chapel ceremony for $650."
+  },
+  {
+   "h": "Ask what comes on top",
+   "t": "Fees, deposits and extra hours can sit on top of the printed price. Bouré Event Studio charges $150 an hour with a 4-hour minimum. The Penrose House&#x27;s $2,500 package is a starting price."
+  },
+  {
+   "h": "Ask three questions",
+   "t": "Which dates are open? What is the guest limit? Is there a cheaper day or a shorter slot? Put the answers in writing before you pay a deposit."
+  }
+ ]
 }

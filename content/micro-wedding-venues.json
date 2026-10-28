@@ -270,5 +270,187 @@
   }
  ],
  "last_checked": "2026-10-28",
- "first_published": "2026-10-28"
+ "first_published": "2026-10-28",
+ "cards": [
+  {
+   "name": "The Courthouse Wedding Chapel",
+   "url": "https://bookmyweddingnow.com/",
+   "price_display": "$197",
+   "amount": 197,
+   "source_url": "https://bookmyweddingnow.com/",
+   "date_read": "2026-10-28",
+   "city": "houston",
+   "sub": "Houston",
+   "detail": "2 guests (the couple) · Weddings by The Fireplace, weekday (weekend $297)",
+   "includes": ""
+  },
+  {
+   "name": "The Middleton Venue",
+   "url": "https://www.middletonvenue.com/about-1-1",
+   "price_display": "$380",
+   "amount": 380,
+   "source_url": "https://www.middletonvenue.com/about-1-1",
+   "date_read": "2026-10-28",
+   "city": "houston",
+   "sub": "Houston",
+   "detail": "seats up to 40 · Let's Elope, 1 hour ($760 for 2 hours)",
+   "includes": ""
+  },
+  {
+   "name": "The Makenzie House (Little Glass Chapel)",
+   "url": "https://themakenziehouse.com/courthouse-wedding-houston",
+   "price_display": "$499",
+   "amount": 499,
+   "source_url": "https://themakenziehouse.com/courthouse-wedding-houston",
+   "date_read": "2026-10-28",
+   "city": "houston",
+   "sub": "Houston",
+   "detail": "up to 20 guests · Hourglass \"I Do\" package, 1 hour",
+   "includes": ""
+  },
+  {
+   "name": "Garfield Park Conservatory: Jensen Room",
+   "url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue",
+   "price_display": "$400",
+   "amount": 400,
+   "source_url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue",
+   "date_read": "2026-10-28",
+   "city": "chicago",
+   "sub": "Chicago",
+   "detail": "banquet capacity 100 · Monday to Thursday, 4 hours, private rate",
+   "includes": ""
+  },
+  {
+   "name": "Garden Club of Evanston: Shakespeare Garden",
+   "url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf",
+   "price_display": "$500",
+   "amount": 500,
+   "source_url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf",
+   "date_read": "2026-10-28",
+   "city": "chicago",
+   "sub": "Chicago",
+   "detail": "50 guests or fewer · fee for a wedding service in the garden",
+   "includes": ""
+  },
+  {
+   "name": "Oak Park Conservatory: ceremony only",
+   "url": "https://oakparkconservatory.org/wp-content/uploads/2026/05/Oak-Park-Conservatory-Rental-Information-Guide.pdf",
+   "price_display": "$600",
+   "amount": 600,
+   "source_url": "https://oakparkconservatory.org/wp-content/uploads/2026/05/Oak-Park-Conservatory-Rental-Information-Guide.pdf",
+   "date_read": "2026-10-28",
+   "city": "chicago",
+   "sub": "Chicago",
+   "detail": "50 in the garden, 30 in the greenhouses · 2-hour ceremony-only rental after 4 pm",
+   "includes": ""
+  },
+  {
+   "name": "Occasions Hall (Queens Party Hall)",
+   "url": "https://queenspartyhall.com/wedding-reception-venues/",
+   "price_display": "$595",
+   "amount": 595,
+   "source_url": "https://queenspartyhall.com/wedding-reception-venues/",
+   "date_read": "2026-10-28",
+   "city": "new-york",
+   "sub": "New York",
+   "detail": "up to 80 guests · Monday to Thursday base rate, hall only (Fri and Sun $1,095, Sat $1,295)",
+   "includes": ""
+  },
+  {
+   "name": "NYC Wedding Factory",
+   "url": "https://www.nycweddingfactory.com/",
+   "price_display": "$650",
+   "amount": 650,
+   "source_url": "https://www.nycweddingfactory.com/",
+   "date_read": "2026-10-28",
+   "city": "new-york",
+   "sub": "New York",
+   "detail": "30 people maximum · Standard Package: 30-minute ceremony (Gold, $1,000, adds a 30-minute photo shoot)",
+   "includes": ""
+  },
+  {
+   "name": "Brooklyn Botanic Garden: garden ceremony",
+   "url": "https://www.bbg.org/visit/weddings_ceremony",
+   "price_display": "$1,000",
+   "amount": 1000,
+   "source_url": "https://www.bbg.org/visit/weddings_ceremony",
+   "date_read": "2026-10-28",
+   "city": "new-york",
+   "sub": "New York",
+   "detail": "up to 50 (10 more at $22 each, 60 maximum) · permit fee, weekends 9 to 10 a.m., nonrefundable",
+   "includes": ""
+  },
+  {
+   "name": "Skip The Courthouse Chapel: Tie The Knot",
+   "url": "https://www.skipthecourthouse.com/",
+   "price_display": "$250",
+   "amount": 250,
+   "source_url": "https://www.skipthecourthouse.com/",
+   "date_read": "2026-10-28",
+   "city": "dallas",
+   "sub": "Dallas",
+   "detail": "bride and groom only, 30 minutes · chapel ceremony package",
+   "includes": ""
+  },
+  {
+   "name": "Blush Event Garden: Essential elopement",
+   "url": "https://www.blusheventgarden.com/elopements",
+   "price_display": "$250",
+   "amount": 250,
+   "source_url": "https://www.blusheventgarden.com/elopements",
+   "date_read": "2026-10-28",
+   "city": "dallas",
+   "sub": "Dallas",
+   "detail": "couple only (up to 2 guests) · Monday to Friday, 30 minutes of venue access",
+   "includes": ""
+  },
+  {
+   "name": "Blush Event Garden: Classic elopement",
+   "url": "https://www.blusheventgarden.com/elopements",
+   "price_display": "$450",
+   "amount": 450,
+   "source_url": "https://www.blusheventgarden.com/elopements",
+   "date_read": "2026-10-28",
+   "city": "dallas",
+   "sub": "Dallas",
+   "detail": "seating for up to 20 guests · Monday to Friday, 1 hour of venue access",
+   "includes": ""
+  },
+  {
+   "name": "Albertson Wedding Chapel",
+   "url": "https://albertsonchapel.com/wedding-ceremonies/civil-ceremony/",
+   "price_display": "$320",
+   "amount": 320,
+   "source_url": "https://albertsonchapel.com/wedding-ceremonies/civil-ceremony/",
+   "date_read": "2026-10-28",
+   "city": "los-angeles",
+   "sub": "Los Angeles",
+   "detail": "0 to 5 guests (6 to 18 guests $390) · ceremony only, Monday to Friday and Sunday",
+   "includes": ""
+  },
+  {
+   "name": "Lucky Wedding Day Chapel",
+   "url": "https://luckyweddingday.com/",
+   "price_display": "$449.99",
+   "amount": 449.99,
+   "source_url": "https://luckyweddingday.com/",
+   "date_read": "2026-10-28",
+   "city": "los-angeles",
+   "sub": "Los Angeles",
+   "detail": "1 to 10 people · Sweet Package (couple-only Happy Package $399.99)",
+   "includes": ""
+  },
+  {
+   "name": "Cute Little Wedding Chapel",
+   "url": "https://cutelittleweddingchapel.com/the-prices/",
+   "price_display": "$450",
+   "amount": 450,
+   "source_url": "https://cutelittleweddingchapel.com/the-prices/",
+   "date_read": "2026-10-28",
+   "city": "los-angeles",
+   "sub": "Los Angeles",
+   "detail": "0 to 4 guests (5 to 15 guests $550) · license and ceremony, lowest tier (+$50 on weekends)",
+   "includes": ""
+  }
+ ]
 }

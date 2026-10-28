@@ -202,5 +202,60 @@
   }
  ],
  "last_checked": "2026-10-28",
- "first_published": "2026-10-28"
+ "first_published": "2026-10-28",
+ "fee_total": 126,
+ "fee_parts": "$91 license + $35 ceremony",
+ "where": "An LA County office (main: 12400 Imperial Hwy., Norwalk)",
+ "where_note": "appointment only",
+ "when": "Appointment only. The Norwalk office is open Monday to Friday, 8 a.m.–5 p.m.",
+ "steps5": [
+  {
+   "title": "Apply online",
+   "text": "Both of you fill in the county's application, then book an in-person appointment (up to 3 weeks ahead).",
+   "fee": ""
+  },
+  {
+   "title": "Get your license",
+   "text": "Both of you, together, with photo ID (not expired). $85 if you choose a confidential license.",
+   "fee": "$91"
+  },
+  {
+   "title": "Book your ceremony",
+   "text": "Prepaid, 15 minutes. The county only gives a ceremony appointment once you hold your license. An Express ceremony does license and ceremony in one 45-minute visit.",
+   "fee": "$35"
+  },
+  {
+   "title": "Add a witness",
+   "text": "A county witness costs $20. A confidential license needs no witness.",
+   "fee": ""
+  },
+  {
+   "title": "Return the license",
+   "text": "Marry within 90 days, then return the signed license to the Norwalk office to be recorded.",
+   "fee": ""
+  }
+ ],
+ "tips": [
+  {
+   "h": "What to wear",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Bring a light jacket or wrap."
+  },
+  {
+   "h": "Best time to go",
+   "t": "Book the Express ceremony (license and ceremony in one 45-minute visit) if you want a single trip; appointments open up to 3 weeks ahead."
+  },
+  {
+   "h": "Photo spots",
+   "t": "Use the building: the front steps, a staircase, a big window. Ask the court if photos are allowed inside before you plan them, then walk a few minutes for a second backdrop."
+  },
+  {
+   "h": "Who to bring",
+   "t": "A confidential license needs no witness. Otherwise, bring one adult or pay $20 for a county witness. Keep the group small: ceremonies last 15 minutes."
+  },
+  {
+   "h": "Celebrate after",
+   "t": "Call a restaurant a week ahead and ask for a table for your group. Order a set menu so the bill is no surprise."
+  }
+ ],
+ "look_heading": "Your Los Angeles courthouse look, for less"
 }

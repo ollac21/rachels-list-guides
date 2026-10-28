@@ -14,7 +14,7 @@
  "card_title": "New York",
  "card_line": "7 venues, $595 to $3,000",
  "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
- "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+ "facts_intro": "Each card shows the price as the venue prints it, who it fits, and what comes with it. Tap the name to open the venue's own page.",
  "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
  "venues": [
   {
@@ -189,5 +189,27 @@
   }
  ],
  "last_checked": "2026-10-28",
- "first_published": "2026-10-28"
+ "first_published": "2026-10-28",
+ "pay_less": [
+  {
+   "h": "Book a weekday",
+   "t": "Many venues print a lower price for Monday to Thursday. Occasions Hall in Queens is $595 Monday to Thursday, $1,095 on Friday and Sunday, and $1,295 on Saturday."
+  },
+  {
+   "h": "Ask for the room only",
+   "t": "A package adds an officiant, photos or decor you may not need, and its price shows it. Ask what the room costs on its own."
+  },
+  {
+   "h": "Book fewer hours",
+   "t": "A ceremony and a toast fit in an hour or two. NYC Wedding Factory sells a 30-minute ceremony for $650. Wave Hill&#x27;s elopement slot runs up to 90 minutes."
+  },
+  {
+   "h": "Ask what comes on top",
+   "t": "Fees, deposits and extra hours can sit on top of the printed price. Wave Hill&#x27;s $500 rental fee comes with a required $1,500 Partner Membership. Brooklyn Botanic Garden&#x27;s $1,000 permit fee is nonrefundable."
+  },
+  {
+   "h": "Ask three questions",
+   "t": "Which dates are open? What is the guest limit? Is there a cheaper day or a shorter slot? Put the answers in writing before you pay a deposit."
+  }
+ ]
 }

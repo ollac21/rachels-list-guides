@@ -14,7 +14,7 @@
  "card_title": "Los Angeles",
  "card_line": "8 venues, $320 to $4,500",
  "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
- "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+ "facts_intro": "Each card shows the price as the venue prints it, who it fits, and what comes with it. Tap the name to open the venue's own page.",
  "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
  "venues": [
   {
@@ -189,5 +189,27 @@
   }
  ],
  "last_checked": "2026-10-28",
- "first_published": "2026-10-28"
+ "first_published": "2026-10-28",
+ "pay_less": [
+  {
+   "h": "Book a weekday",
+   "t": "Many venues print a lower price for Monday to Thursday. La Venta Inn&#x27;s ceremony-only package is $4,000 on a weekday and $5,500 from Friday to Sunday. Orcutt Ranch&#x27;s weekday rental is $900."
+  },
+  {
+   "h": "Ask for the room only",
+   "t": "A package adds an officiant, photos or decor you may not need, and its price shows it. Ask what the room costs on its own."
+  },
+  {
+   "h": "Book fewer hours",
+   "t": "A ceremony and a toast fit in an hour or two. Greystone Mansion rents the Formal Garden for a 1-hour ceremony at $2,600. Cute Little Wedding Chapel&#x27;s lowest tier is $450 and covers the license and ceremony."
+  },
+  {
+   "h": "Ask what comes on top",
+   "t": "Fees, deposits and extra hours can sit on top of the printed price. Orcutt Ranch asks a $500 refundable deposit. Cute Little Wedding Chapel adds $50 on weekends."
+  },
+  {
+   "h": "Ask three questions",
+   "t": "Which dates are open? What is the guest limit? Is there a cheaper day or a shorter slot? Put the answers in writing before you pay a deposit."
+  }
+ ]
 }

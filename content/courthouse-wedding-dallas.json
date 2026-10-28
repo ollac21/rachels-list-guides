@@ -206,5 +206,60 @@
   }
  ],
  "last_checked": "2026-10-28",
- "first_published": "2026-10-28"
+ "first_published": "2026-10-28",
+ "fee_total": 161,
+ "fee_parts": "$81 license + $80 ceremony",
+ "where": "Justice of the Peace court 2-2, Mesquite",
+ "where_note": "cash only, by appointment",
+ "when": "Weekdays by appointment. License office: 500 Elm St., Suite 2100, Mon–Fri, 8 a.m.–4:30 p.m.",
+ "steps5": [
+  {
+   "title": "Apply online",
+   "text": "Fill in the Dallas County application first and write down the order number it gives you.",
+   "fee": ""
+  },
+  {
+   "title": "Get your license",
+   "text": "Both of you at the County Clerk, 500 Elm St., Suite 2100, with photo ID, your Social Security numbers and that order number. No personal checks.",
+   "fee": "$81"
+  },
+  {
+   "title": "Wait 72 hours",
+   "text": "Before the ceremony. A district judge can waive it; a Twogether in Texas certificate also skips it and takes $60 off the license.",
+   "fee": ""
+  },
+  {
+   "title": "Book a Justice of the Peace",
+   "text": "Each court sets its own fee: JP 5-1 charges $60, JP 2-2 $80 and JP 3-1 $150. Appointment required; the first two are cash only.",
+   "fee": "$80"
+  },
+  {
+   "title": "Get married in time",
+   "text": "Hold the ceremony within 90 days of the day the license was issued, or it expires.",
+   "fee": ""
+  }
+ ],
+ "tips": [
+  {
+   "h": "What to wear",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Bring a light jacket or wrap."
+  },
+  {
+   "h": "Best time to go",
+   "t": "Book your court first (they take appointments), then get the license at least 72 hours before. Courts set their own fees, so compare JP 5-1, 2-2 and 3-1."
+  },
+  {
+   "h": "Photo spots",
+   "t": "Use the building: the front steps, a staircase, a big window. Ask the court if photos are allowed inside before you plan them, then walk a few minutes for a second backdrop."
+  },
+  {
+   "h": "Who to bring",
+   "t": "JP 3-1 allows up to 15 guests with an appointment, and 5 at a walk-in. Keep your group to what the court allows."
+  },
+  {
+   "h": "Celebrate after",
+   "t": "Call a restaurant a week ahead and ask for a table for your group. Order a set menu so the bill is no surprise."
+  }
+ ],
+ "look_heading": "Your Dallas courthouse look, for less"
 }

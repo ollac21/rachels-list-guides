@@ -86,6 +86,16 @@
    "includes": "",
    "date_read": "2026-10-28",
    "quote": "Courthouse ceremonies are $400/hour with a 1-hour minimum."
+  },
+  "florist": {
+   "name": "RainFlorist Designs (Frisco)",
+   "url": "https://www.rainfloristdesigns.com",
+   "item": "bridal bouquet, prices run $125-$350",
+   "price_display": "$125",
+   "amount": 125,
+   "from": true,
+   "date_read": "2026-10-28",
+   "quote": "-Bridal bouquet- $125-$350 ($200 average)"
   }
  },
  "los-angeles": {

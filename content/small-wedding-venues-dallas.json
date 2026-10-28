@@ -1,0 +1,231 @@
+{
+ "path": "small-wedding-venues-dallas",
+ "type": "venues",
+ "medium": "venues",
+ "order": 9,
+ "title": "Small & Micro Wedding Venues in Dallas, With Prices",
+ "description": "10 small and micro wedding venues in Dallas, $250 to $2,500, each price from the venue's own site. Checked Oct 28, 2026.",
+ "h1": "Small & micro wedding venues in Dallas",
+ "h1_em": "Dallas",
+ "eyebrow": "Dallas · prices from the venues' own pages",
+ "refresh_note": "Venue pages are re-checked monthly.",
+ "answer_html": "<p>As of Oct 28, 2026, 10 small and micro wedding venues in Dallas print their own prices, from <strong>$250</strong> (Blush Event Garden - &#x27;Essential&#x27; sign-and-go elopement) to <strong>$2,500</strong> (The Penrose House: DIY elopement). For a group of 10 or more, the lowest is <strong>$450</strong> (Blush Event Garden - &#x27;Classic&#x27; elopement).</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
+ "oneliner": "10 venues with printed prices, $250 to $2,500 (checked Oct 28, 2026).",
+ "card_title": "Dallas",
+ "card_line": "10 venues, $250 to $2,500",
+ "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
+ "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+ "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
+ "venues": [
+  {
+   "name": "Blush Event Garden - 'Essential' sign-and-go elopement",
+   "url": "https://www.blusheventgarden.com/elopements",
+   "area": "Addison, Downtown Dallas, North Plano and Lake Highlands (four locations; Addison is 4043 East Trinity Mills Rd)",
+   "guests": "Bride and Groom Only Ceremony (up to 2 guests allowed)",
+   "max_guests": 2,
+   "price_display": "$250",
+   "amount": 250,
+   "price_for": "'Essential' elopement package, Monday-Friday anytime, includes 30 min of venue access (holiday pricing may apply on select dates)",
+   "includes": "30 min exclusive access to the garden-themed venue, in-house licensed officiant (or bring your own; ceremony up to 15 min), pre-written ceremony scripts, raised stage platform, bluetooth sound system, cleaning, free parking, WiFi",
+   "quote": "Pricing: (includes 30 min of venue access) Monday-Friday anytime: $250.00",
+   "date_read": "2026-10-28",
+   "guests_quote": {
+    "quote": "Bride and Groom Only Ceremony (up to 2 guests allowed)",
+    "source_url": "https://www.blusheventgarden.com/elopements"
+   },
+   "_researched_name": "Blush Event Garden - 'Essential' sign-and-go elopement"
+  },
+  {
+   "name": "Blush Event Garden - 'Classic' elopement",
+   "url": "https://www.blusheventgarden.com/elopements",
+   "area": "Addison, Downtown Dallas, North Plano and Lake Highlands (four locations; Addison is 4043 East Trinity Mills Rd)",
+   "guests": "ceremony seating setup for up to 20 guests",
+   "max_guests": 20,
+   "price_display": "$450",
+   "amount": 450,
+   "price_for": "'Classic' elopement package, Monday-Friday anytime, includes 1 hour of venue access (holiday pricing may apply on select dates)",
+   "includes": "1 hour exclusive access, pre-decorated ceremony aisle and background (florals and candles), in-house licensed officiant (or bring your own; ceremony up to 30 min), clear chiavari chairs for up to 20 guests, bluetooth sound system, cleaning, free parking, WiFi",
+   "quote": "Pricing: (includes 1 hours of venue access) Monday-Friday anytime: $450.00",
+   "date_read": "2026-10-28",
+   "guests_quote": {
+    "quote": "Guest ceremony seating setup for up to 20 guests (clear chiavari chairs)",
+    "source_url": "https://www.blusheventgarden.com/elopements"
+   },
+   "_researched_name": "Blush Event Garden - 'Classic' elopement"
+  },
+  {
+   "name": "Skip The Courthouse Chapel: She Said Yes",
+   "url": "https://www.skipthecourthouse.com/",
+   "area": "Arlington",
+   "guests": "up to 10 guests",
+   "max_guests": 10,
+   "price_display": "$550",
+   "amount": 550,
+   "price_for": "intimate chapel ceremony package",
+   "includes": "white chairs, tables, linens, backdrop, centerpieces",
+   "quote": "\"She Said Yes\" Package $550 Intimate wedding ceremony in our charming wedding chapel with family and friends. White Chiavari Chairs Tables White Table Linens Wedding Backdrop Clear Centerpieces with Candles Up to 10 Guest",
+   "date_read": "2026-10-28",
+   "_researched_name": "Skip The Courthouse Chapel: She Said Yes"
+  },
+  {
+   "name": "Bouré Event Studio",
+   "url": "https://boureeventstudio.com/packages/",
+   "area": "Plano",
+   "guests": "75 seated",
+   "max_guests": 75,
+   "price_display": "$600",
+   "amount": 600,
+   "price_for": "Monday to Thursday, 4-hour rental ($150 per hour, 4-hour minimum)",
+   "includes": "event room, tables and chairs, sound system, day-of supervisor",
+   "quote": "Monday – Thursday: Starting at $600 for a 4-hour event",
+   "date_read": "2026-10-28",
+   "capacity_quote": {
+    "quote": "75 guests comfortably seated",
+    "source_url": "https://boureeventstudio.com/faqs/"
+   },
+   "_researched_name": "Bouré Event Studio"
+  },
+  {
+   "name": "Flourish Events Dallas - 'Silver' micro wedding, pavilion ceremony",
+   "url": "https://www.flourisheventsdallas.com",
+   "area": "Mesquite (316 West College Street)",
+   "guests": "Up to 40 guests",
+   "max_guests": 40,
+   "price_display": "$600",
+   "amount": 600,
+   "price_for": "pavilion ceremony, 2 hours, part of the 'Micro Wedding / Party Package', available Sunday - Friday (the same page prices a small-ballroom micro reception separately: Sun-Thu $1,000)",
+   "includes": "40 white chairs, indoor restrooms (bridal suite $150 and groom's room $50 are options)",
+   "quote": "Ceremony: $600 (2 hours) Includes: Up to 40 guests, 40 white chairs, indoor restrooms",
+   "date_read": "2026-10-28",
+   "_researched_name": "Flourish Events Dallas - 'Silver' micro wedding, pavilion ceremony"
+  },
+  {
+   "name": "Drive Up & Wed: Sweet & Simple",
+   "url": "https://www.driveupandwed.com/",
+   "area": "Hurst",
+   "guests": "up to 6 guests",
+   "max_guests": 6,
+   "price_display": "$650",
+   "amount": 650,
+   "price_for": "30-minute chapel ceremony",
+   "includes": "officiant, decorated space, photography, bridal bouquet",
+   "quote": "Photography Fresh Floral Bridal Bouquet Seating for up to 6 Guests Thirty Minute Appointment $650",
+   "date_read": "2026-10-28",
+   "_researched_name": "Drive Up & Wed: Sweet & Simple"
+  },
+  {
+   "name": "Heirloom Hideaway: Just the 2 of You",
+   "url": "https://theheirloomhideaway.com/%22walk-in-%26-wed%22-elopement",
+   "area": "Fort Worth",
+   "guests": "couple only",
+   "max_guests": 2,
+   "price_display": "$675",
+   "amount": 675,
+   "price_for": "60-minute elopement, Monday to Thursday",
+   "includes": "elopement at the Stone House",
+   "quote": "60-min Pkg / Couple Only - No Guests / Price $675",
+   "date_read": "2026-10-28",
+   "_researched_name": "Heirloom Hideaway: Just the 2 of You"
+  },
+  {
+   "name": "Heirloom Hideaway: 2+12+CAKE=JOY",
+   "url": "https://theheirloomhideaway.com/%22walk-in-%26-wed%22-elopement",
+   "area": "Fort Worth",
+   "guests": "up to 12 guests",
+   "max_guests": 12,
+   "price_display": "$1,100",
+   "amount": 1100,
+   "price_for": "2-hour elopement package, starting price",
+   "includes": "time for a toast, cake, dancing and photos",
+   "quote": "2-Hrs / 12 Guests / Prices start at $1100",
+   "date_read": "2026-10-28",
+   "_researched_name": "Heirloom Hideaway: 2+12+CAKE=JOY"
+  },
+  {
+   "name": "Drive Up & Wed: Intimate Ceremony",
+   "url": "https://www.driveupandwed.com/",
+   "area": "Hurst",
+   "guests": "up to 45 guests, Monday to Thursday",
+   "max_guests": 45,
+   "price_display": "$1,800",
+   "amount": 1800,
+   "price_for": "3-hour weekday micro wedding",
+   "includes": "officiant, 2 hours of photography, bouquet, two small cakes, venue use",
+   "quote": "Celebration for up to 45 Guests Monday-Thursday Licensed Wedding Officiant Two Hours of Photography Fresh Flower Bridal Bouquet Two Single Tier Cakes Full use of the ceremony & reception venue 3 Hour Appointment In-House Catering Available $1,800",
+   "date_read": "2026-10-28",
+   "_researched_name": "Drive Up & Wed: Intimate Ceremony"
+  },
+  {
+   "name": "The Penrose House: DIY elopement",
+   "url": "https://thepenrosehouse.com/pricing",
+   "area": "Princeton, 45 minutes from Dallas",
+   "guests": "a small number of guests",
+   "max_guests": 0,
+   "price_display": "$2,500",
+   "amount": 2500,
+   "price_for": "'DIY elopement' package, starting price",
+   "includes": "private ceremony space, overnight suite, resort amenities",
+   "quote": "Packages at The Penrose House start at $2,500 for a DIY elopement, $6,500 for a DIY wedding weekend (2 nights, sleeps 28, ceremony for up to 50 guests) and $10,000 for the all-inclusive micro wedding.",
+   "date_read": "2026-10-28",
+   "_researched_name": "The Penrose House: DIY elopement"
+  }
+ ],
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:dallas.florist"
+  },
+  {
+   "ref": "find:dallas.photographer"
+  },
+  {
+   "ref": "fact:courthouse-wedding-dallas:license_fee"
+  }
+ ],
+ "ideas_lead": "A venue is one line of the budget. One real find in each of the other categories, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "What is a normal cost for a wedding venue in Dallas?",
+   "a": "We do not quote an average, because an average hides what each venue actually prints. On this page 10 venues print prices from $250 to $2,500, each quoted from its own website on Oct 28, 2026."
+  },
+  {
+   "q": "What are some cheap wedding venues in Dallas under $1,000?",
+   "a": "7 of the 10 venues print a price under $1,000: Blush Event Garden - 'Essential' sign-and-go elopement $250; Blush Event Garden - 'Classic' elopement $450; Skip The Courthouse Chapel: She Said Yes $550; Bouré Event Studio $600. Prices are for the package or hours each venue names, so read the row before you book."
+  },
+  {
+   "q": "What is a small wedding considered?",
+   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed on this page run from 2 to 75 people. Every venue here prints its price for a small, micro, weekday or elopement booking."
+  },
+  {
+   "q": "How much does a micro wedding cost in Dallas?",
+   "a": "The venue prices we verified run $250 to $2,500. Add the sample finds on this page (a $250 dress, $400 photos) to the cheapest venue and you get about $900 before catering, rings and tax."
+  },
+  {
+   "q": "Is $5,000 enough for a wedding in Dallas?",
+   "a": "For a small group it can be: the cheapest verified venue ($250) plus the sample finds comes to about $900, and even the most expensive venue here is $2,500. A 100-guest wedding is a different budget, because this page prices small groups only."
+  }
+ ],
+ "related": [
+  {
+   "path": "courthouse-wedding-dallas",
+   "label": "Courthouse wedding in Dallas",
+   "note": "The official fees and steps, if you want the legal part cheap."
+  },
+  {
+   "path": "micro-wedding-venues",
+   "label": "Micro wedding venues: real prices by city"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

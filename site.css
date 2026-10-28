@@ -55,6 +55,7 @@ main{padding-top:4px}
 .tbl th,.tbl td{text-align:left;vertical-align:top;padding:12px 8px 12px 0;border-top:1px solid var(--hairline)}
 .tbl thead th{border-top:0;border-bottom:1px solid var(--hairline);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--rose-deep);padding-top:4px}
 .tbl tbody th{font-weight:600;width:34%}
+.tbl tbody th a{text-decoration-thickness:1px}
 .tbl tbody th small{display:block;font-weight:400;color:var(--mute);font-size:13px}
 .tbl td.src{font-size:13px;color:var(--mute);width:24%}
 .price{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.05;font-variant-numeric:lining-nums;display:block;color:var(--ink)}
@@ -113,3 +114,13 @@ q.quote::before{content:"\201C"}q.quote::after{content:"\201D"}
 }
 @media (min-width:721px){.site-foot{padding-bottom:40px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* home menu */
+.menu h2{margin-top:34px}
+.mcards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.mcards.one{grid-template-columns:1fr}
+.mcard{display:flex;flex-direction:column;gap:2px;position:relative;padding:14px 34px 14px 14px;border:1px solid var(--hairline);border-radius:16px;background:#fff;box-shadow:var(--shadow-card);text-decoration:none;color:var(--ink);min-height:84px}
+.mcard::after{content:"\2192";position:absolute;right:14px;top:14px;color:var(--rose-deep);font-size:18px}
+.mcard-t{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.1;font-variant-numeric:lining-nums}
+.mcard-l{font-size:13px;line-height:1.35;color:var(--mute)}
+.mcard:hover{border-color:var(--rose)}

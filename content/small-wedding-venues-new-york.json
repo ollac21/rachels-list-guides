@@ -1,0 +1,193 @@
+{
+ "path": "small-wedding-venues-new-york",
+ "type": "venues",
+ "medium": "venues",
+ "order": 8,
+ "title": "Small & Micro Wedding Venues in NYC, With Prices",
+ "description": "7 small and micro wedding venues in New York, $595 to $3,000, each price from the venue's own site. Checked Oct 28, 2026.",
+ "h1": "Small & micro wedding venues in New York",
+ "h1_em": "New York",
+ "eyebrow": "New York · prices from the venues' own pages",
+ "refresh_note": "Venue pages are re-checked monthly.",
+ "answer_html": "<p>As of Oct 28, 2026, 7 small and micro wedding venues in New York print their own prices, from <strong>$595</strong> (Occasions Hall (Queens Party Hall)) to <strong>$3,000</strong> (Bartow-Pell Mansion: Conservatory). For a group of 10 or more, the lowest is <strong>$595</strong> (Occasions Hall (Queens Party Hall)).</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
+ "oneliner": "7 venues with printed prices, $595 to $3,000 (checked Oct 28, 2026).",
+ "card_title": "New York",
+ "card_line": "7 venues, $595 to $3,000",
+ "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
+ "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+ "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
+ "venues": [
+  {
+   "name": "Occasions Hall (Queens Party Hall)",
+   "url": "https://queenspartyhall.com/wedding-reception-venues/",
+   "area": "Ozone Park, Queens",
+   "guests": "up to 80 guests",
+   "max_guests": 80,
+   "price_display": "$595",
+   "amount": 595,
+   "price_for": "Monday to Thursday base rate, hall only (Fri and Sun $1,095, Sat $1,295)",
+   "includes": "DJ booth; bring your own food",
+   "quote": "Capacity: Up to 80 guests Features: Fixed DJ booth; outside food and caterers are permitted Why Choose Occasions? An 80-guest Ozone Park venue suited to flexible DIY celebrations. Starting Base Rates: Mon–Thu $595, Fri & Sun $1,095, Sat $1,295",
+   "date_read": "2026-10-28",
+   "_researched_name": "Occasions Hall (Queens Party Hall)"
+  },
+  {
+   "name": "NYC Wedding Factory",
+   "url": "https://www.nycweddingfactory.com/",
+   "area": "Mott Haven, Bronx",
+   "guests": "30 people maximum",
+   "max_guests": 30,
+   "price_display": "$650",
+   "amount": 650,
+   "price_for": "Standard Package: 30-minute ceremony (Gold, $1,000, adds a 30-minute photo shoot)",
+   "includes": "officiant and a 30-minute ceremony",
+   "quote": "Standard Package $650 Ceremony only Exchange vows in a cozy setting with our standard ceremony package.",
+   "guests_evidence": {
+    "quote": "Located in the Bronx, our venue offers 30-minute ceremonies for up to 30 guests and 1-hour packages that include photography services.",
+    "source_url": "https://www.nycweddingfactory.com/"
+   },
+   "date_read": "2026-10-28",
+   "_researched_name": "NYC Wedding Factory"
+  },
+  {
+   "name": "Brooklyn Botanic Garden: garden ceremony",
+   "url": "https://www.bbg.org/visit/weddings_ceremony",
+   "area": "Brooklyn",
+   "guests": "up to 50 (10 more at $22 each, 60 maximum)",
+   "max_guests": 50,
+   "price_display": "$1,000",
+   "amount": 1000,
+   "price_for": "permit fee, weekends 9 to 10 a.m., nonrefundable",
+   "includes": "portrait photography fees included; no chairs, tables or decorations",
+   "quote": "Permit fee: $1,000 for up to 50 people.",
+   "date_read": "2026-10-28",
+   "_researched_name": "Brooklyn Botanic Garden: garden ceremony"
+  },
+  {
+   "name": "Wave Hill: elopement",
+   "url": "https://www.wavehill.org/weddings-private-events/weekday-weddings-and-intimate-events",
+   "area": "Riverdale, Bronx",
+   "guests": "8 people in all",
+   "max_guests": 8,
+   "price_display": "$2,000",
+   "amount": 2000,
+   "price_for": "$500 rental fee plus the required $1,500 Partner Membership; up to 90 minutes, Tue, Wed or Fri afternoons",
+   "includes": "up to 6 white ceremony chairs",
+   "quote": "Rent our Glyndor Terrace, or Shade Border Arbor for events with up to six additional guests (eight people total). A Wave Hill Partner Membership at $1,500, and rental fee of $500 are required.",
+   "date_read": "2026-10-28",
+   "_researched_name": "Wave Hill: elopement"
+  },
+  {
+   "name": "The Benjamin: The Regal elopement",
+   "url": "https://nyc.sonesta.com/the-benjamin/weddings/",
+   "area": "Midtown East, Manhattan",
+   "guests": "10 guests or fewer",
+   "max_guests": 10,
+   "price_display": "$2,000",
+   "amount": 2000,
+   "price_for": "weekends only, plus tax and service charge",
+   "includes": "1.5 hours in the space, chairs, high tops, champagne and hors d'oeuvres",
+   "quote": "The Regal 10 Guests or Less $2,000 plus tax and service charge One -hour and thirty minutes exclusive use of space for ceremony, photos, and mingling",
+   "weekend_evidence": {
+    "quote": "Elopements & Microwedding Ceremonies Packages are available on weekends and able to be booked up to 3 months in advance.",
+    "source_url": "https://nyc.sonesta.com/the-benjamin/weddings/"
+   },
+   "date_read": "2026-10-28",
+   "_researched_name": "The Benjamin: The Regal elopement"
+  },
+  {
+   "name": "Little Church Around the Corner: Holy Family Chapel",
+   "url": "https://www.transfiguration.net/wp-content/uploads/2025/06/The-Wedding-Fee-Schedule-2024.pdf",
+   "area": "East 29th St., Manhattan",
+   "guests": "chapel seats 20",
+   "max_guests": 20,
+   "price_display": "$2,250",
+   "amount": 2250,
+   "price_for": "wedding fee (the fee schedule is titled 2024); Episcopal rules apply",
+   "includes": "building, sexton, setup, lights and sound, altar flowers; clergy at no extra fee",
+   "quote": "The fee for a wedding at Transfiguration is $2,250, payable to the church as follows:",
+   "guests_evidence": {
+    "quote": "The Holy Family Chapel is a quaint room paneled with dark wood that seats up to 20 people and is appropriate for smaller weddings.",
+    "source_url": "https://www.littlechurch.org/weddings"
+   },
+   "requirements_evidence": {
+    "quote": "The national canons of the Episcopal Church require that one party is a baptized Christian, and that the couple partake in pre-marital meetings with the Rector.",
+    "source_url": "https://www.littlechurch.org/weddings"
+   },
+   "date_read": "2026-10-28",
+   "_researched_name": "Little Church Around the Corner: Holy Family Chapel"
+  },
+  {
+   "name": "Bartow-Pell Mansion: Conservatory",
+   "url": "https://www.bartowpellmansionmuseum.org/rent/space-rentals/",
+   "area": "Pelham Bay Park, Bronx",
+   "guests": "max 30 people",
+   "max_guests": 30,
+   "price_display": "$3,000",
+   "amount": 3000,
+   "price_for": "3-hour rental plus prep and clean-up time",
+   "includes": "tables, chairs, linens; catering and music arranged by you",
+   "quote": "Conservatory (max capacity 30 people) Amenities Tables, Chairs and White Linens for seated dining To be arranged by host China, silverware, glassware, catering, wait staff, valet service, table/floral arrangements, music, PA system Duration Three hours plus an additional two hours of prep time immediately preceding your event, and an additional hour of clean-up by your caterer, wait staff, or event-planner personnel immediately following your event. Set-up to be determined and mutually agreed upon. Cost $3,000",
+   "date_read": "2026-10-28",
+   "_researched_name": "Bartow-Pell Mansion: Conservatory"
+  }
+ ],
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:new-york.florist"
+  },
+  {
+   "ref": "find:new-york.photographer"
+  },
+  {
+   "ref": "fact:courthouse-wedding-new-york:license_fee"
+  }
+ ],
+ "ideas_lead": "A venue is one line of the budget. One real find in each of the other categories, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "What is a normal cost for a wedding venue in NYC?",
+   "a": "We do not quote an average, because an average hides what each venue actually prints. On this page 7 venues print prices from $595 to $3,000, each quoted from its own website on Oct 28, 2026."
+  },
+  {
+   "q": "What are some cheap wedding venues in NYC under $1,000?",
+   "a": "2 of the 7 venues print a price under $1,000: Occasions Hall (Queens Party Hall) $595; NYC Wedding Factory $650. Prices are for the package or hours each venue names, so read the row before you book."
+  },
+  {
+   "q": "What is a small wedding considered?",
+   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed on this page run from 8 to 80 people. Every venue here prints its price for a small, micro, weekday or elopement booking."
+  },
+  {
+   "q": "How much does a micro wedding cost in NYC?",
+   "a": "The venue prices we verified run $595 to $3,000. Add the sample finds on this page (a $250 dress, $150 flowers, $500 photos) to the cheapest venue and you get about $1,495 before catering, rings and tax."
+  },
+  {
+   "q": "Is $5,000 enough for a wedding in NYC?",
+   "a": "For a small group it can be: the cheapest verified venue ($595) plus the sample finds comes to about $1,495, and even the most expensive venue here is $3,000. A 100-guest wedding is a different budget, because this page prices small groups only."
+  }
+ ],
+ "related": [
+  {
+   "path": "courthouse-wedding-new-york",
+   "label": "Courthouse wedding in New York",
+   "note": "The official fees and steps, if you want the legal part cheap."
+  },
+  {
+   "path": "micro-wedding-venues",
+   "label": "Micro wedding venues: real prices by city"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

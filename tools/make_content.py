@@ -99,6 +99,7 @@ def dress_pages():
             "eyebrow": "Secondhand designer gowns &middot; Poshmark &middot; updated every Tuesday".replace("&middot;", "·"),
             "refresh_note": "Refreshed every Tuesday.",
             "answer_html": answer, "oneliner": oneliner,
+            "card_title": em, "card_line": "{} gowns, from {}".format(n, money(cheapest["price"])),
             "facts_heading": "This week's <em>gowns</em>",
             "facts_intro": "Biggest gap between price now and seller's original first. Prices are the listing prices on the day we read them; shipping and tax are not included.",
             "gowns": gowns,
@@ -157,6 +158,302 @@ def trust_page():
     })
 
 
+# ----------------------------------------------------------------------------- research -> pages
+CITY_TITLES = {  # exactly the title tags of the spec
+    "courthouse": {"chicago": "Courthouse Wedding in Chicago: Real Cost & Steps (2026)",
+                   "new-york": "Courthouse Wedding in NYC: Real Cost & Steps (2026)",
+                   "houston": "Courthouse Wedding in Houston: Real Cost & Steps (2026)",
+                   "dallas": "Courthouse Wedding in Dallas: Real Cost & Steps (2026)",
+                   "los-angeles": "Courthouse Wedding in Los Angeles: Real Cost (2026)"},
+    "venues": {"houston": "Small & Micro Wedding Venues in Houston, With Prices",
+               "chicago": "Small & Micro Wedding Venues in Chicago, With Prices",
+               "new-york": "Small & Micro Wedding Venues in NYC, With Prices",
+               "dallas": "Small & Micro Wedding Venues in Dallas, With Prices",
+               "los-angeles": "Small & Micro Wedding Venues in LA, With Prices"},
+}
+ORDER = {"courthouse": {"chicago": 1, "new-york": 2, "houston": 3, "dallas": 4, "los-angeles": 5},
+         "venues": {"houston": 6, "chicago": 7, "new-york": 8, "dallas": 9, "los-angeles": 10}}
+SHORT = {"houston": "Houston", "chicago": "Chicago", "new-york": "New York", "dallas": "Dallas", "los-angeles": "Los Angeles"}
+OFFICE_SHORT = {"houston": "Harris County Clerk", "chicago": "Cook County Clerk", "new-york": "NYC City Clerk",
+                "dallas": "Dallas County Clerk", "los-angeles": "LA County Registrar-Recorder/County Clerk"}
+
+
+def research(city):
+    sys.path.insert(0, str(ROOT / "tools"))
+    import research_io
+    return research_io.load(city)
+
+
+def faqs_for(key):
+    sys.path.insert(0, str(ROOT / "tools"))
+    import faqs  # tools/faqs.py: hand-written, per page
+    return faqs.get(key)
+
+
+def finds_file():
+    out = {}
+    for slug, _ in CITIES:
+        r = research(slug)
+        if not r:
+            continue
+        out[slug] = {}
+        for k in ("photographer", "florist"):
+            v = r.get(k)
+            if v and v.get("amount") is not None and v.get("url"):
+                out[slug][k] = {x: v[x] for x in v if x != "quote"}
+                out[slug][k]["quote"] = v.get("quote", "")
+    (CONTENT / "_finds.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    print("wrote content/_finds.json:", {k: sorted(v) for k, v in out.items()})
+
+
+DOMAIN_NAME = {"cookcountyclerkil.gov": "Cook County Clerk", "cookcountycourtil.gov": "Circuit Court of Cook County",
+               "cookcountycourt.org": "Circuit Court of Cook County", "portal.311.nyc.gov": "NYC311 (City of New York)",
+               "cclerk.hctx.net": "Harris County Clerk", "dallascounty.org": "Dallas County Clerk",
+               "lavote.gov": "LA County Registrar-Recorder/County Clerk", "www.lavote.gov": "LA County Registrar-Recorder/County Clerk"}
+ANSWER_CREDIT = {  # (who issues the license, who performs the ceremony, a short note)
+    "houston": ("Harris County Clerk", "Justice of the Peace, Precinct 1", ", cash only; other Harris County courts set their own fees"),
+    "dallas": ("Dallas County Clerk", "Justice of the Peace court 2-2", " by appointment, cash only; other Dallas County courts charge $60 to $150"),
+    "chicago": ("Cook County Clerk", "Circuit Court of Cook County", ", an administrative fee"),
+    "new-york": ("NYC City Clerk", "City Clerk's office, any borough", ""),
+    "los-angeles": ("LA County Registrar-Recorder/County Clerk", "county office, prepaid", ""),
+}
+CREDIT = {"houston": "license: Harris County Clerk; ceremony: Harris County Justice of the Peace, Precinct 1",
+          "dallas": "license: Dallas County Clerk; ceremony: Dallas County Justice of the Peace court 2-2","chicago": "license: Cook County Clerk; ceremony: Circuit Court of Cook County",
+          "new-york": "NYC City Clerk, from the City's NYC311 pages"}
+
+
+def source_name(url, fallback):
+    from urllib.parse import urlparse
+    host = urlparse(url).netloc.lower()
+    for k, v in DOMAIN_NAME.items():
+        if host == k or host.endswith("." + k):
+            return v
+    return fallback
+
+
+def courthouse_page(slug, name):
+    r = research(slug)
+    if not r or not r.get("courthouse") or not r["courthouse"].get("facts"):
+        return
+    c = r["courthouse"]
+    office = OFFICE_SHORT[slug]
+    credit = CREDIT.get(slug, office)
+    facts = []
+    for f in c["facts"]:
+        x = dict(f)
+        x["source_name"] = source_name(x["source_url"], OFFICE_SHORT[slug])
+        if x["key"] in ("license_fee", "ceremony_fee") and x.get("amount") is not None:
+            x["allin"] = True
+        facts.append(x)
+    lic = next((f for f in facts if f["key"] == "license_fee"), None)
+    cer = next((f for f in facts if f["key"] == "ceremony_fee"), None)
+    if lic and cer and cer.get("amount") is not None:
+        total = lic["amount"] + cer["amount"]
+        lc, cc, note = ANSWER_CREDIT[slug]
+        lead = ("a courthouse wedding in {n} costs <strong>{t}</strong> in official fees: <strong>{l}</strong> for the marriage license ({lc}) "
+                "and <strong>{c}</strong> for the civil ceremony ({cc}).").format(n=name, t=money(total), l=money(lic["amount"]), c=money(cer["amount"]), lc=lc, cc=cc + note)
+        one_fee = "{} in fees: license {} + ceremony {}".format(money(total), money(lic["amount"]), money(cer["amount"]))
+        card_line = "{} in official fees".format(money(total))
+    elif lic:
+        lead = ("a courthouse wedding in {n} starts with a <strong>{l}</strong> marriage license ({o}). "
+                "The official pages we read list no separate civil-ceremony fee.").format(n=name, l=lic["display"], o=office)
+        one_fee = "license {}".format(lic["display"])
+        card_line = "{} marriage license".format(money(lic["amount"]))
+    else:
+        return
+    answer = "<p>As of {d}, {lead}</p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>".format(d=fdate(TODAY), lead=lead)
+    left = c.get("left_out") or []
+    note = ""
+    if left:
+        note = "Not shown because no official page states it: " + "; ".join(x.rstrip(".") for x in left) + "."
+    faq = faqs_for("courthouse-wedding-" + slug)
+    if not faq:
+        print("no FAQ yet for", slug); return
+    path = "courthouse-wedding-" + slug
+    desc = "Courthouse wedding in {n}: {fee}, per the official pages. Wait, ID and booking steps. Checked {d}.".format(n=name, fee=one_fee, d=fdate(TODAY))
+    if len(desc) > 155:
+        desc = "Courthouse wedding in {n}: {fee}, per the official pages. Checked {d}.".format(n=name, fee=one_fee, d=fdate(TODAY))
+    page = {
+        "path": path, "type": "courthouse", "medium": "courthouse", "order": ORDER["courthouse"][slug],
+        "title": CITY_TITLES["courthouse"][slug],
+        "description": desc,
+        "h1": "Courthouse wedding in " + name, "h1_em": name,
+        "eyebrow": "{} \u00b7 {}".format(name, office),
+        "refresh_note": "Courthouse pages are re-checked every 3 months.",
+        "answer_html": answer,
+        "oneliner": "{} ({}), checked {}.".format(one_fee[0].upper() + one_fee[1:], OFFICE_SHORT[slug], fdate(TODAY)),
+        "card_title": name, "card_line": card_line,
+        "office": office,
+        "facts_heading": "The fees and the <em>steps</em>, from the official pages",
+        "facts_intro": "Copied word for word from {}. Each row links to the page it came from.".format(office),
+        "facts": facts, "steps": c.get("steps", []), "facts_note": note,
+        "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:{}.florist".format(slug)}]
+                 + ([{"ref": "find:{}.photographer".format(slug)}] if (r.get("photographer") or {}).get("hours", 9) <= 2 else [])
+                 + [{"ref": "venue:small-wedding-venues-{}:cheapest10".format(slug)}],
+        "ideas_lead": "The license is the legal part. Here is one real find in each category couples still buy for a courthouse day, each from its own page and dated.",
+        "faq": faq,
+        "related": [{"path": "small-wedding-venues-" + slug, "label": "Small and micro wedding venues in " + name,
+                     "note": "Want a dinner or a small party after the courthouse? Prices from the venues' own sites."},
+                    {"path": "wedding-dresses-under-500", "label": "Designer wedding dresses, $500 or less"},
+                    {"path": "elopement-packages", "label": "Elopement and micro wedding packages"},
+                    {"path": "how-we-check", "label": "How we check every price"}],
+    }
+    save(path, page)
+
+
+def venue_page(slug, name):
+    r = research(slug)
+    if not r or not r.get("venues"):
+        return
+    vs = sorted(r["venues"], key=lambda v: (bool(v.get("per_person")), v["amount"]))
+    for v in vs:
+        v.pop("curl_verifiable", None)
+    totals = [v for v in vs if not v.get("per_person")]
+    lo, hi = totals[0], totals[-1]
+    faq = faqs_for("small-wedding-venues-" + slug)
+    if not faq:
+        print("no FAQ yet for venues", slug); return
+    ten = [v for v in totals if v.get("max_guests", 0) >= 10]
+    ten_txt = " For a group of 10 or more, the lowest is <strong>{}</strong> ({}).".format(ten[0]["price_display"], e(ten[0]["name"])) if ten else ""
+    answer = ("<p>As of {d}, {n} small and micro wedding venues in {c} print their own prices, from <strong>{lp}</strong> ({ln}) to <strong>{hp}</strong> ({hn}).{ten}</p>"
+              "<p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>").format(
+        d=fdate(TODAY), n=len(vs), c=name, lp=lo["price_display"], ln=e(lo["name"]), hp=hi["price_display"], hn=e(hi["name"]), ten=ten_txt)
+    path = "small-wedding-venues-" + slug
+    page = {
+        "path": path, "type": "venues", "medium": "venues", "order": ORDER["venues"][slug],
+        "title": CITY_TITLES["venues"][slug],
+        "description": "{n} small and micro wedding venues in {c}, {lp} to {hp}, each price from the venue's own site. Checked {d}.".format(
+            n=len(vs), c=name, lp=money(lo["amount"]), hp=money(hi["amount"]), d=fdate(TODAY)),
+        "h1": "Small & micro wedding venues in " + name, "h1_em": name,
+        "eyebrow": "{} \u00b7 prices from the venues' own pages".format(name),
+        "refresh_note": "Venue pages are re-checked monthly.",
+        "answer_html": answer,
+        "oneliner": "{} venues with printed prices, {} to {} (checked {}).".format(len(vs), lo["price_display"], hi["price_display"], fdate(TODAY)),
+        "card_title": name, "card_line": "{} venues, {} to {}".format(len(vs), lo["price_display"], hi["price_display"]),
+        "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
+        "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+        "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
+        "venues": vs,
+        "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:{}.florist".format(slug)},
+                  {"ref": "find:{}.photographer".format(slug)}, {"ref": "fact:courthouse-wedding-{}:license_fee".format(slug)}],
+        "ideas_lead": "A venue is one line of the budget. One real find in each of the other categories, each from its own page and dated.",
+        "faq": faq,
+        "related": [{"path": "courthouse-wedding-" + slug, "label": "Courthouse wedding in " + name,
+                     "note": "The official fees and steps, if you want the legal part cheap."},
+                    {"path": "micro-wedding-venues", "label": "Micro wedding venues: real prices by city"},
+                    {"path": "elopement-packages", "label": "Elopement and micro wedding packages"},
+                    {"path": "wedding-dresses-under-500", "label": "Designer wedding dresses, $500 or less"}],
+    }
+    save(path, page)
+
+
+def e(x):
+    import html as _h
+    return _h.escape(str(x), quote=True)
+
+
+def hub_pages():
+    venues = []
+    for slug, name in CITIES:
+        pg = read_page("small-wedding-venues-" + slug)
+        if not pg:
+            continue
+        for v in sorted((x for x in pg["venues"] if not x.get("per_person")), key=lambda x: x["amount"])[:3]:
+            venues.append((slug, name, v))
+    if len(venues) < 6:
+        return
+    faq = faqs_for("micro-wedding-venues")
+    if faq:
+        by_city = {}
+        for slug, name, v in venues:
+            by_city.setdefault(name, v)
+        cheapest = min(venues, key=lambda t: t[2]["amount"])
+        bits = ", ".join("{} from {}".format(n, v["price_display"]) for n, v in by_city.items())
+        answer = ("<p>As of {d}, the lowest micro or small wedding venue price we verified is <strong>{p}</strong> ({vn}, {c}). "
+                  "By city: {bits}. Every price comes from the venue's own website.</p>").format(
+            d=fdate(TODAY), p=cheapest[2]["price_display"], vn=e(cheapest[2]["name"]).replace("&amp;amp;", "&amp;"), c=cheapest[1], bits=bits)
+        rows, items = [], []
+        for slug, name, v in venues:
+            rows.append({
+                "th": '<a href="{}" rel="noopener">{}</a><small><a href="@small-wedding-venues-{}/">{}</a></small>'.format(e(v["url"]), e(v["name"]), slug, name),
+                "td": '<span class="price">{}</span><span class="was">{} &middot; {}</span><q class="quote">{}</q>'.format(
+                    e(v["price_display"]), e(v["guests"]), e(v["price_for"]), e(v["quote"])),
+                "src": "Venue's own page<br>Read {}".format(fdate(v["date_read"])),
+                "amount": v["amount"], "source_url": v["url"], "date_read": v["date_read"]})
+            items.append({"name": "{} ({})".format(v["name"], name), "url": v["url"]})
+        page = {
+            "path": "micro-wedding-venues", "type": "hub", "medium": "hub", "order": 11,
+            "title": "Micro Wedding Venues: Real Prices by City (2026)",
+            "description": "Micro and small wedding venue prices in 5 US cities, from {} to {}, each quoted from the venue's own site. Checked {}.".format(
+                cheapest[2]["price_display"], max(v["price_display"] for _, _, v in venues if v["amount"] == max(x["amount"] for _, _, x in venues)), fdate(TODAY)),
+            "h1": "Micro wedding venues: real prices by city", "h1_em": "real prices",
+            "eyebrow": "Houston \u00b7 Chicago \u00b7 New York \u00b7 Dallas \u00b7 Los Angeles",
+            "refresh_note": "Refreshed monthly.",
+            "answer_html": answer,
+            "oneliner": "Lowest verified micro wedding venue price {} ({}); three cheapest venues in each of five cities.".format(cheapest[2]["price_display"], cheapest[1]),
+            "card_title": "Compare the five cities", "card_line": "Lowest verified price {} ({})".format(cheapest[2]["price_display"], cheapest[1]),
+            "facts_heading": "The three cheapest venues in <em>each city</em>",
+            "facts_intro": "From each city's venue page, where every venue has its own price, guest count and quote. Open a city for the full list.",
+            "table": {"headers": ["Venue", "Price on its own page", "Source"], "rows": rows},
+            "items": items,
+            "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
+                      {"ref": "find:houston.photographer"}, {"ref": "fact:courthouse-wedding-houston:license_fee"}],
+            "ideas_lead": "Whichever city you pick, the rest of the day can cost less too. One real find in each other category, each from its own page and dated.",
+            "faq": faq,
+            "related": [{"path": "small-wedding-venues-" + s2, "label": "Small and micro wedding venues in " + n2} for s2, n2 in CITIES]
+                       + [{"path": "elopement-packages", "label": "Elopement and micro wedding packages"}],
+        }
+        # rows with amount need source+date at the row level for the price check
+        save("micro-wedding-venues", page)
+    # packages
+    f = CACHE / "research" / "packages.json"
+    if not f.exists():
+        return
+    d = json.loads(f.read_text())
+    pk = sorted(d["packages"], key=lambda x: x["amount"])
+    faq = faqs_for("elopement-packages")
+    if not pk or not faq:
+        return
+    rows, items = [], []
+    for x in pk:
+        rows.append({
+            "th": '<a href="{}" rel="noopener">{}</a><small>{} &middot; {}</small>'.format(e(x["url"]), e(x["name"]), e(x.get("provider") or ""), e(x.get("place") or "")),
+            "td": '<span class="price">{}</span><span class="was">{}</span>{}<q class="quote">{}</q>'.format(
+                e(x["price_display"]), e(x.get("guests") or ""),
+                '<span class="was">Includes: {}</span>'.format(e(x["includes"])) if x.get("includes") else "", e(x["quote"])),
+            "src": "Provider's own page<br>Read {}".format(fdate(x["date_read"])),
+            "amount": x["amount"], "source_url": x["url"], "date_read": x["date_read"]})
+        items.append({"name": "{} ({})".format(x["name"], x.get("provider", "")), "url": x["url"]})
+    lo, hi = pk[0], pk[-1]
+    answer = ("<p>As of {d}, elopement and micro wedding packages that print their price run from <strong>{lp}</strong> ({ln}, {lpl}) "
+              "to <strong>{hp}</strong> ({hn}, {hpl}). We list {n}, each quoted from the provider's own page.</p>").format(
+        d=fdate(TODAY), lp=lo["price_display"], ln=e(lo["name"]), lpl=e(lo.get("place", "")), hp=hi["price_display"], hn=e(hi["name"]),
+        hpl=e(hi.get("place", "")), n=len(pk))
+    save("elopement-packages", {
+        "path": "elopement-packages", "type": "packages", "medium": "packages", "order": 12,
+        "title": "Elopement & Micro Wedding Packages, Real Prices",
+        "description": "{} elopement and micro wedding packages, {} to {}, with what each includes, quoted from the providers' own pages. Checked {}.".format(
+            len(pk), money(lo["amount"]), money(hi["amount"]), fdate(TODAY)),
+        "h1": "Elopement & micro wedding packages", "h1_em": "packages",
+        "eyebrow": "All-in packages \u00b7 prices from the providers' own pages",
+        "refresh_note": "Refreshed monthly.",
+        "answer_html": answer,
+        "oneliner": "{} packages with printed prices, {} to {} (checked {}).".format(len(pk), lo["price_display"], hi["price_display"], fdate(TODAY)),
+        "card_title": "{} packages".format(len(pk)), "card_line": "{} to {}, each from the provider's own page".format(money(lo["amount"]), money(hi["amount"])),
+        "facts_heading": "Packages with a <em>printed price</em>, cheapest first",
+        "facts_intro": "Only packages whose provider prints the price on its own website. Read what each includes: officiant, photographer, flowers and permits differ.",
+        "table": {"headers": ["Package", "Price on its own page", "Source"], "rows": rows},
+        "items": items,
+        "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
+                  {"ref": "find:houston.photographer"}, {"ref": "fact:courthouse-wedding-houston:license_fee"}],
+        "ideas_lead": "A package covers some pieces. One real find in each other category, each from its own page and dated.",
+        "faq": faq,
+        "related": [{"path": "micro-wedding-venues", "label": "Micro wedding venues: real prices by city"},
+                    {"path": "courthouse-wedding-houston", "label": "Courthouse wedding in Houston"},
+                    {"path": "wedding-dresses-under-500", "label": "Designer wedding dresses, $500 or less"}],
+    })
+
+
 def read_page(name):
     f = CONTENT / (name + ".json")
     return json.loads(f.read_text()) if f.exists() else None
@@ -166,43 +463,18 @@ CITIES = [("houston", "Houston"), ("chicago", "Chicago"), ("new-york", "New York
 
 
 def home_page():
-    rows, facts_lines = [], []
+    d5 = read_page("wedding-dresses-under-500")
+    n_c = len([1 for sl, _ in CITIES if read_page("courthouse-wedding-" + sl)])
     lics = []
-    cheapest = []
     for slug, name in CITIES:
         c = read_page("courthouse-wedding-" + slug)
-        v = read_page("small-wedding-venues-" + slug)
-        parts_td, parts_src = [], []
         if c:
             lic = next((f for f in c["facts"] if f["key"] == "license_fee"), None)
-            cer = next((f for f in c["facts"] if f["key"] == "ceremony_fee"), None)
-            if lic:
+            if lic and lic.get("amount") is not None:
                 lics.append((lic["amount"], name))
-                parts_td.append('Marriage license <strong>{}</strong>'.format(lic["display"]))
-            if cer:
-                parts_td.append('courthouse ceremony <strong>{}</strong>'.format(cer["display"]))
-            parts_src.append('<a href="@courthouse-wedding-{}/">Courthouse page</a>'.format(slug))
-        if v and v.get("venues"):
-            vv = min(v["venues"], key=lambda x: x["amount"])
-            cheapest.append((vv["amount"], vv["name"], name))
-            parts_td.append('cheapest small-venue price we verified <strong>{}</strong> ({})'.format(vv["price_display"], vv["name"].replace("&", "&amp;")))
-            parts_src.append('<a href="@small-wedding-venues-{}/">Venue page</a>'.format(slug))
-        if parts_td:
-            rows.append({"th": '<a href="@courthouse-wedding-{0}/">{1}</a>'.format(slug, name) if c else name,
-                         "td": "; ".join(parts_td) + ".", "src": "<br>".join(parts_src)})
-    d5 = read_page("wedding-dresses-under-500")
-    bits = []
-    if lics:
-        lo, hi = min(lics), max(lics)
-        bits.append("a marriage license costs from <strong>{}</strong> in {} to <strong>{}</strong> in {}".format(money(lo[0]), lo[1], money(hi[0]), hi[1]))
-    if cheapest:
-        c0 = min(cheapest)
-        bits.append("the cheapest small-venue price we verified is <strong>{}</strong> ({}, {})".format(money(c0[0]), c0[1].replace("&", "&amp;"), c0[2]))
-    if d5:
-        bits.append("{} secondhand designer gowns are <strong>$500 or less</strong>".format(len(d5["gowns"])))
-    answer = "<p>As of {d}: {b}. Every number links to the page it came from and shows the day we read it.</p>".format(
-        d=fdate(TODAY), b="; ".join(bits))
-    one = "Real wedding prices for five US cities, each checked on its source page and dated {}.".format(fdate(TODAY))
+    answer = ("<p>Courthouse fees, small-wedding venues, designer dresses and elopement packages for 5 US cities, "
+              "each price copied from the official page or the seller's own page, with the day we read it ({d}). "
+              "No affiliate links.</p>").format(d=fdate(TODAY))
     page = {
         "path": "", "type": "home", "medium": "hub", "order": 0,
         "title": "Real Wedding Prices, Checked: Rachel's List Guides",
@@ -210,28 +482,9 @@ def home_page():
         "h1": "Real wedding prices, checked", "h1_em": "checked",
         "eyebrow": "Rachel's List Guides",
         "refresh_note": "Pages refresh weekly, monthly or every 3 months; each shows its own date.",
-        "answer_html": answer, "oneliner": one,
-        "facts_heading": "Five cities, <em>at a glance</em>",
-        "facts_intro": "The official license fee and the cheapest small-venue price we could verify on a venue's own site. Open a city for every row, quote and date.",
-        "table": {"headers": ["City", "What we found", "Pages"], "rows": rows} if rows else None,
-        "ideas": [
-            {"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
-            {"ref": "find:houston.photographer"}, {"ref": "venue:small-wedding-venues-houston:cheapest10"},
-        ],
-        "ideas_lead": "Whatever the venue, the rest of the day can cost less too. One real find in each category, from its own page and dated.",
-        "faq": [
-            {"q": "How much does a small wedding cost?",
-             "a": "It depends on the city and the venue, so we do not quote an average. Open a city page to see the actual fees and the small-venue prices we verified on venues' own websites."},
-            {"q": "Are courthouse weddings cheaper than a venue?",
-             "a": "The official fees are listed on each courthouse page with the county's own wording. Compare them with the venue prices on the same city's venue page: both show the day we read them."},
-            {"q": "Can I really find a designer wedding dress for under $500?",
-             "a": "Yes: we re-open secondhand designer listings every Tuesday and show only the ones still available. See the dress pages for this week's gowns and their sellers' original prices."},
-            {"q": "Who writes these guides?",
-             "a": "Rachel's List, a free wedding-planning app that finds dresses, decor and venues for less. We earn nothing from the venues, sellers or photographers listed."},
-            {"q": "How do you check a price?",
-             "a": "Official pages are quoted word for word, venue prices come from the venue's own site, and dress listings are re-opened before they appear. <a href=\"@how-we-check/\">Read how we check</a>."},
-        ],
-        "related": [],
+        "answer_html": answer,
+        "oneliner": "Real wedding prices for five US cities, each checked on its source page and dated {}.".format(fdate(TODAY)),
+        "ideas": [], "faq": [], "related": [],
     }
     save("home", page)
 
@@ -240,4 +493,9 @@ if __name__ == "__main__":
     CONTENT.mkdir(exist_ok=True)
     dress_pages()
     trust_page()
+    finds_file()
+    for _slug, _name in CITIES:
+        courthouse_page(_slug, _name)
+        venue_page(_slug, _name)
+    hub_pages()
     home_page()

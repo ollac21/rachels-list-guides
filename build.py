@@ -116,7 +116,8 @@ def resolve_idea(spec, pages, finds):
             g = next((x for x in gl if x["brand"] == idx[6:]), gl[0])
         else:
             g = gl[int(idx)]
-        out = dict(label="The dress", name="{}: {}".format(g["brand"], g["title"]), url=g["url"],
+        gname = g["title"] if g["title"].lower().startswith(g["brand"].lower()) else "{}: {}".format(g["brand"], g["title"])
+        out = dict(label="The dress", name=gname, url=g["url"],
                    amount=g["price"], source_url=g["url"], date_read=g["date_read"],
                    meta="Seller's original {} &middot; size {} &middot; {}".format(
                        money(g["old_price"]), esc(g["size"]), src_line("Poshmark listing", g["date_read"])))
@@ -128,7 +129,7 @@ def resolve_idea(spec, pages, finds):
         if what == "photographer":
             out = dict(label="The photos", name="{}: {}".format(f["name"], f["package"]), url=f["url"],
                        amount=f["amount"], source_url=f["url"], date_read=f["date_read"],
-                       meta="{}{}".format(esc(f.get("includes", "")) + " &middot; " if f.get("includes") else "",
+                       meta="{}{}".format(esc(f.get("includes", "").split(";")[0]) + " &middot; " if f.get("includes") else "",
                                           src_line("their own site", f["date_read"])))
         else:
             out = dict(label="The flowers", name="{}: {}".format(f["name"], f["item"]), url=f["url"],
@@ -136,11 +137,11 @@ def resolve_idea(spec, pages, finds):
                        meta=src_line("their own site", f["date_read"]))
     elif kind == "venue":
         pg, _, rule = rest.partition(":")
-        vs = [v for v in pages[pg].get("venues", []) if v.get("max_guests", 0) >= 10]
+        vs = [v for v in pages[pg].get("venues", []) if v.get("max_guests", 0) >= 10 and not v.get("per_person")]
         if not vs:
             return None
         v = min(vs, key=lambda x: x["amount"])
-        out = dict(label="A room for dinner for 10", name=v["name"], url=v["url"], amount=v["amount"],
+        out = dict(label="Dinner for 10: the room", name=v["name"], url=v["url"], amount=v["amount"],
                    source_url=v["url"], date_read=v["date_read"],
                    meta="{} &middot; {} &middot; {}".format(esc(v["guests"]), esc(v["price_for"]),
                                                             src_line("their own page", v["date_read"])))
@@ -214,7 +215,9 @@ def facts_table(page):
     rows = []
     for f in page["facts"]:
         if f.get("amount") is not None:
-            detail = '<span class="price">{}</span>'.format(esc(f["display"]))
+            m = re.match(r"^(\$[\d,]+(?:\.\d\d)?)\s*(.*)$", f["display"])
+            detail = '<span class="price">{}</span>{}'.format(esc(m.group(1) if m else f["display"]),
+                                                              '<span class="was">{}</span>'.format(esc(m.group(2))) if m and m.group(2) else "")
         else:
             detail = "<strong>{}</strong>".format(esc(f["display"]))
         rows.append(
@@ -321,6 +324,25 @@ def render_related(page, pages):
     return '<section class="related"><h2>More <em>guides</em></h2><ul>{}</ul></section>'.format("".join(items))
 
 
+MENU = [(("courthouse",), "Courthouse weddings: what they really cost", "The official fee for the license and the ceremony, from each clerk's own page."),
+        (("venues", "hub"), "Small & micro wedding venues, with prices", "Only venues that print their own price for a small group."),
+        (("dresses",), "Wedding dresses", "Secondhand designer gowns, re-opened every Tuesday."),
+        (("packages",), "Elopement & micro wedding packages", "All-in packages with the price on the provider's own page.")]
+
+
+def render_home_menu(page, pages):
+    out = []
+    for t, heading, blurb in MENU:
+        ps = sorted((p for p in pages.values() if p["type"] in t and p["path"] not in ("", "/")), key=lambda x: x.get("order", 0))
+        if not ps:
+            continue
+        cards = "".join('<a class="mcard" href="@{}/"><span class="mcard-t">{}</span><span class="mcard-l">{}</span></a>'.format(
+            p["path"], esc(p.get("card_title", p["h1"])), esc(p.get("card_line", p.get("oneliner", "")))) for p in ps)
+        cls = "mcards one" if len(ps) == 1 else "mcards"
+        out.append('<section class="menu"><h2>{}</h2><p class="lead">{}</p><div class="{}">{}</div></section>'.format(heading, esc(blurb), cls, cards))
+    return "".join(out)
+
+
 def render_home_index(page, pages):
     groups = [("courthouse", "Courthouse weddings"), ("venues", "Small and micro wedding venues"),
               ("hub", "Compare cities"), ("packages", "Elopement packages"), ("dresses", "Wedding dresses"), ("trust", "Trust")]
@@ -351,14 +373,17 @@ def jsonld_blocks(page, site, pages):
     if page["path"] not in ("", "/"):
         crumbs.append({"@type": "ListItem", "position": 2, "name": h1, "item": url})
     blocks.append({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": crumbs})
-    blocks.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-        {"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": strip_tags(f["a"])}}
-        for f in page["faq"]]})
+    if page["faq"]:
+        blocks.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": strip_tags(f["a"])}}
+            for f in page["faq"]]})
     items = []
     if page["type"] == "venues":
         items = [(v["name"], v["url"]) for v in page["venues"]]
     elif page["type"] == "dresses":
-        items = [("{}: {}".format(g["brand"], g["title"]), g["url"]) for g in page["gowns"]]
+        items = [(g["title"] if g["title"].lower().startswith(g["brand"].lower()) else "{}: {}".format(g["brand"], g["title"]), g["url"]) for g in page["gowns"]]
+    elif page["type"] == "home":
+        items = [(p["h1"], page_url(site, p["path"])) for p in sorted(pages.values(), key=lambda x: x.get("order", 0)) if p["path"] not in ("", "/")]
     elif page["type"] in ("hub", "packages") and page.get("items"):
         items = [(i["name"], i["url"]) for i in page["items"]]
     if items:
@@ -390,6 +415,14 @@ def render_page(page, site, pages, finds):
     ideas = render_ideas(page, pages, finds)
     bridge = render_dress_bridge(page, site, pages, finds)
     card = fill(template("rachel_card.html"), root=root, app_url=app)
+    if page["type"] == "home":
+        body = "\n".join([
+            '<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
+            "<h1>{}</h1>".format(h1_html(page)), checked, answer, card, render_home_menu(page, pages),
+            '<p class="trust">Every price on these pages links to the page it came from and shows the day we read it. '
+            'No affiliate links: we earn nothing from these sellers or venues. <a href="@how-we-check/">How we check</a>.</p>'])
+        body = internal(body, root)
+        return finish_page(page, site, pages, body, root, app)
     body = "\n".join([
         crumbs,
         '<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
@@ -400,6 +433,10 @@ def render_page(page, site, pages, finds):
         'No affiliate links: we earn nothing from these sellers or venues. <a href="@how-we-check/">How we check</a>.</p>',
     ])
     body = internal(body, root)
+    return finish_page(page, site, pages, body, root, app)
+
+
+def finish_page(page, site, pages, body, root, app):
     ld = "\n".join('<script type="application/ld+json">{}</script>'.format(
         json.dumps(b, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")) for b in jsonld_blocks(page, site, pages))
     return fill(template("base.html"),
@@ -435,6 +472,12 @@ def write_site_files(site, pages):
         (DOCS / "CNAME").write_text(site["domain"] + "\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     shutil.copyfile(ROOT / "site.css", DOCS / "site.css")
+    (DOCS / "404.html").write_text(
+        '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+        '<title>Page not found: Rachel\'s List Guides</title><meta name="robots" content="noindex">'
+        '<style>body{font-family:Georgia,serif;background:#FFFCF9;color:#231F20;margin:0;padding:48px 16px;text-align:center}'
+        'a{color:#9C4A52}</style></head><body><h1>That page is not here.</h1>'
+        '<p><a href="/">See all the guides</a></p></body></html>\n', encoding="utf-8")
 
 
 def build():
@@ -489,7 +532,7 @@ def check_link(url):
 
 def check(do_links=True):
     site, pages, finds = build()
-    problems = []
+    problems, warnings = [], []
     outside = {}
     for p in pages.values():
         w = p["path"] or "home"
@@ -501,7 +544,7 @@ def check(do_links=True):
             problems.append("{}: description is {} characters (max 155)".format(w, len(p["description"])))
         if not re.search(r"\d", p["description"]):
             problems.append("{}: description has no number".format(w))
-        if len(p["faq"]) != 5:
+        if len(p["faq"]) != 5 and not (p["type"] == "home" and not p["faq"]):
             problems.append("{}: FAQ has {} questions (need 5)".format(w, len(p["faq"])))
         words = strip_tags(p["answer_html"]).split()
         first50 = " ".join(words[:50])
@@ -530,7 +573,7 @@ def check(do_links=True):
             except Exception as e:
                 problems.append("{}: structured data does not parse ({})".format(w, e))
         kinds = set(re.findall(r'"@type":"(Article|BreadcrumbList|FAQPage|ItemList)"', h))
-        need = {"Article", "BreadcrumbList", "FAQPage"} | ({"ItemList"} if p["type"] in ("venues", "dresses") else set())
+        need = {"Article", "BreadcrumbList"} | ({"FAQPage"} if p["faq"] else set()) | ({"ItemList"} if p["type"] in ("venues", "dresses", "hub", "packages", "home") else set())
         if not need <= kinds:
             problems.append("{}: structured data missing {}".format(w, sorted(need - kinds)))
         for href in re.findall(r'href="([^"]+)"', h):
@@ -557,16 +600,23 @@ def check(do_links=True):
         print("checking {} outside links ...".format(len(urls)), flush=True)
         with ThreadPoolExecutor(max_workers=12) as ex:
             for url, ok, status in ex.map(check_link, urls):
-                if not ok:
-                    problems.append("link does not answer ({}): {}  [on {}]".format(status, url, ", ".join(sorted(set(outside[url]))[:2])))
+                if ok:
+                    continue
+                msg = "link does not answer ({}): {}  [on {}]".format(status, url, ", ".join(sorted(set(outside[url]))[:2]))
+                if re.match(r"https://rachelslist\.co(/|$)", url):  # the app's own domain is not ours to fix here
+                    warnings.append(msg)
+                else:
+                    problems.append(msg)
     print("pages: {}  outside links: {}".format(len(pages), len(outside)))
+    if warnings:
+        print("WARNING (not blocking: the app's own domain): {} link(s) to rachelslist.co do not answer, e.g. {}".format(len(warnings), warnings[0][:160]))
     if problems:
         print("CHECK FAILED: {} problem(s)".format(len(problems)))
         for pr in problems:
             print(" -", pr)
         return 1
     print("CHECK OK: prices have sources and dates, titles <= 60, descriptions <= 155, structured data parses, every page has its button, no affiliate links{}".format(
-        ", all outside links answer" if do_links else " (outside links not swept)"))
+        ", all outside links answer" + (" (app domain: see warning)" if warnings else "") if do_links else " (outside links not swept)"))
     return 0
 
 

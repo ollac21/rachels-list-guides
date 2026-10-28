@@ -1,0 +1,205 @@
+{
+ "path": "courthouse-wedding-dallas",
+ "type": "courthouse",
+ "medium": "courthouse",
+ "order": 4,
+ "title": "Courthouse Wedding in Dallas: Real Cost & Steps (2026)",
+ "description": "Courthouse wedding in Dallas: $161 in fees: license $81 + ceremony $80, per the official pages. Wait, ID and booking steps. Checked Oct 28, 2026.",
+ "h1": "Courthouse wedding in Dallas",
+ "h1_em": "Dallas",
+ "eyebrow": "Dallas · Dallas County Clerk",
+ "refresh_note": "Courthouse pages are re-checked every 3 months.",
+ "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Dallas costs <strong>$161</strong> in official fees: <strong>$81</strong> for the marriage license (Dallas County Clerk) and <strong>$80</strong> for the civil ceremony (Justice of the Peace court 2-2 by appointment, cash only; other Dallas County courts charge $60 to $150).</p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
+ "oneliner": "$161 in fees: license $81 + ceremony $80 (Dallas County Clerk), checked Oct 28, 2026.",
+ "card_title": "Dallas",
+ "card_line": "$161 in official fees",
+ "office": "Dallas County Clerk",
+ "facts_heading": "The fees and the <em>steps</em>, from the official pages",
+ "facts_intro": "Copied word for word from Dallas County Clerk. Each row links to the page it came from.",
+ "facts": [
+  {
+   "key": "license_fee",
+   "label": "Marriage license fee",
+   "display": "$81",
+   "amount": 81,
+   "quote": "The cost of a marriage license is $81.00.",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+   "date_read": "2026-10-28",
+   "note": "The Clerk's fee schedule page (fees-payment.php) still prints $80.00 under 'Filing Fees Effective January 1, 2014'; the FAQ page and the JP 5-1 page both print $81.00.",
+   "source_name": "Dallas County Clerk",
+   "allin": true
+  },
+  {
+   "key": "ceremony_fee",
+   "label": "Civil ceremony at a Dallas County courthouse (JP 2-2, Mesquite, weekday by appointment)",
+   "display": "$80 by appointment ($100 walk-in), cash only",
+   "amount": 80,
+   "quote": "Monday thru Friday from 10:30a-3:30p: $80 CASH ONLY - By appointment",
+   "source_url": "https://www.dallascounty.org/government/jpcourts/2-2/weddings.php",
+   "date_read": "2026-10-28",
+   "note": "Fees are set court by court. Other Dallas County JP courts print different fees (see the extra facts: JP 5-1 $60, JP 3-1 $150).",
+   "source_name": "Dallas County Clerk",
+   "allin": true
+  },
+  {
+   "key": "extra",
+   "label": "Other courthouse ceremony fee: JP 3-1 (North Dallas Government Center, LBJ Freeway)",
+   "display": "$150 weekday appointment, up to 15 guests; $150 walk-in, up to 5 guests",
+   "amount": 150,
+   "quote": "Appointments - Monday-Friday 9:00am – 3:30pm -- $150 fee (Maximum 15 guests)",
+   "source_url": "https://www.dallascounty.org/government/jpcourts/3-1/wedding-ceremony-information.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "extra",
+   "label": "Other courthouse ceremony fee: JP 5-1 (page still lists the old East Dallas address)",
+   "display": "$60 weekday 10:30a to 3:30p, cash only, appointment required",
+   "amount": 60,
+   "quote": "Monday thru Friday from 10:30a-3:30p: $60 CASH ONLY",
+   "source_url": "https://www.dallascounty.org/government/jpcourts/5-1/marriage.php",
+   "date_read": "2026-10-28",
+   "note": "The page header still gives 3443 St. Francis Avenue, which the Dallas County banner says is closed (East Dallas Government Center moved to 9731 Lake June Road). Call (214) 943-6980 to confirm before relying on it.",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "waiting_period",
+   "label": "Waiting period",
+   "display": "72 hours after the license is issued (a district judge can waive it)",
+   "quote": "After you have purchased your marriage license, state law requires 72-hours before the ceremony takes place to get married, unless you obtain a waiver from a district judge.",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "validity",
+   "label": "How long the license is valid",
+   "display": "90 days from the day it is issued",
+   "quote": "A marriage license expires 90 days after the date the license is issued.",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "id_needed",
+   "label": "ID you bring",
+   "display": "Both of you: valid government-issued photo ID (driver's license, passport, military ID or ID card) and your Social Security number",
+   "quote": "Both persons must be present and provide: Valid government-issued photo ID. Acceptable forms of ID include: Driver's license, passport, military ID, or an identification card issued by Texas or another state, the United States or a foreign government",
+   "source_url": "https://www.dallascounty.org/government/jpcourts/3-2/wedding-ceremonies-marriage-license-information.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "how_to_book",
+   "label": "How to get the license / book the ceremony",
+   "display": "Fill in the application online first (you get an order number), then both of you go to the County Clerk's office at 500 Elm St., Suite 2100 with that number",
+   "quote": "Marriage license applications must be completed on-line. Once you’ve completed the application, you will be provided with an order number.",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "extra",
+   "label": "How you can pay the license fee",
+   "display": "No personal checks: cash, money order, cashier's check, business check or credit/debit card",
+   "quote": "No personal checks are accepted.",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/fees-payment.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "extra",
+   "label": "Twogether in Texas course: cheaper license and no wait",
+   "display": "Takes $60 off the license fee and waives the 72-hour wait",
+   "quote": "Twogether in Texas reduces your marriage license fee by $60 and waives the 72-hour waiting period.",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "extra",
+   "label": "County Clerk office address, phone and hours",
+   "display": "500 Elm Street, Suite 2100, Dallas, TX 75202; (214) 653-7099; 8:00 a.m. to 4:30 p.m., Monday to Friday",
+   "quote": "Records Building - 500 Elm Street, Suite 2100, Dallas, TX 75202 Phone: (214) 653-7099 | Fax: (214) 653-7176 Hours: 8:00 a.m. - 4:30 p.m., Monday - Friday",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  },
+  {
+   "key": "extra",
+   "label": "Certified copy of your marriage license",
+   "display": "$10.00 per search and/or certified copy",
+   "amount": 10,
+   "quote": "Marriage License (Search and/or Certified Copy) $10.00",
+   "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/fees-payment.php",
+   "date_read": "2026-10-28",
+   "source_name": "Dallas County Clerk"
+  }
+ ],
+ "steps": [
+  "Fill in the Dallas County marriage license application online and write down the order number it gives you.",
+  "Both of you go to the County Clerk's Records Building (500 Elm St., Suite 2100) with photo ID and your Social Security numbers, and pay the $81 license fee (no personal checks).",
+  "Wait 72 hours after the license is issued before the ceremony, unless a district judge waives it or you hold a Twogether in Texas certificate.",
+  "Book a ceremony with a Dallas County Justice of the Peace court; each court sets its own fee (JP 5-1 $60, JP 2-2 $80 by appointment, JP 3-1 $150 on its pages).",
+  "Hold the ceremony within 90 days of the day the license was issued, or the license expires."
+ ],
+ "facts_note": "Not shown because no official page states it: A single county-wide courthouse ceremony fee: the County Clerk does not perform ceremonies; each Justice of the Peace court prints its own fee (or none) on its own page; JP 3-2 (Judge Seider) regular weekday ceremony fee: its page prints only '$400 ceremony fee' for holiday and holiday-weekend dates (dated July and August of an earlier year) and says other times are 'fee to be determined'; Whether an appointment is required at the Clerk's office: the FAQ says a marriage license appointment must be scheduled, the marriage-license page speaks of a 'walk-in' with the order number, and the JP 3-1 page says no appointment is required, so no single fact is given; A residency rule: the JP 3-2 page says 'Only Dallas County residents, based on the address shown on applicants' state issued identification', but the County Clerk's own pages do not state it (see notes); A 'courthouse ceremony' room inside the County Clerk's Records Building: no official page states one.",
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:dallas.florist"
+  },
+  {
+   "ref": "find:dallas.photographer"
+  },
+  {
+   "ref": "venue:small-wedding-venues-dallas:cheapest10"
+  }
+ ],
+ "ideas_lead": "The license is the legal part. Here is one real find in each category couples still buy for a courthouse day, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "How to get married at the courthouse in Dallas?",
+   "a": "Fill in the Dallas County marriage license application online and keep the order number. Both of you go to the County Clerk's Records Building (500 Elm St., Suite 2100) with photo ID and pay the $81 license fee (no personal checks), wait 72 hours, then book a ceremony with a Justice of the Peace court."
+  },
+  {
+   "q": "How much is it to get married at the courthouse in Dallas?",
+   "a": "As of Oct 28, 2026, the license costs $81 and each Justice of the Peace court sets its own ceremony fee: $60 at JP 5-1, $80 by appointment at JP 2-2 and $150 at JP 3-1. That makes $141 to $231 in fees, depending on the court."
+  },
+  {
+   "q": "Can you get married the same day in Dallas?",
+   "a": "Not by default: Texas law requires 72 hours after the license is issued. A district judge can waive the wait, and the Dallas County Clerk's page says a Twogether in Texas certificate waives it and takes $60 off the license fee."
+  },
+  {
+   "q": "Can I get married at a courthouse in Texas?",
+   "a": "Yes: in Dallas County, ceremonies are performed by Justice of the Peace courts, each with its own hours and fee. For example JP 2-2 marries couples Monday to Friday from 10:30a to 3:30p for $80 cash only by appointment."
+  },
+  {
+   "q": "Is it cheaper to get married at a courthouse?",
+   "a": "The official fees here run $141 to $231. The lowest Dallas venue price we verified for a group of 10 or more is $450 (Blush Event Garden - 'Classic' elopement), so the courthouse is the cheaper start; compare both pages before you decide."
+  }
+ ],
+ "related": [
+  {
+   "path": "small-wedding-venues-dallas",
+   "label": "Small and micro wedding venues in Dallas",
+   "note": "Want a dinner or a small party after the courthouse? Prices from the venues' own sites."
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

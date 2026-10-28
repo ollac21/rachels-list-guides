@@ -1,0 +1,233 @@
+{
+ "path": "small-wedding-venues-houston",
+ "type": "venues",
+ "medium": "venues",
+ "order": 6,
+ "title": "Small & Micro Wedding Venues in Houston, With Prices",
+ "description": "11 small and micro wedding venues in Houston, $197 to $8,900, each price from the venue's own site. Checked Oct 28, 2026.",
+ "h1": "Small & micro wedding venues in Houston",
+ "h1_em": "Houston",
+ "eyebrow": "Houston · prices from the venues' own pages",
+ "refresh_note": "Venue pages are re-checked monthly.",
+ "answer_html": "<p>As of Oct 28, 2026, 11 small and micro wedding venues in Houston print their own prices, from <strong>$197</strong> (The Courthouse Wedding Chapel) to <strong>$8,900</strong> (County Line Event Center). For a group of 10 or more, the lowest is <strong>$380</strong> (The Middleton Venue).</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
+ "oneliner": "11 venues with printed prices, $197 to $8,900 (checked Oct 28, 2026).",
+ "card_title": "Houston",
+ "card_line": "11 venues, $197 to $8,900",
+ "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
+ "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+ "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
+ "venues": [
+  {
+   "name": "The Courthouse Wedding Chapel",
+   "url": "https://bookmyweddingnow.com/",
+   "area": "North Houston",
+   "guests": "2 guests (the couple)",
+   "max_guests": 2,
+   "price_display": "$197",
+   "amount": 197,
+   "price_for": "Weddings by The Fireplace, weekday (weekend $297)",
+   "includes": "officiant, fireplace setting, bouquet and boutonniere, chapel music, license filing, keepsake certificate",
+   "quote": "Weddings by The Fireplace $197 Weekend : $297 Guests : 2 guests only Authorized wedding officiant Fireplace setting Bride bouquet & groom boutonniere Chapel music Marriage license filing Keepsake certificate",
+   "date_read": "2026-10-28",
+   "_researched_name": "The Courthouse Wedding Chapel"
+  },
+  {
+   "name": "The Middleton Venue",
+   "url": "https://www.middletonvenue.com/about-1-1",
+   "area": "Old Katy",
+   "guests": "seats up to 40",
+   "max_guests": 40,
+   "price_display": "$380",
+   "amount": 380,
+   "price_for": "Let's Elope, 1 hour ($760 for 2 hours)",
+   "includes": "1 hour of venue time, photographer (40 images), licensed officiant, event coordinator, decorated venue",
+   "quote": "Let's Elope $380 for 1 hour, $760 For 2 hours What's Included: 1 hour of venue rental, photographer (40 images), licensed officiant, event coordinator and a fully decorated venue with white artificial flowers. You’ll also enjoy cake cutting supplies,( cake is not included), first dance and cake cutting photos, indoor and outdoor pictures, a personalized playlist for your entry songs, and seating for up to 40 guests.",
+   "date_read": "2026-10-28",
+   "_researched_name": "The Middleton Venue"
+  },
+  {
+   "name": "The Makenzie House (Little Glass Chapel)",
+   "url": "https://themakenziehouse.com/courthouse-wedding-houston",
+   "area": "Missouri City / Stafford",
+   "guests": "up to 20 guests",
+   "max_guests": 20,
+   "price_display": "$499",
+   "amount": 499,
+   "price_for": "Hourglass \"I Do\" package, 1 hour",
+   "includes": "1 hour in the chapel, licensed officiant, floral arch, speaker",
+   "quote": "THE HOURGLASS \"I DO\" $499 1 hour rental time Celebrate with up to 20 guests Bluetooth Speaker Licensed officiant provided Floral Arch",
+   "date_read": "2026-10-28",
+   "_researched_name": "The Makenzie House (Little Glass Chapel)"
+  },
+  {
+   "name": "Houston Botanic Garden: Global Collection Garden",
+   "url": "https://hbg.org/wp-content/uploads/2026/01/2026-Private-Rentals-Guide.pdf",
+   "area": "Houston",
+   "guests": "15 admission tickets included, standing only",
+   "max_guests": 15,
+   "price_display": "$500",
+   "amount": 500,
+   "price_for": "micro wedding, 1-hour rental (+$200 refundable deposit)",
+   "includes": "15 tickets, free parking, photos anywhere in the Garden; no reception, food or drinks",
+   "quote": "1-hour rental for $500 with a $200 refundable damage deposit",
+   "date_read": "2026-10-28",
+   "_researched_name": "Houston Botanic Garden: Global Collection Garden"
+  },
+  {
+   "name": "Verandas Events",
+   "url": "https://verandasevents.com/pricing.html",
+   "area": "Houston Heights",
+   "guests": "up to 50 guests",
+   "max_guests": 50,
+   "price_display": "$560",
+   "amount": 560,
+   "price_for": "Monday to Thursday, 4-hour rental (+5% processing fee)",
+   "includes": "4 hours, cleaning, table and chair setup; bring your own vendors",
+   "quote": "The base rental rate is for a minimum of 4 hours (includes up to 50 guests). Each additional hour is $150 (billed in whole-hour increments only). A 5% processing fee applies to the total. PRICING DAYS 4 HOURS EVENT ADDITIONAL FEE PER HOUR Mon-Thurs $560.00 $100",
+   "date_read": "2026-10-28",
+   "_researched_name": "Verandas Events"
+  },
+  {
+   "name": "Houston Botanic Garden: Woodland Glade",
+   "url": "https://hbg.org/wp-content/uploads/2026/01/2026-Private-Rentals-Guide.pdf",
+   "area": "Houston",
+   "guests": "30 admission tickets included",
+   "max_guests": 30,
+   "price_display": "$850",
+   "amount": 850,
+   "price_for": "micro wedding, 1-hour rental (+$200 refundable deposit)",
+   "includes": "private entrance, free parking, bench seating; no reception, food or drinks",
+   "quote": "1-hour rental for $850 with a $200 refundable damage deposit • Private entrance with 30 admission tickets included",
+   "date_read": "2026-10-28",
+   "_researched_name": "Houston Botanic Garden: Woodland Glade"
+  },
+  {
+   "name": "The Reserve on Cypress Creek: Elopement",
+   "url": "https://www.thereserveoncypresscreek.com/weddings",
+   "area": "Cypress",
+   "guests": "up to 30 guests",
+   "max_guests": 30,
+   "price_display": "$1,200",
+   "amount": 1200,
+   "price_for": "2-hour elopement package, 'starting at' price",
+   "includes": "seated ceremony, photos on the property, high-top tables",
+   "quote": "2026 Elopement Package* Starting at $1,200 2-hour rental Up to 30 guests Seated ceremony Use of property for photos High-top tables included Available within 30 days of booking.",
+   "date_read": "2026-10-28",
+   "_researched_name": "The Reserve on Cypress Creek: Elopement"
+  },
+  {
+   "name": "The Heritage Society: St. John Church",
+   "url": "https://www.heritagesociety.org/wedding-special-events",
+   "area": "Downtown, Sam Houston Park",
+   "guests": "capacity 65 including the wedding party",
+   "max_guests": 65,
+   "price_display": "$1,650",
+   "amount": 1650,
+   "price_for": "4-hour rental, Monday to Friday (weekends $2,750)",
+   "includes": "rehearsal hour the day before, guest parking",
+   "quote": "1891 ST. JOHN CHURCH Capacity: 65 (includes wedding party) Cost: $1,650 (4-hour rental) Mon. - Fri. $2,750 (4-hour rental) Sat. - Sun.",
+   "date_read": "2026-10-28",
+   "_researched_name": "The Heritage Society: St. John Church"
+  },
+  {
+   "name": "The Reserve on Cypress Creek: Micro Wedding",
+   "url": "https://www.thereserveoncypresscreek.com/weddings",
+   "area": "Cypress",
+   "guests": "up to 50 guests",
+   "max_guests": 50,
+   "price_display": "$2,500",
+   "amount": 2500,
+   "price_for": "micro wedding package, up to 4 hours, 'starting at' price",
+   "includes": "seated ceremony, covered cocktail-hour tent, chairs and tables",
+   "quote": "2026 Micro Wedding Package* Starting at $2,500 Up to 4 hours Up to 50 guests Seated ceremony Covered cocktail-hour tent Chairs and tables included",
+   "date_read": "2026-10-28",
+   "_researched_name": "The Reserve on Cypress Creek: Micro Wedding"
+  },
+  {
+   "name": "Silver Sycamore",
+   "url": "https://www.silversycamore.com/affordable-all-inclusive-houston-weddings/",
+   "area": "Pasadena",
+   "guests": "20 guests (+$38 per guest over 20, max 50)",
+   "max_guests": 50,
+   "price_display": "$3,520",
+   "amount": 3520,
+   "price_for": "micro wedding package, Monday to Thursday (Fri to Sun $4,620); tax and a 20% service fee are added",
+   "includes": "chapel or gazebo ceremony, day-of coordinator, rehearsal, reception, dinner, cake",
+   "quote": "Micro Wedding $3,520 Mon-Thu - $4,620 Fri-Sun - +$38/guest over 20 (max 50) A 21/2-hour wedding & reception for 20 guests",
+   "date_read": "2026-10-28",
+   "_researched_name": "Silver Sycamore"
+  },
+  {
+   "name": "County Line Event Center",
+   "url": "https://www.countylineeventcenter.com/",
+   "area": "Pearland",
+   "guests": "packages for up to 50 guests",
+   "max_guests": 50,
+   "price_display": "$8,900",
+   "amount": 8900,
+   "price_for": "all-inclusive wedding package, 'starting at' price",
+   "includes": "decor options, wedding planner, catering",
+   "quote": "Venue rental only starts at $5,000 for weekday dates, with all-inclusive packages starting at $8,900 for up to 50 guests.",
+   "date_read": "2026-10-28",
+   "_researched_name": "County Line Event Center"
+  }
+ ],
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:houston.florist"
+  },
+  {
+   "ref": "find:houston.photographer"
+  },
+  {
+   "ref": "fact:courthouse-wedding-houston:license_fee"
+  }
+ ],
+ "ideas_lead": "A venue is one line of the budget. One real find in each of the other categories, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "What are the best venues for a micro wedding in Houston?",
+   "a": "We do not rank venues; we list the ones that print a small-group price on their own website. The three lowest are The Courthouse Wedding Chapel $197 (2 guests); The Middleton Venue $380 (seats up to 40); The Makenzie House (Little Glass Chapel) $499 (up to 20 guests), with 11 priced venues in all, from $197 to $8,900."
+  },
+  {
+   "q": "What are some cheap wedding venues in Houston under $1,000?",
+   "a": "6 of the 11 venues print a price under $1,000: The Courthouse Wedding Chapel $197; The Middleton Venue $380; The Makenzie House (Little Glass Chapel) $499; Houston Botanic Garden: Global Collection Garden $500. Prices are for the package or hours each venue names, so read the row before you book."
+  },
+  {
+   "q": "How much does a small wedding cost in Texas?",
+   "a": "We do not quote an average. In Houston the venue prices we verified run $197 to $8,900, and the official courthouse fees are $81 for the license plus $100 for a ceremony at Justice of the Peace Precinct 1, Place 1."
+  },
+  {
+   "q": "Is $5,000 enough for a wedding in Houston?",
+   "a": "For a small group it can be: the cheapest verified venue ($197) plus the sample finds comes to about $2,127, and even the most expensive venue here is $8,900. A 100-guest wedding is a different budget, because this page prices small groups only."
+  },
+  {
+   "q": "What is a normal cost for a wedding venue in Houston?",
+   "a": "We do not quote an average, because an average hides what each venue actually prints. On this page 11 venues print prices from $197 to $8,900, each quoted from its own website on Oct 28, 2026."
+  }
+ ],
+ "related": [
+  {
+   "path": "courthouse-wedding-houston",
+   "label": "Courthouse wedding in Houston",
+   "note": "The official fees and steps, if you want the legal part cheap."
+  },
+  {
+   "path": "micro-wedding-venues",
+   "label": "Micro wedding venues: real prices by city"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

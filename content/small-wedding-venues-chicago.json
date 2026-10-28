@@ -1,0 +1,207 @@
+{
+ "path": "small-wedding-venues-chicago",
+ "type": "venues",
+ "medium": "venues",
+ "order": 7,
+ "title": "Small & Micro Wedding Venues in Chicago, With Prices",
+ "description": "8 small and micro wedding venues in Chicago, $400 to $2,900, each price from the venue's own site. Checked Oct 28, 2026.",
+ "h1": "Small & micro wedding venues in Chicago",
+ "h1_em": "Chicago",
+ "eyebrow": "Chicago · prices from the venues' own pages",
+ "refresh_note": "Venue pages are re-checked monthly.",
+ "answer_html": "<p>As of Oct 28, 2026, 8 small and micro wedding venues in Chicago print their own prices, from <strong>$400</strong> (Garfield Park Conservatory: Jensen Room) to <strong>$2,900</strong> (Cheney Mansion: weekday wedding). For a group of 10 or more, the lowest is <strong>$400</strong> (Garfield Park Conservatory: Jensen Room).</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
+ "oneliner": "8 venues with printed prices, $400 to $2,900 (checked Oct 28, 2026).",
+ "card_title": "Chicago",
+ "card_line": "8 venues, $400 to $2,900",
+ "facts_heading": "Venues with a <em>printed price</em>, cheapest first",
+ "facts_intro": "Only venues that print a number for a small, micro, weekday or elopement booking on their own website. Directories and social posts were leads, never sources.",
+ "facts_note": "A price is for the package the venue names, on the day we read it. Ask the venue about dates, taxes and fees.",
+ "venues": [
+  {
+   "name": "Garfield Park Conservatory: Jensen Room",
+   "url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue",
+   "area": "East Garfield Park",
+   "guests": "banquet capacity 100",
+   "max_guests": 100,
+   "price_display": "$400",
+   "amount": 400,
+   "price_for": "Monday to Thursday, 4 hours, private rate",
+   "includes": "no bookings after 3 pm; $100 per extra hour; preferred-caterer list; deposit up to $500",
+   "quote": "Jensen Room (Only) *No bookings after 3pm *Rates listed are for 4 hours; $100/hour additional Mon.-Thurs. $400",
+   "date_read": "2026-10-28",
+   "guests_support": {
+    "quote": "Jensen Room 48’x36’ 100 150 150",
+    "source_url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue"
+   },
+   "_researched_name": "Garfield Park Conservatory: Jensen Room"
+  },
+  {
+   "name": "Garden Club of Evanston: Shakespeare Garden",
+   "url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf",
+   "area": "Evanston",
+   "guests": "50 guests or fewer",
+   "max_guests": 50,
+   "price_display": "$500",
+   "amount": 500,
+   "price_for": "fee for a wedding service in the garden",
+   "includes": "outdoor garden; no restrooms, food or drink; a chapel is suggested for rain",
+   "quote": "A fee of $500 is requested for the use of the garden for a wedding service.",
+   "date_read": "2026-10-28",
+   "guests_support": {
+    "quote": "The garden accommodates 50 guests or less.",
+    "source_url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf"
+   },
+   "_researched_name": "Garden Club of Evanston: Shakespeare Garden"
+  },
+  {
+   "name": "Oak Park Conservatory: ceremony only",
+   "url": "https://oakparkconservatory.org/wp-content/uploads/2026/05/Oak-Park-Conservatory-Rental-Information-Guide.pdf",
+   "area": "Oak Park",
+   "guests": "50 in the garden, 30 in the greenhouses",
+   "max_guests": 50,
+   "price_display": "$600",
+   "amount": 600,
+   "price_for": "2-hour ceremony-only rental after 4 pm",
+   "includes": "chairs in the garden; no food or drink",
+   "quote": "Ceremony Only* 50 in garden $600",
+   "date_read": "2026-10-28",
+   "_researched_name": "Oak Park Conservatory: ceremony only"
+  },
+  {
+   "name": "Lincoln Park Conservatory (Chicago Park District)",
+   "url": "https://www.chicagoparkdistrict.com/lincoln-park-conservatory-gardens-special-event-venue",
+   "area": "Lincoln Park",
+   "guests": "50 seated",
+   "max_guests": 50,
+   "price_display": "$1,000",
+   "amount": 1000,
+   "price_for": "2-hour rental, 5 to 7 pm (rental $1,000; $1,700 with security guard and deposit)",
+   "includes": "set-up and breakdown time; preferred-caterer list",
+   "quote": "2-Hour Usage (5-7pm) Rental Fee $1,000 Security Guard $200 Security Deposit $500 TOTAL $1,700",
+   "date_read": "2026-10-28",
+   "guests_support": {
+    "quote": "50 (seated ceremony in Show Room)",
+    "source_url": "https://www.chicagoparkdistrict.com/lincoln-park-conservatory-gardens-special-event-venue"
+   },
+   "_researched_name": "Lincoln Park Conservatory (Chicago Park District)"
+  },
+  {
+   "name": "Astoria Banquets: elopement ceremony",
+   "url": "https://www.astoriabanquets.com/weddings/micro-weddings-chicago",
+   "area": "Buffalo Grove (northwest suburbs)",
+   "guests": "up to 30 guests",
+   "max_guests": 30,
+   "price_display": "$1,200",
+   "amount": 1200,
+   "price_for": "elopement ceremony, Wednesdays and Thursdays only",
+   "includes": "decorated ceremony space with aisle and backdrop, 1.5 hours of private venue time",
+   "quote": "Elopement Ceremony – $1,200 Our Elopement Ceremony is ideal for couples who want a beautiful place to exchange vows without hosting a full reception. Enjoy a fully decorated ceremony space with an aisle, elegant seating, and a romantic backdrop, plus 1 hour and 30 minutes of private venue time for your ceremony and photos. It’s an easy, stress-free alternative to a courthouse wedding that still feels meaningful and special. Available Wednesdays and Thursdays for up to 30 guests.",
+   "date_read": "2026-10-28",
+   "_researched_name": "Astoria Banquets: elopement ceremony"
+  },
+  {
+   "name": "First Unitarian Church: Hull Chapel",
+   "url": "https://firstuchicago.org/?p=446",
+   "area": "Hyde Park",
+   "guests": "Hull Chapel seats 90",
+   "max_guests": 90,
+   "price_display": "$1,500",
+   "amount": 1500,
+   "price_for": "three-hour wedding block in Hull Chapel",
+   "includes": "",
+   "quote": "The fee for a three-hour wedding block is $2,500 for the Sanctuary and $1,500 for Hull Chapel.",
+   "date_read": "2026-10-28",
+   "_researched_name": "First Unitarian Church: Hull Chapel"
+  },
+  {
+   "name": "Chicago Temple: Sky Chapel",
+   "url": "https://www.chicagotemple.org/?p=2421",
+   "area": "The Loop",
+   "guests": "seats 30",
+   "max_guests": 30,
+   "price_display": "$2,500",
+   "amount": 2500,
+   "price_for": "wedding fee for non-members, cash, check or money order (members $2,050)",
+   "includes": "pastor, coordinator, custodian, hostess and use of the space",
+   "quote": "Sky Chapel $2,500 $2,050",
+   "date_read": "2026-10-28",
+   "guests_support": {
+    "quote": "The Sky Chapel, seating 30",
+    "source_url": "https://www.chicagotemple.org/?p=2421"
+   },
+   "_researched_name": "Chicago Temple: Sky Chapel"
+  },
+  {
+   "name": "Cheney Mansion: weekday wedding",
+   "url": "https://cheneymansion.com/pricing/",
+   "area": "Oak Park",
+   "guests": "no guest limit printed next to this price",
+   "max_guests": 0,
+   "price_display": "$2,900",
+   "amount": 2900,
+   "price_for": "'Weddings, Year-round, Weekday' on the mansion's pricing page",
+   "includes": "Petite Weddings are offered Sunday to Thursday; $500 security deposit",
+   "quote": "Weekday: $2,900",
+   "date_read": "2026-10-28",
+   "_researched_name": "Cheney Mansion: weekday wedding"
+  }
+ ],
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:chicago.florist"
+  },
+  {
+   "ref": "find:chicago.photographer"
+  },
+  {
+   "ref": "fact:courthouse-wedding-chicago:license_fee"
+  }
+ ],
+ "ideas_lead": "A venue is one line of the budget. One real find in each of the other categories, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "What is a normal cost for a wedding venue in Chicago?",
+   "a": "We do not quote an average, because an average hides what each venue actually prints. On this page 8 venues print prices from $400 to $2,900, each quoted from its own website on Oct 28, 2026."
+  },
+  {
+   "q": "What are some cheap wedding venues in Chicago under $1,000?",
+   "a": "3 of the 8 venues print a price under $1,000: Garfield Park Conservatory: Jensen Room $400; Garden Club of Evanston: Shakespeare Garden $500; Oak Park Conservatory: ceremony only $600. Prices are for the package or hours each venue names, so read the row before you book."
+  },
+  {
+   "q": "What is a small wedding considered?",
+   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed on this page run from 30 to 100 people. Every venue here prints its price for a small, micro, weekday or elopement booking."
+  },
+  {
+   "q": "How much does a micro wedding cost in Chicago?",
+   "a": "The venue prices we verified run $400 to $2,900. Add the sample finds on this page (a $250 dress, $200 flowers, $1,050 photos) to the cheapest venue and you get about $1,900 before catering, rings and tax."
+  },
+  {
+   "q": "Is $5,000 enough for a wedding in Chicago?",
+   "a": "For a small group it can be: the cheapest verified venue ($400) plus the sample finds comes to about $1,900, and even the most expensive venue here is $2,900. A 100-guest wedding is a different budget, because this page prices small groups only."
+  }
+ ],
+ "related": [
+  {
+   "path": "courthouse-wedding-chicago",
+   "label": "Courthouse wedding in Chicago",
+   "note": "The official fees and steps, if you want the legal part cheap."
+  },
+  {
+   "path": "micro-wedding-venues",
+   "label": "Micro wedding venues: real prices by city"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

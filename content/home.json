@@ -9,48 +9,10 @@
  "h1_em": "checked",
  "eyebrow": "Rachel's List Guides",
  "refresh_note": "Pages refresh weekly, monthly or every 3 months; each shows its own date.",
- "answer_html": "<p>As of Oct 28, 2026: 20 secondhand designer gowns are <strong>$500 or less</strong>. Every number links to the page it came from and shows the day we read it.</p>",
+ "answer_html": "<p>Courthouse fees, small-wedding venues, designer dresses and elopement packages for 5 US cities, each price copied from the official page or the seller's own page, with the day we read it (Oct 28, 2026). No affiliate links.</p>",
  "oneliner": "Real wedding prices for five US cities, each checked on its source page and dated Oct 28, 2026.",
- "facts_heading": "Five cities, <em>at a glance</em>",
- "facts_intro": "The official license fee and the cheapest small-venue price we could verify on a venue's own site. Open a city for every row, quote and date.",
- "table": null,
- "ideas": [
-  {
-   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
-  },
-  {
-   "ref": "find:houston.florist"
-  },
-  {
-   "ref": "find:houston.photographer"
-  },
-  {
-   "ref": "venue:small-wedding-venues-houston:cheapest10"
-  }
- ],
- "ideas_lead": "Whatever the venue, the rest of the day can cost less too. One real find in each category, from its own page and dated.",
- "faq": [
-  {
-   "q": "How much does a small wedding cost?",
-   "a": "It depends on the city and the venue, so we do not quote an average. Open a city page to see the actual fees and the small-venue prices we verified on venues' own websites."
-  },
-  {
-   "q": "Are courthouse weddings cheaper than a venue?",
-   "a": "The official fees are listed on each courthouse page with the county's own wording. Compare them with the venue prices on the same city's venue page: both show the day we read them."
-  },
-  {
-   "q": "Can I really find a designer wedding dress for under $500?",
-   "a": "Yes: we re-open secondhand designer listings every Tuesday and show only the ones still available. See the dress pages for this week's gowns and their sellers' original prices."
-  },
-  {
-   "q": "Who writes these guides?",
-   "a": "Rachel's List, a free wedding-planning app that finds dresses, decor and venues for less. We earn nothing from the venues, sellers or photographers listed."
-  },
-  {
-   "q": "How do you check a price?",
-   "a": "Official pages are quoted word for word, venue prices come from the venue's own site, and dress listings are re-opened before they appear. <a href=\"@how-we-check/\">Read how we check</a>."
-  }
- ],
+ "ideas": [],
+ "faq": [],
  "related": [],
  "last_checked": "2026-10-28",
  "first_published": "2026-10-28"

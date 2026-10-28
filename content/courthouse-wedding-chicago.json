@@ -1,0 +1,200 @@
+{
+ "path": "courthouse-wedding-chicago",
+ "type": "courthouse",
+ "medium": "courthouse",
+ "order": 1,
+ "title": "Courthouse Wedding in Chicago: Real Cost & Steps (2026)",
+ "description": "Courthouse wedding in Chicago: $70 in fees: license $60 + ceremony $10, per the official pages. Wait, ID and booking steps. Checked Oct 28, 2026.",
+ "h1": "Courthouse wedding in Chicago",
+ "h1_em": "Chicago",
+ "eyebrow": "Chicago · Cook County Clerk",
+ "refresh_note": "Courthouse pages are re-checked every 3 months.",
+ "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Chicago costs <strong>$70</strong> in official fees: <strong>$60</strong> for the marriage license (Cook County Clerk) and <strong>$10</strong> for the civil ceremony (Circuit Court of Cook County, an administrative fee).</p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
+ "oneliner": "$70 in fees: license $60 + ceremony $10 (Cook County Clerk), checked Oct 28, 2026.",
+ "card_title": "Chicago",
+ "card_line": "$70 in official fees",
+ "office": "Cook County Clerk",
+ "facts_heading": "The fees and the <em>steps</em>, from the official pages",
+ "facts_intro": "Copied word for word from Cook County Clerk. Each row links to the page it came from.",
+ "facts": [
+  {
+   "key": "license_fee",
+   "label": "Marriage license fee",
+   "display": "$60",
+   "amount": 60,
+   "quote": "Pay the marriage license fee of $60.",
+   "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+   "date_read": "2026-10-28",
+   "source_name": "Cook County Clerk",
+   "allin": true
+  },
+  {
+   "key": "ceremony_fee",
+   "label": "Civil ceremony at the courthouse (Circuit Court of Cook County, Marriage and Civil Union Court; the fee is the court's, not the Clerk's)",
+   "display": "$10 administrative fee",
+   "amount": 10,
+   "quote": "A valid marriage or civil union license and a $10 administrative fee are required.",
+   "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+   "date_read": "2026-10-28",
+   "source_name": "Circuit Court of Cook County",
+   "allin": true
+  },
+  {
+   "key": "waiting_period",
+   "label": "Waiting period",
+   "display": "1 day: the license takes effect 1 day after it is issued",
+   "quote": "Effective 1 day after issuance.",
+   "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+   "date_read": "2026-10-28",
+   "source_name": "Cook County Clerk"
+  },
+  {
+   "key": "validity",
+   "label": "How long the license is valid",
+   "display": "60 days from the date of issuance",
+   "quote": "Valid for 60 days from the date of issuance.",
+   "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+   "date_read": "2026-10-28",
+   "source_name": "Cook County Clerk"
+  },
+  {
+   "key": "id_needed",
+   "label": "ID you bring",
+   "display": "Valid photo ID with proof of age (one form, or a combination of two)",
+   "quote": "Present valid identification with proof of age.",
+   "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+   "date_read": "2026-10-28",
+   "source_name": "Cook County Clerk"
+  },
+  {
+   "key": "how_to_book",
+   "label": "How to get the license",
+   "display": "Both partners go together to a Clerk's Vital Records office; downtown is 118 N. Clark St., Room 120. The application can be started online first.",
+   "quote": "All couples must appear together at one of the Clerk’s locations for marriage licenses.",
+   "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+   "date_read": "2026-10-28",
+   "source_name": "Cook County Clerk"
+  },
+  {
+   "key": "how_to_book",
+   "label": "Where the civil ceremony happens in Chicago",
+   "display": "Marriage and Civil Union Court, 119 W. Randolph St. (lower level), a Cook County judge marries you; no prior scheduling for in-person ceremonies",
+   "quote": "In-person ceremonies are held at 119 W. Randolph St.",
+   "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+   "date_read": "2026-10-28",
+   "source_name": "Circuit Court of Cook County"
+  },
+  {
+   "key": "how_to_book",
+   "label": "Ceremony booking in Chicago",
+   "display": "No appointment for an in-person ceremony",
+   "quote": "For those interested in an in-person marriage or civil union, no prior scheduling is required.",
+   "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+   "date_read": "2026-10-28",
+   "source_name": "Circuit Court of Cook County"
+  },
+  {
+   "key": "extra",
+   "label": "Ceremony days and hours in Chicago (in person)",
+   "display": "Tuesday to Friday, 9 a.m. to 12 p.m. and 2 p.m. to 4 p.m.",
+   "quote": "Ceremonies are held Tuesday through Friday from 9 a.m. - 12 p.m. and 2 p.m. - 4 p.m.",
+   "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+   "date_read": "2026-10-28",
+   "source_name": "Circuit Court of Cook County"
+  },
+  {
+   "key": "extra",
+   "label": "Saturday ceremonies in Chicago",
+   "display": "Saturdays 9 a.m. to 12 p.m., by appointment only",
+   "quote": "Saturdays 9 a.m. - 12 p.m. By Appointment Only",
+   "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+   "date_read": "2026-10-28",
+   "source_name": "Circuit Court of Cook County"
+  },
+  {
+   "key": "extra",
+   "label": "Return the signed license",
+   "display": "Within 10 days after the ceremony, by mail or in person",
+   "quote": "Must be returned to the Cook County Clerk's Office within 10 DAYS after the ceremony, by mail or in person",
+   "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+   "date_read": "2026-10-28",
+   "source_name": "Cook County Clerk"
+  },
+  {
+   "key": "extra",
+   "label": "Certified copy of the marriage certificate",
+   "display": "$15, and $4 for each additional copy",
+   "amount": 15,
+   "quote": "Certified legal copies of marriage records are $15 and $4 for each additional copy.",
+   "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-certificates",
+   "date_read": "2026-10-28",
+   "source_name": "Cook County Clerk"
+  }
+ ],
+ "steps": [
+  "Both of you go together to a Cook County Clerk Vital Records office (downtown: 118 N. Clark St., Room 120), with valid ID showing proof of age; you can start the application online first.",
+  "Sign the application and pay the $60 marriage license fee; the license is issued while you wait.",
+  "Wait 1 day: the license takes effect 1 day after it is issued and is valid for 60 days, for ceremonies in Chicago and suburban Cook County only.",
+  "Get married with your own officiant, or in person before a Cook County judge at the Marriage and Civil Union Court, 119 W. Randolph St. (lower level), Tuesday to Friday, no appointment; bring the license, ID and the $10 administrative fee.",
+  "Make sure the signed license is returned to the Clerk within 10 days after the ceremony; a certified copy of the certificate is $15."
+ ],
+ "facts_note": "Not shown because no official page states it: Whether witnesses are required: not stated on the Clerk or Circuit Court pages read; Opening hours of the Clerk's downtown Vital Records office: the locations page only says to click a location for hours; Whether the Chicago courtroom takes cash only: only the Rolling Meadows and Bridgeview rows say cash only; the Chicago row does not say; Any Clerk-run civil ceremony or ceremony fee: the Clerk's page sends couples to the Circuit Court's Marriage and Civil Union Court, so the $10 fee is quoted from the court's page; Wait-time or capacity for guests at the downtown courtroom: not stated on the court page.",
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:chicago.florist"
+  },
+  {
+   "ref": "find:chicago.photographer"
+  },
+  {
+   "ref": "venue:small-wedding-venues-chicago:cheapest10"
+  }
+ ],
+ "ideas_lead": "The license is the legal part. Here is one real find in each category couples still buy for a courthouse day, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "How much does it cost to get married in a Chicago courthouse?",
+   "a": "As of Oct 28, 2026, the Cook County Clerk charges $60 for the marriage license and the Circuit Court of Cook County asks a $10 administrative fee for an in-person civil ceremony: $70 in all. Certified copies of the marriage certificate are extra ($15, and $4 for each additional copy)."
+  },
+  {
+   "q": "Where do you get married at the courthouse in Chicago?",
+   "a": "In-person civil ceremonies are held at the Marriage and Civil Union Court, 119 W. Randolph St. (lower level), where a Cook County judge marries you. You first get the license at a Clerk's Vital Records office; downtown it is 118 N. Clark St., Room 120."
+  },
+  {
+   "q": "What days can you get married at the courthouse in Chicago?",
+   "a": "In person, Tuesday through Friday from 9 a.m. to 12 p.m. and 2 p.m. to 4 p.m., plus Saturdays 9 a.m. to 12 p.m. by appointment only. Virtual (Zoom) ceremonies are on Mondays, by appointment."
+  },
+  {
+   "q": "How long does it take to get married at the courthouse in Chicago?",
+   "a": "The Clerk issues the license while you wait, but it takes effect 1 day after it is issued, so the earliest ceremony is the next day (the license is valid for 60 days). The court takes no appointment for an in-person ceremony Tuesday to Friday; arrive no later than 30 minutes before closing."
+  },
+  {
+   "q": "Is it cheaper to get married at a courthouse?",
+   "a": "The official fees here total $70. The lowest small-venue price we verified in Chicago is $400 (Garfield Park Conservatory: Jensen Room), so the courthouse is the cheaper start; see both pages before you decide."
+  }
+ ],
+ "related": [
+  {
+   "path": "small-wedding-venues-chicago",
+   "label": "Small and micro wedding venues in Chicago",
+   "note": "Want a dinner or a small party after the courthouse? Prices from the venues' own sites."
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

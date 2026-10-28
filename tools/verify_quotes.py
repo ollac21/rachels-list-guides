@@ -28,18 +28,22 @@ def page_text(url):
         return open(f, encoding="utf-8").read()
     raw = None
     if url.lower().split("?")[0].endswith(".pdf"):
-        p = subprocess.run(["curl", "-sL", "-A", UA, "-m", "40", url, "-o", f + ".pdf"])
+        p = subprocess.run(["curl", "-sL", "-A", UA, "-m", "90", "--retry", "2", url, "-o", f + ".pdf"])
         t = subprocess.run(["pdftotext", "-layout", f + ".pdf", "-"], capture_output=True, text=True)
         text = t.stdout
     else:
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
-        with urllib.request.urlopen(req, timeout=40) as r:
-            raw = r.read().decode("utf-8", "replace")
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                raw = r.read().decode("utf-8", "replace")
+        except Exception:  # some sites stall Python's client but answer curl
+            raw = subprocess.run(["curl", "-sL", "-m", "60", "--retry", "1", "-A", UA, url], capture_output=True).stdout.decode("utf-8", "replace")
         raw = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", raw)
         # keep JSON-LD text out, keep everything else visible
         text = re.sub(r"(?s)<[^>]+>", " ", raw)
     text = norm(text)
-    open(f, "w", encoding="utf-8").write(text)
+    if text:  # never cache an empty page (a failed download must be retried)
+        open(f, "w", encoding="utf-8").write(text)
     return text
 
 

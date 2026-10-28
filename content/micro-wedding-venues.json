@@ -1,0 +1,274 @@
+{
+ "path": "micro-wedding-venues",
+ "type": "hub",
+ "medium": "hub",
+ "order": 11,
+ "title": "Micro Wedding Venues: Real Prices by City (2026)",
+ "description": "Micro and small wedding venue prices in 5 US cities, from $197 to $1,000, each quoted from the venue's own site. Checked Oct 28, 2026.",
+ "h1": "Micro wedding venues: real prices by city",
+ "h1_em": "real prices",
+ "eyebrow": "Houston · Chicago · New York · Dallas · Los Angeles",
+ "refresh_note": "Refreshed monthly.",
+ "answer_html": "<p>As of Oct 28, 2026, the lowest micro or small wedding venue price we verified is <strong>$197</strong> (The Courthouse Wedding Chapel, Houston). By city: Houston from $197, Chicago from $400, New York from $595, Dallas from $250, Los Angeles from $320. Every price comes from the venue's own website.</p>",
+ "oneliner": "Lowest verified micro wedding venue price $197 (Houston); three cheapest venues in each of five cities.",
+ "card_title": "Compare the five cities",
+ "card_line": "Lowest verified price $197 (Houston)",
+ "facts_heading": "The three cheapest venues in <em>each city</em>",
+ "facts_intro": "From each city's venue page, where every venue has its own price, guest count and quote. Open a city for the full list.",
+ "table": {
+  "headers": [
+   "Venue",
+   "Price on its own page",
+   "Source"
+  ],
+  "rows": [
+   {
+    "th": "<a href=\"https://bookmyweddingnow.com/\" rel=\"noopener\">The Courthouse Wedding Chapel</a><small><a href=\"@small-wedding-venues-houston/\">Houston</a></small>",
+    "td": "<span class=\"price\">$197</span><span class=\"was\">2 guests (the couple) &middot; Weddings by The Fireplace, weekday (weekend $297)</span><q class=\"quote\">Weddings by The Fireplace $197 Weekend : $297 Guests : 2 guests only Authorized wedding officiant Fireplace setting Bride bouquet &amp; groom boutonniere Chapel music Marriage license filing Keepsake certificate</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 197,
+    "source_url": "https://bookmyweddingnow.com/",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.middletonvenue.com/about-1-1\" rel=\"noopener\">The Middleton Venue</a><small><a href=\"@small-wedding-venues-houston/\">Houston</a></small>",
+    "td": "<span class=\"price\">$380</span><span class=\"was\">seats up to 40 &middot; Let&#x27;s Elope, 1 hour ($760 for 2 hours)</span><q class=\"quote\">Let&#x27;s Elope $380 for 1 hour, $760 For 2 hours What&#x27;s Included: 1 hour of venue rental, photographer (40 images), licensed officiant, event coordinator and a fully decorated venue with white artificial flowers. You’ll also enjoy cake cutting supplies,( cake is not included), first dance and cake cutting photos, indoor and outdoor pictures, a personalized playlist for your entry songs, and seating for up to 40 guests.</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 380,
+    "source_url": "https://www.middletonvenue.com/about-1-1",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://themakenziehouse.com/courthouse-wedding-houston\" rel=\"noopener\">The Makenzie House (Little Glass Chapel)</a><small><a href=\"@small-wedding-venues-houston/\">Houston</a></small>",
+    "td": "<span class=\"price\">$499</span><span class=\"was\">up to 20 guests &middot; Hourglass &quot;I Do&quot; package, 1 hour</span><q class=\"quote\">THE HOURGLASS &quot;I DO&quot; $499 1 hour rental time Celebrate with up to 20 guests Bluetooth Speaker Licensed officiant provided Floral Arch</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 499,
+    "source_url": "https://themakenziehouse.com/courthouse-wedding-houston",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue\" rel=\"noopener\">Garfield Park Conservatory: Jensen Room</a><small><a href=\"@small-wedding-venues-chicago/\">Chicago</a></small>",
+    "td": "<span class=\"price\">$400</span><span class=\"was\">banquet capacity 100 &middot; Monday to Thursday, 4 hours, private rate</span><q class=\"quote\">Jensen Room (Only) *No bookings after 3pm *Rates listed are for 4 hours; $100/hour additional Mon.-Thurs. $400</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 400,
+    "source_url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf\" rel=\"noopener\">Garden Club of Evanston: Shakespeare Garden</a><small><a href=\"@small-wedding-venues-chicago/\">Chicago</a></small>",
+    "td": "<span class=\"price\">$500</span><span class=\"was\">50 guests or fewer &middot; fee for a wedding service in the garden</span><q class=\"quote\">A fee of $500 is requested for the use of the garden for a wedding service.</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 500,
+    "source_url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://oakparkconservatory.org/wp-content/uploads/2026/05/Oak-Park-Conservatory-Rental-Information-Guide.pdf\" rel=\"noopener\">Oak Park Conservatory: ceremony only</a><small><a href=\"@small-wedding-venues-chicago/\">Chicago</a></small>",
+    "td": "<span class=\"price\">$600</span><span class=\"was\">50 in the garden, 30 in the greenhouses &middot; 2-hour ceremony-only rental after 4 pm</span><q class=\"quote\">Ceremony Only* 50 in garden $600</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 600,
+    "source_url": "https://oakparkconservatory.org/wp-content/uploads/2026/05/Oak-Park-Conservatory-Rental-Information-Guide.pdf",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://queenspartyhall.com/wedding-reception-venues/\" rel=\"noopener\">Occasions Hall (Queens Party Hall)</a><small><a href=\"@small-wedding-venues-new-york/\">New York</a></small>",
+    "td": "<span class=\"price\">$595</span><span class=\"was\">up to 80 guests &middot; Monday to Thursday base rate, hall only (Fri and Sun $1,095, Sat $1,295)</span><q class=\"quote\">Capacity: Up to 80 guests Features: Fixed DJ booth; outside food and caterers are permitted Why Choose Occasions? An 80-guest Ozone Park venue suited to flexible DIY celebrations. Starting Base Rates: Mon–Thu $595, Fri &amp; Sun $1,095, Sat $1,295</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 595,
+    "source_url": "https://queenspartyhall.com/wedding-reception-venues/",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.nycweddingfactory.com/\" rel=\"noopener\">NYC Wedding Factory</a><small><a href=\"@small-wedding-venues-new-york/\">New York</a></small>",
+    "td": "<span class=\"price\">$650</span><span class=\"was\">30 people maximum &middot; Standard Package: 30-minute ceremony (Gold, $1,000, adds a 30-minute photo shoot)</span><q class=\"quote\">Standard Package $650 Ceremony only Exchange vows in a cozy setting with our standard ceremony package.</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 650,
+    "source_url": "https://www.nycweddingfactory.com/",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.bbg.org/visit/weddings_ceremony\" rel=\"noopener\">Brooklyn Botanic Garden: garden ceremony</a><small><a href=\"@small-wedding-venues-new-york/\">New York</a></small>",
+    "td": "<span class=\"price\">$1,000</span><span class=\"was\">up to 50 (10 more at $22 each, 60 maximum) &middot; permit fee, weekends 9 to 10 a.m., nonrefundable</span><q class=\"quote\">Permit fee: $1,000 for up to 50 people.</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 1000,
+    "source_url": "https://www.bbg.org/visit/weddings_ceremony",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.blusheventgarden.com/elopements\" rel=\"noopener\">Blush Event Garden - &#x27;Essential&#x27; sign-and-go elopement</a><small><a href=\"@small-wedding-venues-dallas/\">Dallas</a></small>",
+    "td": "<span class=\"price\">$250</span><span class=\"was\">Bride and Groom Only Ceremony (up to 2 guests allowed) &middot; &#x27;Essential&#x27; elopement package, Monday-Friday anytime, includes 30 min of venue access (holiday pricing may apply on select dates)</span><q class=\"quote\">Pricing: (includes 30 min of venue access) Monday-Friday anytime: $250.00</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 250,
+    "source_url": "https://www.blusheventgarden.com/elopements",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.blusheventgarden.com/elopements\" rel=\"noopener\">Blush Event Garden - &#x27;Classic&#x27; elopement</a><small><a href=\"@small-wedding-venues-dallas/\">Dallas</a></small>",
+    "td": "<span class=\"price\">$450</span><span class=\"was\">ceremony seating setup for up to 20 guests &middot; &#x27;Classic&#x27; elopement package, Monday-Friday anytime, includes 1 hour of venue access (holiday pricing may apply on select dates)</span><q class=\"quote\">Pricing: (includes 1 hours of venue access) Monday-Friday anytime: $450.00</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 450,
+    "source_url": "https://www.blusheventgarden.com/elopements",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://www.skipthecourthouse.com/\" rel=\"noopener\">Skip The Courthouse Chapel: She Said Yes</a><small><a href=\"@small-wedding-venues-dallas/\">Dallas</a></small>",
+    "td": "<span class=\"price\">$550</span><span class=\"was\">up to 10 guests &middot; intimate chapel ceremony package</span><q class=\"quote\">&quot;She Said Yes&quot; Package $550 Intimate wedding ceremony in our charming wedding chapel with family and friends. White Chiavari Chairs Tables White Table Linens Wedding Backdrop Clear Centerpieces with Candles Up to 10 Guest</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 550,
+    "source_url": "https://www.skipthecourthouse.com/",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://albertsonchapel.com/wedding-ceremonies/civil-ceremony/\" rel=\"noopener\">Albertson Wedding Chapel</a><small><a href=\"@small-wedding-venues-los-angeles/\">Los Angeles</a></small>",
+    "td": "<span class=\"price\">$320</span><span class=\"was\">0 to 5 guests (6 to 18 guests $390) &middot; ceremony only, Monday to Friday and Sunday</span><q class=\"quote\">Monday to Friday &amp; Sunday Rates Closed on Tuesdays 0-5 guests – $320 6-18 guests – $390 19-29 guests – $520 30-42 guests – $720</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 320,
+    "source_url": "https://albertsonchapel.com/wedding-ceremonies/civil-ceremony/",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://luckyweddingday.com/\" rel=\"noopener\">Lucky Wedding Day Chapel</a><small><a href=\"@small-wedding-venues-los-angeles/\">Los Angeles</a></small>",
+    "td": "<span class=\"price\">$449.99</span><span class=\"was\">1 to 10 people &middot; Sweet Package (couple-only Happy Package $399.99)</span><q class=\"quote\">Sweet Package 1 to 10 People (including groom/bride) $449.99</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 449.99,
+    "source_url": "https://luckyweddingday.com/",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://cutelittleweddingchapel.com/the-prices/\" rel=\"noopener\">Cute Little Wedding Chapel</a><small><a href=\"@small-wedding-venues-los-angeles/\">Los Angeles</a></small>",
+    "td": "<span class=\"price\">$450</span><span class=\"was\">0 to 4 guests (5 to 15 guests $550) &middot; license and ceremony, lowest tier (+$50 on weekends)</span><q class=\"quote\">License and Ceremony Packages 0-4 Guests $ 450 includes Marriage License, Wedding Ceremony and Certificate</q>",
+    "src": "Venue's own page<br>Read Oct 28, 2026",
+    "amount": 450,
+    "source_url": "https://cutelittleweddingchapel.com/the-prices/",
+    "date_read": "2026-10-28"
+   }
+  ]
+ },
+ "items": [
+  {
+   "name": "The Courthouse Wedding Chapel (Houston)",
+   "url": "https://bookmyweddingnow.com/"
+  },
+  {
+   "name": "The Middleton Venue (Houston)",
+   "url": "https://www.middletonvenue.com/about-1-1"
+  },
+  {
+   "name": "The Makenzie House (Little Glass Chapel) (Houston)",
+   "url": "https://themakenziehouse.com/courthouse-wedding-houston"
+  },
+  {
+   "name": "Garfield Park Conservatory: Jensen Room (Chicago)",
+   "url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue"
+  },
+  {
+   "name": "Garden Club of Evanston: Shakespeare Garden (Chicago)",
+   "url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf"
+  },
+  {
+   "name": "Oak Park Conservatory: ceremony only (Chicago)",
+   "url": "https://oakparkconservatory.org/wp-content/uploads/2026/05/Oak-Park-Conservatory-Rental-Information-Guide.pdf"
+  },
+  {
+   "name": "Occasions Hall (Queens Party Hall) (New York)",
+   "url": "https://queenspartyhall.com/wedding-reception-venues/"
+  },
+  {
+   "name": "NYC Wedding Factory (New York)",
+   "url": "https://www.nycweddingfactory.com/"
+  },
+  {
+   "name": "Brooklyn Botanic Garden: garden ceremony (New York)",
+   "url": "https://www.bbg.org/visit/weddings_ceremony"
+  },
+  {
+   "name": "Blush Event Garden - 'Essential' sign-and-go elopement (Dallas)",
+   "url": "https://www.blusheventgarden.com/elopements"
+  },
+  {
+   "name": "Blush Event Garden - 'Classic' elopement (Dallas)",
+   "url": "https://www.blusheventgarden.com/elopements"
+  },
+  {
+   "name": "Skip The Courthouse Chapel: She Said Yes (Dallas)",
+   "url": "https://www.skipthecourthouse.com/"
+  },
+  {
+   "name": "Albertson Wedding Chapel (Los Angeles)",
+   "url": "https://albertsonchapel.com/wedding-ceremonies/civil-ceremony/"
+  },
+  {
+   "name": "Lucky Wedding Day Chapel (Los Angeles)",
+   "url": "https://luckyweddingday.com/"
+  },
+  {
+   "name": "Cute Little Wedding Chapel (Los Angeles)",
+   "url": "https://cutelittleweddingchapel.com/the-prices/"
+  }
+ ],
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:houston.florist"
+  },
+  {
+   "ref": "find:houston.photographer"
+  },
+  {
+   "ref": "fact:courthouse-wedding-houston:license_fee"
+  }
+ ],
+ "ideas_lead": "Whichever city you pick, the rest of the day can cost less too. One real find in each other category, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "What would be considered a micro wedding?",
+   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed next to the 41 prices on our city pages run from 2 to 175 people. Every venue listed prints its price for a small, micro, weekday or elopement booking."
+  },
+  {
+   "q": "What is a normal cost for a wedding venue?",
+   "a": "We do not quote an average, because an average hides what each venue prints. Across 5 cities the verified prices run from $197 (The Courthouse Wedding Chapel, Houston) to $8,900 (County Line Event Center, Houston), each from the venue's own website on Oct 28, 2026."
+  },
+  {
+   "q": "Is 100 guests a micro wedding?",
+   "a": "Not by the venues on this page: the largest guest limit printed next to a price here is 175 people. Venues that host 100 guests price a different kind of day, so we list them only when they print a small-group price."
+  },
+  {
+   "q": "What is a realistic budget for a small wedding?",
+   "a": "For the venue alone, the prices we verified run from $197 to $8,900. The rest depends on you; our city pages add one real find each for the dress, flowers and photos so you can see how the lines add up."
+  },
+  {
+   "q": "Is $5,000 enough for a wedding?",
+   "a": "For a small group it can be: all 41 venue prices on our city pages are $8,900 or less, before the dress, flowers, photos and food. A 100-guest wedding is a different budget, because these pages price small groups only."
+  }
+ ],
+ "related": [
+  {
+   "path": "small-wedding-venues-houston",
+   "label": "Small and micro wedding venues in Houston"
+  },
+  {
+   "path": "small-wedding-venues-chicago",
+   "label": "Small and micro wedding venues in Chicago"
+  },
+  {
+   "path": "small-wedding-venues-new-york",
+   "label": "Small and micro wedding venues in New York"
+  },
+  {
+   "path": "small-wedding-venues-dallas",
+   "label": "Small and micro wedding venues in Dallas"
+  },
+  {
+   "path": "small-wedding-venues-los-angeles",
+   "label": "Small and micro wedding venues in Los Angeles"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

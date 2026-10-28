@@ -1,0 +1,198 @@
+{
+ "path": "courthouse-wedding-los-angeles",
+ "type": "courthouse",
+ "medium": "courthouse",
+ "order": 5,
+ "title": "Courthouse Wedding in Los Angeles: Real Cost (2026)",
+ "description": "Courthouse wedding in Los Angeles: $126 in fees: license $91 + ceremony $35, per the official pages. Wait, ID and booking steps. Checked Oct 28, 2026.",
+ "h1": "Courthouse wedding in Los Angeles",
+ "h1_em": "Los Angeles",
+ "eyebrow": "Los Angeles · LA County Registrar-Recorder/County Clerk",
+ "refresh_note": "Courthouse pages are re-checked every 3 months.",
+ "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Los Angeles costs <strong>$126</strong> in official fees: <strong>$91</strong> for the marriage license (LA County Registrar-Recorder/County Clerk) and <strong>$35</strong> for the civil ceremony (county office, prepaid).</p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
+ "oneliner": "$126 in fees: license $91 + ceremony $35 (LA County Registrar-Recorder/County Clerk), checked Oct 28, 2026.",
+ "card_title": "Los Angeles",
+ "card_line": "$126 in official fees",
+ "office": "LA County Registrar-Recorder/County Clerk",
+ "facts_heading": "The fees and the <em>steps</em>, from the official pages",
+ "facts_intro": "Copied word for word from LA County Registrar-Recorder/County Clerk. Each row links to the page it came from.",
+ "facts": [
+  {
+   "key": "license_fee",
+   "label": "Marriage license fee (public license)",
+   "display": "$91",
+   "amount": 91,
+   "quote": "Public Marriage License $91",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk",
+   "allin": true
+  },
+  {
+   "key": "license_fee_confidential",
+   "label": "Marriage license fee (confidential license)",
+   "display": "$85",
+   "amount": 85,
+   "quote": "Confidential Marriage License $85",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "ceremony_fee",
+   "label": "Civil ceremony at a county office (Registrar-Recorder/County Clerk)",
+   "display": "$35",
+   "amount": 35,
+   "quote": "Civil Ceremony $35",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk",
+   "allin": true
+  },
+  {
+   "key": "witness_fee",
+   "label": "Witness provided by the county for a civil ceremony",
+   "display": "$20",
+   "amount": 20,
+   "quote": "RR/CC-Provided Witness for a Civil Ceremony $20",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "validity",
+   "label": "How long the license is valid",
+   "display": "90 days",
+   "quote": "Now that you have your marriage license, which is valid for 90 days",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/recording-your-marriage-certificate",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "id_needed",
+   "label": "ID you bring",
+   "display": "Both of you, together, with photo ID and proof of age (driver's license or passport); expired ID is not accepted",
+   "quote": "Acceptable forms of I.D. are: Driver's license Passport",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "both_present",
+   "label": "Who must attend the license appointment",
+   "display": "Both people, in person, together",
+   "quote": "both parties must be present together and provide",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "how_to_book",
+   "label": "How to get the license (appointment)",
+   "display": "Apply online, then book an in-person appointment at a county office, up to 3 weeks ahead",
+   "quote": "Appointments can be scheduled up to three (3) weeks in advance.",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/apply",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "ceremony_booking",
+   "label": "How to book the civil ceremony",
+   "display": "By appointment only, prepaid; the county gives no ceremony appointment until you hold your license",
+   "quote": "All civil ceremonies are by appointment only and must be prepaid.",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "ceremony_length",
+   "label": "Length of a civil ceremony",
+   "display": "15 minutes",
+   "quote": "All ceremonies are scheduled for 15 minutes.",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "express_ceremony",
+   "label": "Express ceremony (license and ceremony in one visit)",
+   "display": "45-minute appointment at the 7 county offices",
+   "quote": "Appointments are set for 45 minutes and available at all seven RR/CC branch locations.",
+   "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/apply",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  },
+  {
+   "key": "main_office",
+   "label": "Main office (Norwalk): address and hours",
+   "display": "12400 Imperial Hwy., Norwalk, CA 90650; Monday to Friday 8:00 a.m. to 5:00 p.m.",
+   "quote": "Norwalk (Main Office) 12400 Imperial Hwy. Norwalk, CA 90650 M-F, 8:00 a.m. - 5:00 p.m.",
+   "source_url": "https://lavote.gov/contact-us/branch-office-locations",
+   "date_read": "2026-10-28",
+   "source_name": "LA County Registrar-Recorder/County Clerk"
+  }
+ ],
+ "steps": [
+  "Both of you complete the county's marriage license application online, then book an in-person appointment (appointments open up to 3 weeks ahead).",
+  "Both of you go to the appointment together with valid photo ID and pay the license fee: $91 for a public license, $85 for a confidential license.",
+  "If you want the county to marry you, book a prepaid 15-minute civil ceremony ($35); the county only gives the ceremony appointment once you hold your license. A county-provided witness is $20, and a confidential license needs no witness.",
+  "Marry within 90 days of getting the license.",
+  "Return the signed license to the Norwalk office so it can be recorded."
+ ],
+ "facts_note": "Not shown because no official page states it: Waiting period: no lavote.gov page (and the California state license page) says in words that there is no waiting period, so it is not quoted; Fee for a certified copy of the marriage certificate: not on the lavote.gov marriage pages read (the Recorder's records pages were not read); Which weekdays each branch office holds ceremonies, beyond the branch list (ceremonies by appointment only): the branch page lists days per office; not summarised here.",
+ "ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:los-angeles.florist"
+  },
+  {
+   "ref": "venue:small-wedding-venues-los-angeles:cheapest10"
+  }
+ ],
+ "ideas_lead": "The license is the legal part. Here is one real find in each category couples still buy for a courthouse day, each from its own page and dated.",
+ "faq": [
+  {
+   "q": "How much does a courthouse wedding cost in Los Angeles?",
+   "a": "As of Oct 28, 2026, Los Angeles County charges $91 for a public marriage license ($85 for a confidential one) and $35 for a civil ceremony at a county office: $126 in all. A county-provided witness is $20 more."
+  },
+  {
+   "q": "Can you get married at the courthouse in Los Angeles?",
+   "a": "The county marries you at its Registrar-Recorder/County Clerk offices: civil ceremonies are by appointment only, prepaid, and last 15 minutes. The county gives no ceremony appointment until you hold your license, and outside officiants are not allowed in its chapels."
+  },
+  {
+   "q": "How do you get a marriage license in Los Angeles County?",
+   "a": "Both of you complete the application online, then book an in-person appointment at a county office (up to 3 weeks ahead) and go together with valid photo ID. The license costs $91 (public) or $85 (confidential) and is valid for 90 days."
+  },
+  {
+   "q": "Can you get married the same day in Los Angeles?",
+   "a": "The county offers a 45-minute express appointment at all seven of its branch offices, which it describes as license and ceremony in one visit. You still need the application and the $126 in fees."
+  },
+  {
+   "q": "Is it cheaper to get married at a courthouse?",
+   "a": "The county's fees total $126. The lowest small-venue price we verified in Los Angeles is $449.99 (Lucky Wedding Day Chapel), so the county office is the cheaper start; see both pages before you decide."
+  }
+ ],
+ "related": [
+  {
+   "path": "small-wedding-venues-los-angeles",
+   "label": "Small and micro wedding venues in Los Angeles",
+   "note": "Want a dinner or a small party after the courthouse? Prices from the venues' own sites."
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

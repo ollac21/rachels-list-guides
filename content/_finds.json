@@ -1,0 +1,90 @@
+{
+ "houston": {
+  "photographer": {
+   "name": "Brit Fine Photography",
+   "url": "https://www.britfinephotography.com/services-7",
+   "package": "Micro Weddings (the page says: mini/micro/elopement wedding), starting price",
+   "hours": 5,
+   "price_display": "$1,500",
+   "amount": 1500,
+   "includes": "5 hours of shooting time total, split as the couple wishes; the page does not mention a courthouse or a 1-hour session",
+   "date_read": "2026-10-28",
+   "quote": "4 Micro Weddings Ranging pricing starting $1,500 for 5 hours to $2,800 for 8 hours"
+  },
+  "florist": {
+   "name": "KVITKAFA (Houston, 15015 Westheimer Rd, Unit J)",
+   "url": "https://www.kvitkafa.com/bridal-bouquets",
+   "item": "Bridal Bouquet \"Burgundy\" (listed as Pre-Order; the cheapest listed bouquet, $130, is marked Out of Stock)",
+   "price_display": "$180.00",
+   "amount": 180,
+   "date_read": "2026-10-28",
+   "quote": "Bridal Bouquet \"Burgundy\" Price $180.00 Pre-Order"
+  }
+ },
+ "chicago": {
+  "photographer": {
+   "name": "The Adri Photo Co.",
+   "url": "https://adridelacruz.com/chicago-elopement-photographer/",
+   "package": "Elopement and intimate wedding coverage for courthouse and small ceremonies (price is 'starts at'; the page says elopement coverage starts at two hours)",
+   "hours": 2,
+   "price_display": "$1,050",
+   "amount": 1050,
+   "includes": "a full edited gallery delivered through Pixieset",
+   "hours_support": {
+    "quote": "Elopement coverage starts at two hours and scales from there depending on what your day looks like.",
+    "source_url": "https://adridelacruz.com/chicago-elopement-photographer/"
+   },
+   "includes_support": {
+    "quote": "Every package includes a full edited gallery delivered through Pixieset.",
+    "source_url": "https://adridelacruz.com/chicago-elopement-photographer/"
+   },
+   "date_read": "2026-10-28",
+   "quote": "Elopement and intimate wedding coverage at The Adri Photo Co. starts at $1,050 for courthouse and small ceremonies."
+  },
+  "florist": {
+   "name": "Flowers for Dreams (Chicago)",
+   "url": "https://flowersfordreams.com/collections/self-service-wedding-flowers?filter.p.m.weddings.style=Lush&filter.p.m.weddings.palette=White+%26+Cream",
+   "item": "Bridal Bouquet (self-service wedding shop, Lush style, White & Cream palette)",
+   "price_display": "$200.00",
+   "amount": 200,
+   "date_read": "2026-10-28",
+   "quote": "Bridal Bouquet $200.00"
+  }
+ },
+ "new-york": {
+  "photographer": {
+   "name": "Erica Morris Photography",
+   "url": "https://sites.google.com/view/ericamorrisphotography/packages",
+   "package": "City Hall Package 2: Ceremony + 30 minute shoot in immediate surrounding area",
+   "hours": 1,
+   "price_display": "$500",
+   "amount": 500,
+   "includes": "ceremony coverage (30 minutes or under) plus a 30-minute shoot nearby, 50+ fully edited images, mix of color and black and white editing; other City Hall tiers on the page: ceremony only up to 30 minutes $300 (15 images), ceremony + 1 hour shoot $800 (100+ images)",
+   "date_read": "2026-10-28",
+   "quote": "CITY HALL PACKAGE 2 This package is limited to City Hall Weddings Ceremony + 30 minute shoot in immediate surrounding area * ceremony must be 30 minutes or under includes a mix of both color and black and white editing $500 50+ fully edited images"
+  },
+  "florist": {
+   "name": "NYC Flower Pop",
+   "url": "https://sites.google.com/view/nycflowerpop",
+   "item": "8-10\" seasonal bouquet (Same-Day Elopement Flowers, pickup from Union Square)",
+   "price_display": "$150",
+   "amount": 150,
+   "date_read": "2026-10-28",
+   "quote": "Same-Day Elopement Flowers Convenient pickup from Union Square the evening before or day of your ceremony -- just minutes from Manhattan City Hall. $150 8-10\" SEASONAL BOUQUET"
+  }
+ },
+ "dallas": {
+  "photographer": {
+   "name": "Shelly Voss Photography (McKinney, Texas)",
+   "url": "https://www.shellyvossphotography.com/wedding-photography-packages",
+   "package": "Courthouse Elopement: courthouse ceremony coverage, priced by the hour",
+   "hours": 1,
+   "price_display": "$400/hour with a 1-hour minimum",
+   "amount": 400,
+   "includes": "the page prints only the hourly rate for courthouse coverage (no deliverables listed there); a travel fee of $2 per mile applies if the courthouse is over 50 miles from McKinney, TX",
+   "date_read": "2026-10-28",
+   "quote": "Courthouse ceremonies are $400/hour with a 1-hour minimum."
+  }
+ },
+ "los-angeles": {}
+}

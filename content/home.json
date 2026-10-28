@@ -31,12 +31,12 @@
  "chips": [
   {
    "target": "courthouse",
-   "label": "Courthouse from",
+   "label": "Courthouse fees from",
    "value": "$60"
   },
   {
    "target": "venues",
-   "label": "Venues for 10+ from",
+   "label": "Venues seating 10+ from",
    "value": "$380"
   },
   {

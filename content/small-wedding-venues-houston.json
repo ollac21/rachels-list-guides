@@ -9,7 +9,7 @@
  "h1_em": "Houston",
  "eyebrow": "Houston · venue prices",
  "refresh_note": "Venue pages are re-checked monthly.",
- "answer_html": "<p>As of Oct 28, 2026, small wedding venues in Houston start at <strong class=\"big\">$197</strong> for just the two of you and <strong>$380</strong> for a group of 10 or more (The Middleton Venue). The 11 venues we verified go up to $8,900.</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
+ "answer_html": "<p>As of Oct 28, 2026, small wedding venues in Houston start at <strong class=\"big\">$197</strong> for just the two of you and <strong>$380</strong> for venues that seat 10 or more (The Middleton Venue, Let&#x27;s Elope, 1 hour). The 11 venues we verified go up to $8,900.</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
  "oneliner": "11 venues with printed prices, $197 to $8,900 (checked Oct 28, 2026).",
  "card_title": "Houston",
  "card_line": "11 venues, $197 to $8,900",
@@ -198,11 +198,11 @@
   },
   {
    "q": "How much does a small wedding cost in Texas?",
-   "a": "We do not quote an average. In Houston the venue prices we verified run $197 to $8,900, and the official courthouse fees are $81 for the license plus $100 for a ceremony at Justice of the Peace Precinct 1, Place 1."
+   "a": "We do not quote an average. In Houston the venue prices we verified run $197 to $8,900, and the official courthouse fees are $81 for the license plus $100 for a ceremony at Justice of the Peace Precinct 1, Place 1."
   },
   {
    "q": "Is $5,000 enough for a wedding in Houston?",
-   "a": "For a small group it can be: the cheapest verified venue ($197) plus the sample finds comes to about $2,208, and even the most expensive venue here is $8,900. A 100-guest wedding is a different budget, because this page prices small groups only."
+   "a": "For a small group it can be: the cheapest verified venue ($197) plus the sample finds comes to about $708, and even the most expensive venue here is $8,900. A 100-guest wedding is a different budget, because this page prices small groups only."
   },
   {
    "q": "What is a normal cost for a wedding venue in Houston?",

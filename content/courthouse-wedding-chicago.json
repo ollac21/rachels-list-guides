@@ -30,7 +30,7 @@
   },
   {
    "key": "ceremony_fee",
-   "label": "Civil ceremony at the courthouse (Circuit Court of Cook County, Marriage and Civil Union Court; the fee is the court's, not the Clerk's)",
+   "label": "Civil ceremony (the court's fee, not the Clerk's)",
    "display": "$10 administrative fee",
    "amount": 10,
    "quote": "A valid marriage or civil union license and a $10 administrative fee are required.",
@@ -42,7 +42,7 @@
   {
    "key": "waiting_period",
    "label": "Waiting period",
-   "display": "1 day: the license takes effect 1 day after it is issued",
+   "display": "1 day after the license is issued",
    "quote": "Effective 1 day after issuance.",
    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
    "date_read": "2026-10-28",

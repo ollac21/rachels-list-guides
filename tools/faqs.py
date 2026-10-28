@@ -192,7 +192,7 @@ def venue_faq(city, name, courthouse_fee_text=""):
         pass
     if f.get("florist"):
         parts.append(money(f["florist"]["amount"]) + " flowers"); total += f["florist"]["amount"]
-    if f.get("photographer"):
+    if f.get("photographer") and (f["photographer"].get("hours") or 1) <= 2:  # the same gate as the cards
         parts.append(money(f["photographer"]["amount"]) + " photos"); total += f["photographer"]["amount"]
     if under:
         under_txt = "{k} of the {n} venues print a price under $1,000: {l}.".format(
@@ -307,7 +307,17 @@ def houston_venue_faq():
     ]
 
 
+def _nb(items):
+    for it in items or []:
+        it["a"] = it["a"].replace("Precinct 1", "Precinct\u00a01").replace("Place 1", "Place\u00a01")
+    return items
+
+
 def get(key):
+    return _nb(_get(key))
+
+
+def _get(key):
     if key == "small-wedding-venues-houston" and load("houston"):
         return houston_venue_faq()
     if key == "micro-wedding-venues":

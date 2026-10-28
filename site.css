@@ -249,3 +249,70 @@ details.steps li{margin:6px 0}
 .gown{position:relative}
 .gown-ico{position:absolute;right:12px;top:12px;color:var(--rose);opacity:.55}
 @media (min-width:900px){.rachel{grid-template-columns:96px 1fr}.rachel .cta.in-card{grid-column:1 / -1;min-width:0}}
+
+/* the real Dream Board, shown (round 5) */
+.dream{margin:40px 0 0;display:grid;gap:18px}
+.dream h2{margin:6px 0 8px}
+.dream-sub{color:var(--mute);margin:0 0 12px}
+.steps3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.steps3 li{display:flex;flex-direction:column;gap:2px;padding:10px;border-radius:14px;background:var(--blush);font-size:12.5px;line-height:1.3;color:var(--mute)}
+.steps3 b{font-size:14px;color:var(--ink);font-weight:600}
+.steps3 .ico{color:var(--rose-deep);width:22px;height:22px;margin-bottom:3px}
+.phone{margin:0;justify-self:center;text-align:center}
+.phone-frame{width:min(250px,68vw);aspect-ratio:9/16;border-radius:28px;overflow:hidden;border:1px solid var(--hairline);box-shadow:0 2px 4px rgba(35,31,32,.05),0 18px 40px -12px rgba(35,31,32,.22);background:var(--blush)}
+.phone video{display:block;width:100%;height:100%;object-fit:cover}
+.phone figcaption{font-size:12.5px;color:var(--mute);margin:10px auto 0;max-width:32ch}
+.styles-t{font-weight:600;margin:0 0 8px;font-size:15px}
+.styles-t .tag{font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin-left:6px}
+.style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.style{position:relative;display:block;aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:1px solid var(--hairline);text-decoration:none}
+.style img{display:block;width:100%;height:100%;object-fit:cover}
+.style span{position:absolute;left:0;right:0;bottom:0;padding:18px 8px 7px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(35,31,32,.62))}
+.style:hover{border-color:var(--rose)}
+.dream .rachel{margin-top:2px}
+@media (min-width:900px){
+  .dream{grid-template-columns:1fr 270px;column-gap:36px;align-items:start}
+  .dream>*{grid-column:1}
+  .dream>.phone{grid-column:2;grid-row:1 / span 4;position:sticky;top:84px}
+}
+
+.in-text{margin:0 0 14px;font-size:16px}
+.in-text a{font-weight:600;color:var(--rose-deep)}
+.answer .in-text{margin:0 0 14px}
+.in-text.mid{margin:12px 0 0;padding:12px 14px;border-radius:12px;background:var(--blush)}
+.dream-stat{font-size:13px;color:var(--mute);margin:0 0 12px}
+.dream-stat a{color:var(--mute)}
+
+@media (max-width:700px){.checked .rn{display:none}.answer .in-text{margin-bottom:12px}.cta{margin-top:12px}.cta .promise{margin-bottom:8px;font-size:15px}}
+
+/* round 5 */
+.strip{margin:6px 0 12px}
+.strip-t{font-weight:600;font-size:15px;margin:0 0 8px}
+.strip-t .tag{display:block;font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin-top:2px}
+.strip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.strip-row::-webkit-scrollbar{display:none}
+.style.sm{flex:0 0 92px;aspect-ratio:1/1;scroll-snap-align:start;border-radius:12px}
+.style.sm span{font-size:11px;padding:14px 6px 5px}
+.rachel .name small{font-family:var(--ui);font-style:normal;font-size:12px;font-weight:500;color:var(--mute);margin-left:6px}
+.dream-give{font-size:14px;color:var(--ink);margin:12px 0 8px;line-height:1.5}
+.mcard.wide{grid-column:1 / -1}
+.is-home .site-head .wrap{max-width:880px}
+@media (min-width:900px){
+  .strip-row{overflow:visible;display:grid;grid-template-columns:repeat(6,1fr)}
+  .style.sm{flex:none}
+  .dream>.rachel{grid-column:1 / -1}
+  .dream>.phone{grid-row:1 / span 3}
+  .hero img{aspect-ratio:3.6/1}
+}
+@media (min-width:1000px){.site-head .wrap{max-width:880px}.is-home .site-head .wrap{max-width:1000px}}
+
+/* round 6 */
+.ideas>:last-child:nth-child(odd){grid-column:1 / -1}
+@media (max-width:700px){.strip-row{margin:0 -16px;padding:0 16px 4px;scroll-padding-left:16px}.style.sm{flex-basis:104px}.style.sm span{font-size:12px}}
+.sample{font-size:13.5px;color:var(--mute);margin:8px 0 0}
+.sample a{color:var(--ink);font-weight:500}
+
+/* round 7 */
+.gown-brand{padding-right:26px}
+.cta{margin-bottom:18px}
+.answer strong.big{font-size:1.3em;line-height:1}

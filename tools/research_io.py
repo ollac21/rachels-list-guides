@@ -32,6 +32,12 @@ OVERRIDES = {
     ("chicago", "Cheney Mansion"): {"guests": "no guest limit printed next to this price", "max_guests": 0},
 }
 
+# shorter labels / display for a few rows (the quotes are untouched)
+FACT_PATCH = {
+    ("chicago", "ceremony_fee", "Civil ceremony at the co"): {"label": "Civil ceremony (the court's fee, not the Clerk's)"},
+    ("chicago", "waiting_period", "Waiting period"): {"display": "1 day after the license is issued"},
+}
+
 # which courthouse rows to show (a key, or a start of the row's label), in this order; other rows are not shown
 PICK = {
     "houston": ["license_fee", "Marriage license fee if neither", "ceremony_fee", "Same JP court: Saturday", "Same JP court: what to bring",
@@ -82,6 +88,10 @@ def load(city):
         if "price_display" not in (patch or {}):
             v["price_display"] = "${:,.0f}".format(v["amount"]) if float(v["amount"]).is_integer() else "${:,.2f}".format(v["amount"])
         v.setdefault("_researched_name", v["name"])
+    for f in (d.get("courthouse") or {}).get("facts", []):
+        patch = FACT_PATCH.get((city, f["key"], f["label"][:24]))
+        if patch:
+            f.update(patch)
     pick = PICK.get(city)
     if pick and d.get("courthouse"):
         facts, used = d["courthouse"]["facts"], set()

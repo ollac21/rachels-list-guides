@@ -117,7 +117,7 @@ def dress_pages():
                 {"ref": "venue:small-wedding-venues-houston:cheapest10"},
                 {"ref": "fact:courthouse-wedding-houston:license_fee"},
             ],
-            "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories (examples from Houston and New York), each from its own page and dated.",
+            "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories, each from its own page and dated.",
             "faq": faq,
             "related": [{"path": other, "label": "Designer wedding dresses " + ("$501 to $1,000" if cap == 500 else "$500 or less"),
                          "note": "The other price band, re-opened the same day."},
@@ -345,10 +345,10 @@ def venue_page(slug, name):
         print("no FAQ yet for venues", slug); return
     ten = [v for v in totals if v.get("max_guests", 0) >= 10]
     if ten:
-        answer = ("<p>As of {d}, small wedding venues in {c} start at <strong class=\"big\">{lp}</strong> for just the two of you and <strong>{tp}</strong> for a group of 10 or more ({tn}). "
+        answer = ("<p>As of {d}, small wedding venues in {c} start at <strong class=\"big\">{lp}</strong> for just the two of you and <strong>{tp}</strong> for venues that seat 10 or more ({tn}, {tf}). "
                   "The {n} venues we verified go up to {hp}.</p>"
                   "<p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>").format(
-            d=fdate(TODAY), c=name, tp=ten[0]["price_display"], tn=e(ten[0]["name"]), lp=lo["price_display"], n=len(vs), hp=hi["price_display"])
+            d=fdate(TODAY), c=name, tp=ten[0]["price_display"], tn=e(ten[0]["name"]), tf=e(ten[0]["price_for"].split(" (")[0]), lp=lo["price_display"], n=len(vs), hp=hi["price_display"])
     else:
         answer = ("<p>As of {d}, {n} small and micro wedding venues in {c} print their own prices, from <strong>{lp}</strong> ({ln}) to <strong>{hp}</strong> ({hn}).</p>"
                   "<p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>").format(
@@ -433,7 +433,7 @@ def hub_pages():
             "items": items,
             "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
                       {"ref": "find:new-york.photographer"}, {"ref": "fact:courthouse-wedding-houston:license_fee"}],
-            "ideas_lead": "Whichever city you pick, the rest of the day can cost less too. One real find in each other category (examples from Houston and New York), each from its own page and dated.",
+            "ideas_lead": "Whichever city you pick, the rest of the day can cost less too. One real find in each other category, each from its own page and dated.",
             "faq": faq,
             "related": [{"path": "small-wedding-venues-" + s2, "label": "Small and micro wedding venues in " + n2} for s2, n2 in CITIES]
                        + [{"path": "elopement-packages", "label": "Elopement and micro wedding packages"}],
@@ -551,9 +551,9 @@ def home_page():
             ten += [x["amount"] for x in v["venues"] if x.get("max_guests", 0) >= 10 and not x.get("per_person")]
     chips = []
     if fees:
-        chips.append({"target": "courthouse", "label": "Courthouse from", "value": money(min(fees))})
+        chips.append({"target": "courthouse", "label": "Courthouse fees from", "value": money(min(fees))})
     if ten:
-        chips.append({"target": "venues", "label": "Venues for 10+ from", "value": money(min(ten))})
+        chips.append({"target": "venues", "label": "Venues seating 10+ from", "value": money(min(ten))})
     if d5:
         chips.append({"target": "dresses", "label": "Dresses from", "value": money(min(g["price"] for g in d5["gowns"]))})
     pkj = ROOT / "research" / "packages.json"

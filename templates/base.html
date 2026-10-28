@@ -40,11 +40,14 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("{{posthog
 <symbol id="i-courthouse" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5H3zM5.5 9v9M9.5 9v9M14.5 9v9M18.5 9v9M3 21h18M2 18h20"/></symbol>
 <symbol id="i-venue" viewBox="0 0 24 24"><path d="M4 21V11a8 8 0 0116 0v10M9 21v-6a3 3 0 016 0v6"/></symbol>
 <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 10h16v11H4zM3 7h18v3H3zM12 7v14M12 7C10 3 6 4 7 7M12 7c2-4 6-3 5 0"/></symbol>
+<symbol id="i-tap" viewBox="0 0 24 24"><path d="M9 11V5a1.5 1.5 0 013 0v5M12 10a1.5 1.5 0 013 0v1M15 11a1.5 1.5 0 013 0v4a6 6 0 01-6 6h-1a6 6 0 01-5-3l-2-3a1.5 1.5 0 012.5-1.5L9 15"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
 <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-6-6-11a6 6 0 1112 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></symbol>
 </defs></svg>
 <header class="site-head"><div class="wrap">
 <a class="wordmark" href="{{root}}">Rachel's List</a>
-<a class="rl-btn-sm" href="{{app_url}}" data-cta="header">Build my free Dream Board</a>
+<a class="rl-btn-sm" href="{{app_url}}" data-cta="header">{{btnhead}}</a>
 </div></header>
 <main class="wrap{{main_class}}">
 {{body}}
@@ -53,17 +56,20 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("{{posthog
 <nav><a href="{{root}}how-we-check/">How we check</a><a href="https://rachelslist.co/privacy">Privacy</a><a href="https://rachelslist.co/">Rachel's List app</a></nav>
 <p>No affiliate links: we earn nothing from these sellers or venues. &copy; Rachel's List</p>
 </div></footer>
-<div class="sticky" id="sticky"><a href="{{app_url}}" data-cta="sticky">Build my free Dream Board &middot; 90 seconds</a></div>
+<div class="sticky" id="sticky"><a href="{{app_url}}" data-cta="sticky">{{btnhead}} &middot; free</a></div>
 <script>
 (function(){
 var slug="{{slug}}",medium="{{medium}}";
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-cta]");if(!a)return;
-try{window.posthog&&posthog.capture("guide_cta_click",{slug:slug,utm_medium:medium,position:a.getAttribute("data-cta")},{send_instantly:true})}catch(x){}});
+try{window.posthog&&posthog.capture("guide_cta_click",{slug:slug,utm_medium:medium,position:a.getAttribute("data-cta"),style:a.getAttribute("data-style")||undefined},{send_instantly:true})}catch(x){}});
 var s=document.getElementById("sticky"),seen=new Set();
 if(s){var f=function(){if(window.scrollY>140&&seen.size===0)s.classList.add("on");else s.classList.remove("on")};window.addEventListener("scroll",f,{passive:true});f();
 if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)seen.add(x.target);else seen.delete(x.target)});f()});document.querySelectorAll(".rl-btn").forEach(function(b){io.observe(b)})}}
 document.querySelectorAll(".showgowns").forEach(function(b){b.addEventListener("click",function(){var m=b.previousElementSibling;m.classList.add("open");b.remove()})});
 document.documentElement.classList.add("js");
+var vids=document.querySelectorAll(".dream-video"),still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function loadVid(v){if(v.dataset.on)return;v.dataset.on=1;v.innerHTML='<source src="'+v.dataset.webm+'" type="video/webm"><source src="'+v.dataset.mp4+'" type="video/mp4">';v.load();if(!still){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+if(vids.length){if("IntersectionObserver"in window){var vo=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){loadVid(x.target);vo.unobserve(x.target)}})},{rootMargin:"250px"});vids.forEach(function(v){vo.observe(v)})}else{vids.forEach(loadVid)}}
 document.querySelectorAll(".showall").forEach(function(b){b.addEventListener("click",function(){var t=b.previousElementSibling;t.classList.add("open");b.remove()})});
 })();
 </script>

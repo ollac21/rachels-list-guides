@@ -1,0 +1,8 @@
+{
+ "domain": "guides.rachelslist.co",
+ "base_url": "https://guides.rachelslist.co",
+ "app_url": "https://rachelslist.co/start",
+ "posthog_key": "phc_C3bCNNda9BTyU4jpdhCSDNuyFhSwiRjoNkRBBb4GVzYf",
+ "posthog_host": "https://us.i.posthog.com",
+ "indexnow_key": "f7073a937a66e29ea186f69216239465"
+}

@@ -1,0 +1,76 @@
+{
+ "path": "how-we-check",
+ "type": "trust",
+ "medium": "hub",
+ "order": 16,
+ "title": "How We Check Every Price: Rachel's List",
+ "description": "Our rules for the 16 guides: official pages quoted word for word, venues' own prices, dated rows, no affiliate links. Checked Oct 28, 2026.",
+ "h1": "How we check every price",
+ "h1_em": "check",
+ "eyebrow": "Sources · dates · no affiliate links",
+ "refresh_note": "Rules reviewed with every refresh.",
+ "answer_html": "<p>Every price on Rachel's List Guides links to the page it came from and shows the day we read it (Oct 28, 2026). Government fees are quoted from the official page, venue prices from the venue's own site, and dress prices from a Poshmark listing re-opened that day. There are <strong>no affiliate links</strong>.</p>",
+ "oneliner": "Official pages quoted word for word, venues' own prices, dated rows, no affiliate links.",
+ "facts_heading": "Where each number <em>comes from</em>",
+ "table": {
+  "headers": [
+   "Page type",
+   "Where the number comes from",
+   "How often"
+  ],
+  "rows": [
+   {
+    "th": "Courthouse pages",
+    "td": "The county or city clerk's own web page. The sentence is copied word for word and shown on the row, with its link and the day we read it.",
+    "src": "Every 3 months"
+   },
+   {
+    "th": "Venue pages",
+    "td": "The venue's own website. We show the price and guest count in the venue's words, what is included, a link and the day we read it. Directories and social posts are only leads, never sources.",
+    "src": "Monthly"
+   },
+   {
+    "th": "Dress pages",
+    "td": "The week's secondhand listings on Poshmark. Each listing is re-opened: it must still be available at the price shown. Sold or repriced ones are dropped.",
+    "src": "Every Tuesday"
+   },
+   {
+    "th": "Photographers, florists",
+    "td": "The photographer's or florist's own page, with the package or item named as they name it.",
+    "src": "Monthly"
+   }
+  ]
+ },
+ "facts_note": "We leave out any number we cannot find on the right kind of page. A missing number is better than a guessed one.",
+ "ideas": [],
+ "faq": [
+  {
+   "q": "Where do your numbers come from?",
+   "a": "Courthouse fees come from the county or city clerk's own web page and are quoted word for word. Venue and photographer prices come from their own websites. Dress prices come from the Poshmark listing, re-opened on the day shown."
+  },
+  {
+   "q": "Do you earn money from the venues, sellers or links on these pages?",
+   "a": "No. There are no affiliate links, and we earn nothing from any seller or venue listed. The only button on a page leads to Rachel's List, our own free app."
+  },
+  {
+   "q": "What happens when a price changes?",
+   "a": "Every row shows the day we read it. Dress pages are re-checked every Tuesday, venue pages monthly, and courthouse pages every three months. A price we can no longer confirm is removed, not guessed."
+  },
+  {
+   "q": "Why is a fee or a price missing from a page?",
+   "a": "If we cannot find a number on the official or seller's own page, we leave it out and say so. We do not use averages, estimates or prices copied from directories."
+  },
+  {
+   "q": "How do I report a wrong price?",
+   "a": "Check the source link on the row and tell us through <a href=\"https://rachelslist.co/\" rel=\"noopener\">rachelslist.co</a>. If the source says something different, we correct the page and the date."
+  }
+ ],
+ "related": [
+  {
+   "path": "",
+   "label": "All the guides"
+  }
+ ],
+ "last_checked": "2026-10-28",
+ "first_published": "2026-10-28"
+}

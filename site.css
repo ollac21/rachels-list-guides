@@ -1,0 +1,115 @@
+/* Rachel's List Guides: the app's own look (tokens from rachel-s-list/src/index.css + tailwind.config.js) */
+@font-face{font-family:"Cormorant Fallback";src:local("Times New Roman Bold"),local("TimesNewRomanPS-BoldMT"),local("Times Bold");font-weight:500 700;font-style:normal;size-adjust:91%}
+@font-face{font-family:"Cormorant Fallback";src:local("Times New Roman Bold Italic"),local("TimesNewRomanPS-BoldItalicMT"),local("Times Bold Italic");font-weight:500 700;font-style:italic;size-adjust:86.5%}
+:root{
+  --paper:#FFFCF9;--ink:#231F20;--mute:#6B6460;--blush:#F6E7E4;--blush-deep:#EFD5D1;
+  --rose:#B5646B;--rose-deep:#9C4A52;--gold:#B8975A;--hairline:#EBDCD8;
+  --shadow-card:0 1px 2px rgba(35,31,32,.04),0 8px 24px -8px rgba(35,31,32,.12);
+  --shadow-button:0 1px 2px rgba(35,31,32,.2),0 10px 24px -10px rgba(35,31,32,.55);
+  --display:'Cormorant Garamond','Cormorant Fallback',ui-serif,Georgia,serif;
+  --ui:'Inter',ui-sans-serif,system-ui,sans-serif;
+}
+*{box-sizing:border-box;border-color:var(--hairline)}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--ui);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+a{color:var(--rose-deep);text-underline-offset:2px}
+a:hover{color:var(--ink)}
+img{max-width:100%;height:auto}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+
+/* header + footer */
+.site-head{border-bottom:1px solid var(--hairline);background:var(--paper);position:sticky;top:0;z-index:20}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px}
+.wordmark{font-family:var(--display);font-weight:600;font-style:italic;font-size:26px;line-height:1;color:var(--ink);text-decoration:none;font-variant-numeric:lining-nums}
+.rl-btn-sm{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap}
+.rl-btn-sm:hover{color:#fff;opacity:.9}
+.site-foot{margin-top:56px;border-top:1px solid var(--hairline);padding:24px 0 96px;color:var(--mute);font-size:14px}
+.site-foot a{color:var(--mute)}
+.site-foot nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:10px}
+
+/* type */
+h1,h2,h3{font-family:var(--display);font-weight:600;font-variant-numeric:lining-nums;color:var(--ink);letter-spacing:-.01em}
+h1{font-size:clamp(34px,9.4vw,46px);line-height:1;margin:6px 0 10px;letter-spacing:-.015em}
+h1 em,h2 em{color:var(--rose-deep);font-style:italic}
+h2{font-size:30px;line-height:1.05;margin:44px 0 8px}
+h3{font-size:22px;line-height:1.15;margin:22px 0 4px}
+p{margin:0 0 14px}
+.rl-eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--rose-deep);margin:0}
+.crumbs{font-size:13px;color:var(--mute);margin:18px 0 14px}
+.crumbs a{color:var(--mute)}
+.checked{font-size:14px;color:var(--mute);margin:0 0 18px}
+.lead{color:var(--mute);margin:0 0 14px}
+main{padding-top:4px}
+
+/* answer */
+.answer{background:var(--blush);border-radius:16px;padding:18px 18px 4px;font-size:18px;line-height:1.5;margin-bottom:8px}
+.answer p{margin-bottom:14px}
+.answer strong{font-weight:600}
+.answer .sub{font-size:14px;color:var(--mute)}
+
+/* card */
+.rl-card{background:#fff;border:1px solid var(--hairline);border-radius:16px;box-shadow:var(--shadow-card)}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0 6px}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:12px 8px 12px 0;border-top:1px solid var(--hairline)}
+.tbl thead th{border-top:0;border-bottom:1px solid var(--hairline);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--rose-deep);padding-top:4px}
+.tbl tbody th{font-weight:600;width:34%}
+.tbl tbody th small{display:block;font-weight:400;color:var(--mute);font-size:13px}
+.tbl td.src{font-size:13px;color:var(--mute);width:24%}
+.price{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.05;font-variant-numeric:lining-nums;display:block;color:var(--ink)}
+.was{display:block;font-size:13px;color:var(--mute)}
+q.quote,.quote{display:block;quotes:none;font-size:13px;line-height:1.45;color:var(--mute);margin-top:6px;font-style:italic}
+q.quote::before{content:"\201C"}q.quote::after{content:"\201D"}
+.tbl tr.total td,.tbl tr.total th{border-top:2px solid var(--ink)}
+.note{font-size:13px;color:var(--mute);margin:6px 0 0}
+@media (max-width:600px){
+  .tbl,.tbl tbody,.tbl tr,.tbl th,.tbl td{display:block;width:100%}
+  .tbl thead{display:none}
+  .tbl tr{border-top:1px solid var(--hairline);padding:12px 0}
+  .tbl tbody th,.tbl td.src{width:100%}
+  .tbl th,.tbl td{border-top:0;padding:0 0 6px}
+  .tbl td.src{padding-top:2px}
+}
+
+/* ideas (save on the rest) */
+.ideas{display:grid;gap:12px;margin-top:14px}
+.idea{padding:16px}
+.idea .rl-eyebrow{margin-bottom:4px}
+.idea h3{font-family:var(--ui);font-size:16px;font-weight:600;letter-spacing:0;line-height:1.35;margin:0 0 6px}
+.idea h3 a{color:var(--ink)}
+.idea .price{margin:2px 0 2px}
+.idea .meta{font-size:13px;color:var(--mute);margin:0}
+.allin{margin-top:18px}
+
+/* Rachel's card + button */
+.rachel{display:grid;grid-template-columns:72px 1fr;gap:14px;padding:18px;margin:28px 0 0;align-items:start}
+.rachel img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid var(--hairline)}
+.rachel .name{font-family:var(--display);font-style:italic;font-weight:600;font-size:26px;line-height:1;color:var(--rose-deep);margin:0 0 4px}
+.rachel p{margin:0 0 4px;font-size:16px}
+.cta{margin:18px 0 6px}
+.cta .promise{font-size:16px;margin:0 0 10px}
+.cta.in-card{grid-column:1 / -1;margin:6px 0 0}
+.rl-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;height:56px;padding:0 24px;border-radius:999px;background:var(--ink);color:#fff;font-family:var(--ui);font-size:17px;font-weight:600;letter-spacing:.005em;text-decoration:none;box-shadow:var(--shadow-button);transition:transform .15s ease-out}
+.rl-btn:hover{color:#fff}
+.rl-btn:active{transform:translateY(1px) scale(.98);box-shadow:none}
+.fine{text-align:center;font-size:13px;color:var(--mute);margin:8px 0 0}
+
+/* faq, related, trust */
+.faq h3{font-family:var(--ui);font-size:16px;font-weight:600;letter-spacing:0;margin:18px 0 4px}
+.faq p{margin:0 0 6px;color:var(--ink)}
+.related ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+.related a{display:block;padding:12px 14px;border:1px solid var(--hairline);border-radius:12px;background:#fff;text-decoration:none;color:var(--ink);font-weight:500}
+.related a span{display:block;font-weight:400;font-size:14px;color:var(--mute)}
+.trust{font-size:14px;color:var(--mute);border-top:1px solid var(--hairline);margin-top:34px;padding-top:14px}
+
+/* sticky phone bar: shown by a few lines of JS once she has read the answer */
+.sticky{display:none}
+@media (max-width:720px){
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,252,249,.96);border-top:1px solid var(--hairline);transform:translateY(110%);transition:transform .25s ease-out}
+  .sticky.on{display:block;transform:none}
+  .sticky a{display:flex;align-items:center;justify-content:center;height:48px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none;box-shadow:var(--shadow-button)}
+  .sticky a:hover{color:#fff}
+}
+@media (min-width:721px){.site-foot{padding-bottom:40px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}

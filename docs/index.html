@@ -33,43 +33,65 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("phc_C3bCN
 </script>
 </head>
 <body class="is-home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-dress" viewBox="0 0 24 24"><path d="M9 3l3 3 3-3M9 3L7.5 11M15 3l1.5 8M7.5 11h9M7.5 11L4.5 21h15L16.5 11"/></symbol>
+<symbol id="i-flowers" viewBox="0 0 24 24"><circle cx="12" cy="11" r="2"/><circle cx="12" cy="6" r="2.5"/><circle cx="16.5" cy="9.5" r="2.5"/><circle cx="15" cy="14.5" r="2.5"/><circle cx="9" cy="14.5" r="2.5"/><circle cx="7.5" cy="9.5" r="2.5"/><path d="M12 17.5V22"/></symbol>
+<symbol id="i-photo" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+<symbol id="i-dinner" viewBox="0 0 24 24"><path d="M5 3v5a2 2 0 004 0V3M7 3v18M17 3c-2 1-3 4-3 7h3v11"/></symbol>
+<symbol id="i-legal" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h7M9 16h7"/></symbol>
+<symbol id="i-courthouse" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5H3zM5.5 9v9M9.5 9v9M14.5 9v9M18.5 9v9M3 21h18M2 18h20"/></symbol>
+<symbol id="i-venue" viewBox="0 0 24 24"><path d="M4 21V11a8 8 0 0116 0v10M9 21v-6a3 3 0 016 0v6"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 10h16v11H4zM3 7h18v3H3zM12 7v14M12 7C10 3 6 4 7 7M12 7c2-4 6-3 5 0"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-6-6-11a6 6 0 1112 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></symbol>
+</defs></svg>
 <header class="site-head"><div class="wrap">
 <a class="wordmark" href="./">Rachel's List</a>
-<a class="rl-btn-sm" href="https://rachelslist.co/start?utm_source=guides&amp;utm_medium=hub&amp;utm_campaign=home" data-cta="header">Build my free board</a>
+<a class="rl-btn-sm" href="https://rachelslist.co/start?utm_source=guides&amp;utm_medium=hub&amp;utm_campaign=home" data-cta="header">Build my free Dream Board</a>
 </div></header>
 <main class="wrap home">
 <div class="home-top"><!-- Hero photo: photo 1808178 by rquiros, https://www.pexels.com/@rquiros/, via Pexels. Pexels License: free to use, no attribution required. --><figure class="hero"><img src="./img/hero-home.jpg" width="1000" height="600" alt="A bridal bouquet of roses (stock photo)" fetchpriority="high"></figure><div class="home-copy"><p class="rl-eyebrow">Rachel&#x27;s List Guides</p>
 <h1>Real wedding prices, <em>checked</em></h1>
 <p class="checked">Last checked: <time datetime="2026-10-28">Oct 28, 2026</time>. Pages refresh weekly, monthly or every 3 months; each shows its own date.</p>
-<div class="answer" id="answer"><p>Courthouse fees, small-wedding venues, designer dresses and elopement packages for 5 US cities, each price copied from the official page or the seller's own page, with the day we read it (Oct 28, 2026). No affiliate links.</p></div>
 <div class="chips"><a class="chip" href="#courthouse">Courthouse from<b>$60</b></a><a class="chip" href="#venues">Venues for 10+ from<b>$380</b></a><a class="chip" href="#dresses">Dresses from<b>$65</b></a><a class="chip" href="#packages">Packages from<b>$159</b></a></div>
+<div class="answer" id="answer"><p>Courthouse fees, small venues, designer dresses and elopement packages for 5 US cities, each from the official or seller's page and dated (Oct 28, 2026).</p></div>
 <aside class="rl-card rachel">
 <img src="./rachel-avatar-400.jpg" width="72" height="72" alt="Rachel, the illustrated host of Rachel's List" loading="lazy">
 <div>
 <p class="name">Rachel</p>
 <p>I find pieces like these for your style every week. Tap the wedding photos you love: your free board in 90 seconds.</p>
 </div>
+<div class="board" aria-label="Example board"><p class="board-t">Your board could look like this</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-dress"/></svg><span>Dress</span><b>$250</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-flowers"/></svg><span>Flowers</span><b>$180</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-photo"/></svg><span>Photos</span><b>from $1,500</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-dinner"/></svg><span>Room for 10</span><b>$380</b></li></ul><p class="board-n">Real finds from this page. Yours match the photos you tap.</p></div>
 <div class="cta in-card">
 <a class="rl-btn" href="https://rachelslist.co/start?utm_source=guides&amp;utm_medium=hub&amp;utm_campaign=home" data-cta="card">Build my free Dream Board</a>
 <p class="fine">Free &middot; 90 seconds &middot; no card</p>
 </div>
 </aside>
 </div></div>
-<section class="menu" id="courthouse"><h2>Courthouse weddings: what they really cost</h2><p class="lead">The official fee for the license and the ceremony, from each clerk&#x27;s own page.</p><div class="mcards"><a class="mcard" href="./courthouse-wedding-chicago/"><span class="mcard-t">Chicago</span><span class="mcard-l">$70 in official fees</span></a><a class="mcard" href="./courthouse-wedding-new-york/"><span class="mcard-t">New York</span><span class="mcard-l">$60 in official fees</span></a><a class="mcard" href="./courthouse-wedding-houston/"><span class="mcard-t">Houston</span><span class="mcard-l">$181 in official fees</span></a><a class="mcard" href="./courthouse-wedding-dallas/"><span class="mcard-t">Dallas</span><span class="mcard-l">$161 in official fees</span></a><a class="mcard" href="./courthouse-wedding-los-angeles/"><span class="mcard-t">Los Angeles</span><span class="mcard-l">$126 in official fees</span></a></div></section><section class="menu" id="venues"><h2>Small & micro wedding venues, with prices</h2><p class="lead">Only venues that print their own price for a small group.</p><div class="mcards"><a class="mcard" href="./small-wedding-venues-houston/"><span class="mcard-t">Houston</span><span class="mcard-l">11 venues, $197 to $8,900</span></a><a class="mcard" href="./small-wedding-venues-chicago/"><span class="mcard-t">Chicago</span><span class="mcard-l">8 venues, $400 to $2,900</span></a><a class="mcard" href="./small-wedding-venues-new-york/"><span class="mcard-t">New York</span><span class="mcard-l">7 venues, $595 to $3,000</span></a><a class="mcard" href="./small-wedding-venues-dallas/"><span class="mcard-t">Dallas</span><span class="mcard-l">11 venues, $250 to $2,500</span></a><a class="mcard" href="./small-wedding-venues-los-angeles/"><span class="mcard-t">Los Angeles</span><span class="mcard-l">8 venues, $320 to $4,500</span></a><a class="mcard" href="./micro-wedding-venues/"><span class="mcard-t">Compare the five cities</span><span class="mcard-l">Lowest verified price $197 (Houston)</span></a></div></section><section class="menu" id="dresses"><h2>Wedding dresses</h2><p class="lead">Secondhand designer gowns, re-opened every Tuesday.</p><div class="mcards"><a class="mcard" href="./wedding-dresses-under-500/"><span class="mcard-t">Under $500</span><span class="mcard-l">20 gowns, from $65</span></a><a class="mcard" href="./wedding-dresses-under-1000/"><span class="mcard-t">Under $1,000</span><span class="mcard-l">14 gowns, from $576</span></a></div></section><section class="menu" id="packages"><h2>Elopement & micro wedding packages</h2><p class="lead">All-in packages with the price on the provider&#x27;s own page.</p><div class="mcards one"><a class="mcard" href="./elopement-packages/"><span class="mcard-t">16 packages</span><span class="mcard-l">$159 to $4,775, each from the provider&#x27;s own page</span></a></div></section>
+<section class="menu" id="courthouse"><h2>Courthouse weddings: what they really cost</h2><p class="lead">The official fee for the license and the ceremony, from each clerk&#x27;s own page.</p><div class="mcards"><a class="mcard" href="./courthouse-wedding-chicago/"><svg class="ico" aria-hidden="true"><use href="#i-courthouse"/></svg><span class="mcard-t">Chicago</span><span class="mcard-l">$70 in fees</span></a><a class="mcard" href="./courthouse-wedding-new-york/"><svg class="ico" aria-hidden="true"><use href="#i-courthouse"/></svg><span class="mcard-t">New York</span><span class="mcard-l">$60 in fees</span></a><a class="mcard" href="./courthouse-wedding-houston/"><svg class="ico" aria-hidden="true"><use href="#i-courthouse"/></svg><span class="mcard-t">Houston</span><span class="mcard-l">$181 in fees</span></a><a class="mcard" href="./courthouse-wedding-dallas/"><svg class="ico" aria-hidden="true"><use href="#i-courthouse"/></svg><span class="mcard-t">Dallas</span><span class="mcard-l">$161 in fees</span></a><a class="mcard" href="./courthouse-wedding-los-angeles/"><svg class="ico" aria-hidden="true"><use href="#i-courthouse"/></svg><span class="mcard-t">Los Angeles</span><span class="mcard-l">$126 in fees</span></a></div></section><section class="menu" id="venues"><h2>Small & micro wedding venues, with prices</h2><p class="lead">Only venues that print their own price for a small group.</p><div class="mcards"><a class="mcard" href="./small-wedding-venues-houston/"><svg class="ico" aria-hidden="true"><use href="#i-venue"/></svg><span class="mcard-t">Houston</span><span class="mcard-l">11 venues, $197 to $8,900</span></a><a class="mcard" href="./small-wedding-venues-chicago/"><svg class="ico" aria-hidden="true"><use href="#i-venue"/></svg><span class="mcard-t">Chicago</span><span class="mcard-l">8 venues, $400 to $2,900</span></a><a class="mcard" href="./small-wedding-venues-new-york/"><svg class="ico" aria-hidden="true"><use href="#i-venue"/></svg><span class="mcard-t">New York</span><span class="mcard-l">7 venues, $595 to $3,000</span></a><a class="mcard" href="./small-wedding-venues-dallas/"><svg class="ico" aria-hidden="true"><use href="#i-venue"/></svg><span class="mcard-t">Dallas</span><span class="mcard-l">11 venues, $250 to $2,500</span></a><a class="mcard" href="./small-wedding-venues-los-angeles/"><svg class="ico" aria-hidden="true"><use href="#i-venue"/></svg><span class="mcard-t">Los Angeles</span><span class="mcard-l">8 venues, $320 to $4,500</span></a><a class="mcard" href="./micro-wedding-venues/"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="mcard-t">Compare the five cities</span><span class="mcard-l">Lowest verified price $197 (Houston)</span></a></div></section><section class="menu" id="dresses"><h2>Wedding dresses</h2><p class="lead">Secondhand designer gowns, re-opened every Tuesday.</p><div class="mcards two"><a class="mcard" href="./wedding-dresses-under-500/"><svg class="ico" aria-hidden="true"><use href="#i-dress"/></svg><span class="mcard-t">Under $500</span><span class="mcard-l">20 gowns, from $65</span></a><a class="mcard" href="./wedding-dresses-under-1000/"><svg class="ico" aria-hidden="true"><use href="#i-dress"/></svg><span class="mcard-t">Under $1,000</span><span class="mcard-l">14 gowns, from $576</span></a></div></section><section class="menu" id="packages"><h2>Elopement & micro wedding packages</h2><p class="lead">All-in packages with the price on the provider&#x27;s own page.</p><div class="mcards one"><a class="mcard" href="./elopement-packages/"><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg><span class="mcard-t">16 packages</span><span class="mcard-l">$159 to $4,775, each from the provider&#x27;s own page</span></a></div></section>
+<div class="cta">
+<p class="promise">Ready to see them for your own wedding?</p>
+<a class="rl-btn" href="https://rachelslist.co/start?utm_source=guides&amp;utm_medium=hub&amp;utm_campaign=home" data-cta="closing">Build my free Dream Board</a>
+<p class="fine">Free &middot; 90 seconds &middot; no card</p>
+</div>
+
 <p class="trust">Every price on these pages links to the page it came from and shows the day we read it. No affiliate links: we earn nothing from these sellers or venues. <a href="./how-we-check/">How we check</a>.</p>
 </main>
 <footer class="site-foot"><div class="wrap">
 <nav><a href="./how-we-check/">How we check</a><a href="https://rachelslist.co/privacy">Privacy</a><a href="https://rachelslist.co/">Rachel's List app</a></nav>
 <p>No affiliate links: we earn nothing from these sellers or venues. &copy; Rachel's List</p>
 </div></footer>
-<div class="sticky" id="sticky"><a href="https://rachelslist.co/start?utm_source=guides&amp;utm_medium=hub&amp;utm_campaign=home" data-cta="sticky">Find my wedding for less &middot; free</a></div>
+<div class="sticky" id="sticky"><a href="https://rachelslist.co/start?utm_source=guides&amp;utm_medium=hub&amp;utm_campaign=home" data-cta="sticky">Build my free Dream Board &middot; 90 seconds</a></div>
 <script>
 (function(){
 var slug="home",medium="hub";
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-cta]");if(!a)return;
 try{window.posthog&&posthog.capture("guide_cta_click",{slug:slug,utm_medium:medium,position:a.getAttribute("data-cta")},{send_instantly:true})}catch(x){}});
-var s=document.getElementById("sticky"),ans=document.getElementById("answer");
-if(s&&ans&&"IntersectionObserver"in window){new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting&&x.boundingClientRect.top<0)s.classList.add("on")})}).observe(ans)}
+var s=document.getElementById("sticky"),vis=0;
+if(s){var f=function(){if(window.scrollY>140&&!vis)s.classList.add("on");else s.classList.remove("on")};window.addEventListener("scroll",f,{passive:true});f();
+if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){vis+=x.isIntersecting?1:-1});if(vis<0)vis=0;f()});document.querySelectorAll(".rl-btn").forEach(function(b){io.observe(b)})}}
+document.querySelectorAll(".showgowns").forEach(function(b){b.addEventListener("click",function(){var m=b.previousElementSibling;m.classList.add("open");b.remove()})});
+document.documentElement.classList.add("js");
+document.querySelectorAll(".showall").forEach(function(b){b.addEventListener("click",function(){var t=b.previousElementSibling;t.classList.add("open");b.remove()})});
 })();
 </script>
 </body>

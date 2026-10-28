@@ -94,7 +94,7 @@ q.quote::before{content:"\201C"}q.quote::after{content:"\201D"}
 .rl-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;height:56px;padding:0 24px;border-radius:999px;background:var(--ink);color:#fff;font-family:var(--ui);font-size:17px;font-weight:600;letter-spacing:.005em;text-decoration:none;box-shadow:var(--shadow-button);transition:transform .15s ease-out}
 .rl-btn:hover{color:#fff}
 .rl-btn:active{transform:translateY(1px) scale(.98);box-shadow:none}
-.fine{text-align:center;font-size:13px;color:var(--mute);margin:8px 0 0}
+.fine{text-align:center;font-size:14px;color:var(--ink);margin:8px 0 0}
 
 /* faq, related, trust */
 .faq h3{font-family:var(--ui);font-size:16px;font-weight:600;letter-spacing:0;margin:18px 0 4px}
@@ -134,7 +134,7 @@ q.quote::before{content:"\201C"}q.quote::after{content:"\201D"}
 .gown:hover{border-color:var(--rose)}
 .gown-brand{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--rose-deep);overflow-wrap:anywhere}
 .gown-model{font-family:var(--display);font-weight:600;font-size:20px;line-height:1.1;margin:2px 0 6px;overflow-wrap:anywhere}
-.gown .price{font-size:30px;margin-top:auto}
+.gown .price{font-size:30px}
 .gown .was{font-size:12.5px}
 .gown-size{font-size:12.5px;color:var(--mute)}
 .gowns.three .gown:nth-child(3){grid-column:1 / -1}
@@ -193,3 +193,49 @@ details.words p{font-size:13px;color:var(--mute);margin:6px 0 0}
 .chip{display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;border:1px solid var(--hairline);background:#fff;color:var(--ink);font-size:14px;font-weight:500;text-decoration:none;box-shadow:var(--shadow-card)}
 .chip b{font-family:var(--display);font-size:18px;font-weight:600;margin-left:6px;font-variant-numeric:lining-nums}
 .chip:hover{border-color:var(--rose)}
+.home-top .hero{margin-bottom:14px}
+@media (min-width:1000px){.home-top .hero{margin-bottom:0}}
+
+/* round 2 */
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.idea .rl-eyebrow{display:flex;align-items:center;gap:8px}
+.idea .ico{color:var(--rose-deep)}
+.mcard .ico{width:30px;height:30px;padding:6px;border-radius:50%;background:var(--blush);color:var(--rose-deep);margin-bottom:6px;box-sizing:content-box;width:18px;height:18px}
+.tbl.collapsible tr.more{display:none}
+html:not(.js) .tbl.collapsible tr.more{display:table-row}
+.tbl.collapsible.open tr.more{display:table-row}
+.showall{display:block;margin:6px 0 0;padding:10px 16px;border:1px solid var(--hairline);border-radius:999px;background:#fff;color:var(--ink);font:500 14px var(--ui);cursor:pointer}
+html:not(.js) .showall{display:none}
+@media (max-width:600px){.tbl.collapsible tr.more{display:none}.tbl.collapsible.open tr.more{display:block}html:not(.js) .tbl.collapsible tr.more{display:block}}
+@media (max-width:700px){.crumbs{display:none}.hero img{aspect-ratio:16/6}.checked{margin-bottom:14px}.answer{font-size:17px;padding:16px 16px 2px}}
+.mcards.two{grid-template-columns:1fr 1fr}
+@media (min-width:900px){.mcards.two{grid-template-columns:1fr 1fr}.home-top{align-items:stretch}.home-top .hero{display:flex}.home-top .hero img{aspect-ratio:auto;height:100%;min-height:480px}}
+
+/* round 3 */
+.rachel .board{grid-column:1 / -1;margin-top:4px}
+.board-t{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--rose-deep);margin:0 0 8px}
+.board ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.board li{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;border-radius:12px;background:var(--blush);text-align:center;font-size:12px;color:var(--mute)}
+.board li .ico{color:var(--rose-deep)}
+.board li b{font-family:var(--display);font-size:20px;font-weight:600;color:var(--ink);font-variant-numeric:lining-nums;line-height:1.1}
+.board-n{font-size:12.5px;color:var(--mute);margin:6px 0 0}
+.gowns-more{display:none}
+.gowns-more.open{display:block}
+html:not(.js) .gowns-more{display:block}
+.showgowns{display:block;margin:0 0 6px;padding:10px 16px;border:1px solid var(--hairline);border-radius:999px;background:#fff;color:var(--ink);font:500 14px var(--ui);cursor:pointer}
+html:not(.js) .showgowns{display:none}
+.answer p:first-child strong:first-of-type{font-family:var(--display);font-size:1.45em;font-weight:600;font-variant-numeric:lining-nums;line-height:1}
+.allin td{text-align:right}
+.allin th{font-weight:500}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px}
+.chip{justify-content:space-between;padding:9px 14px}
+@media (min-width:900px){.chips{grid-template-columns:repeat(4,auto);justify-content:start;margin-bottom:18px}.home-copy .chips{grid-template-columns:1fr 1fr}.rachel .board{grid-column:1 / -1}}
+.gown-brand{letter-spacing:.1em}
+.mcard-t{overflow-wrap:anywhere}
+
+details.steps{margin-top:14px;border:1px solid var(--hairline);border-radius:14px;background:#fff;padding:12px 16px}
+details.steps summary{font-weight:600;cursor:pointer}
+details.steps ol{margin:10px 0 0;padding-left:20px;font-size:15px}
+details.steps li{margin:6px 0}
+.hook{margin:0 0 14px;font-size:15px}
+.hook a{font-weight:600}

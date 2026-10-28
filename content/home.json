@@ -9,11 +9,25 @@
  "h1_em": "checked",
  "eyebrow": "Rachel's List Guides",
  "refresh_note": "Pages refresh weekly, monthly or every 3 months; each shows its own date.",
- "answer_html": "<p>Courthouse fees, small-wedding venues, designer dresses and elopement packages for 5 US cities, each price copied from the official page or the seller's own page, with the day we read it (Oct 28, 2026). No affiliate links.</p>",
+ "answer_html": "<p>Courthouse fees, small venues, designer dresses and elopement packages for 5 US cities, each from the official or seller's page and dated (Oct 28, 2026).</p>",
  "oneliner": "Real wedding prices for five US cities, each checked on its source page and dated Oct 28, 2026.",
  "ideas": [],
  "faq": [],
  "related": [],
+ "board_ideas": [
+  {
+   "ref": "gown:wedding-dresses-under-500:brand=BHLDN"
+  },
+  {
+   "ref": "find:houston.florist"
+  },
+  {
+   "ref": "find:houston.photographer"
+  },
+  {
+   "ref": "venue:small-wedding-venues-houston:cheapest10"
+  }
+ ],
  "chips": [
   {
    "target": "courthouse",

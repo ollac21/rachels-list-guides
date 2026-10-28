@@ -181,13 +181,19 @@ def venue_faq(city, name, courthouse_fee_text=""):
     g = _dress()
     parts = [money(g["price"]) + " dress"]
     total = lo["amount"] + g["price"]
+    try:
+        lic = fact(load(city), "license_fee")
+        if lic and lic.get("amount") is not None:
+            parts.append(money(lic["amount"]) + " marriage license"); total += lic["amount"]
+    except Exception:
+        pass
     if f.get("florist"):
         parts.append(money(f["florist"]["amount"]) + " flowers"); total += f["florist"]["amount"]
     if f.get("photographer"):
         parts.append(money(f["photographer"]["amount"]) + " photos"); total += f["photographer"]["amount"]
     if under:
         under_txt = "{k} of the {n} venues print a price under $1,000: {l}.".format(
-            k=len(under), n=len(vs), l="; ".join("{} {}".format(_nm(v), v["price_display"]) for v in under[:4]))
+            k=len(under), n=len(vs), l="; ".join("{} {}".format(_nm(v), v["price_display"]) for v in under))
     else:
         under_txt = "None of the {n} venues we verified prints a price under $1,000; the lowest is {p} ({v}).".format(n=len(vs), p=lo["price_display"], v=_nm(lo))
     return [

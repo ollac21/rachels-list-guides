@@ -115,7 +115,7 @@ def dress_pages():
                 {"ref": "venue:small-wedding-venues-houston:cheapest10"},
                 {"ref": "fact:courthouse-wedding-houston:license_fee"},
             ],
-            "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories, from Houston, each from its own page and dated.",
+            "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories, each from its own page and dated.",
             "faq": faq,
             "related": [{"path": other, "label": "Designer wedding dresses " + ("$501 to $1,000" if cap == 500 else "$500 or less"),
                          "note": "The other price band, re-opened the same day."},
@@ -198,13 +198,13 @@ def faqs_for(key):
 
 
 FIND_DISPLAY = {
-    ("houston", "photographer"): dict(name="Brit Fine Photography", package="micro wedding coverage, 5 hours (starting price)", includes="5 hours of shooting, split as you wish"),
+    ("houston", "photographer"): dict(name="Brit Fine Photography", package="micro wedding coverage, 5 hours", includes="5 hours of shooting, split as you wish", **{"from": True}),
     ("houston", "florist"): dict(name="KVITKAFA", item="Burgundy bridal bouquet (pre-order)"),
-    ("chicago", "photographer"): dict(name="The Adri Photo Co.", package="courthouse and small-ceremony coverage, 2 hours (starts at)", includes="a full edited gallery"),
+    ("chicago", "photographer"): dict(name="The Adri Photo Co.", package="courthouse and small-ceremony coverage, 2 hours", includes="a full edited gallery", **{"from": True}),
     ("chicago", "florist"): dict(name="Flowers for Dreams", item="bridal bouquet, white and cream (self-service shop)"),
     ("new-york", "photographer"): dict(name="Erica Morris Photography", package="City Hall ceremony plus a 30-minute shoot", includes="50+ edited images"),
     ("new-york", "florist"): dict(name="NYC Flower Pop", item="elopement bouquet, 8 to 10 inch, seasonal (pickup)"),
-    ("los-angeles", "photographer"): dict(name="Golden Vibes Photo", package="courthouse weddings, 1 hour, 10 guests or fewer (starting at)", includes="50+ images"),
+    ("los-angeles", "photographer"): dict(name="Golden Vibes Photo", package="courthouse weddings, 1 hour, 10 guests or fewer", includes="50+ images", **{"from": True}),
     ("los-angeles", "florist"): dict(name="Hanamate Floral Design", item="bridal bouquet, customizable"),
     ("dallas", "photographer"): dict(name="Shelly Voss Photography", package="courthouse ceremony coverage, 1-hour minimum ($400 an hour)", includes=""),
 }
@@ -274,7 +274,7 @@ def courthouse_page(slug, name):
         lead = ("a courthouse wedding in {n} costs <strong>{t}</strong> in official fees: <strong>{l}</strong> for the marriage license ({lc}) "
                 "and <strong>{c}</strong> for the civil ceremony ({cc}).").format(n=name, t=money(total), l=money(lic["amount"]), c=money(cer["amount"]), lc=lc, cc=cc + note)
         one_fee = "{} in fees: license {} + ceremony {}".format(money(total), money(lic["amount"]), money(cer["amount"]))
-        card_line = "{} in official fees".format(money(total))
+        card_line = "{} in fees".format(money(total))
     elif lic:
         lead = ("a courthouse wedding in {n} starts with a <strong>{l}</strong> marriage license ({o}). "
                 "The official pages we read list no separate civil-ceremony fee.").format(n=name, l=lic["display"], o=office)
@@ -282,7 +282,8 @@ def courthouse_page(slug, name):
         card_line = "{} marriage license".format(money(lic["amount"]))
     else:
         return
-    answer = "<p>As of {d}, {lead}</p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>".format(d=fdate(TODAY), lead=lead)
+    answer = ("<p>As of {d}, {lead}</p><p class=\"hook\"><a href=\"#allin\">A full courthouse day with a dress, flowers, photos and a dinner room: about {{{{allin}}}} all in &darr;</a></p>"
+              "<p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>").format(d=fdate(TODAY), lead=lead)
     left = [x.strip().rstrip(".") for x in (c.get("left_out") or []) if x.strip()]
     sys.path.insert(0, str(ROOT / "tools"))
     import display as _d
@@ -299,7 +300,7 @@ def courthouse_page(slug, name):
         "title": CITY_TITLES["courthouse"][slug],
         "description": desc,
         "h1": "Courthouse wedding in " + name, "h1_em": name,
-        "eyebrow": "{} \u00b7 {}".format(name, office),
+        "eyebrow": "{} \u00b7 {}".format(name, OFFICE_SHORT[slug].split("/")[0]),
         "refresh_note": "Courthouse pages are re-checked every 3 months.",
         "answer_html": answer,
         "oneliner": "{} ({}), checked {}.".format(one_fee[0].upper() + one_fee[1:], OFFICE_SHORT[slug], fdate(TODAY)),
@@ -337,8 +338,8 @@ def venue_page(slug, name):
         print("no FAQ yet for venues", slug); return
     ten = [v for v in totals if v.get("max_guests", 0) >= 10]
     if ten:
-        answer = ("<p>As of {d}, small wedding venues in {c} start at <strong>{tp}</strong> for a group of 10 or more ({tn}). "
-                  "Couple-only chapels start at {lp}, and the {n} venues we verified go up to {hp}.</p>"
+        answer = ("<p>As of {d}, small wedding venues in {c} start at <strong>{lp}</strong> for just the two of you and <strong>{tp}</strong> for a group of 10 or more ({tn}). "
+                  "The {n} venues we verified go up to {hp}.</p>"
                   "<p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>").format(
             d=fdate(TODAY), c=name, tp=ten[0]["price_display"], tn=e(ten[0]["name"]), lp=lo["price_display"], n=len(vs), hp=hi["price_display"])
     else:
@@ -352,7 +353,7 @@ def venue_page(slug, name):
         "description": "{n} small and micro wedding venues in {c}, {lp} to {hp}, each price from the venue's own site. Checked {d}.".format(
             n=len(vs), c=name, lp=money(lo["amount"]), hp=money(hi["amount"]), d=fdate(TODAY)),
         "h1": "Small & micro wedding venues in " + name, "h1_em": name,
-        "eyebrow": "{} \u00b7 prices from the venues' own pages".format(name),
+        "eyebrow": "{} \u00b7 venue prices".format(name),
         "refresh_note": "Venue pages are re-checked monthly.",
         "answer_html": answer,
         "oneliner": "{} venues with printed prices, {} to {} (checked {}).".format(len(vs), lo["price_display"], hi["price_display"], fdate(TODAY)),
@@ -499,9 +500,8 @@ def home_page():
             lic = next((f for f in c["facts"] if f["key"] == "license_fee"), None)
             if lic and lic.get("amount") is not None:
                 lics.append((lic["amount"], name))
-    answer = ("<p>Courthouse fees, small-wedding venues, designer dresses and elopement packages for 5 US cities, "
-              "each price copied from the official page or the seller's own page, with the day we read it ({d}). "
-              "No affiliate links.</p>").format(d=fdate(TODAY))
+    answer = ("<p>Courthouse fees, small venues, designer dresses and elopement packages for 5 US cities, "
+              "each from the official or seller's page and dated ({d}).</p>").format(d=fdate(TODAY))
     page = {
         "path": "", "type": "home", "medium": "hub", "order": 0,
         "title": "Real Wedding Prices, Checked: Rachel's List Guides",
@@ -512,6 +512,8 @@ def home_page():
         "answer_html": answer,
         "oneliner": "Real wedding prices for five US cities, each checked on its source page and dated {}.".format(fdate(TODAY)),
         "ideas": [], "faq": [], "related": [],
+        "board_ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
+                        {"ref": "find:houston.photographer"}, {"ref": "venue:small-wedding-venues-houston:cheapest10"}],
     }
     fees = []
     for slug, name in CITIES:

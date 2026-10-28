@@ -28,7 +28,8 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
 AI_BOTS = ["Googlebot", "Bingbot", "OAI-SearchBot", "GPTBot", "ChatGPT-User", "ClaudeBot",
            "PerplexityBot", "Google-Extended"]
 SAVE_HEADING = "Make it feel like a wedding, for less"
-TOP_PROMISE = "Tap the wedding photos you love and Rachel finds them for less, every week: dresses, flowers, venues."
+TOP_PROMISE = "Tap the photos you love. Rachel finds dresses, flowers and venues like them for less, every week."
+ICON = {"The dress": "i-dress", "The flowers": "i-flowers", "The photos": "i-photo", "Dinner for 10: the room": "i-dinner", "Make it legal": "i-legal"}
 
 
 # ----------------------------------------------------------------------------- helpers
@@ -44,6 +45,11 @@ def money(n):
 def fmt_date(iso):
     d = datetime.date.fromisoformat(iso)
     return "{} {}, {}".format(d.strftime("%b"), d.day, d.year)
+
+
+def fmt_short(iso):
+    d = datetime.date.fromisoformat(iso)
+    return "{} {}".format(d.strftime("%b"), d.day)
 
 
 def strip_tags(s):
@@ -106,6 +112,13 @@ def src_line(name, date_iso):
     return "{} &middot; read {}".format(esc(name), fmt_date(date_iso))
 
 
+CITY_NAMES = {"houston": "Houston", "chicago": "Chicago", "new-york": "New York", "dallas": "Dallas", "los-angeles": "Los Angeles"}
+
+
+def city_label(city):
+    return CITY_NAMES.get(city, "") + " &middot; " if city in CITY_NAMES else ""
+
+
 def resolve_idea(spec, pages, finds):
     """Turn {"ref": "..."} into a displayable find (None if its source is missing)."""
     kind, _, rest = spec["ref"].partition(":")
@@ -127,14 +140,14 @@ def resolve_idea(spec, pages, finds):
         if not f:
             return None
         if what == "photographer":
-            out = dict(label="The photos", name="{}: {}".format(f["name"], f["package"]), url=f["url"],
+            out = dict(label="The photos", name="{}: {}".format(f["name"], f["package"]), url=f["url"], prefix="from " if f.get("from") else "",
                        amount=f["amount"], source_url=f["url"], date_read=f["date_read"],
                        meta="{}{}".format(esc(f.get("includes", "").split(";")[0]) + " &middot; " if f.get("includes") else "",
-                                          src_line("their own site", f["date_read"])))
+                                          city_label(city) + src_line("their own site", f["date_read"])))
         else:
             out = dict(label="The flowers", name="{}: {}".format(f["name"], f["item"]), url=f["url"],
                        amount=f["amount"], source_url=f["url"], date_read=f["date_read"],
-                       meta=src_line("their own site", f["date_read"]))
+                       meta=city_label(city) + src_line("their own site", f["date_read"]))
     elif kind == "venue":
         pg, _, rule = rest.partition(":")
         vs = [v for v in pages[pg].get("venues", []) if v.get("max_guests", 0) >= 10 and not v.get("per_person")]
@@ -157,14 +170,25 @@ def resolve_idea(spec, pages, finds):
         return None
     if spec.get("label"):
         out["label"] = spec["label"]
-    out["price_display"] = money(out["amount"]) if out.get("amount") is not None else ""
+    out["price_display"] = (out.pop("prefix", "")) + (money(out["amount"]) if out.get("amount") is not None else "")
     out["kind"] = kind
     return out
 
 
+def render_board(ideas):
+    tiles = [i for i in ideas if i.get("price_display")][:4]
+    if len(tiles) < 3:
+        return ""
+    short = {"The dress": "Dress", "The flowers": "Flowers", "The photos": "Photos", "Dinner for 10: the room": "Room for 10", "Make it legal": "License"}
+    t = "".join('<li><svg class="ico" aria-hidden="true"><use href="#{}"/></svg><span>{}</span><b>{}</b></li>'.format(
+        ICON.get(i["label"], "i-dress"), esc(short.get(i["label"], i["label"])), esc(i["price_display"])) for i in tiles)
+    return ('<div class="board" aria-label="Example board"><p class="board-t">Your board could look like this</p><ul>{}</ul>'
+            '<p class="board-n">Real finds from this page. Yours match the photos you tap.</p></div>').format(t)
+
+
 def render_ideas(page, pages, finds):
     ideas = []
-    for s in page.get("ideas", []):
+    for s in page.get("ideas") or page.get("board_ideas", []):
         try:
             i = resolve_idea(s, pages, finds)
         except (KeyError, IndexError, ValueError):  # its source page is not built yet
@@ -172,9 +196,9 @@ def render_ideas(page, pages, finds):
         if i:
             ideas.append(i)
     page["_resolved_ideas"] = ideas
-    if not ideas:
+    if not ideas or not page.get("ideas"):
         return ""
-    cards = "\n".join(fill(template("idea.html"), label=esc(i["label"]), url=esc(i["url"]), name=esc(i["name"]),
+    cards = "\n".join(fill(template("idea.html"), label=esc(i["label"]), url=esc(i["url"]), name=esc(i["name"]), icon=ICON.get(i["label"], "i-dress"),
                            price_display=esc(i["price_display"]), meta=i["meta"]) for i in ideas)
     lead = page.get("ideas_lead") or "One real find in each category, each from its own page and dated. Prices change; check the page before you buy."
     return ('<section><h2>{}</h2><p class="lead">{}</p><div class="ideas">\n{}\n</div>{}</section>'
@@ -199,10 +223,10 @@ def render_allin(page, ideas):
         total += i["amount"]
     rows.append('<tr class="total"><th scope="row">All in</th><td><span class="price">{}</span></td></tr>'.format(money(total)))
     page["_allin_total"] = total
-    return ('<h3 style="margin-top:28px">Your courthouse wedding, all in</h3>'
-            '<table class="tbl allin"><tbody>{}</tbody></table>'
-            '<p class="note">Official fees plus one real find per category from the cards above. It is a sum of dated listings, not a quote: '
-            'prices change.</p>').format("".join(rows))
+    return ('<h3 id="allin" style="margin-top:28px">Your courthouse wedding, all in</h3>'
+            '<table class="tbl allin"><tbody>{0}</tbody></table>'
+            '<p class="note">An example, not part of the {1} answer above: the official fees plus one real find per category from the cards. '
+            'It is a sum of dated listings, not a quote; prices change.</p>').format("".join(rows), money(sum(f["amount"] for f in fees)) if fees else "fees")
 
 
 # ----------------------------------------------------------------------------- tables
@@ -213,17 +237,23 @@ def table(headers, rows):
 
 def facts_table(page):
     rows = []
-    for f in page["facts"]:
+    for n, f in enumerate(page["facts"]):
         if f.get("amount") is not None:
-            m = re.match(r"^(\$[\d,]+(?:\.\d\d)?)\s*(.*)$", f["display"])
+            m = re.match(r"^(\$\d{1,3}(?:,\d{3})*(?:\.\d\d)?)\s*(.*)$", f["display"])
+            rest = m.group(2).lstrip(" ,;:") if m else ""
             detail = '<span class="price">{}</span>{}'.format(esc(m.group(1) if m else f["display"]),
-                                                              '<span class="was">{}</span>'.format(esc(m.group(2).lstrip(" ,;:"))) if m and m.group(2).lstrip(" ,;:") else "")
+                                                              '<span class="was">{}</span>'.format(esc(rest)) if rest else "")
         else:
             detail = "<strong>{}</strong>".format(esc(f["display"]))
+        cls = ' class="more"' if n >= 7 else ""
         rows.append(
-            '<tr><th scope="row">{}</th><td>{}<q class="quote">{}</q></td><td class="src"><a href="{}" rel="noopener">{}</a><br>Read {}</td></tr>'
-            .format(esc(f["label"]), detail, esc(f["quote"]), esc(f["source_url"]), esc(f["source_name"]), fmt_date(f["date_read"])))
-    return table(["What", "The official page says", "Source"], rows)
+            '<tr{}><th scope="row">{}</th><td>{}<details class="words"><summary>Official wording</summary><q class="quote">{}</q></details></td>'
+            '<td class="src"><a href="{}" rel="noopener">{}</a><br>read {}</td></tr>'
+            .format(cls, esc(f["label"]), detail, esc(f["quote"]), esc(f["source_url"]), esc(f["source_name"]), fmt_short(f["date_read"])))
+    t = table(["What", "The official page says", "Source"], rows)
+    if len(rows) > 8:
+        t = t.replace('<table class="tbl">', '<table class="tbl collapsible">', 1) + '<button class="showall" type="button">Show all {} rows</button>'.format(len(rows))
+    return t
 
 
 def venues_table(page):
@@ -234,10 +264,16 @@ def venues_table(page):
             '<tr><th scope="row"><a href="{}" rel="noopener">{}</a><small>{}</small></th>'
             '<td><span class="price">{}</span><span class="was">{} &middot; {}</span>'
             '<details class="words"><summary>Their exact words</summary>{}<q class="quote">{}</q></details></td>'
-            '<td class="src"><a href="{}" rel="noopener">Venue\'s own page</a><br>Read {}</td></tr>'.format(
+            '<td class="src"><a href="{}" rel="noopener">Venue\'s page</a><br>read {}</td></tr>'.format(
                 esc(v["url"]), esc(v["name"]), esc(v.get("area", "")), esc(v["price_display"]), esc(v["guests"]),
-                esc(v["price_for"]), inc, esc(v["quote"]), esc(v["url"]), fmt_date(v["date_read"])))
-    return table(["Venue", "Price on its own page", "Source"], rows)
+                esc(v["price_for"]), inc, esc(v["quote"]), esc(v["url"]), fmt_short(v["date_read"])))
+    for n, r in enumerate(rows):
+        if n >= 7:
+            rows[n] = r.replace("<tr>", '<tr class="more">', 1)
+    t = table(["Venue", "Price on its own page", "Source"], rows)
+    if len(rows) > 8:
+        t = t.replace('<table class="tbl">', '<table class="tbl collapsible">', 1) + '<button class="showall" type="button">Show all {} venues</button>'.format(len(rows))
+    return t
 
 
 def gown_name(g):
@@ -251,7 +287,7 @@ def gown_cards(gowns, cls=""):
     for g in gowns:
         out.append(
             '<a class="gown" href="{}" rel="noopener"><span class="gown-brand">{}</span><span class="gown-model">{}</span>'
-            '<span class="price">{}</span><span class="was">seller\'s original {}</span><span class="gown-size">{}</span><span class="gown-go">View on Poshmark &rarr;</span></a>'.format(
+            '<span class="price">{}</span><span class="was">seller\'s original {}</span><span class="gown-size">{}</span><span class="gown-go">See photos on Poshmark &rarr;</span></a>'.format(
                 esc(g["url"]), esc(g["brand"]), esc(g.get("model") or g["title"]), money(g["price"]), money(g["old_price"]),
                 esc(g["size"] if str(g["size"]).lower().startswith(("size", "us", "various")) else "Size " + str(g["size"]))))
     return '<div class="gowns {}">{}</div>'.format(cls, "".join(out))
@@ -290,15 +326,22 @@ def render_facts(page, site, pages):
     if t == "courthouse":
         steps = ""
         if page.get("steps"):
-            steps = "<h3>The steps</h3><ol>{}</ol>".format("".join("<li>{}</li>".format(esc(s)) for s in page["steps"]))
+            steps = '<details class="steps"><summary>The steps in order</summary><ol>{}</ol></details>'.format("".join("<li>{}</li>".format(esc(s)) for s in page["steps"]))
         return "<section>{}{}{}{}{}</section>".format(head, intro, facts_table(page), note, steps)
     if t == "venues":
         return "<section>{}{}{}{}</section>".format(head, intro, venues_table(page), note)
     if t == "dresses":
         g = page["gowns"]
-        mid = fill(template("cta.html"), promise=page.get("cta_mid", "Not your size or style? Tap the dresses you love; Rachel watches Poshmark and Etsy for your size every week."),
+        mid = fill(template("cta.html"), promise=page.get("cta_mid", "Not your size or style? Tap the dresses you love in Rachel's List and she watches Poshmark and Etsy for your size every week."),
                    app_url=esc(app_link(site, page)), position="after-6")
-        body = gown_cards(g[:6]) + (mid + gown_cards(g[6:]) if len(g) > 6 else mid)
+        first = gown_cards(g[:6])
+        rest = g[6:]
+        more = ""
+        if rest:
+            more = gown_cards(rest[:4]) 
+            if len(rest) > 4:
+                more += '<div class="gowns-more">' + gown_cards(rest[4:]) + '</div><button class="showgowns" type="button">Show all {} gowns</button>'.format(len(g))
+        body = first + mid + more
         return "<section>{}{}{}{}</section>".format(head, intro, body, note)
     if t in ("hub", "packages", "home", "trust"):
         tbl = generic_table(page) if page.get("table") else ""
@@ -314,10 +357,10 @@ def render_dress_bridge(page, site, pages, finds):
     if not d or not d.get("gowns"):
         return ""
     return ('<section><h2>Venue sorted? The <em>dress</em> is next</h2>'
-            '<p class="lead">Three secondhand designer gowns at $500 or less from Poshmark, each re-opened on {} before it went on this page. '
+            '<p class="lead">Three secondhand designer gowns at $500 or less from Poshmark, each re-opened on {} and still available. '
             '<a href="@wedding-dresses-under-500/">See all of them</a>.</p>{}{}</section>').format(
         fmt_date(d["last_checked"]), gown_cards(d["gowns"][:3], "three"),
-        fill(template("cta.html"), promise="Venue sorted? Rachel finds the rest for less, every week.",
+        fill(template("cta.html"), promise="Rachel finds the rest of your wedding for less, every week.",
              app_url=esc(app_link(site, page)), position="dress-bridge"))
 
 
@@ -359,9 +402,10 @@ def render_home_menu(page, pages):
         ps = sorted((p for p in pages.values() if p["type"] in t and p["path"] not in ("", "/")), key=lambda x: x.get("order", 0))
         if not ps:
             continue
-        cards = "".join('<a class="mcard" href="@{}/"><span class="mcard-t">{}</span><span class="mcard-l">{}</span></a>'.format(
-            p["path"], esc(p.get("card_title", p["h1"])), esc(p.get("card_line", p.get("oneliner", "")))) for p in ps)
-        cls = "mcards one" if len(ps) == 1 else "mcards"
+        icon = {"courthouse": "i-courthouse", "venues": "i-venue", "dresses": "i-dress", "packages": "i-gift"}[t[0]]
+        cards = "".join('<a class="mcard" href="@{}/"><svg class="ico" aria-hidden="true"><use href="#{}"/></svg><span class="mcard-t">{}</span><span class="mcard-l">{}</span></a>'.format(
+            p["path"], "i-pin" if p["type"] == "hub" else icon, esc(p.get("card_title", p["h1"])), esc(p.get("card_line", p.get("oneliner", "")))) for p in ps)
+        cls = "mcards one" if len(ps) == 1 else ("mcards two" if len(ps) == 2 else "mcards")
         out.append('<section class="menu" id="{}"><h2>{}</h2><p class="lead">{}</p><div class="{}">{}</div></section>'.format(t[0], heading, esc(blurb), cls, cards))
     return "".join(out)
 
@@ -447,19 +491,27 @@ def render_page(page, site, pages, finds):
         "" if page["path"] in ("", "/") else " &rsaquo; " + esc(page["h1"]))
     checked = '<p class="checked">Last checked: <time datetime="{}">{}</time>. {}</p>'.format(
         page["last_checked"], fmt_date(page["last_checked"]), esc(page.get("refresh_note", "")))
-    answer = '<div class="answer" id="answer">{}</div>'.format(page["answer_html"])
+    ideas = render_ideas(page, pages, finds)
+    ah = page["answer_html"]
+    if page.get("_allin_total"):
+        ah = ah.replace("{{allin}}", money(page["_allin_total"]))
+    else:
+        ah = re.sub(r'<p class="hook">.*?</p>', "", ah, flags=re.S)
+    answer = '<div class="answer" id="answer">{}</div>'.format(ah)
     top_cta = fill(template("cta.html"), promise=TOP_PROMISE, app_url=app, position="top")
     facts = render_facts(page, site, pages)
-    ideas = render_ideas(page, pages, finds)
     bridge = render_dress_bridge(page, site, pages, finds)
-    card = fill(template("rachel_card.html"), root=root, app_url=app)
+    card = fill(template("rachel_card.html"), root=root, app_url=app, board=render_board(page.get("_resolved_ideas", [])))
     if page["type"] == "home":
+        render_ideas(page, pages, finds)
+        card = fill(template("rachel_card.html"), root=root, app_url=app, board=render_board(page.get("_resolved_ideas", [])))
+        closing = fill(template("cta.html"), promise="Ready to see them for your own wedding?", app_url=app, position="closing")
         body = "\n".join([
             '<div class="home-top">{}<div class="home-copy">{}</div></div>'.format(
                 render_hero(page, site, root),
                 "\n".join(['<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
-                           "<h1>{}</h1>".format(h1_html(page)), checked, answer, render_chips(page), card])),
-            render_home_menu(page, pages),
+                           "<h1>{}</h1>".format(h1_html(page)), checked, render_chips(page), answer, card])),
+            render_home_menu(page, pages), closing,
             '<p class="trust">Every price on these pages links to the page it came from and shows the day we read it. '
             'No affiliate links: we earn nothing from these sellers or venues. <a href="@how-we-check/">How we check</a>.</p>'])
         body = internal(body, root)
@@ -607,6 +659,8 @@ def check(do_links=True):
             problems.append("{}: {} buttons (need 1 to 3)".format(w, n_btn))
         if "utm_campaign=" + (p["path"].strip("/") or "home") not in h or "utm_medium=" + p["medium"] not in h:
             problems.append("{}: the button link lacks its utm tags".format(w))
+        if "{{" in h:
+            problems.append("{}: an unfilled {{{{placeholder}}}} is left in the page".format(w))
         if p["type"] == "dresses":
             vis = strip_tags(re.sub(r"(?is)<script.*?</script>", " ", h))
             for bad in (r"%", r"\bretail\b", r"\bsave[sd]?\b", r"\bdiscount"):

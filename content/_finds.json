@@ -3,13 +3,14 @@
   "photographer": {
    "name": "Brit Fine Photography",
    "url": "https://www.britfinephotography.com/services-7",
-   "package": "micro wedding coverage, 5 hours (starting price)",
+   "package": "micro wedding coverage, 5 hours",
    "hours": 5,
    "price_display": "$1,500",
    "amount": 1500,
    "includes": "5 hours of shooting, split as you wish",
    "date_read": "2026-10-28",
-   "quote": "4 Micro Weddings Ranging pricing starting $1,500 for 5 hours to $2,800 for 8 hours"
+   "quote": "4 Micro Weddings Ranging pricing starting $1,500 for 5 hours to $2,800 for 8 hours",
+   "from": true
   },
   "florist": {
    "name": "KVITKAFA",
@@ -25,7 +26,7 @@
   "photographer": {
    "name": "The Adri Photo Co.",
    "url": "https://adridelacruz.com/chicago-elopement-photographer/",
-   "package": "courthouse and small-ceremony coverage, 2 hours (starts at)",
+   "package": "courthouse and small-ceremony coverage, 2 hours",
    "hours": 2,
    "price_display": "$1,050",
    "amount": 1050,
@@ -39,7 +40,8 @@
     "source_url": "https://adridelacruz.com/chicago-elopement-photographer/"
    },
    "date_read": "2026-10-28",
-   "quote": "Elopement and intimate wedding coverage at The Adri Photo Co. starts at $1,050 for courthouse and small ceremonies."
+   "quote": "Elopement and intimate wedding coverage at The Adri Photo Co. starts at $1,050 for courthouse and small ceremonies.",
+   "from": true
   },
   "florist": {
    "name": "Flowers for Dreams",
@@ -90,13 +92,14 @@
   "photographer": {
    "name": "Golden Vibes Photo",
    "url": "https://goldenvibesphoto.com/weddinginvestment",
-   "package": "courthouse weddings, 1 hour, 10 guests or fewer (starting at)",
+   "package": "courthouse weddings, 1 hour, 10 guests or fewer",
    "hours": 1,
    "price_display": "starting at $900",
    "amount": 900,
    "includes": "50+ images",
    "date_read": "2026-10-28",
-   "quote": "starting at $900 10 guests or less 1 hour of coverage expect no less than 50 images"
+   "quote": "starting at $900 10 guests or less 1 hour of coverage expect no less than 50 images",
+   "from": true
   },
   "florist": {
    "name": "Hanamate Floral Design",

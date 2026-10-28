@@ -734,6 +734,8 @@ def check_link(url):
                 if r.status < 400:
                     return url, True, r.status
         except urllib.error.HTTPError as e:
+            if e.code == 429:  # the site answered and asked us to slow down: the link is alive
+                return url, True, e.code
             if method == "GET":
                 return url, False, e.code
         except Exception as e:  # DNS, timeout, TLS

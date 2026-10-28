@@ -9,7 +9,7 @@
  "h1_em": "Los Angeles",
  "eyebrow": "Los Angeles · LA County Registrar-Recorder",
  "refresh_note": "Courthouse pages are re-checked every 3 months.",
- "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Los Angeles costs <strong>$126</strong> in official fees: <strong>$91</strong> for the marriage license (LA County Registrar-Recorder/County Clerk) and <strong>$35</strong> for the civil ceremony (county office, prepaid).</p><p class=\"hook\"><a href=\"#allin\">A full courthouse day with a dress, flowers, photos and a dinner room: about {{allin}} all in &darr;</a></p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
+ "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Los Angeles costs <strong class=\"big\">$126</strong> in official fees: <strong>$91</strong> for the marriage license (LA County Registrar-Recorder/County Clerk) and <strong>$35</strong> for the civil ceremony (county office, prepaid).</p><p class=\"hook\"><a href=\"#allin\">A full courthouse day with a dress, flowers, photos and a dinner room: about {{allin}} all in</a></p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
  "oneliner": "$126 in fees: license $91 + ceremony $35 (LA County Registrar-Recorder/County Clerk), checked Oct 28, 2026.",
  "card_title": "Los Angeles",
  "card_line": "$126 in fees",

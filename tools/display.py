@@ -72,3 +72,24 @@ LEFT_OUT = {
     "los-angeles": ["The waiting period (no page says in words that there is none)", "The fee for a certified copy of the marriage certificate",
                     "Which weekdays each branch office holds ceremonies"],
 }
+
+
+# Packages: short names and notes; key = (provider, researched name start)
+PACKAGES = {
+    ("Vegas Weddings", "The Crystal Suite"): dict(name="Vegas Weddings: The Crystal Suite", place="Las Vegas (destination)", guests="0 to 10 guests", includes="music, bouquet and boutonniere, 9 ceremony photos", price_for="wedding package (the page was running a sale that ends Oct 31)", destination=True),
+    ("Graceland Wedding Chapel", "Let's Get Hitched"): dict(name="Graceland Wedding Chapel: Let's Get Hitched", place="Las Vegas (destination)", guests="chapel seats about 25 to 30", includes="chapel, music, rose bouquet and boutonniere, 4 digital photos", price_for="plus tax and fees (officiant $60 extra)", destination=True),
+    ("The Little Glass Chapel", "QUICK"): dict(name="The Little Glass Chapel: Quick \"I Do\"", place="Missouri City / Stafford (Houston area)", guests="guest count not stated", includes="30 minutes in the chapel", price_for="the smallest of three packages"),
+    ("The Middleton Venue", "Let's Elope"): dict(name="The Middleton Venue: Let's Elope", place="Katy (Houston area)", guests="seats up to 40", includes="1 hour of venue time, photographer (40 images), officiant, coordinator, decorated venue", price_for="1 hour ($760 for 2 hours)"),
+    ("Lucky Wedding Day", "Happy Package"): dict(name="Lucky Wedding Day Chapel: Happy Package", place="Encino, Los Angeles", guests="couple only", includes="chapel, ceremony, music, marriage license, notary, minister", price_for="couple only (an October special banner was showing)"),
+    ("Drive Up & Wed", "Sweet & Simple"): dict(name="Drive Up & Wed: Sweet & Simple", place="Hurst (Dallas-Fort Worth)", guests="up to 6 guests", includes="officiant, decorated space, photography, bridal bouquet", price_for="30-minute chapel ceremony"),
+    ("NYC Wedding Factory", "Standard Package"): dict(name="NYC Wedding Factory: Standard Package", place="Bronx, New York City", guests="30 people maximum", includes="officiant and a 30-minute ceremony", price_for="ceremony only"),
+    ("Albertson Wedding Chapel", "The Moment"): dict(name="Albertson Wedding Chapel: The Moment", place="Los Angeles", guests="0 to 5 guests (6 to 18 guests $950)", includes="license and certificate, notary, officiant, photographer (50 to 100 images), coordinator, florals", price_for="weekdays and Sundays (the page says prices expire 10/31/2026)"),
+    ("Perfect Wedding NYC", "Essential Duo"): dict(name="Perfect Wedding NYC: Essential Duo Ceremony", place="Manhattan, New York City", guests="guest count not stated", includes="officiant and photographer, 1 hour in all", price_for="sale price (the page shows $1,149 struck through)"),
+    ("Elope to Chicago", "City Hall Package"): dict(name="Elope to Chicago: City Hall Package", place="Chicago", guests="up to 10 guests (a City Hall rule)", includes="2 hours of photography, City Hall plus one other location, digital files, timeline help", price_for="photography-led; officiant and bouquet are priced separately"),
+    ("Just Elope", "Public Park"): dict(name="Just Elope: Public Park, couple only", place="Dallas parks", guests="couple only", includes="officiant, elopement specialist, photography", price_for="30-minute event, plus tax"),
+    ("One Wedding House", "Basic"): dict(name="One Wedding House: Basic all-in-one", place="New York City", guests="up to 15 guests, not counting the couple", includes="officiant, 1.5 hours of photos", price_for="Friday to Sunday bookings carry a 50% surcharge"),
+    ("Pop The Knot", "The Pop The Knot Experience|Chicago"): dict(name="Pop The Knot Experience", place="Chicago", guests="25 guests or fewer", includes="location guidance, officiant, photographer, bouquet and boutonniere, planning", price_for="venue and permit fees are separate"),
+    ("Pop The Knot", "The Pop The Knot Experience|Los Angeles"): dict(name="Pop The Knot Experience", place="Los Angeles", guests="25 guests or fewer", includes="location guidance, officiant, photographer, bouquet and boutonniere, planning", price_for="venue and permit fees are separate"),
+    ("Just Elope", "Dallas Arboretum"): dict(name="Just Elope: Dallas Arboretum, Poetry Garden", place="Dallas", guests="couple plus up to 10 guests", includes="garden reservation with guest entry, officiant, coordinator, photography", price_for="1-hour event, plus tax"),
+    ("Tiny Wedding Collective", "All Inclusive"): dict(name="Tiny Wedding Collective: all-inclusive micro wedding", place="Chicago", guests="guest count not stated", includes="2-hour wedding, planning support, day-of coordinator, officiant, photography, two floral designs, cake, champagne toast", price_for="Monday to Thursday (Friday to Sunday $4,990)"),
+}

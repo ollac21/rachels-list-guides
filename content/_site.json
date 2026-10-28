@@ -9,7 +9,8 @@
   "home": {
    "file": "hero-home.jpg",
    "alt": "A bridal bouquet of roses (stock photo)",
-   "credit": "photo 1808178 by rquiros, https://www.pexels.com/@rquiros/, via Pexels"
+   "credit": "photo 1808178 by rquiros, https://www.pexels.com/@rquiros/, via Pexels",
+   "pos": "50% 22%"
   },
   "courthouse": {
    "file": "hero-courthouse.jpg",

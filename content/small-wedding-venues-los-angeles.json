@@ -9,7 +9,7 @@
  "h1_em": "Los Angeles",
  "eyebrow": "Los Angeles · venue prices",
  "refresh_note": "Venue pages are re-checked monthly.",
- "answer_html": "<p>As of Oct 28, 2026, small wedding venues in Los Angeles start at <strong>$320</strong> for just the two of you and <strong>$449.99</strong> for a group of 10 or more (Lucky Wedding Day Chapel). The 8 venues we verified go up to $4,500.</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
+ "answer_html": "<p>As of Oct 28, 2026, small wedding venues in Los Angeles start at <strong class=\"big\">$320</strong> for just the two of you and <strong>$449.99</strong> for a group of 10 or more (Lucky Wedding Day Chapel). The 8 venues we verified go up to $4,500.</p><p class=\"sub\">Each price and guest count is quoted from the venue's own website and shows the day we read it.</p>",
  "oneliner": "8 venues with printed prices, $320 to $4,500 (checked Oct 28, 2026).",
  "card_title": "Los Angeles",
  "card_line": "8 venues, $320 to $4,500",

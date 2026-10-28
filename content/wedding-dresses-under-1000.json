@@ -5,11 +5,11 @@
  "order": 14,
  "title": "Designer Wedding Dresses Under $1,000 (This Week)",
  "description": "14 secondhand designer wedding gowns at $501 to $1,000, each re-opened Oct 28, 2026. Price now, seller's original, size and link.",
- "h1": "Designer Wedding Dresses Under $1,000",
- "h1_em": "Under $1,000",
- "eyebrow": "Secondhand designer gowns · Poshmark · updated every Tuesday",
- "refresh_note": "Refreshed every Tuesday.",
- "answer_html": "<p>As of Oct 28, 2026, we found <strong>14 secondhand designer wedding gowns</strong> listed at more than $500 and up to $1,000 on Poshmark, from <strong>$576</strong> (Ronald Joyce, seller's original $3,800) to <strong>$1,000</strong>. The biggest gap: a Ronald Joyce gown at $576, seller's original $3,800.</p><p class=\"sub\">Each listing was re-opened on Oct 28, 2026 and was still available at the price shown.</p>",
+ "h1": "Designer wedding dresses under $1,000",
+ "h1_em": "under $1,000",
+ "eyebrow": "Poshmark gowns · weekly",
+ "refresh_note": "Refreshed weekly, on Tuesdays.",
+ "answer_html": "<p>As of Oct 28, 2026, we found <strong class=\"big\">14</strong> secondhand designer wedding gowns listed at more than $500 and up to $1,000 on Poshmark, from <strong>$576</strong> (Ronald Joyce, seller's original $3,800) to <strong>$1,000</strong>. The biggest gap: a Ronald Joyce gown at $576, seller's original $3,800.</p><p class=\"sub\">Each listing was re-opened on Oct 28, 2026 and was still available at the price shown.</p>",
  "oneliner": "14 secondhand designer wedding gowns at more than $500 and up to $1,000 on Poshmark, from $576 to $1,000; each re-opened Oct 28, 2026.",
  "card_title": "Under $1,000",
  "card_line": "14 gowns, from $576",
@@ -171,7 +171,7 @@
    "ref": "fact:courthouse-wedding-houston:license_fee"
   }
  ],
- "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories, each from its own page and dated.",
+ "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories (the examples are from Houston), each from its own page and dated.",
  "faq": [
   {
    "q": "Where can I buy a designer wedding dress for under $1,000?",

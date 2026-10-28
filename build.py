@@ -28,8 +28,8 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
 AI_BOTS = ["Googlebot", "Bingbot", "OAI-SearchBot", "GPTBot", "ChatGPT-User", "ClaudeBot",
            "PerplexityBot", "Google-Extended"]
 SAVE_HEADING = "Make it feel like a wedding, for less"
-TOP_PROMISE = "Tap the photos you love. Rachel finds dresses, flowers and venues like them for less, every week."
-ICON = {"The dress": "i-dress", "The flowers": "i-flowers", "The photos": "i-photo", "Dinner for 10: the room": "i-dinner", "Make it legal": "i-legal"}
+TOP_PROMISE = "Pick your style in 90 seconds. Rachel finds dresses, flowers and venues like them for less, every week."
+ICON = {"The dress": "i-dress", "The flowers": "i-flowers", "The photos": "i-photo", "Room for a 10-person dinner (room only)": "i-dinner", "Make it legal": "i-legal"}
 
 
 # ----------------------------------------------------------------------------- helpers
@@ -154,7 +154,7 @@ def resolve_idea(spec, pages, finds):
         if not vs:
             return None
         v = min(vs, key=lambda x: x["amount"])
-        out = dict(label="Dinner for 10: the room", name=v["name"], url=v["url"], amount=v["amount"],
+        out = dict(label="Room for a 10-person dinner (room only)", name=v["name"], url=v["url"], amount=v["amount"],
                    source_url=v["url"], date_read=v["date_read"],
                    meta="{} &middot; {} &middot; {}".format(esc(v["guests"]), esc(v["price_for"]),
                                                             src_line("their own page", v["date_read"])))
@@ -179,7 +179,7 @@ def render_board(ideas):
     tiles = [i for i in ideas if i.get("price_display")][:4]
     if len(tiles) < 3:
         return ""
-    short = {"The dress": "Dress", "The flowers": "Flowers", "The photos": "Photos", "Dinner for 10: the room": "Room for 10", "Make it legal": "License"}
+    short = {"The dress": "Dress", "The flowers": "Flowers", "The photos": "Photos", "Room for a 10-person dinner (room only)": "Room for 10", "Make it legal": "License"}
     t = "".join('<li><svg class="ico" aria-hidden="true"><use href="#{}"/></svg><span>{}</span><b>{}</b></li>'.format(
         ICON.get(i["label"], "i-dress"), esc(short.get(i["label"], i["label"])), esc(i["price_display"])) for i in tiles)
     return ('<div class="board" aria-label="Example board"><p class="board-t">Your board could look like this</p><ul>{}</ul>'
@@ -244,7 +244,7 @@ def facts_table(page):
             detail = '<span class="price">{}</span>{}'.format(esc(m.group(1) if m else f["display"]),
                                                               '<span class="was">{}</span>'.format(esc(rest)) if rest else "")
         else:
-            detail = "<strong>{}</strong>".format(esc(f["display"]))
+            detail = '<span class="val">{}</span>'.format(esc(f["display"]))
         cls = ' class="more"' if n >= 7 else ""
         rows.append(
             '<tr{}><th scope="row">{}</th><td>{}<details class="words"><summary>Official wording</summary><q class="quote">{}</q></details></td>'
@@ -286,7 +286,7 @@ def gown_cards(gowns, cls=""):
     out = []
     for g in gowns:
         out.append(
-            '<a class="gown" href="{}" rel="noopener"><span class="gown-brand">{}</span><span class="gown-model">{}</span>'
+            '<a class="gown" href="{}" rel="noopener"><svg class="ico gown-ico" aria-hidden="true"><use href="#i-dress"/></svg><span class="gown-brand">{}</span><span class="gown-model">{}</span>'
             '<span class="price">{}</span><span class="was">seller\'s original {}</span><span class="gown-size">{}</span><span class="gown-go">See photos on Poshmark &rarr;</span></a>'.format(
                 esc(g["url"]), esc(g["brand"]), esc(g.get("model") or g["title"]), money(g["price"]), money(g["old_price"]),
                 esc(g["size"] if str(g["size"]).lower().startswith(("size", "us", "various")) else "Size " + str(g["size"]))))
@@ -321,7 +321,7 @@ def render_facts(page, site, pages):
     note = '<p class="note">{}</p>'.format(page["facts_note"]) if page.get("facts_note") else ""
     if page.get("facts_note_list"):
         note = '<p class="note">{}</p><ul class="note-list">{}</ul>'.format(
-            esc(page.get("facts_note_head", "Not shown, because no official page states it:")),
+            esc(page.get("facts_note_head", "We could not confirm these from an official page:")),
             "".join("<li>{}</li>".format(esc(x)) for x in page["facts_note_list"]))
     if t == "courthouse":
         steps = ""
@@ -480,8 +480,8 @@ def render_hero(page, site, root):
     if not im:
         return ""
     return ('<!-- Hero photo: {credit}. Pexels License: free to use, no attribution required. -->'
-            '<figure class="hero"><img src="{root}img/{file}" width="1000" height="600" alt="{alt}" fetchpriority="high"></figure>').format(
-        credit=im["credit"].replace("--", "-"), root=root, file=im["file"], alt=esc(im["alt"]))
+            '<figure class="hero"><img src="{root}img/{file}" width="1000" height="600" alt="{alt}" fetchpriority="high" style="object-position:{pos}"></figure>').format(
+        credit=im["credit"].replace("--", "-"), root=root, file=im["file"], alt=esc(im["alt"]), pos=im.get("pos", "50% 50%"))
 
 
 def render_page(page, site, pages, finds):
@@ -511,9 +511,7 @@ def render_page(page, site, pages, finds):
                 render_hero(page, site, root),
                 "\n".join(['<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
                            "<h1>{}</h1>".format(h1_html(page)), checked, render_chips(page), answer, card])),
-            render_home_menu(page, pages), closing,
-            '<p class="trust">Every price on these pages links to the page it came from and shows the day we read it. '
-            'No affiliate links: we earn nothing from these sellers or venues. <a href="@how-we-check/">How we check</a>.</p>'])
+            render_home_menu(page, pages), closing])
         body = internal(body, root)
         return finish_page(page, site, pages, body, root, app)
     body = "\n".join([

@@ -9,7 +9,7 @@
  "h1_em": "Chicago",
  "eyebrow": "Chicago · Cook County Clerk",
  "refresh_note": "Courthouse pages are re-checked every 3 months.",
- "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Chicago costs <strong>$70</strong> in official fees: <strong>$60</strong> for the marriage license (Cook County Clerk) and <strong>$10</strong> for the civil ceremony (Circuit Court of Cook County, an administrative fee).</p><p class=\"hook\"><a href=\"#allin\">A full courthouse day with a dress, flowers, photos and a dinner room: about {{allin}} all in &darr;</a></p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
+ "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Chicago costs <strong class=\"big\">$70</strong> in official fees: <strong>$60</strong> for the marriage license (Cook County Clerk) and <strong>$10</strong> for the civil ceremony (Circuit Court of Cook County, an administrative fee).</p><p class=\"hook\"><a href=\"#allin\">A full courthouse day with a dress, flowers, photos and a dinner room: about {{allin}} all in</a></p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
  "oneliner": "$70 in fees: license $60 + ceremony $10 (Cook County Clerk), checked Oct 28, 2026.",
  "card_title": "Chicago",
  "card_line": "$70 in fees",

@@ -9,10 +9,10 @@
  "h1_em": "packages",
  "eyebrow": "All-in packages · prices from the providers' own pages",
  "refresh_note": "Refreshed monthly.",
- "answer_html": "<p>As of Oct 28, 2026, elopement and micro wedding packages that print their price run from <strong>$159</strong> (The Crystal Suite, Las Vegas, NV (destination)) to <strong>$4,775 (Monday–Thursday)</strong> (All Inclusive Package (micro wedding), Chicago, IL). We list 16, each quoted from the provider's own page.</p>",
- "oneliner": "16 packages with printed prices, $159 to $4,775 (Monday–Thursday) (checked Oct 28, 2026).",
+ "answer_html": "<p>As of Oct 28, 2026, elopement and micro wedding packages in our five cities that print their price run from <strong class=\"big\">$350</strong> (The Little Glass Chapel: Quick &quot;I Do&quot;, Missouri City / Stafford (Houston area)) to <strong>$4,775</strong> (Tiny Wedding Collective: all-inclusive micro wedding, Chicago). Two Las Vegas chapels start lower, from $159. We list 16, each quoted from the provider's own page.</p>",
+ "oneliner": "16 packages with printed prices, $350 to $4,775 (checked Oct 28, 2026).",
  "card_title": "16 packages",
- "card_line": "$159 to $4,775, each from the provider's own page",
+ "card_line": "$350 to $4,775, each from the provider's own page",
  "facts_heading": "Packages with a <em>printed price</em>, cheapest first",
  "facts_intro": "Only packages whose provider prints the price on its own website. Read what each includes: officiant, photographer, flowers and permits differ.",
  "table": {
@@ -23,199 +23,199 @@
   ],
   "rows": [
    {
-    "th": "<a href=\"https://vegasweddings.com\" rel=\"noopener\">The Crystal Suite</a><small>Vegas Weddings &middot; Las Vegas, NV (destination)</small>",
-    "td": "<span class=\"price\">$159</span><span class=\"was\">0-10 Guests</span><span class=\"was\">Includes: Music, bouquet &amp; boutonniere, 9 professional ceremony photos &amp; more</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">The Crystal Suite 0-10 Guests Package Highlights Music Bouquet &amp; Boutonniere 9 Professional Ceremony Photos &amp; More $159</q></details>",
-    "src": "<a href=\"https://vegasweddings.com\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
-    "amount": 159,
-    "source_url": "https://vegasweddings.com",
-    "date_read": "2026-10-28"
-   },
-   {
-    "th": "<a href=\"https://gracelandchapel.com/traditional-wedding-packages/\" rel=\"noopener\">Let&#x27;s Get Hitched</a><small>Graceland Wedding Chapel &middot; Las Vegas, NV (destination)</small>",
-    "td": "<span class=\"price\">$249 plus tax &amp; fees</span><span class=\"was\">chapel can seat roughly 25 to 30 guests</span><span class=\"was\">Includes: Use of chapel, traditional wedding music, 3 rose bouquet &amp; rose boutonniere, professional photography (4 digital images of your choice), wedding certificate holder</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Let&#x27;s Get Hitched $ 249 plus tax &amp; fees Use of Chapel Traditional Wedding Music 3 Rose Bouquet &amp; Rose Boutonniere Professional Photography 4 Digital Images of your choice.</q></details>",
-    "src": "<a href=\"https://gracelandchapel.com/traditional-wedding-packages/\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
-    "amount": 249,
-    "source_url": "https://gracelandchapel.com/traditional-wedding-packages/",
-    "date_read": "2026-10-28"
-   },
-   {
-    "th": "<a href=\"https://houstonelopement.com\" rel=\"noopener\">QUICK “I DO”</a><small>The Little Glass Chapel &middot; Missouri City / Stafford, TX (South Houston)</small>",
-    "td": "<span class=\"price\">$350</span><span class=\"was\"></span><span class=\"was\">Includes: 30-minute Little Glass Chapel access (the page does not state a guest count for this package)</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">30-minute Little Glass Chapel access QUICK “I DO” $350</q></details>",
+    "th": "<a href=\"https://houstonelopement.com\" rel=\"noopener\">The Little Glass Chapel: Quick &quot;I Do&quot;</a><small>The Little Glass Chapel &middot; Missouri City / Stafford (Houston area)</small>",
+    "td": "<span class=\"price\">$350</span><span class=\"was\">guest count not stated</span><span class=\"was\">Includes: 30 minutes in the chapel</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">30-minute Little Glass Chapel access QUICK “I DO” $350</q></details>",
     "src": "<a href=\"https://houstonelopement.com\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 350,
     "source_url": "https://houstonelopement.com",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://www.middletonvenue.com/about-1-1\" rel=\"noopener\">Let&#x27;s Elope</a><small>The Middleton Venue &middot; Katy, TX (Houston area)</small>",
-    "td": "<span class=\"price\">$380 for 1 hour</span><span class=\"was\">seating for up to 40 guests</span><span class=\"was\">Includes: 1 hour of venue rental, photographer (40 images), licensed officiant, event coordinator, fully decorated venue with white artificial flowers</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Let&#x27;s Elope $380 for 1 hour, $760 For 2 hours What&#x27;s Included: 1 hour of venue rental, photographer (40 images), licensed officiant, event coordinator and a fully decorated venue with white artificial flowers.</q></details>",
+    "th": "<a href=\"https://www.middletonvenue.com/about-1-1\" rel=\"noopener\">The Middleton Venue: Let&#x27;s Elope</a><small>The Middleton Venue &middot; Katy (Houston area)</small>",
+    "td": "<span class=\"price\">$380</span><span class=\"was\">seats up to 40</span><span class=\"was\">Includes: 1 hour of venue time, photographer (40 images), officiant, coordinator, decorated venue</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Let&#x27;s Elope $380 for 1 hour, $760 For 2 hours What&#x27;s Included: 1 hour of venue rental, photographer (40 images), licensed officiant, event coordinator and a fully decorated venue with white artificial flowers.</q></details>",
     "src": "<a href=\"https://www.middletonvenue.com/about-1-1\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 380,
     "source_url": "https://www.middletonvenue.com/about-1-1",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://luckyweddingday.com/\" rel=\"noopener\">Happy Package</a><small>Lucky Wedding Day &middot; Encino, Los Angeles, CA</small>",
-    "td": "<span class=\"price\">$399.99</span><span class=\"was\">Just Couple (no guests)</span><span class=\"was\">Includes: Wedding chapel, wedding ceremony, ceremony music, marriage license, notary public, ordained minister, first dance</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Happy Package Just Couple (no guests) $399.99 Wedding Chapel Wedding Ceremony Ceremony Music Marriage License Notary Public Ordained Minister First Dance</q></details>",
+    "th": "<a href=\"https://luckyweddingday.com/\" rel=\"noopener\">Lucky Wedding Day Chapel: Happy Package</a><small>Lucky Wedding Day &middot; Encino, Los Angeles</small>",
+    "td": "<span class=\"price\">$399.99</span><span class=\"was\">couple only</span><span class=\"was\">Includes: chapel, ceremony, music, marriage license, notary, minister</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Happy Package Just Couple (no guests) $399.99 Wedding Chapel Wedding Ceremony Ceremony Music Marriage License Notary Public Ordained Minister First Dance</q></details>",
     "src": "<a href=\"https://luckyweddingday.com/\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 399.99,
     "source_url": "https://luckyweddingday.com/",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://www.driveupandwed.com\" rel=\"noopener\">Sweet &amp; Simple</a><small>Drive Up &amp; Wed &middot; Hurst, TX (Dallas-Fort Worth area)</small>",
-    "td": "<span class=\"price\">$650</span><span class=\"was\">Seating for up to 6 Guests</span><span class=\"was\">Includes: Everything in Kiss &amp; Go (licensed wedding officiant, decorated ceremony space), photography, fresh floral bridal bouquet</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Includes: Everything in Kiss &amp; Go Photography Fresh Floral Bridal Bouquet Seating for up to 6 Guests Thirty Minute Appointment $650</q></details>",
+    "th": "<a href=\"https://www.driveupandwed.com\" rel=\"noopener\">Drive Up &amp; Wed: Sweet &amp; Simple</a><small>Drive Up &amp; Wed &middot; Hurst (Dallas-Fort Worth)</small>",
+    "td": "<span class=\"price\">$650</span><span class=\"was\">up to 6 guests</span><span class=\"was\">Includes: officiant, decorated space, photography, bridal bouquet</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Includes: Everything in Kiss &amp; Go Photography Fresh Floral Bridal Bouquet Seating for up to 6 Guests Thirty Minute Appointment $650</q></details>",
     "src": "<a href=\"https://www.driveupandwed.com\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 650,
     "source_url": "https://www.driveupandwed.com",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://www.nycweddingfactory.com\" rel=\"noopener\">Standard Package</a><small>NYC Wedding Factory &middot; Bronx, New York City</small>",
-    "td": "<span class=\"price\">$650</span><span class=\"was\">30 PPL MAX</span><span class=\"was\">Includes: Wedding officiant, 30 minute ceremony (ceremony only)</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Standard Package $650 Ceremony only Exchange vows in a cozy setting with our standard ceremony package.</q></details>",
+    "th": "<a href=\"https://www.nycweddingfactory.com\" rel=\"noopener\">NYC Wedding Factory: Standard Package</a><small>NYC Wedding Factory &middot; Bronx, New York City</small>",
+    "td": "<span class=\"price\">$650</span><span class=\"was\">30 people maximum</span><span class=\"was\">Includes: officiant and a 30-minute ceremony</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Standard Package $650 Ceremony only Exchange vows in a cozy setting with our standard ceremony package.</q></details>",
     "src": "<a href=\"https://www.nycweddingfactory.com\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 650,
     "source_url": "https://www.nycweddingfactory.com",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://albertsonchapel.com/affordable-wedding-package-deals/\" rel=\"noopener\">The Moment</a><small>Albertson Wedding Chapel &middot; Los Angeles, CA</small>",
-    "td": "<span class=\"price\">$770</span><span class=\"was\">0-5 guests (tiers up to 30-42 guests)</span><span class=\"was\">Includes: Marriage license &amp; certificate, notary, wedding officiant, professional photographer (50 to 100 edited images), day-of coordinator, floral decor, unity candle moment, private bridal room access</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Weekdays &amp; Sundays 0-5 guests – $770 6-18 guests – $950 19-29 guests – $1080 30-42 guests – $1370</q></details>",
+    "th": "<a href=\"https://albertsonchapel.com/affordable-wedding-package-deals/\" rel=\"noopener\">Albertson Wedding Chapel: The Moment</a><small>Albertson Wedding Chapel &middot; Los Angeles</small>",
+    "td": "<span class=\"price\">$770</span><span class=\"was\">0 to 5 guests (6 to 18 guests $950)</span><span class=\"was\">Includes: license and certificate, notary, officiant, photographer (50 to 100 images), coordinator, florals</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Weekdays &amp; Sundays 0-5 guests – $770 6-18 guests – $950 19-29 guests – $1080 30-42 guests – $1370</q></details>",
     "src": "<a href=\"https://albertsonchapel.com/affordable-wedding-package-deals/\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 770,
     "source_url": "https://albertsonchapel.com/affordable-wedding-package-deals/",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://www.perfectweddingnyc.com/elopement-packages-nyc\" rel=\"noopener\">Essential Duo Ceremony Package</a><small>Perfect Wedding NYC &middot; New York City (Manhattan)</small>",
-    "td": "<span class=\"price\">$949.00</span><span class=\"was\"></span><span class=\"was\">Includes: Licensed wedding officiant and professional photographer for 1 hour in total (guest count not stated on the page)</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Essential Duo Ceremony Package Sale Price: $949.00 Original Price: $1,149.00</q></details>",
+    "th": "<a href=\"https://www.perfectweddingnyc.com/elopement-packages-nyc\" rel=\"noopener\">Perfect Wedding NYC: Essential Duo Ceremony</a><small>Perfect Wedding NYC &middot; Manhattan, New York City</small>",
+    "td": "<span class=\"price\">$949</span><span class=\"was\">guest count not stated</span><span class=\"was\">Includes: officiant and photographer, 1 hour in all</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Essential Duo Ceremony Package Sale Price: $949.00 Original Price: $1,149.00</q></details>",
     "src": "<a href=\"https://www.perfectweddingnyc.com/elopement-packages-nyc\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 949,
     "source_url": "https://www.perfectweddingnyc.com/elopement-packages-nyc",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://elopetochicago.com/2026packages/\" rel=\"noopener\">City Hall Package</a><small>Elope to Chicago &middot; Chicago, IL</small>",
-    "td": "<span class=\"price\">$1000</span><span class=\"was\">Up to 10 guests (that’s a city hall rule)</span><span class=\"was\">Includes: 2 hours of photography coverage, City Hall and one other location, hi-res digital files, help with locations and timeline</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">$1000 – City Hall Package. 2 hours of coverage. City Hall and one other location. Up to 10 guests (that’s a city hall rule)</q></details>",
+    "th": "<a href=\"https://elopetochicago.com/2026packages/\" rel=\"noopener\">Elope to Chicago: City Hall Package</a><small>Elope to Chicago &middot; Chicago</small>",
+    "td": "<span class=\"price\">$1,000</span><span class=\"was\">up to 10 guests (a City Hall rule)</span><span class=\"was\">Includes: 2 hours of photography, City Hall plus one other location, digital files, timeline help</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">$1000 – City Hall Package. 2 hours of coverage. City Hall and one other location. Up to 10 guests (that’s a city hall rule)</q></details>",
     "src": "<a href=\"https://elopetochicago.com/2026packages/\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 1000,
     "source_url": "https://elopetochicago.com/2026packages/",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://justelope.com/elopement-packages\" rel=\"noopener\">Public Park | Couple Only</a><small>Just Elope &middot; Dallas, TX (Dallas area public parks)</small>",
-    "td": "<span class=\"price\">$1,295 plus tax</span><span class=\"was\">Couple only</span><span class=\"was\">Includes: Professional officiant, Elopement Specialist, professional photography</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">30 minutes event · Couple only officiant + specialist + photography Public Park Public Park | Couple Only $1,295 plus tax Dallas area public parks Professional officiant Elopement Specialist included Professional photography</q></details>",
+    "th": "<a href=\"https://justelope.com/elopement-packages\" rel=\"noopener\">Just Elope: Public Park, couple only</a><small>Just Elope &middot; Dallas parks</small>",
+    "td": "<span class=\"price\">$1,295</span><span class=\"was\">couple only</span><span class=\"was\">Includes: officiant, elopement specialist, photography</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">30 minutes event · Couple only officiant + specialist + photography Public Park Public Park | Couple Only $1,295 plus tax Dallas area public parks Professional officiant Elopement Specialist included Professional photography</q></details>",
     "src": "<a href=\"https://justelope.com/elopement-packages\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 1295,
     "source_url": "https://justelope.com/elopement-packages",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://oneweddinghouse.com/prices\" rel=\"noopener\">Basic (All-in-One Packages)</a><small>One Wedding House &middot; New York City</small>",
-    "td": "<span class=\"price\">$2k</span><span class=\"was\">up to 15 guests, excluding the couple</span><span class=\"was\">Includes: Officiant, 1.5h of photos</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Basic $2k or $500/mo. for 4 mo. Officiant 1.5h of Photos Friday, Saturday &amp; Sunday bookings are subject to a 50% package surcharge</q></details>",
+    "th": "<a href=\"https://oneweddinghouse.com/prices\" rel=\"noopener\">One Wedding House: Basic all-in-one</a><small>One Wedding House &middot; New York City</small>",
+    "td": "<span class=\"price\">$2,000</span><span class=\"was\">up to 15 guests, not counting the couple</span><span class=\"was\">Includes: officiant, 1.5 hours of photos</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Basic $2k or $500/mo. for 4 mo. Officiant 1.5h of Photos Friday, Saturday &amp; Sunday bookings are subject to a 50% package surcharge</q></details>",
     "src": "<a href=\"https://oneweddinghouse.com/prices\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 2000,
     "source_url": "https://oneweddinghouse.com/prices",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://www.poptheknot.com/chicago-elopement-packages/\" rel=\"noopener\">The Pop The Knot Experience</a><small>Pop The Knot &middot; Chicago, IL</small>",
-    "td": "<span class=\"price\">$3,499</span><span class=\"was\">intimate gatherings of 25 or less</span><span class=\"was\">Includes: Curated ceremony location guidance, choice of licensed officiant, choice of trusted local photographers, bouquet &amp; boutonniere, full planning &amp; logistics coordination</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">The Pop The Knot Experience is available in Chicago for $3,499.</q></details>",
+    "th": "<a href=\"https://www.poptheknot.com/chicago-elopement-packages/\" rel=\"noopener\">Pop The Knot Experience</a><small>Pop The Knot &middot; Chicago</small>",
+    "td": "<span class=\"price\">$3,499</span><span class=\"was\">25 guests or fewer</span><span class=\"was\">Includes: location guidance, officiant, photographer, bouquet and boutonniere, planning</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">The Pop The Knot Experience is available in Chicago for $3,499.</q></details>",
     "src": "<a href=\"https://www.poptheknot.com/chicago-elopement-packages/\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 3499,
     "source_url": "https://www.poptheknot.com/chicago-elopement-packages/",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://www.poptheknot.com/los-angeles-elopement-packages/\" rel=\"noopener\">The Pop The Knot Experience</a><small>Pop The Knot &middot; Los Angeles, CA</small>",
-    "td": "<span class=\"price\">$3,499</span><span class=\"was\">intimate gatherings of 25 or less</span><span class=\"was\">Includes: Curated ceremony location guidance, choice of licensed officiant, choice of trusted local photographers, bouquet &amp; boutonniere, full planning &amp; logistics coordination</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">The Pop The Knot Experience is available in Los Angeles for $3,499.</q></details>",
+    "th": "<a href=\"https://www.poptheknot.com/los-angeles-elopement-packages/\" rel=\"noopener\">Pop The Knot Experience</a><small>Pop The Knot &middot; Los Angeles</small>",
+    "td": "<span class=\"price\">$3,499</span><span class=\"was\">25 guests or fewer</span><span class=\"was\">Includes: location guidance, officiant, photographer, bouquet and boutonniere, planning</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">The Pop The Knot Experience is available in Los Angeles for $3,499.</q></details>",
     "src": "<a href=\"https://www.poptheknot.com/los-angeles-elopement-packages/\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 3499,
     "source_url": "https://www.poptheknot.com/los-angeles-elopement-packages/",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://justelope.com/elopement-packages\" rel=\"noopener\">Dallas Arboretum: Poetry Garden</a><small>Just Elope &middot; Dallas, TX (Dallas Arboretum)</small>",
-    "td": "<span class=\"price\">$3,500 plus tax</span><span class=\"was\">Couple plus up to 10 guests</span><span class=\"was\">Includes: Venue (Poetry Garden reservation, guest entry included), officiant, onsite coordinator, photography</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">1 hour event · Couple plus up to 10 guests Venue + officiant + coordinator + photography Venue Included Dallas Arboretum: Poetry Garden $3,500 plus tax Dallas Arboretum Poetry Garden reservation Guest entry included Onsite Coordinator included</q></details>",
+    "th": "<a href=\"https://justelope.com/elopement-packages\" rel=\"noopener\">Just Elope: Dallas Arboretum, Poetry Garden</a><small>Just Elope &middot; Dallas</small>",
+    "td": "<span class=\"price\">$3,500</span><span class=\"was\">couple plus up to 10 guests</span><span class=\"was\">Includes: garden reservation with guest entry, officiant, coordinator, photography</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">1 hour event · Couple plus up to 10 guests Venue + officiant + coordinator + photography Venue Included Dallas Arboretum: Poetry Garden $3,500 plus tax Dallas Arboretum Poetry Garden reservation Guest entry included Onsite Coordinator included</q></details>",
     "src": "<a href=\"https://justelope.com/elopement-packages\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 3500,
     "source_url": "https://justelope.com/elopement-packages",
     "date_read": "2026-10-28"
    },
    {
-    "th": "<a href=\"https://www.tinyweddingcollective.com/portfolio/all-inclusive-micro-wedding-package-dc-chicago\" rel=\"noopener\">All Inclusive Package (micro wedding)</a><small>Tiny Wedding Collective &middot; Chicago, IL</small>",
-    "td": "<span class=\"price\">$4,775 (Monday–Thursday)</span><span class=\"was\"></span><span class=\"was\">Includes: Two-hour wedding experience, partial planning support, day-of coordinator, officiant, professional photography, two personal floral designs, small cutting cake, couple&#x27;s champagne toast (guest count not stated)</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">$4,775 for Monday–Thursday weddings $4,990 for Friday–Sunday weddings The pricing is the same in both our base cities: Washington, DC and Chicago.</q></details>",
+    "th": "<a href=\"https://www.tinyweddingcollective.com/portfolio/all-inclusive-micro-wedding-package-dc-chicago\" rel=\"noopener\">Tiny Wedding Collective: all-inclusive micro wedding</a><small>Tiny Wedding Collective &middot; Chicago</small>",
+    "td": "<span class=\"price\">$4,775</span><span class=\"was\">guest count not stated</span><span class=\"was\">Includes: 2-hour wedding, planning support, day-of coordinator, officiant, photography, two floral designs, cake, champagne toast</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">$4,775 for Monday–Thursday weddings $4,990 for Friday–Sunday weddings The pricing is the same in both our base cities: Washington, DC and Chicago.</q></details>",
     "src": "<a href=\"https://www.tinyweddingcollective.com/portfolio/all-inclusive-micro-wedding-package-dc-chicago\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
     "amount": 4775,
     "source_url": "https://www.tinyweddingcollective.com/portfolio/all-inclusive-micro-wedding-package-dc-chicago",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://vegasweddings.com\" rel=\"noopener\">Vegas Weddings: The Crystal Suite</a><small>Vegas Weddings &middot; Las Vegas (destination)</small>",
+    "td": "<span class=\"price\">$159</span><span class=\"was\">0 to 10 guests</span><span class=\"was\">Includes: music, bouquet and boutonniere, 9 ceremony photos</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">The Crystal Suite 0-10 Guests Package Highlights Music Bouquet &amp; Boutonniere 9 Professional Ceremony Photos &amp; More $159</q></details>",
+    "src": "<a href=\"https://vegasweddings.com\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
+    "amount": 159,
+    "source_url": "https://vegasweddings.com",
+    "date_read": "2026-10-28"
+   },
+   {
+    "th": "<a href=\"https://gracelandchapel.com/traditional-wedding-packages/\" rel=\"noopener\">Graceland Wedding Chapel: Let&#x27;s Get Hitched</a><small>Graceland Wedding Chapel &middot; Las Vegas (destination)</small>",
+    "td": "<span class=\"price\">$249</span><span class=\"was\">chapel seats about 25 to 30</span><span class=\"was\">Includes: chapel, music, rose bouquet and boutonniere, 4 digital photos</span><details class=\"words\"><summary>Their exact words</summary><q class=\"quote\">Let&#x27;s Get Hitched $ 249 plus tax &amp; fees Use of Chapel Traditional Wedding Music 3 Rose Bouquet &amp; Rose Boutonniere Professional Photography 4 Digital Images of your choice.</q></details>",
+    "src": "<a href=\"https://gracelandchapel.com/traditional-wedding-packages/\" rel=\"noopener\">Provider's own page</a><br>Read Oct 28, 2026",
+    "amount": 249,
+    "source_url": "https://gracelandchapel.com/traditional-wedding-packages/",
     "date_read": "2026-10-28"
    }
   ]
  },
  "items": [
   {
-   "name": "The Crystal Suite (Vegas Weddings)",
-   "url": "https://vegasweddings.com"
-  },
-  {
-   "name": "Let's Get Hitched (Graceland Wedding Chapel)",
-   "url": "https://gracelandchapel.com/traditional-wedding-packages/"
-  },
-  {
-   "name": "QUICK “I DO” (The Little Glass Chapel)",
+   "name": "The Little Glass Chapel: Quick \"I Do\" (The Little Glass Chapel)",
    "url": "https://houstonelopement.com"
   },
   {
-   "name": "Let's Elope (The Middleton Venue)",
+   "name": "The Middleton Venue: Let's Elope (The Middleton Venue)",
    "url": "https://www.middletonvenue.com/about-1-1"
   },
   {
-   "name": "Happy Package (Lucky Wedding Day)",
+   "name": "Lucky Wedding Day Chapel: Happy Package (Lucky Wedding Day)",
    "url": "https://luckyweddingday.com/"
   },
   {
-   "name": "Sweet & Simple (Drive Up & Wed)",
+   "name": "Drive Up & Wed: Sweet & Simple (Drive Up & Wed)",
    "url": "https://www.driveupandwed.com"
   },
   {
-   "name": "Standard Package (NYC Wedding Factory)",
+   "name": "NYC Wedding Factory: Standard Package (NYC Wedding Factory)",
    "url": "https://www.nycweddingfactory.com"
   },
   {
-   "name": "The Moment (Albertson Wedding Chapel)",
+   "name": "Albertson Wedding Chapel: The Moment (Albertson Wedding Chapel)",
    "url": "https://albertsonchapel.com/affordable-wedding-package-deals/"
   },
   {
-   "name": "Essential Duo Ceremony Package (Perfect Wedding NYC)",
+   "name": "Perfect Wedding NYC: Essential Duo Ceremony (Perfect Wedding NYC)",
    "url": "https://www.perfectweddingnyc.com/elopement-packages-nyc"
   },
   {
-   "name": "City Hall Package (Elope to Chicago)",
+   "name": "Elope to Chicago: City Hall Package (Elope to Chicago)",
    "url": "https://elopetochicago.com/2026packages/"
   },
   {
-   "name": "Public Park | Couple Only (Just Elope)",
+   "name": "Just Elope: Public Park, couple only (Just Elope)",
    "url": "https://justelope.com/elopement-packages"
   },
   {
-   "name": "Basic (All-in-One Packages) (One Wedding House)",
+   "name": "One Wedding House: Basic all-in-one (One Wedding House)",
    "url": "https://oneweddinghouse.com/prices"
   },
   {
-   "name": "The Pop The Knot Experience (Pop The Knot)",
+   "name": "Pop The Knot Experience (Pop The Knot)",
    "url": "https://www.poptheknot.com/chicago-elopement-packages/"
   },
   {
-   "name": "The Pop The Knot Experience (Pop The Knot)",
+   "name": "Pop The Knot Experience (Pop The Knot)",
    "url": "https://www.poptheknot.com/los-angeles-elopement-packages/"
   },
   {
-   "name": "Dallas Arboretum: Poetry Garden (Just Elope)",
+   "name": "Just Elope: Dallas Arboretum, Poetry Garden (Just Elope)",
    "url": "https://justelope.com/elopement-packages"
   },
   {
-   "name": "All Inclusive Package (micro wedding) (Tiny Wedding Collective)",
+   "name": "Tiny Wedding Collective: all-inclusive micro wedding (Tiny Wedding Collective)",
    "url": "https://www.tinyweddingcollective.com/portfolio/all-inclusive-micro-wedding-package-dc-chicago"
+  },
+  {
+   "name": "Vegas Weddings: The Crystal Suite (Vegas Weddings)",
+   "url": "https://vegasweddings.com"
+  },
+  {
+   "name": "Graceland Wedding Chapel: Let's Get Hitched (Graceland Wedding Chapel)",
+   "url": "https://gracelandchapel.com/traditional-wedding-packages/"
   }
  ],
  "ideas": [
@@ -236,7 +236,7 @@
  "faq": [
   {
    "q": "Is eloping cheaper than having a wedding?",
-   "a": "On this page the 16 packages print prices from $159 to $4,775 (Monday–Thursday), each from the provider's own website on Oct 28, 2026. A package replaces a venue, an officiant and sometimes photos, so compare it with the venue prices on our city pages."
+   "a": "On this page the 16 packages print prices from $159 to $4,775, each from the provider's own website on Oct 28, 2026. A package replaces a venue, an officiant and sometimes photos, so compare it with the venue prices on our city pages."
   },
   {
    "q": "Does eloping make you legally married?",
@@ -244,11 +244,11 @@
   },
   {
    "q": "What is the average budget for an elopement?",
-   "a": "We do not quote an average. The packages here run $159 to $4,775 (Monday–Thursday), and they include different things, so read the Includes line on each row before you compare."
+   "a": "We do not quote an average. The packages here run $159 to $4,775, and they include different things, so read the Includes line on each row before you compare."
   },
   {
    "q": "Is $5,000 enough for a wedding?",
-   "a": "For an elopement or micro wedding, yes: every package listed is $4,775 (Monday–Thursday) or less before the license fee ($35 to $91) and any travel. A large guest list is a different budget."
+   "a": "For an elopement or micro wedding, yes: every package listed is $4,775 or less before the license fee ($35 to $91) and any travel. A large guest list is a different budget."
   },
   {
    "q": "What does an elopement package include?",

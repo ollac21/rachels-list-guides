@@ -5,11 +5,11 @@
  "order": 13,
  "title": "Designer Wedding Dresses Under $500 (This Week)",
  "description": "20 secondhand designer wedding gowns at $500 or less, each re-opened Oct 28, 2026. Price now, seller's original, size and link.",
- "h1": "Designer Wedding Dresses Under $500",
- "h1_em": "Under $500",
- "eyebrow": "Secondhand designer gowns · Poshmark · updated every Tuesday",
- "refresh_note": "Refreshed every Tuesday.",
- "answer_html": "<p>As of Oct 28, 2026, we found <strong>20 secondhand designer wedding gowns</strong> listed at $500 or less on Poshmark, from <strong>$65</strong> (David's Bridal, seller's original $600) to <strong>$500</strong>. The biggest gap: a Hayley Paige gown at $500, seller's original $2,400.</p><p class=\"sub\">Each listing was re-opened on Oct 28, 2026 and was still available at the price shown.</p>",
+ "h1": "Designer wedding dresses under $500",
+ "h1_em": "under $500",
+ "eyebrow": "Poshmark gowns · weekly",
+ "refresh_note": "Refreshed weekly, on Tuesdays.",
+ "answer_html": "<p>As of Oct 28, 2026, we found <strong class=\"big\">20</strong> secondhand designer wedding gowns listed at $500 or less on Poshmark, from <strong>$65</strong> (David's Bridal, seller's original $600) to <strong>$500</strong>. The biggest gap: a Hayley Paige gown at $500, seller's original $2,400.</p><p class=\"sub\">Each listing was re-opened on Oct 28, 2026 and was still available at the price shown.</p>",
  "oneliner": "20 secondhand designer wedding gowns at $500 or less on Poshmark, from $65 to $500; each re-opened Oct 28, 2026.",
  "card_title": "Under $500",
  "card_line": "20 gowns, from $65",
@@ -231,7 +231,7 @@
    "ref": "fact:courthouse-wedding-houston:license_fee"
   }
  ],
- "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories, each from its own page and dated.",
+ "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories (the examples are from Houston), each from its own page and dated.",
  "faq": [
   {
    "q": "Where can I buy a designer wedding dress for under $500?",

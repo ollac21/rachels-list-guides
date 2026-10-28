@@ -268,16 +268,16 @@ def packages_faq():
     return [
         {"q": "Is eloping cheaper than having a wedding?",
          "a": "On this page the {n} packages print prices from {lo} to {hi}, each from the provider's own website on {t}. A package replaces a venue, an officiant and sometimes photos, so compare it with the venue prices on our city pages.".format(
-             n=len(pk), lo=lo["price_display"], hi=hi["price_display"], t=TODAY)},
+             n=len(pk), lo=money(lo["amount"]), hi=money(hi["amount"]), t=TODAY)},
         {"q": "Does eloping make you legally married?",
          "a": "Only the marriage license and a ceremony by an authorized officiant do; a package is not the license. The licenses we checked cost {la} in {lc} to {ha} in {hc} (see each courthouse page for the official wording).".format(
              la=money(la), lc=ln, ha=money(ha), hc=hn)},
         {"q": "What is the average budget for an elopement?",
          "a": "We do not quote an average. The packages here run {lo} to {hi}, and they include different things, so read the Includes line on each row before you compare.".format(
-             lo=lo["price_display"], hi=hi["price_display"])},
+             lo=money(lo["amount"]), hi=money(hi["amount"]))},
         {"q": "Is $5,000 enough for a wedding?",
          "a": "For an elopement or micro wedding, yes: every package listed is {hi} or less before the license fee ({la} to {ha}) and any travel. A large guest list is a different budget.".format(
-             hi=hi["price_display"], la=money(la), ha=money(ha))},
+             hi=money(hi["amount"]), la=money(la), ha=money(ha))},
         {"q": "What does an elopement package include?",
          "a": "It depends on the provider: some include only a ceremony site and an officiant, others add photos or flowers. Each row on this page names what the provider's own page lists, and the price covers only that."},
     ]
@@ -294,11 +294,11 @@ def houston_venue_faq():
     return [
         {"q": "What are the best venues for a micro wedding in Houston?",
          "a": "We do not rank venues; we list the ones that print a small-group price on their own website. The three lowest are {l}, with {n} priced venues in all, from {lo} to {hi}.".format(
-             l="; ".join("{} {} ({})".format(_nm(v), v["price_display"], v["guests"].split("(")[0].strip()) for v in cheapest3), n=len(vs), lo=lo["price_display"], hi=hi["price_display"])},
+             l="; ".join("{} {} ({})".format(_nm(v), v["price_display"], v["guests"].split("(")[0].strip()) for v in cheapest3), n=len(vs), lo=money(lo["amount"]), hi=money(hi["amount"]))},
         base[1],
         {"q": "How much does a small wedding cost in Texas?",
          "a": "We do not quote an average. In Houston the venue prices we verified run {lo} to {hi}, and the official courthouse fees are {l} for the license plus {c} for a ceremony at Justice of the Peace Precinct 1, Place 1.".format(
-             lo=lo["price_display"], hi=hi["price_display"], l=lic["display"], c=cer["display"])},
+             lo=money(lo["amount"]), hi=money(hi["amount"]), l=lic["display"], c=cer["display"])},
         base[4],
         base[0],
     ]

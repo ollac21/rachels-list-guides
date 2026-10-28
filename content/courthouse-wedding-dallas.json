@@ -9,7 +9,7 @@
  "h1_em": "Dallas",
  "eyebrow": "Dallas · Dallas County Clerk",
  "refresh_note": "Courthouse pages are re-checked every 3 months.",
- "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Dallas costs <strong>$161</strong> in official fees: <strong>$81</strong> for the marriage license (Dallas County Clerk) and <strong>$80</strong> for the civil ceremony (Justice of the Peace court 2-2 by appointment, cash only; other Dallas County courts charge $60 to $150).</p><p class=\"hook\"><a href=\"#allin\">A full courthouse day with a dress, flowers, photos and a dinner room: about {{allin}} all in &darr;</a></p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
+ "answer_html": "<p>As of Oct 28, 2026, a courthouse wedding in Dallas costs <strong class=\"big\">$161</strong> in official fees: <strong>$81</strong> for the marriage license (Dallas County Clerk) and <strong>$80</strong> for the civil ceremony (Justice of the Peace court 2-2 by appointment, cash only; other Dallas County courts charge $60 to $150).</p><p class=\"hook\"><a href=\"#allin\">A full courthouse day with a dress, flowers, photos and a dinner room: about {{allin}} all in</a></p><p class=\"sub\">Every figure below is the official page's own wording, with its link and the day we read it.</p>",
  "oneliner": "$161 in fees: license $81 + ceremony $80 (Dallas County Clerk), checked Oct 28, 2026.",
  "card_title": "Dallas",
  "card_line": "$161 in fees",

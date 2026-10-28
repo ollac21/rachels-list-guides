@@ -1,0 +1,396 @@
+{
+ "city": "los-angeles",
+ "date_read": "2026-10-28",
+ "courthouse": {
+  "office": "Los Angeles County Registrar-Recorder/County Clerk (RR/CC)",
+  "official_pages": [
+   {
+    "url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+    "title": "Marriage License and Ceremony Fees - lavote.gov"
+   },
+   {
+    "url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+    "title": "Ceremonies - lavote.gov"
+   },
+   {
+    "url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/apply",
+    "title": "In-Person Marriage License Appointment - lavote.gov"
+   },
+   {
+    "url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+    "title": "Eligibility - lavote.gov"
+   },
+   {
+    "url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/recording-your-marriage-certificate",
+    "title": "Recording Your Marriage Certificate - lavote.gov"
+   },
+   {
+    "url": "https://lavote.gov/contact-us/branch-office-locations",
+    "title": "Branch Office Locations - lavote.gov"
+   },
+   {
+    "url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/faqs/faqs",
+    "title": "Marriage FAQs - lavote.gov"
+   }
+  ],
+  "facts": [
+   {
+    "key": "license_fee",
+    "label": "Marriage license fee (public license)",
+    "display": "$91",
+    "amount": 91,
+    "quote": "Public Marriage License $91",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "license_fee_confidential",
+    "label": "Marriage license fee (confidential license)",
+    "display": "$85",
+    "amount": 85,
+    "quote": "Confidential Marriage License $85",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_fee",
+    "label": "Civil ceremony at a county office (Registrar-Recorder/County Clerk)",
+    "display": "$35",
+    "amount": 35,
+    "quote": "Civil Ceremony $35",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "witness_fee",
+    "label": "Witness provided by the county for a civil ceremony",
+    "display": "$20",
+    "amount": 20,
+    "quote": "RR/CC-Provided Witness for a Civil Ceremony $20",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "validity",
+    "label": "How long the license is valid",
+    "display": "90 days",
+    "quote": "Now that you have your marriage license, which is valid for 90 days",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/recording-your-marriage-certificate",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "id_needed",
+    "label": "ID you bring",
+    "display": "Both of you, together, with photo ID and proof of age (driver's license or passport); expired ID is not accepted",
+    "quote": "Acceptable forms of I.D. are: Driver's license Passport",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "id_expired",
+    "label": "Expired ID",
+    "display": "Expired documents are not accepted",
+    "quote": "Documents that have expired will not be accepted",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "both_present",
+    "label": "Who must attend the license appointment",
+    "display": "Both people, in person, together",
+    "quote": "both parties must be present together and provide",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "no_blood_test",
+    "label": "Blood test / residency",
+    "display": "No blood test, no residence or citizenship requirement",
+    "quote": "A blood test and health certificate are not required to obtain a marriage license",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "no_residence",
+    "label": "Residence requirement",
+    "display": "None",
+    "quote": "There is no residence or citizenship status requirement",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "How to get the license (appointment)",
+    "display": "Apply online, then book an in-person appointment at a county office, up to 3 weeks ahead",
+    "quote": "Appointments can be scheduled up to three (3) weeks in advance.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/apply",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "book_after_apply",
+    "label": "When you can book",
+    "display": "After your application is submitted",
+    "quote": "Once your application is submitted you can make an appointment.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/apply",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_booking",
+    "label": "How to book the civil ceremony",
+    "display": "By appointment only, prepaid; the county gives no ceremony appointment until you hold your license",
+    "quote": "All civil ceremonies are by appointment only and must be prepaid.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_needs_license",
+    "label": "Ceremony booking rule",
+    "display": "License first, then ceremony appointment",
+    "quote": "An appointment will not be given until you have your marriage license.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_length",
+    "label": "Length of a civil ceremony",
+    "display": "15 minutes",
+    "quote": "All ceremonies are scheduled for 15 minutes.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_offices",
+    "label": "Where ceremonies are held",
+    "display": "At the county's offices",
+    "quote": "Ceremonies are done at all RR/CC offices.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_officiants",
+    "label": "Outside officiants",
+    "display": "Not allowed in the county chapels",
+    "quote": "Outside ministers/officiants are not allowed to do ceremonies in our chapels.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/ceremonies",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "express_ceremony",
+    "label": "Express ceremony (license and ceremony in one visit)",
+    "display": "45-minute appointment at the 7 county offices",
+    "quote": "Appointments are set for 45 minutes and available at all seven RR/CC branch locations.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/apply",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "witness_rule",
+    "label": "Witness",
+    "display": "One witness at the license window; none for a confidential license",
+    "quote": "Confidential Marriage Licenses do not require a witness.",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/apply",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "main_office",
+    "label": "Main office (Norwalk): address and hours",
+    "display": "12400 Imperial Hwy., Norwalk, CA 90650; Monday to Friday 8:00 a.m. to 5:00 p.m.",
+    "quote": "Norwalk (Main Office) 12400 Imperial Hwy. Norwalk, CA 90650 M-F, 8:00 a.m. - 5:00 p.m.",
+    "source_url": "https://lavote.gov/contact-us/branch-office-locations",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_days_example",
+    "label": "Ceremony days differ by office (example: Beverly Hills)",
+    "display": "Beverly Hills office: ceremonies Wednesday and Friday, by appointment only; other offices list their own days on the branch page",
+    "quote": "Beverly Hills 9355 Burton Way 4th Floor Beverly Hills, CA 90210 M-F, 8:30 a.m. - 4:00 p.m. Services Issue marriage licenses Perform marriage ceremonies (Wednesday and Friday, by appointment only)",
+    "source_url": "https://lavote.gov/contact-us/branch-office-locations",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "return_license",
+    "label": "After the wedding",
+    "display": "Return the signed license to the Norwalk office to be recorded",
+    "quote": "you must return your marriage license to our Norwalk office to be recorded",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/apply-for-a-marriage-license/recording-your-marriage-certificate",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "late_grace",
+    "label": "Late to your appointment",
+    "display": "5-minute grace period, then the appointment is cancelled",
+    "quote": "we provide a five (5) minute grace period",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/faqs/faqs",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Confidential license",
+    "display": "Available to couples already living together as spouses",
+    "quote": "Parties living together as spouses who meet the required conditions may request a confidential marriage license",
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/general-info/eligibility",
+    "date_read": "2026-10-28"
+   }
+  ],
+  "steps": [
+   "Both of you complete the county's marriage license application online, then book an in-person appointment (appointments open up to 3 weeks ahead).",
+   "Both of you go to the appointment together with valid photo ID and pay the license fee: $91 for a public license, $85 for a confidential license.",
+   "If you want the county to marry you, book a prepaid 15-minute civil ceremony ($35); the county only gives the ceremony appointment once you hold your license. A county-provided witness is $20, and a confidential license needs no witness.",
+   "Marry within 90 days of getting the license.",
+   "Return the signed license to the Norwalk office so it can be recorded."
+  ],
+  "left_out": [
+   "Waiting period: no lavote.gov page (and the California state license page) says in words that there is no waiting period, so it is not quoted.",
+   "Fee for a certified copy of the marriage certificate: not on the lavote.gov marriage pages read (the Recorder's records pages were not read)."
+  ]
+ },
+ "venues": [
+  {
+   "name": "Albertson Wedding Chapel",
+   "url": "https://albertsonchapel.com/wedding-ceremonies/civil-ceremony/",
+   "area": "La Brea Ave, Los Angeles",
+   "guests": "0-5 guests (the same page prices 6-18 guests at $390, 19-29 at $520, 30-42 at $720)",
+   "max_guests": 5,
+   "price_display": "$320",
+   "amount": 320,
+   "price_for": "ceremony-only price, Monday to Friday and Sunday (closed Tuesdays); the page's lowest tier",
+   "includes": "chapel, officiant's fee, unity candle moment, private changing room (the page lists a license set and photography as paid add-ons)",
+   "quote": "Monday to Friday & Sunday Rates Closed on Tuesdays 0-5 guests – $320 6-18 guests – $390 19-29 guests – $520 30-42 guests – $720",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Lucky Wedding Day Chapel",
+   "url": "https://luckyweddingday.com/",
+   "area": "Encino (Ventura Blvd)",
+   "guests": "1 to 10 People (including groom/bride)",
+   "max_guests": 10,
+   "price_display": "$449.99",
+   "amount": 449.99,
+   "price_for": "Sweet Package (the page's Happy Package, couple only, is $399.99; Lovely Package 11 to 20 people $549.99; Luxury Package 21 to 30 people $649.99)",
+   "includes": "wedding chapel, wedding ceremony, ceremony music, marriage license, notary public, ordained minister, first dance",
+   "quote": "Sweet Package 1 to 10 People (including groom/bride) $449.99",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Cute Little Wedding Chapel",
+   "url": "https://cutelittleweddingchapel.com/the-prices/",
+   "area": "Long Beach",
+   "guests": "0-4 Guests (5-15 guests $550; 16-30 guests $650)",
+   "max_guests": 4,
+   "price_display": "$450",
+   "amount": 450,
+   "price_for": "license and ceremony package, lowest tier; the page adds $50 for Saturday and Sunday",
+   "includes": "marriage license, wedding ceremony and certificate",
+   "quote": "License and Ceremony Packages 0-4 Guests $ 450 includes Marriage License, Wedding Ceremony and Certificate",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Get Married Today (Los Angeles-area chapel offices)",
+   "url": "https://getmarried.today/pricing/",
+   "area": "Westwood and Canoga Park offices, Los Angeles",
+   "guests": "couple & up to 8 guests",
+   "max_guests": 8,
+   "price_display": "$735",
+   "amount": 735,
+   "price_for": "License + Ceremony on the evening/night balcony, all-inclusive of the county license fee; the page says balcony ceremonies are offered at select locations / participating chapels (not confirmed for a specific Los Angeles office); couple only is $635. An office-based same-day marriage service rather than an event venue",
+   "includes": "confidential license, licensed officiant (Deputy Commissioner of Civil Marriages), ceremony, same-day county filing (per the page's 'What's Included' list)",
+   "quote": "License + Ceremony — Balcony (couple & up to 8 guests) $735",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Orcutt Ranch Horticultural Center (City of Los Angeles Recreation and Parks)",
+   "url": "https://recreation.parks.lacity.gov/horticulture/orcutt-ranch",
+   "area": "West Hills (San Fernando Valley), Los Angeles",
+   "guests": "events up to 175 people",
+   "max_guests": 175,
+   "price_display": "$900",
+   "amount": 900,
+   "price_for": "weekday (Monday to Thursday) rental, first 3 hours; $110 each additional hour; Friday to Sunday is $2,350 for 6 hours",
+   "includes": "rental of the historic ranch house and gardens; rental fee includes a refundable $500 building deposit",
+   "quote": "Orcutt Ranch can accommodate events up to 175 people. Rental Fees and Charges *Please note: Prices are subject to change without notice. * A. RENTAL FEE * RATES 1. Monday-Thursday - 1st 3 hours $900.00",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Greystone Mansion & Gardens (City of Beverly Hills)",
+   "url": "https://www.beverlyhills.org/462/Special-Event-Pricing",
+   "area": "Beverly Hills",
+   "guests": "1 to 75 people (ceremony only)",
+   "max_guests": 75,
+   "price_display": "$2,600 (non-residents); $2,200 (Beverly Hills residents)",
+   "amount": 2600,
+   "price_for": "ceremony-only rental of the Formal Garden, one-hour event with two hours for vendor set-up and breakdown; approximate fees",
+   "includes": "Formal Garden for a one-hour ceremony; no food or beverages except water",
+   "quote": "Number of People Cost for Beverly Hills Residents Non-Resident Rate 1 to 75 $2,200 $2,600",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "La Venta Inn",
+   "url": "https://laventa.com/ceremony-only-package/",
+   "area": "Palos Verdes Estates",
+   "guests": "ceremony only, maximum of 100 guests",
+   "max_guests": 100,
+   "price_display": "$4,000 (Monday to Thursday)",
+   "amount": 4000,
+   "price_for": "ceremony-only package (wedding ceremony, vow renewal or elopement), weekday rate; Friday to Sunday is $5,500; full amount is the non-refundable reservation fee",
+   "includes": "two hours of private use of the property, grounds for photos, dressing room and light refreshments, sound system, ceremony chairs, day-of wedding director, one planning meeting",
+   "quote": "Friday – Sunday: $5,500 Monday – Thursday: $4,000",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Heritage Square Museum",
+   "url": "https://www.heritagesquare.org/site-rentals",
+   "area": "Montecito Heights, Los Angeles",
+   "guests": "50 or less guests",
+   "max_guests": 50,
+   "price_display": "starting at $4,500",
+   "amount": 4500,
+   "price_for": "outdoor boutique wedding; the page states 'prices starting at $4,500' (what the fee includes is not itemised on the page)",
+   "includes": "outdoor wedding venue among historic homes and gardens",
+   "quote": "Heritage Square Museum is the perfect place for a one-of-a-kind boutique wedding (50 or less guests) experience. Stunning architecture. Beautiful gardens. Professional staff. With prices starting at $4,500",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Cecile Trattoria",
+   "url": "https://ceciletrattoria.com/engagements-%26-weddings",
+   "area": "Glendale",
+   "guests": "25 to 85 guests",
+   "max_guests": 85,
+   "price_display": "$75 per guest",
+   "amount": 75,
+   "price_for": "PER-GUEST price (not a total): per-guest wedding packages start at $75, with full buyouts from $120. Listed last because it is per guest.",
+   "includes": "restaurant room for a ceremony and reception or a rehearsal dinner (the same site's private-events page adds curated Italian menus, cocktail packages and event coordination)",
+   "quote": "The room hosts 25 to 85 guests for everything from a rehearsal dinner to a full ceremony-and-reception. Per-guest wedding packages start at $75, with full buyouts from $120.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "price_unit": "per guest"
+  }
+ ],
+ "photographer": {
+  "name": "Golden Vibes Photo",
+  "url": "https://goldenvibesphoto.com/weddinginvestment",
+  "package": "Courthouse weddings, 1 hour of coverage, 10 guests or less",
+  "hours": 1,
+  "price_display": "starting at $900",
+  "amount": 900,
+  "quote": "starting at $900 10 guests or less 1 hour of coverage expect no less than 50 images",
+  "includes": "1 hour of coverage, no less than 50 images (the same page lists elopements starting at $1950 for 25 guests or less and 3 hours)",
+  "date_read": "2026-10-28"
+ },
+ "florist": {
+  "name": "Hanamate Floral Design",
+  "url": "https://hanamate.com/products/dark-element-fresh-rose-bouquet",
+  "item": "Delicate Bouquets for Bride / Bridesmaids (Customize)",
+  "price_display": "$98.00 USD",
+  "amount": 98,
+  "quote": "Delicate Bouquets for Bride / Bridesmaids (Customize) Regular price $98.00 USD",
+  "date_read": "2026-10-28"
+ },
+ "notes": "READ THIS. (1) Hidden county fee notice: the HTML source of lavote.gov's About page (marriage-licenses-ceremonies/general-info/about) holds a COMMENTED-OUT notice, not shown to visitors, saying the Board of Supervisors approved new fees (public license $176, confidential $220, ceremony $44, witness $26) effective 30 days after an ordinance is adopted. It is not a published fact today, so it is not in the facts. The Fees page still shows $91 / $85 / $35 / $20; re-check lavote.gov/.../fees/fees right before publishing. (2) Quote check: tools/verify_quotes.py strips tags but NOT HTML comments, so it would also pass hidden text. I also checked every quote against the visible text of the downloaded pages (comments, script and style removed). Example of why: the eligibility page's list of acceptable ID has 'Alien resident card' inside a comment; the visible list is Driver's license and Passport only, and the id_needed quote uses only the visible words. (3) Waiting period: no lavote.gov page states it, so it is left out; the California Department of Public Health general-information page was read too and does not say it either (it does say licenses are valid 90 days). (4) Web search budget ran out mid-task, so the venue list was built from the venues' own sites reached through directory pages (leads only) and direct fetches; it is NOT exhaustive and several famous venues print no price (Descanso, Arboretum, Annenberg Beach House [only a $450 ceremony fee on top of rental], Hollywood Forever, Ebell, hotels). (5) Weak entries, flagged for the coordinator: Get Married Today is an office-based same-day marriage service (its balcony row has a guest count but the page says only 'select locations' / 'participating chapels'; its plain chapel row, License + Ceremony with Guests (Casual) $485, prints no guest limit); Cecile Trattoria is a per-guest price (price_unit 'per guest') and is listed last, not in amount order; Heritage Square is 'starting at'; La Venta Inn and Greystone are not small-group packages but ceremony-only/weekday rates with caps of 100 and 75 guests; Orcutt Ranch is a City of Los Angeles Recreation and Parks weekday (Mon-Thu) 3-hour rental with a 175-person capacity, and the page says prices are subject to change without notice. Los Angeles Wedding Chapel (laweddingchapel.com, Boyle Heights; Religious Wedding Package from $498.00, Civil from $398.00) was dropped because its price page prints no guest count. (6) Tiers: Albertson (0-5 guests $320; 6-18 $390; 19-29 $520; 30-42 $720, Monday to Friday and Sunday, closed Tuesdays), Lucky Wedding Day (Happy Package, couple only, $399.99; Sweet 1-10 $449.99; Lovely 11-20 $549.99; Luxury 21-30 $649.99) and Cute Little Wedding Chapel (0-4 guests $450, 5-15 $550, 16-30 $650, +$50 Saturday and Sunday) all price by guest count; the entry uses the lowest tier with guests and the other tiers are in price_for. Albertson's separate packages page says its package prices expire 10/31/2026 (three days after the read date); the ceremony-only page used for the quote has no expiry line. Cute Little Wedding Chapel and Lucky Wedding Day prices include a marriage license (the page says so); Albertson's ceremony-only price does not (license set is a paid add-on). (7) Greystone: the City of Beverly Hills page prints 'Approximate Rental Fees': $2,200 for Beverly Hills residents, $2,600 for non-residents (1 to 75 people, ceremony only); amount uses the non-resident rate. (8) Photographer: Golden Vibes Photo is 'based in Long Beach, California' per the meta description of goldenvibesphoto.com (not visible text, so not quoted); the quoted row is the 'courthouse weddings' tier. (9) Florist: Hanamate (Alhambra, CA per its Zola listing; its About page says 'Serving Southern California') sells bridal bouquets on its own Shopify store: Delicate Bouquets for Bride / Bridesmaids (Customize) $98.00 and Natural Elegance Bridal Bouquet (customize) $168.00. Not a courthouse-specific bouquet; delivery/pickup terms for Los Angeles were not stated on the pages read. (10) Cute Little Wedding Chapel also runs a $14 Valentine's Day ceremony special (one day a year); not used. (11) Ceremony facts for the county: the Ceremonies page says ceremonies are done at all RR/CC offices, while the Branch Office Locations page lists specific weekdays per office (e.g. Beverly Hills Wed/Fri, Van Nuys Wed/Fri, East LA Fri); book through the county's system and check the office/day."
+}

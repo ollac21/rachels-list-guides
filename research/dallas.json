@@ -1,0 +1,396 @@
+{
+ "city": "dallas",
+ "date_read": "2026-10-28",
+ "courthouse": {
+  "office": "Dallas County Clerk (Vital Records Division, marriage licenses); ceremonies are performed by Dallas County Justice of the Peace courts",
+  "official_pages": [
+   {
+    "url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+    "title": "County Clerk | Vital Records Division - Marriage License"
+   },
+   {
+    "url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+    "title": "Vital Records Division - Frequently Asked Questions"
+   },
+   {
+    "url": "https://www.dallascounty.org/government/county-clerk/vital-records/fees-payment.php",
+    "title": "Vital Records Fees & Payment Information"
+   },
+   {
+    "url": "https://www.dallascounty.org/government/jpcourts/2-2/weddings.php",
+    "title": "Justice of the Peace 2-2 (Mesquite) - Wedding Ceremonies"
+   },
+   {
+    "url": "https://www.dallascounty.org/government/jpcourts/3-1/wedding-ceremony-information.php",
+    "title": "Justice of the Peace 3-1 (North Dallas) - Wedding Ceremony Information"
+   },
+   {
+    "url": "https://www.dallascounty.org/government/jpcourts/5-1/marriage.php",
+    "title": "Justice of the Peace 5-1 - Marriage Licenses & Marriage Ceremonies"
+   },
+   {
+    "url": "https://www.dallascounty.org/government/jpcourts/3-2/wedding-ceremonies-marriage-license-information.php",
+    "title": "Justice of the Peace 3-2 - Wedding Ceremonies & Marriage License Information"
+   }
+  ],
+  "facts": [
+   {
+    "key": "license_fee",
+    "label": "Marriage license fee",
+    "display": "$81",
+    "amount": 81,
+    "quote": "The cost of a marriage license is $81.00.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+    "date_read": "2026-10-28",
+    "note": "The Clerk's fee schedule page (fees-payment.php) still prints $80.00 under 'Filing Fees Effective January 1, 2014'; the FAQ page and the JP 5-1 page both print $81.00."
+   },
+   {
+    "key": "ceremony_fee",
+    "label": "Civil ceremony at a Dallas County courthouse (JP 2-2, Mesquite, weekday by appointment)",
+    "display": "$80 CASH ONLY - By appointment",
+    "amount": 80,
+    "quote": "Monday thru Friday from 10:30a-3:30p: $80 CASH ONLY - By appointment",
+    "source_url": "https://www.dallascounty.org/government/jpcourts/2-2/weddings.php",
+    "date_read": "2026-10-28",
+    "note": "The same page prints '$100 CASH ONLY - Walk-in' on the next line. Fees are set court by court. Other Dallas County JP courts print different fees (see the extra facts: JP 5-1 $60, JP 3-1 $150)."
+   },
+   {
+    "key": "waiting_period",
+    "label": "Waiting period",
+    "display": "72 hours after the license is issued (a district judge can waive it)",
+    "quote": "After you have purchased your marriage license, state law requires 72-hours before the ceremony takes place to get married, unless you obtain a waiver from a district judge.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "validity",
+    "label": "How long the license is valid",
+    "display": "90 days from the day it is issued",
+    "quote": "A marriage license expires 90 days after the date the license is issued.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "id_needed",
+    "label": "ID you bring",
+    "display": "Both of you: valid government-issued photo ID (driver's license, passport, military ID or ID card) and your Social Security number",
+    "quote": "Both persons must be present and provide: Valid government-issued photo ID. Acceptable forms of ID include: Driver's license, passport, military ID, or an identification card issued by Texas or another state, the United States or a foreign government",
+    "source_url": "https://www.dallascounty.org/government/jpcourts/3-2/wedding-ceremonies-marriage-license-information.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "How to get the license / book the ceremony",
+    "display": "Fill in the application online first (you get an order number), then both of you go to the County Clerk's office at 500 Elm St., Suite 2100 with that number",
+    "quote": "Marriage license applications must be completed on-line.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Order number needed at the Clerk's office",
+    "display": "Keep the order number from the online application: you need it when you come in",
+    "quote": "Please make note of this order number, because you will need this number for your walk-in with Dallas County.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Both people must be there",
+    "display": "Both parties present to buy the license",
+    "quote": "Both parties will have to be present to purchase a new marriage license.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "County Clerk office address, phone and hours",
+    "display": "500 Elm Street, Suite 2100, Dallas, TX 75202; (214) 653-7099; 8:00 a.m. to 4:30 p.m., Monday to Friday",
+    "quote": "Records Building - 500 Elm Street, Suite 2100, Dallas, TX 75202 Phone: (214) 653-7099 | Fax: (214) 653-7176 Hours: 8:00 a.m. - 4:30 p.m., Monday - Friday",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "How you can pay the license fee",
+    "display": "No personal checks: cash, money order, cashier's check, business check or credit/debit card",
+    "quote": "No personal checks are accepted.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/fees-payment.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Twogether in Texas course: cheaper license and no wait",
+    "display": "Takes $60 off the license fee and waives the 72-hour wait",
+    "quote": "Twogether in Texas reduces your marriage license fee by $60 and waives the 72-hour waiting period.",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/marriage-license.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Social Security number",
+    "display": "Bring your number (the card itself is not required)",
+    "quote": "Social Security number. You are not required to show your social security card.",
+    "source_url": "https://www.dallascounty.org/government/jpcourts/3-2/wedding-ceremonies-marriage-license-information.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Witnesses",
+    "display": "Witnesses are not required; guests are welcome (JP 3-2 courtroom)",
+    "quote": "While witnesses are not required, you are welcome to have guests.",
+    "source_url": "https://www.dallascounty.org/government/jpcourts/3-2/wedding-ceremonies-marriage-license-information.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Certified copy of your marriage license",
+    "display": "$10.00 per search and/or certified copy",
+    "amount": 10,
+    "quote": "Marriage License (Search and/or Certified Copy) $10.00",
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/fees-payment.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Other courthouse ceremony fee: JP 3-1 (North Dallas Government Center, LBJ Freeway)",
+    "display": "$150 weekday appointment, up to 15 guests; $150 walk-in, up to 5 guests",
+    "amount": 150,
+    "quote": "Appointments - Monday-Friday 9:00am – 3:30pm -- $150 fee (Maximum 15 guests)",
+    "source_url": "https://www.dallascounty.org/government/jpcourts/3-1/wedding-ceremony-information.php",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Other courthouse ceremony fee: JP 5-1 (page still lists the old East Dallas address)",
+    "display": "$60 weekday 10:30a to 3:30p, cash only, appointment required",
+    "amount": 60,
+    "quote": "Monday thru Friday from 10:30a-3:30p: $60 CASH ONLY",
+    "source_url": "https://www.dallascounty.org/government/jpcourts/5-1/marriage.php",
+    "date_read": "2026-10-28",
+    "note": "The page header still gives 3443 St. Francis Avenue, which the Dallas County banner says is closed (East Dallas Government Center moved to 9731 Lake June Road). Call (214) 943-6980 to confirm before relying on it."
+   }
+  ],
+  "steps": [
+   "Fill in the Dallas County marriage license application online and write down the order number it gives you.",
+   "Both of you go to the County Clerk's Records Building (500 Elm St., Suite 2100) with photo ID and your Social Security numbers, and pay the $81 license fee (no personal checks).",
+   "Wait 72 hours after the license is issued before the ceremony, unless a district judge waives it or you hold a Twogether in Texas certificate.",
+   "Book a ceremony with a Dallas County Justice of the Peace court; each court sets its own fee (JP 5-1 $60, JP 2-2 $80 by appointment, JP 3-1 $150 on its pages).",
+   "Hold the ceremony within 90 days of the day the license was issued, or the license expires."
+  ],
+  "left_out": [
+   "A single county-wide courthouse ceremony fee: the County Clerk does not perform ceremonies; each Justice of the Peace court prints its own fee (or none) on its own page.",
+   "JP 3-2 (Judge Seider) regular weekday ceremony fee: its page prints only '$400 ceremony fee' for holiday and holiday-weekend dates (dated July and August of an earlier year) and says other times are 'fee to be determined'.",
+   "Whether an appointment is required at the Clerk's office: the FAQ says a marriage license appointment must be scheduled, the marriage-license page speaks of a 'walk-in' with the order number, and the JP 3-1 page says no appointment is required, so no single fact is given.",
+   "A residency rule: the JP 3-2 page says 'Only Dallas County residents, based on the address shown on applicants' state issued identification', but the County Clerk's own pages do not state it (see notes).",
+   "A 'courthouse ceremony' room inside the County Clerk's Records Building: no official page states one."
+  ]
+ },
+ "venues": [
+  {
+   "name": "City of Dallas park (Dallas Park and Recreation outdoor wedding reservation)",
+   "url": "https://dallasparks.org/374/Outdoor-Weddings",
+   "area": "Dallas (any City of Dallas park; the department lists Reverchon, Samuell Grand, Kidd Springs, Lake Cliff, Pike and Central Square as preferred sites)",
+   "guests": "limited to 50 people (Terms and Conditions PDF)",
+   "max_guests": 50,
+   "price_display": "$25 per hour",
+   "amount": 25,
+   "price_for": "outdoor wedding reservation in a Dallas park, per hour, two-hour minimum (so at least $50), any day of the week; the page prints the hourly rate, not a package",
+   "includes": "reserved wedding area in a city park for 2 to 3 hours; per the Terms and Conditions PDF: no electricity or water, maximum 20 chairs, no alcohol",
+   "quote": "The cost is $25 per hour with a two hour minimum.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "guest_limit_text": "Reservations for outdoor weddings are limited to 50 people. (Dallas Park and Recreation, Outdoor Weddings and Receptions Terms and Conditions, PDF https://dallasparks.org/DocumentCenter/View/8424/Outdoor-Weddings-Condition-of-Rental, revised January 2020; saved as raw/dallas/dallasparks_condition.pdf; the same department's site sheet gives Central Square Park a 20 guest limit)"
+  },
+  {
+   "name": "Skip The Courthouse Wedding Chapel - 'Tie The Knot'",
+   "url": "https://www.skipthecourthouse.com/",
+   "area": "Arlington (2102 Roosevelt Drive, Suite A), between Dallas and Fort Worth",
+   "guests": "Bride & Groom Only Ceremony (section heading: 'Up to 20 Guest'; the chapel's maximum is 20 participants)",
+   "max_guests": 2,
+   "price_display": "$250",
+   "amount": 250,
+   "price_for": "'Tie The Knot' package: romantic bride and groom only ceremony, 30 minutes; bring your own officiant or the chapel gives a resource",
+   "includes": "romantic bride and groom only ceremony, wedding backdrop, bridal bouquet use, 30 minutes",
+   "quote": "Elopement Weddings & Vow Renewals - Up to 20 Guest \"Tie The Knot\" Package $250",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Blush Event Garden - 'Essential' sign-and-go elopement",
+   "url": "https://www.blusheventgarden.com/elopements",
+   "area": "Addison, Downtown Dallas, North Plano and Lake Highlands (four locations; Addison is 4043 East Trinity Mills Rd)",
+   "guests": "Bride and Groom Only Ceremony (up to 2 guests allowed)",
+   "max_guests": 2,
+   "price_display": "$250.00",
+   "amount": 250,
+   "price_for": "'Essential' elopement package, Monday-Friday anytime, includes 30 min of venue access (holiday pricing may apply on select dates)",
+   "includes": "30 min exclusive access to the garden-themed venue, in-house licensed officiant (or bring your own; ceremony up to 15 min), pre-written ceremony scripts, raised stage platform, bluetooth sound system, cleaning, free parking, WiFi",
+   "quote": "Pricing: (includes 30 min of venue access) Monday-Friday anytime: $250.00",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "guests_quote": {
+    "quote": "Bride and Groom Only Ceremony (up to 2 guests allowed)",
+    "source_url": "https://www.blusheventgarden.com/elopements"
+   }
+  },
+  {
+   "name": "Blush Event Garden - 'Classic' elopement",
+   "url": "https://www.blusheventgarden.com/elopements",
+   "area": "Addison, Downtown Dallas, North Plano and Lake Highlands (four locations; Addison is 4043 East Trinity Mills Rd)",
+   "guests": "ceremony seating setup for up to 20 guests",
+   "max_guests": 20,
+   "price_display": "$450.00",
+   "amount": 450,
+   "price_for": "'Classic' elopement package, Monday-Friday anytime, includes 1 hour of venue access (holiday pricing may apply on select dates)",
+   "includes": "1 hour exclusive access, pre-decorated ceremony aisle and background (florals and candles), in-house licensed officiant (or bring your own; ceremony up to 30 min), clear chiavari chairs for up to 20 guests, bluetooth sound system, cleaning, free parking, WiFi",
+   "quote": "Pricing: (includes 1 hours of venue access) Monday-Friday anytime: $450.00",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "guests_quote": {
+    "quote": "Guest ceremony seating setup for up to 20 guests (clear chiavari chairs)",
+    "source_url": "https://www.blusheventgarden.com/elopements"
+   }
+  },
+  {
+   "name": "Skip The Courthouse Wedding Chapel - 'She Said Yes'",
+   "url": "https://www.skipthecourthouse.com/",
+   "area": "Arlington (2102 Roosevelt Drive, Suite A), between Dallas and Fort Worth",
+   "guests": "Up to 10 Guest",
+   "max_guests": 10,
+   "price_display": "$550",
+   "amount": 550,
+   "price_for": "'She Said Yes' package: intimate wedding ceremony in the chapel with family and friends",
+   "includes": "white Chiavari chairs, tables, white table linens, wedding backdrop, clear centerpieces with candles",
+   "quote": "\"She Said Yes\" Package $550 Intimate wedding ceremony in our charming wedding chapel with family and friends. White Chiavari Chairs Tables White Table Linens Wedding Backdrop Clear Centerpieces with Candles Up to 10 Guest",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Bouré Event Studio",
+   "url": "https://boureeventstudio.com/packages/",
+   "area": "Plano",
+   "guests": "75 guests comfortably seated (capacity answer on the venue's FAQ page)",
+   "max_guests": 75,
+   "price_display": "Starting at $600 for a 4-hour event",
+   "amount": 600,
+   "price_for": "venue rental, Monday to Thursday, starting price for a 4-hour event ($150 per hour with a 4-hour minimum); the site lists micro-weddings among its events",
+   "includes": "event room and lounge, Bluetooth speaker system, up to 10 round tables, up to 80 Chiavari chairs, Wi-Fi, day-of venue supervisor, cleaning and break-down",
+   "quote": "Monday – Thursday: Starting at $600 for a 4-hour event",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "capacity_quote": {
+    "quote": "75 guests comfortably seated",
+    "source_url": "https://boureeventstudio.com/faqs/"
+   }
+  },
+  {
+   "name": "Flourish Events Dallas - 'Silver' micro wedding, pavilion ceremony",
+   "url": "https://www.flourisheventsdallas.com",
+   "area": "Mesquite (316 West College Street)",
+   "guests": "Up to 40 guests",
+   "max_guests": 40,
+   "price_display": "$600",
+   "amount": 600,
+   "price_for": "pavilion ceremony, 2 hours, part of the 'Micro Wedding / Party Package', available Sunday - Friday (the same page prices a small-ballroom micro reception separately: Sun-Thu $1,000)",
+   "includes": "40 white chairs, indoor restrooms (bridal suite $150 and groom's room $50 are options)",
+   "quote": "Ceremony: $600 (2 hours) Includes: Up to 40 guests, 40 white chairs, indoor restrooms",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Drive Up & Wed - 'Sweet & Simple'",
+   "url": "https://www.driveupandwed.com/",
+   "area": "Hurst (658 Grapevine Hwy), Tarrant County",
+   "guests": "Seating for up to 6 Guests",
+   "max_guests": 6,
+   "price_display": "$650",
+   "amount": 650,
+   "price_for": "'Sweet & Simple' chapel ceremony package, thirty minute appointment",
+   "includes": "everything in 'Kiss & Go' (licensed officiant, decorated ceremony space), photography, fresh floral bridal bouquet",
+   "quote": "Photography Fresh Floral Bridal Bouquet Seating for up to 6 Guests Thirty Minute Appointment $650",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Heirloom Hideaway & Arboreum - 'Just the 2 of You' (Stone House)",
+   "url": "https://theheirloomhideaway.com/%22walk-in-%26-wed%22-elopement",
+   "area": "Fort Worth (5101 Oak Mill Drive)",
+   "guests": "Couple Only - No Guests",
+   "max_guests": 2,
+   "price_display": "$675",
+   "amount": 675,
+   "price_for": "60-minute elopement ceremony for the two of you; the packages overview page says 'Available Monday - Thursday $675'",
+   "includes": "'Walk-in & Wed' elopement package at the Stone House (the page lists no detailed inclusions here)",
+   "quote": "60-min Pkg / Couple Only - No Guests / Price $675",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Heirloom Hideaway & Arboreum - '2+12+CAKE=JOY' (Stone House)",
+   "url": "https://theheirloomhideaway.com/%22walk-in-%26-wed%22-elopement",
+   "area": "Fort Worth (5101 Oak Mill Drive)",
+   "guests": "12 Guests",
+   "max_guests": 12,
+   "price_display": "Prices start at $1100",
+   "amount": 1100,
+   "price_for": "2-hour elopement package for you and up to 12 guests, starting price (prices effective for new bookings as of January 2026)",
+   "includes": "time for a toast, cake, dancing and photos with up to 12 guests",
+   "quote": "2-Hrs / 12 Guests / Prices start at $1100",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Drive Up & Wed - 'Intimate Ceremony' (weekday micro wedding)",
+   "url": "https://www.driveupandwed.com/",
+   "area": "Hurst (658 Grapevine Hwy), Tarrant County",
+   "guests": "Celebration for up to 45 Guests Monday-Thursday",
+   "max_guests": 45,
+   "price_display": "$1,800",
+   "amount": 1800,
+   "price_for": "'Intimate Ceremony' weekday wedding package, 3 hour appointment",
+   "includes": "licensed officiant, two hours of photography, fresh flower bridal bouquet, two single tier cakes, full use of the ceremony and reception venue, in-house catering available",
+   "quote": "Celebration for up to 45 Guests Monday-Thursday Licensed Wedding Officiant Two Hours of Photography Fresh Flower Bridal Bouquet Two Single Tier Cakes Full use of the ceremony & reception venue 3 Hour Appointment In-House Catering Available $1,800",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "The Penrose House - DIY elopement",
+   "url": "https://thepenrosehouse.com/pricing",
+   "area": "Princeton (Collin County), about 45 minutes from downtown Dallas",
+   "guests": "a small number of your closest guests (elopement page); the $6,500 wedding-weekend tier is for 'ceremony for up to 50 guests'",
+   "max_guests": null,
+   "price_display": "$2,500",
+   "amount": 2500,
+   "price_for": "'DIY elopement' package, starting price (the same sentence prices the DIY wedding weekend at $6,500 and the all-inclusive micro wedding at $10,000)",
+   "includes": "private ceremony space on the estate, overnight suite for the two of you, resort amenities (pool, hot tub, lounge), bridal get-ready room",
+   "quote": "Packages at The Penrose House start at $2,500 for a DIY elopement, $6,500 for a DIY wedding weekend (2 nights, sleeps 28, ceremony for up to 50 guests) and $10,000 for the all-inclusive micro wedding.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  }
+ ],
+ "photographer": {
+  "name": "Shelly Voss Photography (McKinney, Texas)",
+  "url": "https://www.shellyvossphotography.com/wedding-photography-packages",
+  "package": "Courthouse Elopement: courthouse ceremony coverage, priced by the hour",
+  "hours": 1,
+  "price_display": "$400/hour with a 1-hour minimum",
+  "amount": 400,
+  "quote": "Courthouse ceremonies are $400/hour with a 1-hour minimum.",
+  "includes": "the page prints only the hourly rate for courthouse coverage (no deliverables listed there); a travel fee of $2 per mile applies if the courthouse is over 50 miles from McKinney, TX",
+  "date_read": "2026-10-28"
+ },
+ "florist": {
+  "name": "RainFlorist Designs (Frisco, Texas)",
+  "url": "https://www.rainfloristdesigns.com",
+  "item": "Bridal bouquet (the page says its wedding flower prices are 'generally' as listed; it also lists backyard elopements among its services)",
+  "price_display": "$125-$350",
+  "amount": null,
+  "amount_low": 125,
+  "amount_high": 350,
+  "quote": "-Bridal bouquet- $125-$350 ($200 average)",
+  "date_read": "2026-10-28",
+  "price_note": "A range, not a 'starting at' price, so amount is left null per the brief; the page also prints '$200 average', which is not used. The page says it delivers throughout the DFW metroplex and gives Frisco, TX as its address."
+ },
+ "notes": "SOURCES AND METHOD: every quote was copied from a page downloaded with curl on 2026-10-28 (raw pages in .cache/raw/dallas/) and verify_quotes.py reports problems: 0. The web-search budget ran out part-way, so later venue, photographer and florist leads came from Zola's Dallas-area listing pages (leads only) and each business's own site was then fetched directly. Search-engine summaries were not trusted: one said Drive Up & Wed's 'Kiss & Go' was $975 for ten minutes, but its live page prints $250 for fifteen minutes; one said JP 3-1 weddings cost $100, but its page prints $150. Only curl-verified values are used. COURTHOUSE: (1) The Dallas County Clerk issues licenses; it does not marry people. Ceremonies are done by Justice of the Peace courts, and each court prints its own fee (JP 5-1 $60, JP 2-2 $80 by appointment / $100 walk-in, JP 3-1 $150), so the guide should say 'about $60 to $150, depending on the court' and name the court. (2) License fee: the FAQ page and the JP 5-1 page print $81.00; the Clerk's fee schedule page still prints 'Marriage License without Certificate $80.00' under 'Filing Fees Effective January 1, 2014'. $81 is used. (3) Residency conflict: the JP 3-2 page says 'RESIDENCY REQUIREMENTS - Only Dallas County residents, based on the address shown on applicants’ state issued identification.' for the Dallas County Clerk; the Clerk's own marriage-license, FAQ and fee pages say nothing about residency, and the same JP 3-2 page says Collin County has none. Not stated as a fact; the coordinator should phone the Clerk, (214) 653-7099, before writing 'non-residents welcome' or 'residents only'. (4) Appointment conflict: the FAQ says 'A marriage license application must be completed online and a marriage license appointment must be scheduled'; the marriage-license page talks of a 'walk-in' using the order number; the JP 3-1 page says 'No appointment is required but marriage license application must be completed online' and also says 'Dallas County now has three satellite locations to receive your marriage license! Appointments at the three satellite locations are released 30 days in advance.' (5) The Clerk's pages say 'Effective October 5th, the Vital Records Division will be open on Mondays and Fridays from 7:30 AM to 4:30 PM' with no year given; the standard hours line is 8:00 a.m. to 4:30 p.m., Monday to Friday. (6) JP 5-1's page still lists 3443 St. Francis Avenue, which the county banner says is closed (moved to 9731 Lake June Road), so its $60 fee may be stale. JP 3-2 (Judge Seider) prints no regular weekday fee, only '$400 ceremony fee' on holiday dates from an earlier year. (7) The Dallas Parks guest limit (50 people) and chair limit come from the department's Terms and Conditions PDF (revised January 2020; saved as raw/dallas/dallasparks_condition.pdf); verify_quotes.py cannot read that URL as a PDF, so that line is stored as guest_limit_text, not as a checked quote. The $25 per hour is on the HTML page and is checked. $25 per hour with a two-hour minimum means at least $50, but the page does not print $50. VENUES: 12 entries from 8 businesses (Blush Event Garden, Skip The Courthouse, Drive Up & Wed and Heirloom Hideaway have 2 entries each) sorted by amount. Bouré Event Studio's guest count is on its FAQ page (checked quote in capacity_quote); its $600 is a room rental for a 4-hour event, Monday to Thursday, not a wedding package. Soma Winery (Fort Worth, https://www.somavino.com) was left out: its page prints 'wedding and event packages beginning at $500 and have capacity for up to 100 guests' but names no small, micro, elopement or weekday package. Penrose House's elopement price page does not give a guest number (the $6,500 tier says 'up to 50 guests'), so max_guests is null; Princeton is about 45 minutes from downtown Dallas. Heirloom Hideaway & Arboreum: the page says prices are 'effective for new bookings as of January 2026'; the $675 couple-only price is marked 'Available Monday - Thursday' on its packages overview page. Blush Event Garden has four locations (Addison, Downtown Dallas, North Plano, Lake Highlands) and says 'Holiday pricing may apply on select dates'. Other pages looked at but not used because no small-group price and guest count were printed together: Little Wren Weddings (Rockwall), Chapel at Chestnut Square (McKinney), Hotel Crescent Court, Dallas Arboretum (rates are in an Issuu guide and its ceremony pages returned 404 to curl), Azalea Weddings, Carlisle Room ($1,995 weekday, no guest count), Reflections Venue & Gardens (Plano, Mon-Thu $2,000, no guest count), Dallas Woman's Forum (Mon-Thu $1,995, seated capacity 100). Blush Event Garden's Signature elopement ($750, 2 hours, reception tables for up to 20) and Flourish Events Dallas's Sun-Thu small-ballroom micro reception ($1,000) are also on their pages but not listed. PHOTOGRAPHER: Shelly Voss (McKinney) prints $400/hour with a 1-hour minimum for courthouse ceremonies inside an estimator form; the text is in the HTML. Alternatives seen on their own sites: The Grace Pictures (Dallas/Houston) 'Courthouse Wedding / Marriage Civil begin at $500' (https://www.thegrace.pictures/dallas-houston-wedding-photographer-videographer-pricing/); The Velvet Frame (Dallas) 'COURTHOUSE ELOPEMENT, starting at $1,499 (+tax)' (https://thevelvetframe.co/micros-and-elopements-or-the-velvet-frame). FLORIST: RainFlorist Designs (Frisco) prints a range, '$125-$350 ($200 average)', so amount is null and amount_low / amount_high carry the range per the brief. Alternatives: Petite Petal (serves Dallas, McKinney, Frisco, Plano) 'Simple Toss Bouquet $50–$60' (https://www.petitepetalflowers.com/pricing); J Blooms 'Bridal bouquet $275 - $375'; Best Buds Flowers 'Brides Bouquet: $300-450+'. Etsy was not used."
+}

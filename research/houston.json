@@ -1,0 +1,350 @@
+{
+ "city": "houston",
+ "date_read": "2026-10-28",
+ "courthouse": {
+  "office": "Harris County Clerk (marriage licenses); Harris County Justice of the Peace, Precinct 1, Place 1 (courthouse weddings)",
+  "official_pages": [
+   {
+    "url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "title": "Harris County Clerk - Personal Records: Marriage License, FAQ and fees"
+   },
+   {
+    "url": "https://jp.hctx.net/1-1/Documents/Wedding%20Information%20Document.pdf",
+    "title": "Harris County JP Precinct 1, Place 1 - Courthouse Wedding Information (fee sheet)"
+   }
+  ],
+  "facts": [
+   {
+    "key": "license_fee",
+    "label": "Marriage license fee",
+    "display": "$81",
+    "amount": 81,
+    "quote": "Valid I.D. is required and the fee is $81.00.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Marriage license fee if neither applicant shows Texas residency on ID",
+    "display": "$181",
+    "amount": 181,
+    "quote": "Without proof of state residency on a valid form of identification from at least one applicant the fee will be $181.00.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_fee",
+    "label": "Civil ceremony at a Harris County courthouse (Justice of the Peace Precinct 1, Place 1, weekday Mon-Thu slots; cash only)",
+    "display": "$100",
+    "amount": 100,
+    "quote": "MON., TUES., & THURS. 11:00 AM – 12:00 PM $100.00",
+    "source_url": "https://jp.hctx.net/1-1/Documents/Wedding%20Information%20Document.pdf",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Same JP court: Saturday ceremony (when available)",
+    "display": "$200",
+    "amount": 200,
+    "quote": "SATURDAY 10:00 AM – 1:00 PM $200.00 (WHEN AVAILABLE)",
+    "source_url": "https://jp.hctx.net/1-1/Documents/Wedding%20Information%20Document.pdf",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Same JP court: what to bring and how to pay",
+    "display": "License + cash",
+    "quote": "You must bring MARRIAGE LICENSE & SERVICE FEE (See above, CASH only) to office.",
+    "source_url": "https://jp.hctx.net/1-1/Documents/Wedding%20Information%20Document.pdf",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Same JP court: appointments and walk-ins",
+    "display": "By appointment; walk-ins depend on the judge",
+    "quote": "Weddings are scheduled accordingly by appointments, but walk-ins are welcome based on Judge’s availability.",
+    "source_url": "https://jp.hctx.net/1-1/Documents/Wedding%20Information%20Document.pdf",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Same JP court: witnesses and rings",
+    "display": "Not required",
+    "quote": "Rings are not required but are OPTIONAL.",
+    "source_url": "https://jp.hctx.net/1-1/Documents/Wedding%20Information%20Document.pdf",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "waiting_period",
+    "label": "Waiting period",
+    "display": "72 hours",
+    "quote": "There is a 72 hour waiting period and the license should be signed by the officiant no more than 90 days from the date of issuance.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "validity",
+    "label": "How long the license is valid",
+    "display": "90 days from the date it is issued",
+    "quote": "There is a 72 hour waiting period and the license should be signed by the officiant no more than 90 days from the date of issuance.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Waiting period waived for active military",
+    "display": "Waived with active military ID",
+    "quote": "The 72 hour waiting period is automatically waived for active military personnel; however you will need to present your active military ID upon the purchase of the marriage license.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Premarital course certificate (Twogether in Texas): fee discount and no waiting period",
+    "display": "Up to $60 off and no 72-hour wait",
+    "quote": "The certificate should be presented at the time of applying for a marriage license to receive: • Up to $60 off their marriage license fee • Waiving the 72-hour waiting period",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "id_needed",
+    "label": "ID you bring",
+    "display": "Valid government photo ID (driver's license, DPS ID, passport, resident alien card)",
+    "quote": "You must have a valid ID such as a driver's license, ID card issued by DPS, valid passport, resident alien card, or other U.S. government issued identification.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "How to get the license",
+    "display": "Both apply in person at any of 11 Harris County Clerk locations",
+    "quote": "Both applicants can apply for a Marriage License in person at one of our 11 locations",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Downtown Personal Records office: address and hours",
+    "display": "201 Caroline, Suite 330, Mon-Fri 8:00 AM-4:30 PM",
+    "quote": "Harris County Civil Courthouse 201 Caroline, Suite 330 Houston, TX 77002 (713) 274-8686 Hours of Operation Monday – Friday 8:00 AM – 4:30 PM",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Witnesses at the clerk's office",
+    "display": "Not required",
+    "quote": "Witnesses are not required to purchase the Marriage License nor are they required to attend the marriage ceremony.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "If either person was divorced",
+    "display": "Divorced at least 30 days",
+    "quote": "Both applicants must have been divorced 30 days before applying for a Marriage License.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "After the ceremony: return the signed license",
+    "display": "Return to the Clerk for recording",
+    "quote": "Licenses should be returned to our office for recording, after the ceremony has been performed.",
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-28"
+   }
+  ],
+  "steps": [
+   "Both of you apply in person at a Harris County Clerk office with valid photo ID (downtown: 201 Caroline, Suite 330, Mon-Fri 8:00 AM-4:30 PM); the license costs $81, or $181 if neither ID shows Texas residency.",
+   "Wait 72 hours after the license is issued before the ceremony (waived for active military; a Twogether in Texas premarital-course certificate also waives it and takes up to $60 off the fee).",
+   "Book a courthouse ceremony with a Harris County Justice of the Peace; Precinct 1, Place 1 charges $100 on weekday slots (cash only), $200 on Saturdays when available, and takes appointments or walk-ins at the judge's availability. Bring the license and the cash.",
+   "Have the officiant sign within 90 days of the issue date, then return the signed license to the Clerk for recording (in person or by mail)."
+  ],
+  "left_out": [
+   "Payment methods for the marriage license itself: the Clerk page names cash / check / credit card only for assumed-name filings, not for marriage licenses.",
+   "Whether the Clerk needs an appointment for a marriage license: the page does not say; it says to apply in person at one of 11 locations.",
+   "A courthouse ceremony fee at the Clerk's office: the Clerk issues licenses only; ceremonies at courthouses are by Justices of the Peace, and only JP Precinct 1, Place 1 (Judge Eric William Carter) has a fee sheet I could read. Other JP precincts set their own fees; no official page found for them.",
+   "Date of the JP Precinct 1, Place 1 fee sheet: the PDF is undated; the JP site's own Weddings page (linked as ../info/weddings.htm) would not load from curl.",
+   "Cost of a certified copy of a ceremonial marriage license: the page's $6.00 certified-copy figure sits under the informal-marriage declaration, so it is not used.",
+   "Residency requirement wording for non-Texans: the page only gives the $181 fee when no applicant shows Texas residency; it states no other rule."
+  ]
+ },
+ "venues": [
+  {
+   "name": "The Courthouse Wedding Chapel",
+   "url": "https://bookmyweddingnow.com/",
+   "area": "North Houston (340 N Sam Houston Pkwy E, 77060)",
+   "guests": "2 guests only",
+   "max_guests": 2,
+   "price_display": "$197",
+   "amount": 197,
+   "price_for": "Weddings by The Fireplace, weekday price (weekend $297)",
+   "includes": "authorized wedding officiant, fireplace setting, bride bouquet & groom boutonniere, chapel music, marriage license filing, keepsake certificate",
+   "quote": "Weddings by The Fireplace $197 Weekend : $297 Guests : 2 guests only Authorized wedding officiant Fireplace setting Bride bouquet & groom boutonniere Chapel music Marriage license filing Keepsake certificate",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "The Middleton Venue",
+   "url": "https://www.middletonvenue.com/about-1-1",
+   "area": "Old Katy",
+   "guests": "seating for up to 40 guests",
+   "max_guests": 40,
+   "price_display": "$380",
+   "amount": 380,
+   "price_for": "Let's Elope, 1 hour ($760 for 2 hours)",
+   "includes": "1 hour of venue rental, photographer (40 images), licensed officiant, event coordinator, decorated venue, cake-cutting supplies",
+   "quote": "Let's Elope $380 for 1 hour, $760 For 2 hours What's Included: 1 hour of venue rental, photographer (40 images), licensed officiant, event coordinator and a fully decorated venue with white artificial flowers. You’ll also enjoy cake cutting supplies,( cake is not included), first dance and cake cutting photos, indoor and outdoor pictures, a personalized playlist for your entry songs, and seating for up to 40 guests.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "The Makenzie House (Little Glass Chapel)",
+   "url": "https://themakenziehouse.com/courthouse-wedding-houston",
+   "area": "Missouri City / Stafford (southwest of Houston)",
+   "guests": "up to 20 guests",
+   "max_guests": 20,
+   "price_display": "$499",
+   "amount": 499,
+   "price_for": "The Hourglass \"I Do\" package, 1 hour",
+   "includes": "1 hour rental time, Bluetooth speaker, licensed officiant provided, floral arch",
+   "quote": "THE HOURGLASS \"I DO\" $499 1 hour rental time Celebrate with up to 20 guests Bluetooth Speaker Licensed officiant provided Floral Arch",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Houston Botanic Garden (Global Collection Garden micro wedding)",
+   "url": "https://hbg.org/wp-content/uploads/2026/01/2026-Private-Rentals-Guide.pdf",
+   "area": "Houston (Botanic Lane, 77017)",
+   "guests": "15 admission tickets included, standing room only",
+   "max_guests": 15,
+   "price_display": "$500",
+   "amount": 500,
+   "price_for": "Global Collection Garden micro wedding, 1-hour rental, plus a $200 refundable damage deposit",
+   "includes": "15 admission tickets, free parking, permission to take photos anywhere in the Garden; no reception, food, drinks or decor",
+   "quote": "1-hour rental for $500 with a $200 refundable damage deposit",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Verandas Events",
+   "url": "https://verandasevents.com/pricing.html",
+   "area": "Houston Heights / Airline Dr (77022)",
+   "guests": "includes up to 50 guests",
+   "max_guests": 50,
+   "price_display": "$560.00",
+   "amount": 560,
+   "price_for": "Monday-Thursday, 4-hour base rental (+5% processing fee; $100 per added hour)",
+   "includes": "4 hours, cleaning, initial table and chair setup, bathrooms and trash cans; bring your own vendors",
+   "quote": "The base rental rate is for a minimum of 4 hours (includes up to 50 guests). Each additional hour is $150 (billed in whole-hour increments only). A 5% processing fee applies to the total. PRICING DAYS 4 HOURS EVENT ADDITIONAL FEE PER HOUR Mon-Thurs $560.00 $100",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Houston Botanic Garden (Woodland Glade micro wedding)",
+   "url": "https://hbg.org/wp-content/uploads/2026/01/2026-Private-Rentals-Guide.pdf",
+   "area": "Houston (Botanic Lane, 77017)",
+   "guests": "30 admission tickets included",
+   "max_guests": 30,
+   "price_display": "$850",
+   "amount": 850,
+   "price_for": "Woodland Glade micro wedding, 1-hour rental, plus a $200 refundable damage deposit",
+   "includes": "private entrance with 30 admission tickets, free parking, bench seating, floral decorations allowed; available 9AM-4PM; no reception, food, or drinks",
+   "quote": "1-hour rental for $850 with a $200 refundable damage deposit • Private entrance with 30 admission tickets included",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "The Reserve on Cypress Creek",
+   "url": "https://www.thereserveoncypresscreek.com/weddings",
+   "area": "Cypress",
+   "guests": "Up to 30 guests",
+   "max_guests": 30,
+   "price_display": "$1,200",
+   "amount": 1200,
+   "price_for": "2026 Elopement Package, 2-hour rental, 'Starting at' price; available within 30 days of booking",
+   "includes": "seated ceremony, use of property for photos, high-top tables",
+   "quote": "2026 Elopement Package* Starting at $1,200 2-hour rental Up to 30 guests Seated ceremony Use of property for photos High-top tables included Available within 30 days of booking.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "The Heritage Society (St. John Church, Sam Houston Park)",
+   "url": "https://www.heritagesociety.org/wedding-special-events",
+   "area": "Downtown Houston (Sam Houston Park)",
+   "guests": "Capacity: 65 (includes wedding party)",
+   "max_guests": 65,
+   "price_display": "$1,650",
+   "amount": 1650,
+   "price_for": "1891 St. John Church, 4-hour rental Monday-Friday ($2,750 Sat.-Sun.)",
+   "includes": "one-hour rehearsal the day prior, guest parking; the 4 hours cover decorating, arrival, ceremony, photos and clean-up",
+   "quote": "1891 ST. JOHN CHURCH Capacity: 65 (includes wedding party) Cost: $1,650 (4-hour rental) Mon. - Fri. $2,750 (4-hour rental) Sat. - Sun.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "The Reserve on Cypress Creek",
+   "url": "https://www.thereserveoncypresscreek.com/weddings",
+   "area": "Cypress",
+   "guests": "Up to 50 guests",
+   "max_guests": 50,
+   "price_display": "$2,500",
+   "amount": 2500,
+   "price_for": "2026 Micro Wedding Package, up to 4 hours, 'Starting at' price; available within 60 days of booking",
+   "includes": "seated ceremony, covered cocktail-hour tent, chairs and tables",
+   "quote": "2026 Micro Wedding Package* Starting at $2,500 Up to 4 hours Up to 50 guests Seated ceremony Covered cocktail-hour tent Chairs and tables included",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Silver Sycamore",
+   "url": "https://www.silversycamore.com/affordable-all-inclusive-houston-weddings/",
+   "area": "Pasadena (5111 Pine Ave, east of Houston)",
+   "guests": "20 guests (+$38/guest over 20, max 50)",
+   "max_guests": 50,
+   "price_display": "$3,520",
+   "amount": 3520,
+   "price_for": "Micro Wedding package, Monday-Thursday ($4,620 Fri-Sun); 2.5-hour wedding and reception; sales tax and a 20% service fee are added",
+   "includes": "chapel or gazebo ceremony, day-of coordinator, rehearsal, reception in the Saloon, dinner, cake, setup and cleanup",
+   "quote": "Micro Wedding $3,520 Mon-Thu - $4,620 Fri-Sun - +$38/guest over 20 (max 50) A 21/2-hour wedding & reception for 20 guests",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "County Line Event Center",
+   "url": "https://www.countylineeventcenter.com/",
+   "area": "Pearland",
+   "guests": "all-inclusive packages for up to 50 guests",
+   "max_guests": 50,
+   "price_display": "$8,900",
+   "amount": 8900,
+   "price_for": "all-inclusive wedding package, 'starting at' price (venue rental only starts at $5,000 for weekday dates)",
+   "includes": "all-inclusive packages include classic decor options, dedicated wedding planners, and catering",
+   "quote": "Venue rental only starts at $5,000 for weekday dates, with all-inclusive packages starting at $8,900 for up to 50 guests.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  }
+ ],
+ "photographer": {
+  "name": "Brit Fine Photography",
+  "url": "https://www.britfinephotography.com/services-7",
+  "package": "Micro Weddings (the page says: mini/micro/elopement wedding), starting price",
+  "hours": 5,
+  "price_display": "$1,500",
+  "amount": 1500,
+  "quote": "4 Micro Weddings Ranging pricing starting $1,500 for 5 hours to $2,800 for 8 hours",
+  "includes": "5 hours of shooting time total, split as the couple wishes; the page does not mention a courthouse or a 1-hour session",
+  "date_read": "2026-10-28"
+ },
+ "florist": {
+  "name": "KVITKAFA (Houston, 15015 Westheimer Rd, Unit J)",
+  "url": "https://www.kvitkafa.com/bridal-bouquets",
+  "item": "Bridal Bouquet \"Burgundy\" (listed as Pre-Order; the cheapest listed bouquet, $130, is marked Out of Stock)",
+  "price_display": "$180.00",
+  "amount": 180,
+  "quote": "Bridal Bouquet \"Burgundy\" Price $180.00 Pre-Order",
+  "date_read": "2026-10-28"
+ },
+ "notes": "Search budget ran out mid-run, so photographer and florist came from direct site probes, not searches. PHOTOGRAPHER: no Houston courthouse/city-hall 1-hour price found; Brit Fine Photography (Greater Houston, recommended by The Middleton Venue) prints micro/elopement from $1,500 for 5 hours - weak fit for a 1-hour courthouse session; a better one needs a new search. FLORIST: KVITKAFA is a Houston florist (store 15015 Westheimer Rd, Unit J, 77082); its listed bridal bouquets run $130-$230, the $130 one is Out of Stock. Lily and Olive (lilyandolive.com) was rejected: its Opal bridal bouquet at $65 is a faux-flower RENTAL and shows Sold out, fresh bouquets need a $495 minimum or a rental add-on. COURTHOUSE: license fee sources are the Clerk's own page (PersonalRecords.aspx; FAQ and main text both say $81.00, plus $181.00 with no proof of Texas residency). A 2023 press release and some blogs quoted $74 / $72 / $81: use the page, not them. The only courthouse-ceremony fee on an official page is JP Precinct 1 Place 1 (Judge Eric William Carter), $100 weekday / $200 Saturday, cash only; Harris County JPs set their own fees, so do not write it as 'the courthouse fee'. The PDF is undated. VENUES: two chapels found by domain probing (themakenziehouse.com, bookmyweddingnow.com) are the cheapest. The Makenzie House page also prints a Quick 'I Do' at $350 (its FAQ allows up to 5 guests; the page's cards are flattened in curl text, so the 30-minute detail is probably but not surely that package's) - left out of the list because price and guest count are in different sentences. Verandas Events' home page also lists Quick 'I do' $399 Elopements with no hours or guest count - left out; its pricing page text is internally inconsistent ($150 per added hour in the sentence, $100 in the Mon-Thu table row), the quote keeps both. The Reserve on Cypress Creek appears twice (elopement and micro package); Houston Botanic Garden appears twice (two different garden spaces, same 2026 PDF, 9 MB: hbg.org served it slowly during verification, so a re-run of verify_quotes may be needed if it times out; the Global Collection quote has the price line only because its guest line ('15 admission tickets included') sits in a separate bullet). Houston Arboretum (2026 rentals booklet PDF) prints Emmott Circle ceremonies for 10-75 guests at '$350-$1,200' but only as a range, and requires the renter to hold a membership - not listed. Heritage Society Bandstand $275 / 2 hours Mon-Fri has 'Capacity: Expansive' (no number) - not listed. Hermann Park Celebration Garden 'Express Rental/Proposal' $400 (35 people, 2023 fee chart) is not described as a ceremony - not listed. No The Woodlands or Sugar Land venue with a small-wedding price on its own site was found (those searches returned only directories). Venues whose own site showed no small-group price and were dropped: Bell Tower on 34th (per-guest, 'full-scale weddings'), Meekermark, Venue 116, Ella's Garden, Shirley Acres, 15 Acres, La Maison Blanc, Hotel ZaZa, The Springs, The Juliana (micro-events are showers/dinners)."
+}

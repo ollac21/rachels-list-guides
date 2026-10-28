@@ -137,9 +137,9 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("phc_C3bCN
 var slug="courthouse-wedding-dallas",medium="courthouse";
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-cta]");if(!a)return;
 try{window.posthog&&posthog.capture("guide_cta_click",{slug:slug,utm_medium:medium,position:a.getAttribute("data-cta")},{send_instantly:true})}catch(x){}});
-var s=document.getElementById("sticky"),vis=0;
-if(s){var f=function(){if(window.scrollY>140&&!vis)s.classList.add("on");else s.classList.remove("on")};window.addEventListener("scroll",f,{passive:true});f();
-if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){vis+=x.isIntersecting?1:-1});if(vis<0)vis=0;f()});document.querySelectorAll(".rl-btn").forEach(function(b){io.observe(b)})}}
+var s=document.getElementById("sticky"),seen=new Set();
+if(s){var f=function(){if(window.scrollY>140&&seen.size===0)s.classList.add("on");else s.classList.remove("on")};window.addEventListener("scroll",f,{passive:true});f();
+if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)seen.add(x.target);else seen.delete(x.target)});f()});document.querySelectorAll(".rl-btn").forEach(function(b){io.observe(b)})}}
 document.querySelectorAll(".showgowns").forEach(function(b){b.addEventListener("click",function(){var m=b.previousElementSibling;m.classList.add("open");b.remove()})});
 document.documentElement.classList.add("js");
 document.querySelectorAll(".showall").forEach(function(b){b.addEventListener("click",function(){var t=b.previousElementSibling;t.classList.add("open");b.remove()})});

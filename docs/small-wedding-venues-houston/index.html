@@ -97,13 +97,6 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("phc_C3bCN
 </div>
 
 <div class="rl-card idea">
-<p class="rl-eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-photo"/></svg>The photos</p>
-<h3><a href="https://www.britfinephotography.com/services-7" rel="noopener">Brit Fine Photography: micro wedding coverage, 5 hours</a></h3>
-<span class="price">from $1,500</span>
-<p class="meta">5 hours of shooting, split as you wish &middot; Houston &middot; their own site &middot; read Oct 28, 2026</p>
-</div>
-
-<div class="rl-card idea">
 <p class="rl-eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-legal"/></svg>Make it legal</p>
 <h3><a href="https://www.cclerk.hctx.net/PersonalRecords.aspx" rel="noopener">Marriage license fee (Harris County Clerk)</a></h3>
 <span class="price">$81</span>
@@ -117,7 +110,7 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("phc_C3bCN
 <p class="name">Rachel</p>
 <p>I find pieces like these for your style every week. Tap the wedding photos you love: your free board in 90 seconds.</p>
 </div>
-<div class="board" aria-label="Example board"><p class="board-t">Your board could look like this</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-dress"/></svg><span>Dress</span><b>$250</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-flowers"/></svg><span>Flowers</span><b>$180</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-photo"/></svg><span>Photos</span><b>from $1,500</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-legal"/></svg><span>License</span><b>$81</b></li></ul><p class="board-n">Real finds from this page. Yours match the photos you tap.</p></div>
+<div class="board" aria-label="Example board"><p class="board-t">Your board could look like this</p><ul><li><svg class="ico" aria-hidden="true"><use href="#i-dress"/></svg><span>Dress</span><b>$250</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-flowers"/></svg><span>Flowers</span><b>$180</b></li><li><svg class="ico" aria-hidden="true"><use href="#i-legal"/></svg><span>License</span><b>$81</b></li></ul><p class="board-n">Real finds from this page. Yours match the photos you tap.</p></div>
 <div class="cta in-card">
 <a class="rl-btn" href="https://rachelslist.co/start?utm_source=guides&amp;utm_medium=venues&amp;utm_campaign=small-wedding-venues-houston" data-cta="card">Build my free Dream Board</a>
 <p class="fine">Free &middot; 90 seconds &middot; no card</p>
@@ -149,9 +142,9 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("phc_C3bCN
 var slug="small-wedding-venues-houston",medium="venues";
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-cta]");if(!a)return;
 try{window.posthog&&posthog.capture("guide_cta_click",{slug:slug,utm_medium:medium,position:a.getAttribute("data-cta")},{send_instantly:true})}catch(x){}});
-var s=document.getElementById("sticky"),vis=0;
-if(s){var f=function(){if(window.scrollY>140&&!vis)s.classList.add("on");else s.classList.remove("on")};window.addEventListener("scroll",f,{passive:true});f();
-if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){vis+=x.isIntersecting?1:-1});if(vis<0)vis=0;f()});document.querySelectorAll(".rl-btn").forEach(function(b){io.observe(b)})}}
+var s=document.getElementById("sticky"),seen=new Set();
+if(s){var f=function(){if(window.scrollY>140&&seen.size===0)s.classList.add("on");else s.classList.remove("on")};window.addEventListener("scroll",f,{passive:true});f();
+if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)seen.add(x.target);else seen.delete(x.target)});f()});document.querySelectorAll(".rl-btn").forEach(function(b){io.observe(b)})}}
 document.querySelectorAll(".showgowns").forEach(function(b){b.addEventListener("click",function(){var m=b.previousElementSibling;m.classList.add("open");b.remove()})});
 document.documentElement.classList.add("js");
 document.querySelectorAll(".showall").forEach(function(b){b.addEventListener("click",function(){var t=b.previousElementSibling;t.classList.add("open");b.remove()})});

@@ -17,7 +17,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 CACHE = ROOT / ".cache"
-TODAY = "2026-10-28"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import research_io as _rio  # noqa: E402
+TODAY = _rio.latest_date()
 
 
 def money(n):
@@ -43,7 +45,7 @@ def plain(s):
 
 # ----------------------------------------------------------------------------- dresses
 def dress_pages():
-    d = json.loads((CACHE / "dresses.json").read_text())
+    d = json.loads((ROOT / "research" / "dresses.json").read_text())
     specs = [
         ("wedding-dresses-under-500", "under500", 500, "Designer Wedding Dresses Under $500 (This Week)",
          "Designer Wedding Dresses Under $500", "Under $500", 13),
@@ -111,11 +113,11 @@ def dress_pages():
             "facts_intro": "Source: Poshmark listings, each re-opened on {} and still available at the price shown. Tap a gown to open its listing. Biggest gap between price now and seller's original first; shipping and tax are not included.".format(fdate(TODAY)),
             "gowns": gowns,
             "ideas": [
-                {"ref": "find:houston.florist"}, {"ref": "find:houston.photographer"},
+                {"ref": "find:houston.florist"}, {"ref": "find:new-york.photographer"},
                 {"ref": "venue:small-wedding-venues-houston:cheapest10"},
                 {"ref": "fact:courthouse-wedding-houston:license_fee"},
             ],
-            "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories (the examples are from Houston), each from its own page and dated.",
+            "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories (examples from Houston and New York), each from its own page and dated.",
             "faq": faq,
             "related": [{"path": other, "label": "Designer wedding dresses " + ("$501 to $1,000" if cap == 500 else "$500 or less"),
                          "note": "The other price band, re-opened the same day."},
@@ -430,8 +432,8 @@ def hub_pages():
             "table": {"headers": ["Venue", "Price on its own page", "Source"], "rows": rows},
             "items": items,
             "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
-                      {"ref": "find:houston.photographer"}, {"ref": "fact:courthouse-wedding-houston:license_fee"}],
-            "ideas_lead": "Whichever city you pick, the rest of the day can cost less too. One real find in each other category (examples from Houston), each from its own page and dated.",
+                      {"ref": "find:new-york.photographer"}, {"ref": "fact:courthouse-wedding-houston:license_fee"}],
+            "ideas_lead": "Whichever city you pick, the rest of the day can cost less too. One real find in each other category (examples from Houston and New York), each from its own page and dated.",
             "faq": faq,
             "related": [{"path": "small-wedding-venues-" + s2, "label": "Small and micro wedding venues in " + n2} for s2, n2 in CITIES]
                        + [{"path": "elopement-packages", "label": "Elopement and micro wedding packages"}],
@@ -439,7 +441,7 @@ def hub_pages():
         # rows with amount need source+date at the row level for the price check
         save("micro-wedding-venues", page)
     # packages
-    f = CACHE / "research" / "packages.json"
+    f = ROOT / "research" / "packages.json"
     if not f.exists():
         return
     d = json.loads(f.read_text())
@@ -493,7 +495,7 @@ def hub_pages():
         "table": {"headers": ["Package", "Price on its own page", "Source"], "rows": rows},
         "items": items,
         "ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
-                  {"ref": "find:houston.photographer"}, {"ref": "fact:courthouse-wedding-houston:license_fee"}],
+                  {"ref": "find:new-york.photographer"}, {"ref": "fact:courthouse-wedding-houston:license_fee"}],
         "ideas_lead": "A package covers some pieces. One real find in each other category, each from its own page and dated.",
         "faq": faq,
         "related": [{"path": "micro-wedding-venues", "label": "Micro wedding venues: real prices by city"},
@@ -533,7 +535,7 @@ def home_page():
         "oneliner": "Real wedding prices for five US cities, each checked on its source page and dated {}.".format(fdate(TODAY)),
         "ideas": [], "faq": [], "related": [],
         "board_ideas": [{"ref": "gown:wedding-dresses-under-500:brand=BHLDN"}, {"ref": "find:houston.florist"},
-                        {"ref": "find:houston.photographer"}, {"ref": "venue:small-wedding-venues-houston:cheapest10"}],
+                        {"ref": "find:new-york.photographer"}, {"ref": "venue:small-wedding-venues-houston:cheapest10"}],
     }
     fees = []
     for slug, name in CITIES:
@@ -554,7 +556,7 @@ def home_page():
         chips.append({"target": "venues", "label": "Venues for 10+ from", "value": money(min(ten))})
     if d5:
         chips.append({"target": "dresses", "label": "Dresses from", "value": money(min(g["price"] for g in d5["gowns"]))})
-    pkj = CACHE / "research" / "packages.json"
+    pkj = ROOT / "research" / "packages.json"
     if pkj.exists():
         chips.append({"target": "packages", "label": "Packages from", "value": money(min(x["amount"] for x in json.loads(pkj.read_text())["packages"] if "Las Vegas" not in (x.get("place") or "")))})
     page["chips"] = chips

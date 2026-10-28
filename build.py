@@ -140,6 +140,8 @@ def resolve_idea(spec, pages, finds):
         if not f:
             return None
         if what == "photographer":
+            if (f.get("hours") or 1) > 2:  # the spec asks for a short courthouse package, not a full-day one
+                return None
             out = dict(label="The photos", name="{}: {}".format(f["name"], f["package"]), url=f["url"], prefix="from " if f.get("from") else "",
                        amount=f["amount"], source_url=f["url"], date_read=f["date_read"],
                        meta="{}{}".format(esc(f.get("includes", "").split(";")[0]) + " &middot; " if f.get("includes") else "",

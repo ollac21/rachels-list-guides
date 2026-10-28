@@ -1,0 +1,392 @@
+{
+ "city": "new-york",
+ "date_read": "2026-10-28",
+ "courthouse": {
+  "office": "NYC City Clerk (Marriage Bureau, five borough offices; appointments through Project Cupid)",
+  "official_pages": [
+   {
+    "url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "title": "Marriage License - NYC311 (official NYC.gov site; same page as on.nyc.gov/MarriageLicense)"
+   },
+   {
+    "url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "title": "Marriage Ceremony - NYC311 (official NYC.gov site)"
+   },
+   {
+    "url": "https://www.cityclerk.nyc.gov/content/marriage-bureau",
+    "title": "Office of the City Clerk - Marriage Bureau (JavaScript page; no text could be quoted by curl)"
+   },
+   {
+    "url": "https://www.nyc.gov/cupid",
+    "title": "Project Cupid appointment system (redirects to projectcupid.cityofnewyork.us; JavaScript only)"
+   }
+  ],
+  "facts": [
+   {
+    "key": "license_fee",
+    "label": "Marriage license fee",
+    "display": "$35",
+    "amount": 35,
+    "quote": "The fee for a Marriage License is $35.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_fee",
+    "label": "Civil ceremony at the City Clerk's office (any borough)",
+    "display": "$25",
+    "amount": 25,
+    "quote": "The cost is $25, payable by credit/debit card or money order.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "waiting_period",
+    "label": "Waiting period",
+    "display": "24 hours after you receive the license",
+    "quote": "The marriage ceremony needs to take place at least 24 hours after you receive the License.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "validity",
+    "label": "How long the license is valid",
+    "display": "Usually 60 days (180 days for active military)",
+    "quote": "Marriage Licenses are usually valid for 60 days. For active military personnel, the License is valid for 180 days.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "id_needed",
+    "label": "ID you bring",
+    "display": "The same type of photo ID you used for the license: you, your spouse and a witness",
+    "quote": "You, your prospective spouse, and at least one witness must bring the same type of photo identification that was used to obtain the Marriage License.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "How to get the license / book the ceremony",
+    "display": "Appointment only, online (Project Cupid, nyc.gov/cupid) or by phone; no walk-ins",
+    "quote": "City Clerk offices do not provide walk-in services. You must make an appointment online or by phone.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Where: you can apply at any borough office",
+    "display": "Appointment at any of the five borough City Clerk offices",
+    "quote": "A Marriage License is required to get married in New York State. You can make an appointment to apply at any borough office.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Ceremonies are held in all five borough offices",
+    "display": "All five borough offices",
+    "quote": "The Office of the City Clerk performs marriage ceremonies throughout the day in all five City Clerk borough offices.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Accepted ID for the license application",
+    "display": "Driver's license, non-driver ID, NYS learner's permit, IDNYC, US military ID, passport from any country (must be valid)",
+    "quote": "Identification Documents that are accepted: Driver's license (from the United States or one of its territories) Non driver's identification card (from the United States or one of its territories) Learner's permit from New York State only IDNYC United States Military Identification Card A valid passport from any country",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Expired ID",
+    "display": "Expired documents are not accepted",
+    "quote": "All documents must be valid. Expired documents will not be accepted.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Minimum age",
+    "display": "18 and older",
+    "quote": "You must be 18 and older to be permitted to marry in New York State.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "License the same day",
+    "display": "You leave with the license the same day if your documents are complete",
+    "quote": "If you provide all necessary documents, you will get a Marriage License on the same day.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "How to pay the license fee",
+    "display": "Credit or debit card, or money order payable to the City Clerk",
+    "quote": "You can pay by credit card (Visa, MasterCard, Discover, American Express), debit card (Visa or MasterCard) or a money order payable to the City Clerk.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Witness",
+    "display": "At least one witness over 18",
+    "quote": "At least one witness over the age of 18",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Ceremony arrival hours",
+    "display": "Arrive between 8:30 AM and 3:15 PM, Monday to Friday",
+    "quote": "You, your prospective spouse, and witness should arrive between 8:30 AM and 3:15 PM, Monday through Friday.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Ceremony group size",
+    "display": "No more than 6 attendees including the couple and the witness",
+    "quote": "There can be no more than 6 attendees, including you, your prospective spouse and the witness.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Marriage certificate after a City Clerk ceremony",
+    "display": "Same day",
+    "quote": "Once the civil marriage ceremony is complete, you will get a Marriage Certificate on that same day.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Manhattan City Clerk office",
+    "display": "141 Worth Street, New York, NY 10013; Monday-Friday 8:30 AM - 3:45 PM",
+    "quote": "Municipal Building 141 Worth Street (between Centre Street and Hamill Place) New York, NY 10013 Monday - Friday: 8:30 AM - 3:45 PM",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Bronx City Clerk office",
+    "display": "851 Grand Concourse, Room B131, Bronx, NY 10451; Monday-Friday 8:30 AM - 4 PM",
+    "quote": "Supreme Court Building 851 Grand Concourse, Room B131 (between East 158th and East 159th Street) Bronx, NY 10451 Monday - Friday: 8:30 AM - 4 PM",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Brooklyn City Clerk office",
+    "display": "210 Joralemon Street, 2nd Floor, Room 205, Brooklyn, NY 11201; Monday-Friday 8:30 AM - 4 PM",
+    "quote": "Municipal Building 210 Joralemon Street, 2nd Floor, Room 205 (between Court and Fulton Street) Brooklyn, NY 11201 Monday - Friday: 8:30 AM - 4 PM",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Queens City Clerk office",
+    "display": "120-55 Queens Boulevard, Ground Floor, Room G-100, Kew Gardens, NY 11424; Monday-Friday 8:30 AM - 4 PM",
+    "quote": "Borough Hall Building 120-55 Queens Boulevard, Ground Floor, Room G-100 (between 80 Road and 82 Avenue) Kew Gardens, NY 11424 Monday - Friday: 8:30 AM - 4 PM",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Staten Island City Clerk office",
+    "display": "10 Richmond Terrace, 3rd Floor, Room 311, Staten Island, NY 10301; Monday-Friday 8:30 AM - 4 PM",
+    "quote": "Borough Hall Building 10 Richmond Terrace, 3rd Floor, Room 311 (between Bay Street and Bend) Staten Island, NY 10301 Monday - Friday: 8:30 AM - 4 PM",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02124",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Online application expiry",
+    "display": "Online application expires after 21 days",
+    "quote": "Online application expires after 21 days.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Marrying inside the 24-hour wait",
+    "display": "A Judicial Waiver from the County Clerk, no fee",
+    "quote": "You can request a Judicial Waiver from the County Clerk in the borough where you obtained your Marriage License. There is no fee.",
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-28"
+   }
+  ],
+  "steps": [
+   "Book your appointment: City Clerk offices take no walk-ins, so you make an appointment online through Project Cupid (nyc.gov/cupid) or by phone.",
+   "Both of you go to a City Clerk borough office with valid photo ID and the $35 fee (card or money order); with complete documents you get the license the same day.",
+   "Wait at least 24 hours after you receive the license before the ceremony (a judge's waiver is possible, no fee). The license is usually valid for 60 days.",
+   "Book the City Clerk ceremony ($25) at any of the five borough offices and arrive between 8:30 AM and 3:15 PM, Monday to Friday.",
+   "Bring the license, at least one witness over 18 and the same type of photo ID used for the license; no more than 6 attendees in all.",
+   "After the ceremony you receive your Marriage Certificate the same day."
+  ],
+  "left_out": [
+   "Certified copy fee for a marriage certificate: not stated on the NYC311 license or ceremony pages that were read.",
+   "Project Cupid appointment availability, lead times and any online booking fee: the Project Cupid booking system and cityclerk.nyc.gov pages are rendered by JavaScript, so nothing could be downloaded or quoted from them."
+  ]
+ },
+ "venues": [
+  {
+   "name": "Brooklyn Bridge Park (wedding ceremony permit)",
+   "url": "https://www.brooklynbridgepark.org/plan-your-visit/get-a-permit/wedding-permits/",
+   "area": "Brooklyn Bridge Park waterfront (Pier 1 Granite Prospect, Empire Fulton Ferry Boardwalk or Main Street Pebble Beach), Brooklyn",
+   "guests": "a maximum of 100 guests (ceremonies of fewer than 20 guests still need a permit)",
+   "max_guests": 100,
+   "price_display": "$400.00",
+   "amount": 400,
+   "price_for": "site fee for an outdoor wedding ceremony permit, ceremony only, up to 1.5 hours; plus a $25.00 application fee and a $1.00 credit card fee ($426.00 charged on applying, non-refundable); no receptions in the park; no permits on holidays or holiday weekends Friday-Sunday",
+   "includes": "permit for one of three ceremony locations, up to 1.5 hours; no staging, tables, tents or amplified sound; maximum of 10 folding chairs",
+   "quote": "There is a $400.00 site fee in addition to the $25.00 application fee and $1.00 credit card processing fee.",
+   "guests_evidence": {
+    "quote": "Wedding ceremonies cannot exceed 1.5 hours and may have a maximum of 100 guests .",
+    "source_url": "https://www.brooklynbridgepark.org/plan-your-visit/get-a-permit/wedding-permits/"
+   },
+   "elopement_evidence": {
+    "quote": "Brooklyn Bridge Park is a great place to host your wedding ceremony, elopement, vow renewal, or special day!",
+    "source_url": "https://www.brooklynbridgepark.org/plan-your-visit/get-a-permit/wedding-permits/"
+   },
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Queens Party Hall - Occasions Hall (weekday rate)",
+   "url": "https://queenspartyhall.com/wedding-reception-venues/",
+   "area": "Ozone Park, Queens (93-43 104th St.)",
+   "guests": "Up to 80 guests",
+   "max_guests": 80,
+   "price_display": "$595",
+   "amount": 595,
+   "price_for": "starting base rate, Monday to Thursday (Fri & Sun $1,095, Sat $1,295); hall rental for a DIY event, bring your own food",
+   "includes": "fixed DJ booth; outside food and caterers are permitted",
+   "quote": "Capacity: Up to 80 guests Features: Fixed DJ booth; outside food and caterers are permitted Why Choose Occasions? An 80-guest Ozone Park venue suited to flexible DIY celebrations. Starting Base Rates: Mon–Thu $595, Fri & Sun $1,095, Sat $1,295",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "NYC Wedding Factory",
+   "url": "https://www.nycweddingfactory.com/",
+   "area": "221 Bruckner Blvd, 2nd Fl, Bronx (Mott Haven)",
+   "guests": "30 PPL MAX (30-minute ceremony)",
+   "max_guests": 30,
+   "price_display": "$650",
+   "amount": 650,
+   "price_for": "Standard Package, ceremony only, 30 minutes (Gold Package $1000 adds a 30-minute photo shoot)",
+   "includes": "wedding officiant, 30-minute ceremony, up to 30 people",
+   "quote": "Standard Package $650 Ceremony only Exchange vows in a cozy setting with our standard ceremony package.",
+   "guests_evidence": {
+    "quote": "Located in the Bronx, our venue offers 30-minute ceremonies for up to 30 guests and 1-hour packages that include photography services.",
+    "source_url": "https://www.nycweddingfactory.com/"
+   },
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Brooklyn Botanic Garden (Garden Ceremonies, no catering)",
+   "url": "https://www.bbg.org/visit/weddings_ceremony",
+   "area": "Prospect Heights / Crown Heights, Brooklyn",
+   "guests": "up to 50 people (up to 10 more guests at $22 each, 60 maximum)",
+   "max_guests": 50,
+   "price_display": "$1,000",
+   "amount": 1000,
+   "price_for": "permit fee for a stand-up garden ceremony, weekends, 9-10 a.m., nonrefundable",
+   "includes": "choice of garden based on availability; portrait photography fees included; held rain or shine, no indoor facility; no chairs, tables or decorations",
+   "quote": "Permit fee: $1,000 for up to 50 people.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Wave Hill - Elope at Wave Hill",
+   "url": "https://www.wavehill.org/weddings-private-events/weekday-weddings-and-intimate-events",
+   "area": "Riverdale, Bronx (4900 Independence Avenue)",
+   "guests": "up to six additional guests (eight people total)",
+   "max_guests": 8,
+   "price_display": "$500 rental fee + $1,500 Partner Membership",
+   "amount": 2000,
+   "price_for": "elopement at the Glyndor Terrace or Shade Border Arbor, up to 90 minutes, Tuesday/Wednesday/Friday 2-5 PM; both the $500 rental fee and the $1,500 Wave Hill Partner Membership are required (amount = the two printed fees added)",
+   "includes": "up to 6 white ceremony chairs at Glyndor Terrace; up to 90 minutes",
+   "quote": "Rent our Glyndor Terrace, or Shade Border Arbor for events with up to six additional guests (eight people total). A Wave Hill Partner Membership at $1,500, and rental fee of $500 are required.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "The Benjamin (Sonesta) - The Regal elopement ceremony",
+   "url": "https://nyc.sonesta.com/the-benjamin/weddings/",
+   "area": "Midtown East, Manhattan",
+   "guests": "10 Guests or Less",
+   "max_guests": 10,
+   "price_display": "$2,000 plus tax and service charge",
+   "amount": 2000,
+   "price_for": "The Regal elopement / micro-wedding ceremony package; other tiers: The Romantic (couple and officiant) $1,000, The Royal (20 guests or less) $3,000; packages are available on weekends only",
+   "includes": "1.5 hours exclusive use of the space for ceremony, photos and mingling; chairs and two high top tables; champagne and hors d'oeuvres after the ceremony; couples bring their own officiant, photographer and musician",
+   "quote": "The Regal 10 Guests or Less $2,000 plus tax and service charge One -hour and thirty minutes exclusive use of space for ceremony, photos, and mingling",
+   "weekend_evidence": {
+    "quote": "Elopements & Microwedding Ceremonies Packages are available on weekends and able to be booked up to 3 months in advance.",
+    "source_url": "https://nyc.sonesta.com/the-benjamin/weddings/"
+   },
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Church of the Transfiguration (Little Church Around the Corner) - Holy Family Chapel",
+   "url": "https://www.transfiguration.net/wp-content/uploads/2025/06/The-Wedding-Fee-Schedule-2024.pdf",
+   "area": "1 East 29th Street, Manhattan (10016)",
+   "guests": "chapel seats up to 20 people",
+   "max_guests": 20,
+   "price_display": "$2,250",
+   "amount": 2250,
+   "price_for": "wedding fee at the church (fee schedule titled 2024); the church's page says the Holy Family Chapel seats up to 20 people and suits smaller weddings; Episcopal rules apply: one party must be a baptized Christian and the couple meets with the Rector before",
+   "includes": "building use from 2 hours before to 1 hour after the service, sexton for 4 hours, setup/cleanup, lights and sound, altar flowers, Wedding Guild services; clergy officiates with no additional fee",
+   "quote": "The fee for a wedding at Transfiguration is $2,250, payable to the church as follows:",
+   "guests_evidence": {
+    "quote": "The Holy Family Chapel is a quaint room paneled with dark wood that seats up to 20 people and is appropriate for smaller weddings.",
+    "source_url": "https://www.littlechurch.org/weddings"
+   },
+   "requirements_evidence": {
+    "quote": "The national canons of the Episcopal Church require that one party is a baptized Christian, and that the couple partake in pre-marital meetings with the Rector.",
+    "source_url": "https://www.littlechurch.org/weddings"
+   },
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Bartow-Pell Mansion Museum - Conservatory",
+   "url": "https://www.bartowpellmansionmuseum.org/rent/space-rentals/",
+   "area": "Pelham Bay Park, Bronx",
+   "guests": "max capacity 30 people",
+   "max_guests": 30,
+   "price_display": "$3,000",
+   "amount": 3000,
+   "price_for": "Conservatory rental package for an event, three hours plus two hours of prep before and one hour of clean-up (caterer's); the page also asks for a $250 refundable deposit for smaller events",
+   "includes": "tables, chairs and white linens for seated dining; catering, china, music, PA etc. arranged by the host",
+   "quote": "Conservatory (max capacity 30 people) Amenities Tables, Chairs and White Linens for seated dining To be arranged by host China, silverware, glassware, catering, wait staff, valet service, table/floral arrangements, music, PA system Duration Three hours plus an additional two hours of prep time immediately preceding your event, and an additional hour of clean-up by your caterer, wait staff, or event-planner personnel immediately following your event. Set-up to be determined and mutually agreed upon. Cost $3,000",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  }
+ ],
+ "photographer": {
+  "name": "Erica Morris Photography",
+  "url": "https://sites.google.com/view/ericamorrisphotography/packages",
+  "package": "City Hall Package 2: Ceremony + 30 minute shoot in immediate surrounding area",
+  "hours": 1,
+  "price_display": "$500",
+  "amount": 500,
+  "quote": "CITY HALL PACKAGE 2 This package is limited to City Hall Weddings Ceremony + 30 minute shoot in immediate surrounding area * ceremony must be 30 minutes or under includes a mix of both color and black and white editing $500 50+ fully edited images",
+  "includes": "ceremony coverage (30 minutes or under) plus a 30-minute shoot nearby, 50+ fully edited images, mix of color and black and white editing; other City Hall tiers on the page: ceremony only up to 30 minutes $300 (15 images), ceremony + 1 hour shoot $800 (100+ images)",
+  "date_read": "2026-10-28"
+ },
+ "florist": {
+  "name": "NYC Flower Pop",
+  "url": "https://sites.google.com/view/nycflowerpop",
+  "item": "8-10\" seasonal bouquet (Same-Day Elopement Flowers, pickup from Union Square)",
+  "price_display": "$150",
+  "amount": 150,
+  "quote": "Same-Day Elopement Flowers Convenient pickup from Union Square the evening before or day of your ceremony -- just minutes from Manhattan City Hall. $150 8-10\" SEASONAL BOUQUET",
+  "date_read": "2026-10-28"
+ },
+ "notes": "Courthouse: cityclerk.nyc.gov pages are a JavaScript shell (every URL returns the same banner page), so all courthouse quotes come from the City's own NYC311 pages on portal.311.nyc.gov (an nyc.gov site that states 'The Official Website of the City of New York'). They agree with the City Clerk banner text (appointments only, no walk-ins, Project Cupid). Venues: 8 listed, one per venue, sorted by amount. Several do not print a guest count next to the price, so a second verified quote is attached (guests_evidence / weekend_evidence / requirements_evidence / elopement_evidence; verify_quotes.py checks those too). STATEN ISLAND HAS NO VENUE IN THE LIST. The only Staten Island lead with a printed number is Alice Austen House (aliceausten.org/rentals): it prints 'Rental fees are $500/hr' for outdoor wedding-ceremony rentals but no guest limit and no package, so it was dropped under the brief's rules. Snug Harbor, Historic Richmond Town, Staten Island Botanical Garden pages print no price; Venues on the Terrace showed its $1,495 Standard Package (80 people max, Eventective listing) only on an aggregator and its own site did not load. The web-search budget ran out before more Staten Island venues could be checked. Queens has one venue (Queens Party Hall's Occasions Hall); Queens Botanical Garden and Skylight Hall print no price on their own pages. Weak fits the coordinator may drop: Brooklyn Bridge Park is a public-park ceremony permit (up to 100 guests, no reception) and not a booked venue (its page says it is for a wedding ceremony, elopement, vow renewal); Queens Party Hall's Occasions Hall is a DIY 80-guest hall with a Mon-Thu base rate (its page heading says intimate and small wedding venues), not a wedding package; the Church of the Transfiguration fee schedule is titled 2024 and Episcopal rules apply. Wave Hill: the price_display is composed from two printed fees and amount 2000 is their sum ($500 rental fee + $1,500 required Partner Membership); the rental fee alone is $500. The same page prints an intimate event for up to 25 guests (Glyndor Terrace or Aquatic Garden, up to two hours, Tue/Wed/Fri 2-5 PM) at a $1,500 Partner Membership plus a $1,500 rental fee, and weekday ceremony-only (Pergola, up to 125 guests, 6-7:30 PM) at a $2,500 membership plus a $3,500 site fee. The Benjamin: micro-wedding packages are weekends only, 3 months' advance booking; The Romantic (couple and officiant) is $1,000 and The Royal (20 guests or less) is $3,000 plus tax and service charge. Not usable: Central Park Conservancy's Conservatory Garden permit page prints no fee; Atrium82, Brooklyn Winery and Hotel Giraffe print no small-wedding price on their own pages; Royal Blueprint (Brooklyn), Deity Events and Loft of EP own sites did not load. Photographer: Erica Morris's site is a Google Site (text is in the curl HTML). Her City Hall Package 2 is ceremony (30 minutes or under) plus a 30-minute shoot, so about 1 hour; hours=1 is that reading. Florist: NYC Flower Pop is a Google Site; the $150 bouquet is a pickup price (a courier within Manhattan is +$40, boutonniere $25)."
+}

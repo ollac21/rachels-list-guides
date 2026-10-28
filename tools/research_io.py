@@ -6,7 +6,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parent.parent
-RES = ROOT / ".cache" / "research"
+RES = ROOT / "research"  # committed: the provenance of every quote on the site
+if not RES.exists():
+    RES = ROOT / ".cache" / "research"
 
 # venues whose price is a permit or a hall base rate rather than a small-wedding price: not listed
 DROP_VENUES = {
@@ -92,3 +94,13 @@ def load(city):
                     break
         d["courthouse"]["facts"] = out
     return d
+
+
+def latest_date():
+    """The most recent day any source was read (the 'date_read' fields of the research files).
+    Pages are stamped with this, so re-running the generator never claims a day nothing was read."""
+    import re as _re
+    best = ""
+    for f in list(RES.glob("*.json")):
+        best = max([best] + _re.findall(r'"date_read":\s*"(\d{4}-\d{2}-\d{2})"', f.read_text()))
+    return best

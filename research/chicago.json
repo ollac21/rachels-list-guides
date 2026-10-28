@@ -1,0 +1,393 @@
+{
+ "city": "chicago",
+ "date_read": "2026-10-28",
+ "courthouse": {
+  "office": "Cook County Clerk (marriage license); Circuit Court of Cook County, Marriage and Civil Union Court (civil ceremony)",
+  "official_pages": [
+   {
+    "url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "title": "Marriage Licenses - Cook County Clerk"
+   },
+   {
+    "url": "https://www.cookcountyclerkil.gov/vital-records/what-id-do-i-need",
+    "title": "What ID do I need? - Cook County Clerk"
+   },
+   {
+    "url": "https://www.cookcountyclerkil.gov/make-appointment",
+    "title": "Make an Appointment - Cook County Clerk"
+   },
+   {
+    "url": "https://www.cookcountyclerkil.gov/locations",
+    "title": "Hours and Locations - Cook County Clerk"
+   },
+   {
+    "url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-certificates",
+    "title": "Marriage Certificates - Cook County Clerk"
+   },
+   {
+    "url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "title": "Marriage and Civil Union - Circuit Court of Cook County"
+   }
+  ],
+  "facts": [
+   {
+    "key": "license_fee",
+    "label": "Marriage license fee",
+    "display": "$60",
+    "amount": 60,
+    "quote": "Pay the marriage license fee of $60.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "ceremony_fee",
+    "label": "Civil ceremony at the courthouse (Circuit Court of Cook County, Marriage and Civil Union Court; the fee is the court's, not the Clerk's)",
+    "display": "$10 administrative fee",
+    "amount": 10,
+    "quote": "A valid marriage or civil union license and a $10 administrative fee are required.",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "waiting_period",
+    "label": "Waiting period",
+    "display": "1 day: the license takes effect 1 day after it is issued",
+    "quote": "Effective 1 day after issuance.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "validity",
+    "label": "How long the license is valid",
+    "display": "60 days from the date of issuance",
+    "quote": "Valid for 60 days from the date of issuance.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "id_needed",
+    "label": "ID you bring",
+    "display": "Valid photo ID with proof of age (one form, or a combination of two)",
+    "quote": "Present valid identification with proof of age.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "id_needed",
+    "label": "Accepted ID for a marriage license (one form of ID)",
+    "display": "One of: U.S. driver's license or state ID, U.S. passport or passport card, U.S. military ID, foreign passport (full list on the Clerk's page)",
+    "quote": "State Issued Driver’s License or State ID (U.S.-Issued) U.S. Passport / U.S. Passport Card U.S. Military Identification Card Foreign Passport",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/what-id-do-i-need",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "How to get the license",
+    "display": "Both partners go together to a Clerk's Vital Records office; downtown is 118 N. Clark St., Room 120. The application can be started online first.",
+    "quote": "All couples must appear together at one of the Clerk’s locations for marriage licenses.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "Starting the application online",
+    "display": "Fill in the online application, then still go in together to sign it and pay",
+    "quote": "Couples who begin the application online must still appear at one of the Clerk’s offices to finish filling out and sign the application.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "Online appointment at the Clerk's offices",
+    "display": "Book a time online by picking the office location",
+    "quote": "Make an Appointment Now to Book your Service. Click the location below that you would like to visit.",
+    "source_url": "https://www.cookcountyclerkil.gov/make-appointment",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "Where the civil ceremony happens in Chicago",
+    "display": "Marriage and Civil Union Court, 119 W. Randolph St. (lower level), a Cook County judge marries you; no prior scheduling for in-person ceremonies",
+    "quote": "In-person ceremonies are held at 119 W. Randolph St.",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "how_to_book",
+    "label": "Ceremony booking in Chicago",
+    "display": "No appointment for an in-person ceremony",
+    "quote": "For those interested in an in-person marriage or civil union, no prior scheduling is required.",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Ceremony days and hours in Chicago (in person)",
+    "display": "Tuesday to Friday, 9 a.m. to 12 p.m. and 2 p.m. to 4 p.m.",
+    "quote": "Ceremonies are held Tuesday through Friday from 9 a.m. - 12 p.m. and 2 p.m. - 4 p.m.",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Saturday ceremonies in Chicago",
+    "display": "Saturdays 9 a.m. to 12 p.m., by appointment only",
+    "quote": "Saturdays 9 a.m. - 12 p.m. By Appointment Only",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Virtual (Zoom) ceremonies in Chicago",
+    "display": "Mondays 9 a.m. to 4 p.m., call for an appointment",
+    "quote": "Mondays 9 a.m. - 4 p.m. Virtual (Zoom) - Call for Appointment",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Arrive early",
+    "display": "No later than 30 minutes before closing",
+    "quote": "Couples should arrive no later than 30 minutes prior to closing.",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Timing of the license before the ceremony",
+    "display": "At least 1 day, no more than 60 days before the ceremony",
+    "quote": "Couples must obtain a marriage or civil union license at least one (1) day, but no longer than 60 days, prior to the ceremony.",
+    "source_url": "https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "License is issued the same visit",
+    "display": "Issued while you wait",
+    "quote": "Issued while you wait.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Return the signed license",
+    "display": "Within 10 days after the ceremony, by mail or in person",
+    "quote": "Must be returned to the Cook County Clerk's Office within 10 DAYS after the ceremony, by mail or in person",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Certified copy of the marriage certificate",
+    "display": "$15, and $4 for each additional copy",
+    "amount": 15,
+    "quote": "Certified legal copies of marriage records are $15 and $4 for each additional copy.",
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-certificates",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Downtown Chicago Vital Records office (license office)",
+    "display": "118 N. Clark St., Room 120, Chicago, IL 60602, (312) 603-7790",
+    "quote": "Downtown Chicago - Vital Records 118 N. Clark St., Room 120 Chicago, IL 60602 (312) 603-7790",
+    "source_url": "https://www.cookcountyclerkil.gov/locations",
+    "date_read": "2026-10-28"
+   },
+   {
+    "key": "extra",
+    "label": "Suburban Clerk offices need an appointment",
+    "display": "Markham, Maywood and Skokie: appointment required",
+    "quote": "Markham Appointment Required Maywood Appointment Required Skokie Appointment Required",
+    "source_url": "https://www.cookcountyclerkil.gov/make-appointment",
+    "date_read": "2026-10-28"
+   }
+  ],
+  "steps": [
+   "Both of you go together to a Cook County Clerk Vital Records office (downtown: 118 N. Clark St., Room 120), with valid ID showing proof of age; you can start the application online first.",
+   "Sign the application and pay the $60 marriage license fee; the license is issued while you wait.",
+   "Wait 1 day: the license takes effect 1 day after it is issued and is valid for 60 days, for ceremonies in Chicago and suburban Cook County only.",
+   "Get married with your own officiant, or in person before a Cook County judge at the Marriage and Civil Union Court, 119 W. Randolph St. (lower level), Tuesday to Friday, no appointment; bring the license, ID and the $10 administrative fee.",
+   "Make sure the signed license is returned to the Clerk within 10 days after the ceremony; a certified copy of the certificate is $15."
+  ],
+  "left_out": [
+   "Whether witnesses are required: not stated on the Clerk or Circuit Court pages read.",
+   "Opening hours of the Clerk's downtown Vital Records office: the locations page only says to click a location for hours.",
+   "Whether the Chicago courtroom takes cash only: only the Rolling Meadows and Bridgeview rows say cash only; the Chicago row does not say.",
+   "Any Clerk-run civil ceremony or ceremony fee: the Clerk's page sends couples to the Circuit Court's Marriage and Civil Union Court, so the $10 fee is quoted from the court's page.",
+   "Wait-time or capacity for guests at the downtown courtroom: not stated on the court page."
+  ]
+ },
+ "venues": [
+  {
+   "name": "Park District of Oak Park - outdoor park ceremony permit",
+   "url": "https://pdop.org/rentals-permits/ceremony-permits/",
+   "area": "Oak Park",
+   "guests": "Group Size: Up to 75 individuals",
+   "max_guests": 75,
+   "price_display": "$50 /hr",
+   "amount": 50,
+   "price_for": "per hour, outdoor wedding or commitment ceremony in an Oak Park park (hourly permit, not a package)",
+   "includes": "permission for professional photographers and videographers; no tents, at most 10 chairs carried in by hand, no amplified sound, no catering, no guaranteed spot in the park",
+   "quote": "Group Size: Up to 75 individuals $50 /hr",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Berger Park Cultural Center - Coach House (Chicago Park District)",
+   "url": "https://www.chicagoparkdistrict.com/berger-park-cultural-center-special-event-venue",
+   "area": "Edgewater, Chicago (6205 N. Sheridan Rd.)",
+   "guests": "capacity 50 (Coach House)",
+   "max_guests": 50,
+   "price_display": "$50/hr",
+   "amount": 50,
+   "price_for": "per hour, 2026 rate for the Coach House (a Sun Room for 15 is also $50/hr, the Living Room for 40 is $100/hr); the Park District's special event venue page, plus a $200 refundable security deposit",
+   "includes": "single-room rental during Berger Park business hours; about 65 folding chairs and 10 six-foot tables free to use; caterer must come from the Park District's preferred list",
+   "quote": "Coach House 50 30' x 40' 1,000 $50/hr",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Garfield Park Conservatory - Jensen Room (Chicago Park District)",
+   "url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue",
+   "area": "East Garfield Park, Chicago (300 N. Central Park Ave.)",
+   "guests": "banquet capacity 100 (Jensen Room)",
+   "max_guests": 100,
+   "price_display": "$400",
+   "amount": 400,
+   "price_for": "Jensen Room (only), Monday to Thursday, 4 hours, private rate (the same page lists a 2-hour 5-7pm whole-site slot 'great for a ceremony or proposal' at $1,500)",
+   "includes": "no bookings after 3pm; $100 per extra hour; caterer must come from the preferred list; security deposit up to $500",
+   "quote": "Jensen Room (Only) *No bookings after 3pm *Rates listed are for 4 hours; $100/hour additional Mon.-Thurs. $400",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "guests_support": {
+    "quote": "Jensen Room 48’x36’ 100 150 150",
+    "source_url": "https://www.chicagoparkdistrict.com/garfield-park-conservatory-special-event-venue"
+   }
+  },
+  {
+   "name": "The Garden Club of Evanston - Shakespeare Garden",
+   "url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf",
+   "area": "Evanston (2121 Sheridan Road, by Northwestern University)",
+   "guests": "The garden accommodates 50 guests or less.",
+   "max_guests": 50,
+   "price_display": "$500",
+   "amount": 500,
+   "price_for": "fee requested for the use of the garden for a wedding service (photos only: $250)",
+   "includes": "outdoor garden; the fee is non-refundable; no food or drink, no restrooms in the garden; Howes Memorial Chapel (seats 45) suggested as the rain alternative",
+   "quote": "A fee of $500 is requested for the use of the garden for a wedding service.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "guests_support": {
+    "quote": "The garden accommodates 50 guests or less.",
+    "source_url": "https://www.thegardenclubofevanston.org/s/Wedding-Event-Guidelines-1.pdf"
+   }
+  },
+  {
+   "name": "Oak Park Conservatory - Ceremony Only (Park District of Oak Park)",
+   "url": "https://oakparkconservatory.org/wp-content/uploads/2026/05/Oak-Park-Conservatory-Rental-Information-Guide.pdf",
+   "area": "Oak Park (616 Garfield Street)",
+   "guests": "50 in garden, 30 in greenhouses",
+   "max_guests": 50,
+   "price_display": "$600",
+   "amount": 600,
+   "price_for": "Ceremony Only package, garden or greenhouses, 2-hour rental after 4:00P",
+   "includes": "chairs only in the garden (greenhouses are standing room only); no food or drink with this package; a Rubinstein Room reception package is $1,200 to $1,500 for 4 hours",
+   "quote": "Ceremony Only* 50 in garden $600",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "Lincoln Park Conservatory (Chicago Park District)",
+   "url": "https://www.chicagoparkdistrict.com/lincoln-park-conservatory-gardens-special-event-venue",
+   "area": "Lincoln Park, Chicago (2391 N. Stockton Dr.)",
+   "guests": "50 (seated ceremony in Show Room)",
+   "max_guests": 50,
+   "price_display": "$1,000 rental fee ($1,700 total with security guard and deposit)",
+   "amount": 1000,
+   "price_for": "2-hour usage, 5-7pm, inside the Conservatory (rental fee $1,000 + security guard $200 + security deposit $500 = $1,700)",
+   "includes": "includes set-up and breakdown time; events cannot start before 5pm because the Conservatory is open to the public; caterer must come from the preferred list",
+   "quote": "2-Hour Usage (5-7pm) Rental Fee $1,000 Security Guard $200 Security Deposit $500 TOTAL $1,700",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "guests_support": {
+    "quote": "50 (seated ceremony in Show Room)",
+    "source_url": "https://www.chicagoparkdistrict.com/lincoln-park-conservatory-gardens-special-event-venue"
+   }
+  },
+  {
+   "name": "Astoria Banquets & Events - Elopement Ceremony",
+   "url": "https://www.astoriabanquets.com/weddings/micro-weddings-chicago",
+   "area": "Buffalo Grove (1375 W. Dundee Rd., northwest suburbs; outside the close-in ring)",
+   "guests": "up to 30 guests",
+   "max_guests": 30,
+   "price_display": "$1,200",
+   "amount": 1200,
+   "price_for": "Elopement Ceremony, Wednesdays and Thursdays only (the same page prices a 30-guest micro wedding with dinner and a 4-hour reception at $3,400)",
+   "includes": "fully decorated ceremony space with an aisle, elegant seating and a romantic backdrop, 1 hour 30 minutes of private venue time for ceremony and photos",
+   "quote": "Elopement Ceremony – $1,200 Our Elopement Ceremony is ideal for couples who want a beautiful place to exchange vows without hosting a full reception. Enjoy a fully decorated ceremony space with an aisle, elegant seating, and a romantic backdrop, plus 1 hour and 30 minutes of private venue time for your ceremony and photos. It’s an easy, stress-free alternative to a courthouse wedding that still feels meaningful and special. Available Wednesdays and Thursdays for up to 30 guests.",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  },
+  {
+   "name": "First United Methodist Church at the Chicago Temple - Sky Chapel",
+   "url": "https://www.chicagotemple.org/?p=2421",
+   "area": "The Loop, Chicago (77 W. Washington St.)",
+   "guests": "The Sky Chapel, seating 30",
+   "max_guests": 30,
+   "price_display": "$2,500",
+   "amount": 2500,
+   "price_for": "Sky Chapel wedding fee for non-members paid by cash, check or money order (members $2,050; non-member by credit card $3,100)",
+   "includes": "fee covers pastor, wedding coordinator, custodian, wedding hostess and use of the space; no instrument provided in the Sky Chapel, musicians are extra",
+   "quote": "Sky Chapel $2,500 $2,050",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true,
+   "guests_support": {
+    "quote": "The Sky Chapel, seating 30",
+    "source_url": "https://www.chicagotemple.org/?p=2421"
+   }
+  },
+  {
+   "name": "Cheney Mansion (Park District of Oak Park) - weekday wedding",
+   "url": "https://cheneymansion.com/pricing/",
+   "area": "Oak Park (220 N. Euclid Ave.)",
+   "guests": "pricing page gives no guest cap; the Petite Weddings page says up to 50 for a ceremony and reception; the Weddings page says the Mansion and grounds hold 150 for a sit-down dinner",
+   "max_guests": 50,
+   "price_display": "$2,900",
+   "amount": 2900,
+   "price_for": "'Weddings, Year-round, Weekday' price on the Mansion's own pricing page (Friday evening $3,300, Sunday $2,900, Saturday evening $3,700 to $4,200); the page does not state the hours for the weekday price",
+   "includes": "Petite Weddings are offered Sunday to Thursday; $500 wedding security deposit; Oak Park residents and non-profits get 15% off Monday to Thursday",
+   "quote": "Weekday: $2,900",
+   "date_read": "2026-10-28",
+   "curl_verifiable": true
+  }
+ ],
+ "photographer": {
+  "name": "The Adri Photo Co.",
+  "url": "https://adridelacruz.com/chicago-elopement-photographer/",
+  "package": "Elopement and intimate wedding coverage for courthouse and small ceremonies (price is 'starts at'; the page says elopement coverage starts at two hours)",
+  "hours": 2,
+  "price_display": "$1,050",
+  "amount": 1050,
+  "quote": "Elopement and intimate wedding coverage at The Adri Photo Co. starts at $1,050 for courthouse and small ceremonies.",
+  "includes": "a full edited gallery delivered through Pixieset",
+  "hours_support": {
+   "quote": "Elopement coverage starts at two hours and scales from there depending on what your day looks like.",
+   "source_url": "https://adridelacruz.com/chicago-elopement-photographer/"
+  },
+  "includes_support": {
+   "quote": "Every package includes a full edited gallery delivered through Pixieset.",
+   "source_url": "https://adridelacruz.com/chicago-elopement-photographer/"
+  },
+  "date_read": "2026-10-28"
+ },
+ "florist": {
+  "name": "Flowers for Dreams (Chicago)",
+  "url": "https://flowersfordreams.com/collections/self-service-wedding-flowers?filter.p.m.weddings.style=Lush&filter.p.m.weddings.palette=White+%26+Cream",
+  "item": "Bridal Bouquet (self-service wedding shop, Lush style, White & Cream palette)",
+  "price_display": "$200.00",
+  "amount": 200,
+  "quote": "Bridal Bouquet $200.00",
+  "date_read": "2026-10-28"
+ },
+ "notes": "WebSearch hit the tool's per-turn limit part-way through, so the florist and photographer lists are shorter than planned; nothing was searched around the limit. COURTHOUSE: the Clerk (cookcountyclerkil.gov) only issues the license; civil ceremonies are performed by a Cook County judge at the Circuit Court of Cook County's Marriage and Civil Union Court, so the $10 fee and the ceremony days/hours are quoted from cookcountycourtil.gov (cookcountycourt.org shows the same text). The Clerk's pages carry a banner: suburban offices closed on Election Day, Tuesday, November 3rd, and downtown offices run with limited staff. The Clerk's /service/marriage-licenses and /vital-records/marriage-civil-union/marriage-licenses URLs return the same page. VENUES: 9 listed; the cheapest are public or non-profit sites that print hourly or per-ceremony fees, not wedding packages. Oak Park permit and Berger Park are hourly rates, not packages. Berger Park's page lists room rates for special events and names weddings only for its outdoor ceremony permit, so check that a wedding is allowed in the Coach House. Garfield Park Conservatory: the $400 Jensen Room rate is the private rate for 4 hours, Mon-Thu; the page also prints a 2-hour 5-7pm whole-site slot 'great for a ceremony or proposal' at $1,500 with no guest cap stated. Cheney Mansion: 'Weekday: $2,900' sits under Weddings, Year-round; its guest cap and hours for that price are not on that page (the separate Petite Weddings page says up to 50 guests and prints no price). Astoria Banquets is in Buffalo Grove, about 30 miles out, so outside 'close suburbs'; the coordinator decides whether to keep it (it is the only commercial venue whose own page prints an elopement price with a guest limit). First Unitarian Church of Chicago (Hyde Park) prints 'The fee for a three-hour wedding block is $2,500 for the Sanctuary and $1,500 for Hull Chapel' (Hull Chapel seats 90) at firstuchicago.org/?p=446 and curl reads it fine, but that site stalls Python's urllib, so tools/verify_quotes.py cannot fetch it; left out for that reason only, add it back if the coordinator verifies with curl. Looked at and left out because the venue's own page prints no usable number or fails curl: Wicker Park Inn (small-wedding options listed, no price; its page code only shows a $125-$529 lodging range), Creativo Loft (website expired), Unity Temple, Pleasant Home (site did not load), Evanston History Center (no number on its own page), Guesthouse Hotel, 21c Chicago, Vice District Brewing (no price in the page HTML), Chicago History Museum (daytime rental $5,000, ceremony fee $500, no small-group package), Tiffany Celebration Garden (ceremony-only permit fee not printed), Chicago Public Library Winter Garden (wedding $7,000), Chicago Cultural Center (about $13,000+). Simply Eloped, Officiant on Demand ($2,199 to $5,399, 20 guests) and Tiny Wedding Co. ($4,775 to $4,990) are planners, not venues. Oak Park Conservatory's price is only in its PDF rental guide (the HTML pages send you to it); that server is slow (18 s alone, over 40 s when several downloads run together), so verify_quotes.py can flag it MISSING from a truncated download: re-run it alone. PHOTOGRAPHER: no own-site 1-hour courthouse package could be verified (Kristal Lee Photography's 1-hour $300 appears only on Zola; two Pixieset sites are blocked to curl). Adri Photo Co. mentions the courthouse by name, starts at two hours. Cheaper own-site alternative: Deandra Photography, 'Chicago Elopement Packages start at $950 and include up to two hours of coverage and the digital images' (deandaphotography.com/wedding-pricing); Becky Brown Photography lists a Chicago elopement package at $1,000 for a 2-hour session. FLORIST: Flowers for Dreams is Chicago-based; the $200.00 price is on the Lush / White & Cream self-service page and other style or palette pages may price the bouquet differently; the same page shows 'Petite Rose Bouquet Cream $55.00' as a cheaper small bouquet; its self-service weddings have a $200 minimum order. The price is rendered in the HTML (checked with curl)."
+}

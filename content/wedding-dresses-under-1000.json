@@ -162,7 +162,7 @@
    "ref": "find:houston.florist"
   },
   {
-   "ref": "find:houston.photographer"
+   "ref": "find:new-york.photographer"
   },
   {
    "ref": "venue:small-wedding-venues-houston:cheapest10"
@@ -171,7 +171,7 @@
    "ref": "fact:courthouse-wedding-houston:license_fee"
   }
  ],
- "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories (the examples are from Houston), each from its own page and dated.",
+ "ideas_lead": "A dress is one line of the budget. Here is one real find in each of the other categories (examples from Houston and New York), each from its own page and dated.",
  "faq": [
   {
    "q": "Where can I buy a designer wedding dress for under $1,000?",

@@ -8,8 +8,11 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parent.parent
-RES = ROOT / ".cache" / "research"
-TODAY = "Oct 28, 2026"
+import datetime as _dt
+import research_io as _rio
+RES = _rio.RES
+_d = _dt.date.fromisoformat(_rio.latest_date())
+TODAY = "{} {}, {}".format(_d.strftime("%b"), _d.day, _d.year)
 
 
 def money(n):
@@ -167,7 +170,7 @@ def _finds_text(city):
 
 
 def _dress():
-    dd = json.loads((ROOT / ".cache" / "dresses.json").read_text())
+    dd = json.loads((ROOT / "research" / "dresses.json").read_text())
     g = next((x for x in dd["under500"] if x["brand"] == "BHLDN"), dd["under500"][0])
     return g
 

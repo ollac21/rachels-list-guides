@@ -978,7 +978,7 @@ def alcohol_calc(inp, d):
 
     def add(key, name, served, s1, s2, buy, b1, b2, price):
         rows.append({"key": key, "name": name, "served": plural(served, s1, s2), "buy": plural(buy, b1, b2), "n": buy, "unit": b2 if buy != 1 else b1,
-                     "cost": buy * price if isinstance(price, (int, float)) else None})
+                     "cost": int(buy * price + 0.5) if isinstance(price, (int, float)) else None})  # whole dollars, so the rows add up to the total
     w = share(sp["wine"])
     add("wine", "Wine", w, "glass", "glasses", up(w, d["wine_glasses"]), "bottle", "bottles", inp.get("p_wine"))
     if sp.get("liquor"):

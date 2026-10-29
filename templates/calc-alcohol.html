@@ -41,7 +41,7 @@ var pace=i.pace===2?D.pace_heavy:D.pace_average,drinks=g*h*pace,sp=i.bar==="bw"?
 function share(p){return Math.floor((drinks*p+50)/100)}
 function up(a,b){return Math.ceil(a/b)}
 function pl(n,one,many){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,",")+" "+(n===1?one:many)}
-function add(key,name,served,s1,s2,buy,b1,b2,price){rows.push({key:key,name:name,served:pl(served,s1,s2),buy:pl(buy,b1,b2),n:buy,unit:buy!==1?b2:b1,cost:(typeof price==="number"&&isFinite(price))?buy*price:null})}
+function add(key,name,served,s1,s2,buy,b1,b2,price){rows.push({key:key,name:name,served:pl(served,s1,s2),buy:pl(buy,b1,b2),n:buy,unit:buy!==1?b2:b1,cost:(typeof price==="number"&&isFinite(price))?Math.floor(buy*price+0.5):null})}
 var w=share(sp.wine);add("wine","Wine",w,"glass","glasses",up(w,D.wine_glasses),"bottle","bottles",i.p_wine);
 if(sp.liquor){var lq=share(sp.liquor);add("liquor","Liquor",lq,"pour","pours",up(lq,D.liquor_pours),"bottle","bottles",i.p_liquor)}
 var b=share(sp.beer);add("beer","Beer",b,"can","cans",up(b,D.beer_case),"case of 24","cases of 24",i.p_beer);

@@ -53,7 +53,7 @@
      "source_name": "Zola", "source_url": "https://www.zola.com/expert-advice/how-to-spend-smarter-on-your-wedding-bar", "date_read": "2026-10-29"},
     {"key": "wine_price", "amount": 10.33, "what": "Wine, a 750 ml bottle", "shown": "$10.33",
      "quote": "Wine, red and white table, all sizes, any origin, per 1 liter (33.8 oz) in U.S. city average, average price, not seasonally adjusted",
-     "note": "Sep 2026: $13.769 a liter; x 0.75 = $10.33 a 750 ml bottle. A store average across all sizes, boxed wine included, so the bottle you pick may cost more.",
+     "note": "Sep 2026: $13.769 a liter; x 0.75 = $10.33 a 750 ml bottle. A store average across all sizes, so the 750 ml bottle you pick may cost more.",
      "source_name": "US Bureau of Labor Statistics, average price data", "source_url": "https://data.bls.gov/timeseries/APU0000720311", "date_read": "2026-10-29"},
     {"key": "beer_price", "amount": 33.75, "what": "Beer, a case of 24 x 12 oz", "shown": "$33.75",
      "quote": "Malt beverages, all types, all sizes, any origin, per 16 oz. (473.2 ml) in U.S. city average, average price, not seasonally adjusted",

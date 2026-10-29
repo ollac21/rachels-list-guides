@@ -1,0 +1,72 @@
+<section class="calc calcb" id="calc" aria-label="Your budget and guest count">
+<form class="calc-form calcb-form" id="b-form" novalidate>
+<div class="calc-row calcb-row">
+<div class="calc-in"><label for="b-budget">Total budget ($)</label><input id="b-budget" name="budget" type="number" inputmode="numeric" min="1" step="1" value="36000" autocomplete="off"></div>
+<div class="calc-in"><label for="b-guests">Guests</label><input id="b-guests" name="guests" type="number" inputmode="numeric" min="1" step="1" value="145" autocomplete="off"></div>
+<button type="submit" class="calcb-go">Split it</button>
+</div>
+</form>
+<p class="calcb-def">Filled in with Zola&rsquo;s 2026 averages: a $36,000 wedding, 145 guests.</p>
+<p class="calcb-sum" id="b-sum" aria-live="polite">{{summary}}</p>
+</section>
+{{cta}}
+<section class="calcb-res" id="split">
+<h2>Your budget, <em>item by item</em></h2>
+<p class="calcb-msg" id="b-msg" role="status" hidden></p>
+<p class="calcb-pg" id="b-pg">{{per_guest}}</p>
+<table class="calc-out calcb-split" id="b-table">
+<caption class="vh">Your wedding budget split into 15 items, with each item&rsquo;s share and dollar amount</caption>
+<thead><tr><th scope="col">Item</th><th scope="col">Share</th><th scope="col">Your split</th></tr></thead>
+<tbody>{{rows}}</tbody>
+<tfoot><tr><th scope="row">Total</th><td></td><td id="b-total">{{total}}</td></tr></tfoot>
+</table>
+<p class="calc-note">Zola&rsquo;s 2026 national averages for each item, scaled so they add up to your total; amounts are rounded to the dollar. Averages, not a quote: your city and guest list change every line. Not in the split, because they are paid outside the day (Zola&rsquo;s averages): {{outside}}.</p>
+<p class="calcb-dress" id="b-dress">{{dress_line}}</p>
+<div id="b-dress-cta">{{cta_dress}}</div>
+<p class="calc-bar"><button type="button" class="calc-share" id="b-copy">Copy a link to this split</button> <span class="note" id="b-copied" role="status"></span></p>
+<p class="calcb-quote">{{quote}}</p>
+</section>
+{{spend_less}}
+{{sources}}
+<script type="application/json" id="b-data">{{data}}</script>
+<script>
+(function(){
+var D=JSON.parse(document.getElementById("b-data").textContent);
+/*split*/
+function split(budget,avgs){var t=0,s=0,out=[],i,a;for(i=0;i<avgs.length;i++)t+=avgs[i];
+for(i=0;i<avgs.length-1;i++){a=Math.floor(budget*avgs[i]/t+0.5);out.push(a);s+=a}
+out.push(budget-s);return out}
+/*/split*/
+function byId(x){return document.getElementById(x)}
+function fmt(n){return "$"+n.toLocaleString("en-US")}
+function num(el){var v=parseFloat(el.value);return isFinite(v)&&v>0?Math.floor(v+0.5):0}
+function band(v,cuts){for(var i=0;i<cuts.length;i++)if(v<cuts[i])return(i?cuts[i-1]:0)+"-"+(cuts[i]-1);return cuts[cuts.length-1]+"+"}
+var bi=byId("b-budget"),gi=byId("b-guests"),keys=D.items.map(function(x){return x[0]}),avgs=D.items.map(function(x){return x[1]}),tm=null;
+function dressLine(a){var ok=D.gowns.filter(function(g){return g[0]<=a});
+if(!ok.length)return 'The cheapest real gown we re-opened on '+D.gowns_date+' is <a href="'+D.gowns[0][1]+'">'+fmt(D.gowns[0][0])+'</a>.';
+return 'Your split says <b>'+fmt(a)+'</b> for the dress. <a href="'+ok[ok.length-1][1]+'">'+ok.length+' real gown'+(ok.length===1?'':'s')+' we re-opened on '+D.gowns_date+' cost that or less, from '+fmt(D.gowns[0][0])+'</a>.'}
+function calc(user){
+var b=num(bi),g=num(gi),msg=[],ok=b>0;
+if(b>D.max_budget){b=D.max_budget;msg.push("Budgets above "+fmt(D.max_budget)+" are split as "+fmt(D.max_budget)+".")}
+if(g>D.max_guests){g=D.max_guests;msg.push("Guest counts above "+D.max_guests.toLocaleString("en-US")+" are counted as "+D.max_guests.toLocaleString("en-US")+".")}
+if(!ok){b=D.def_budget;g=D.def_guests;msg=["Type a budget above. The table shows Zola’s "+fmt(D.def_budget)+" average."]}
+var amt=split(b,avgs),m={};keys.forEach(function(k,i){m[k]=amt[i]});
+Array.prototype.forEach.call(document.querySelectorAll("[data-amt]"),function(el){var k=el.getAttribute("data-amt");if(k in m)el.textContent=fmt(m[k])});
+byId("b-total").textContent=fmt(b);
+var mm=byId("b-msg");mm.hidden=!msg.length;mm.textContent=msg.join(" ");
+var pg=byId("b-pg");if(g>0){pg.hidden=false;pg.innerHTML="Per guest: <b>"+fmt(Math.floor(b/g+0.5))+"</b> (Zola’s average: "+fmt(D.zola_pg)+"). Food and drink per guest in this split: <b>"+fmt(Math.floor((m.catering+m.bar)/g+0.5))+"</b>."}else pg.hidden=true;
+byId("b-sum").innerHTML="Venue <b>"+fmt(m.venue)+"</b> &middot; catering <b>"+fmt(m.catering)+"</b> &middot; flowers <b>"+fmt(m.flowers)+"</b> &middot; dress <b>"+fmt(m.dress)+"</b>. All 15 lines below.";
+if(D.gowns.length){byId("b-dress").innerHTML=dressLine(m.dress);
+var n=D.gowns.filter(function(x){return x[0]<=m.dress}).length,l=document.querySelector("#b-dress-cta .lbl");if(l)l.textContent=n?"Show me dresses under "+fmt(m.dress):"Find my dress & venue for less"}
+if(user&&!ok){try{history.replaceState(null,"",location.pathname+location.hash)}catch(e){}}
+if(user&&ok){try{history.replaceState(null,"","?budget="+b+(g>0?"&guests="+g:"")+location.hash)}catch(e){}
+clearTimeout(tm);tm=setTimeout(function(){try{window.posthog&&posthog.capture("guide_calc",{slug:D.slug,budget_band:band(b,[10000,20000,35000,50000,100000]),guests_band:g>0?band(g,[26,76,151,251]):"none"})}catch(e){}},1500)}}
+var q=new URLSearchParams(location.search);if(q.get("budget"))bi.value=q.get("budget");if(q.get("guests"))gi.value=q.get("guests");
+bi.addEventListener("input",function(){calc(true)});gi.addEventListener("input",function(){calc(true)});
+byId("b-form").addEventListener("submit",function(e){e.preventDefault();calc(true);var t=byId("split");if(t&&t.scrollIntoView)t.scrollIntoView({behavior:"smooth",block:"start"})});
+byId("b-copy").addEventListener("click",function(){var u=location.href,s=byId("b-copied");
+function done(){s.textContent="Link copied.";try{window.posthog&&posthog.capture("guide_calc_share",{slug:D.slug})}catch(e){}}
+if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(done,function(){s.textContent=u});else s.textContent=u});
+if(q.get("budget")||q.get("guests"))calc(false);
+})();
+</script>

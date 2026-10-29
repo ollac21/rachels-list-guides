@@ -1,0 +1,277 @@
+{
+ "path": "wedding-budget-calculator",
+ "type": "calculator",
+ "medium": "calculator",
+ "order": 15,
+ "calc_template": "calc-budget.html",
+ "calc_data": "budget",
+ "labels": [
+  "Find my dress &amp; venue for less",
+  "Find my dress &amp; venue",
+  "Find my dress &amp; venue for less"
+ ],
+ "title": "Wedding Budget Calculator 2026: Breakdown by Item",
+ "description": "Your budget and guest count, split into venue, food, dress, photos and flowers from Zola's 2026 averages ($36,000), with real prices we checked.",
+ "h1": "Wedding budget calculator",
+ "h1_em": "budget",
+ "eyebrow": "Wedding budget breakdown, 2026",
+ "answer_html": "<p>Zola puts the average 2026 wedding at <b>$36,000</b>, with 145 guests on average. Scaled from its national averages, the venue takes 18% ($6,582), catering 15%, flowers and d&eacute;cor 14%, the bar 12%, photography 9% and the dress 4% ($1,535). Type your own budget below.</p>",
+ "oneliner": "Your budget split into 15 items from Zola's 2026 national averages, with real prices we checked next to the dress, venue, photos and flowers.",
+ "calc": {
+  "default_budget": 36000,
+  "default_guests": 145,
+  "max_budget": 10000000,
+  "max_guests": 2000,
+  "source": {
+   "title": "Average Cost of Weddings in 2026",
+   "url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+   "updated": "2026-03-06",
+   "date_read": "2026-10-29"
+  },
+  "survey": {
+   "title": "The First Look Report 2026",
+   "url": "https://www.zola.com/expert-advice/the-first-look-report-2026",
+   "updated": "2026-10-16",
+   "date_read": "2026-10-29",
+   "sample": "over 11,500 couples getting married in 2026",
+   "quote_cost": "The average cost of a wedding in 2026 is holding steady at $36,000",
+   "quote_guests": "Guest counts remain consistent with an average of 145 guests"
+  },
+  "items": [
+   {
+    "key": "venue",
+    "label": "Venue & site fees",
+    "short": "venue",
+    "zola_avg": 8573,
+    "zola_low": 6900,
+    "zola_high": 10300,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "catering",
+    "label": "Catering",
+    "short": "catering",
+    "zola_avg": 6927,
+    "zola_low": 5500,
+    "zola_high": 8300,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "flowers",
+    "label": "Flowers & décor",
+    "short": "flowers and décor",
+    "zola_avg": 6345,
+    "zola_low": 5100,
+    "zola_high": 7600,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "bar",
+    "label": "Bar services",
+    "short": "bar",
+    "zola_avg": 5542,
+    "zola_low": 4400,
+    "zola_high": 6600,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "photo",
+    "label": "Photography",
+    "short": "photography",
+    "zola_avg": 4400,
+    "zola_low": 3500,
+    "zola_high": 5300,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "planning",
+    "label": "Wedding planning",
+    "short": "wedding planning",
+    "zola_avg": 4047,
+    "zola_low": 3200,
+    "zola_high": 4900,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "video",
+    "label": "Videography",
+    "short": "videography",
+    "zola_avg": 3993,
+    "zola_low": 3200,
+    "zola_high": 4800,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "dress",
+    "label": "Wedding dress",
+    "short": "the dress",
+    "zola_avg": 2000,
+    "zola_low": 1500,
+    "zola_high": 2500,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "music",
+    "label": "Music & entertainment",
+    "short": "music",
+    "zola_avg": 1567,
+    "zola_low": 1300,
+    "zola_high": 1900,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "hair",
+    "label": "Hair & makeup",
+    "short": "hair and makeup",
+    "zola_avg": 982,
+    "zola_low": 800,
+    "zola_high": 1200,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "cake",
+    "label": "Cake & desserts",
+    "short": "cake",
+    "zola_avg": 917,
+    "zola_low": 700,
+    "zola_high": 1100,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "alter",
+    "label": "Dress alterations",
+    "short": "alterations",
+    "zola_avg": 550,
+    "zola_low": 300,
+    "zola_high": 800,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "invite",
+    "label": "Invitation suite",
+    "short": "invitations",
+    "zola_avg": 500,
+    "zola_low": 400,
+    "zola_high": 600,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "officiant",
+    "label": "Officiant",
+    "short": "officiant",
+    "zola_avg": 325,
+    "zola_low": 200,
+    "zola_high": 450,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "key": "tux",
+    "label": "Tux rental",
+    "short": "tux",
+    "zola_avg": 225,
+    "zola_low": 150,
+    "zola_high": 300,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   }
+  ],
+  "outside": [
+   {
+    "label": "honeymoon",
+    "zola_avg": 5300,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "label": "engagement ring",
+    "zola_avg": 5200,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "label": "wedding rings",
+    "zola_avg": 1500,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   },
+   {
+    "label": "rehearsal dinner",
+    "zola_avg": 2700,
+    "source_url": "https://www.zola.com/expert-advice/whats-the-average-cost-of-a-wedding",
+    "date_read": "2026-10-29"
+   }
+  ]
+ },
+ "faq": [
+  {
+   "q": "Is $10,000 a good budget for a wedding?",
+   "a": "It is 28% of Zola's $36,000 average for 2026, so every line is smaller: scaled from Zola's national averages, $10,000 gives the venue $1,828, catering $1,477 and the dress $427. Real prices fit it: courthouse fees from $60 (New York), a chapel for the couple from $197 and secondhand designer gowns from $65 (each checked Oct 28, 2026). Type $10,000 above to see all 15 lines."
+  },
+  {
+   "q": "What is a realistic budget for a small wedding?",
+   "a": "Zola's 2026 couples spend $36,000 on average for 145 guests: about $248 a guest. A small wedding can cost far less. Elopement and micro wedding packages in our five cities start at $350 ($159 in Las Vegas), and the cheapest room with a printed price for up to 80 guests in New York is $595 (checked Oct 28, 2026). Type your budget and guest count above."
+  },
+  {
+   "q": "What is a reasonable budget for a wedding dress?",
+   "a": "Zola's 2026 national average is $2,000 for the dress plus $550 for alterations: together 5.4% of the 15 items it lists, or $1,957 on a $36,000 budget. Secondhand designer gowns cost less: the 30 we re-opened on Oct 28, 2026 run from $65 to $1,000 on Poshmark."
+  },
+  {
+   "q": "What is a normal cost for a wedding venue?",
+   "a": "Zola's 2026 national average for the venue and site fees is $8,573, with a typical range of $6,900 to $10,300; it is the biggest line, 18% of the split. Small rooms that print their price start much lower: $197 in Houston and $250 in Dallas (chapels for the couple), $320 in Los Angeles (up to 5 guests), $400 in Chicago (up to 100) and $595 in New York (up to 80): the cheapest in each city, checked Oct 28, 2026."
+  },
+  {
+   "q": "How is a wedding budget usually broken down?",
+   "a": "Scaled from Zola's 2026 national averages: venue 18%, catering 15%, flowers and d&eacute;cor 14%, bar 12%, photography 9%, wedding planning 9%, videography 9% and the dress 4%. Music, hair and makeup, cake, alterations, invitations, the officiant and the tux take the last 11%. The honeymoon and the rings are paid outside the day and are not in the split."
+  }
+ ],
+ "related": [
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "wedding-dresses-under-1000",
+   "label": "Designer wedding dresses, $501 to $1,000"
+  },
+  {
+   "path": "micro-wedding-venues",
+   "label": "Small and micro wedding venues in five cities"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "courthouse-wedding-new-york",
+   "label": "Courthouse wedding in New York"
+  },
+  {
+   "path": "wedding-alcohol-calculator",
+   "label": "Wedding alcohol calculator"
+  },
+  {
+   "path": "day-of-wedding-coordinator-cost",
+   "label": "Day-of wedding coordinator cost"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-29",
+ "first_published": "2026-10-29"
+}

@@ -244,8 +244,8 @@ def strip_wrap(cards, label, groups="", none="No find in that size this week. Th
 
 
 # ----------------------------------------------------------------------------- the button blocks
-def cta_html(page, app, pos):
-    lab = labels_for(page)[0]
+def cta_html(page, app, pos, label=None):
+    lab = label or labels_for(page)[0]
     pk = picked_for(page)
     tpl = ' data-pick="{}" data-base="{}" data-tpl="{}"'.format(pk[0], lab, pk[1]) if pk else ""
     catch = '<p class="catch">{}</p>'.format(CATCH) if pos == "first" else ""
@@ -1082,7 +1082,146 @@ def calc_data_alcohol(page, pages, finds):
                      "price_month": d["price_month"], "max_guests": d["max_guests"], "max_hours": d["max_hours"]}}
 
 
-CALC_DATA = {"alcohol": calc_data_alcohol}
+def budget_split(budget, avgs):
+    """Each item's share of the sum of Zola's item averages, times her budget, rounded half up to whole dollars;
+    the last line takes the rounding so the lines add up to her budget exactly. The template's JS split() is the same rule."""
+    total = sum(avgs)
+    out = [int(budget * a / total + 0.5) for a in avgs[:-1]]
+    return out + [budget - sum(out)]
+
+
+def dates_txt(ds):
+    ds = sorted(set(d for d in ds if d))
+    if not ds:
+        return ""
+    return fmt_date(ds[0]) if len(ds) == 1 else "{} to {}".format(fmt_short(ds[0]), fmt_date(ds[-1]))
+
+
+def budget_dress_line(amt, gowns, gdate):
+    """The line under the split: how many real gowns we checked cost her dress amount or less (gowns = sorted [price, url])."""
+    ok = [g for g in gowns if g[0] <= amt]
+    if not ok:
+        return 'The cheapest real gown we re-opened on {} is <a href="{}">{}</a>.'.format(gdate, gowns[0][1], money(gowns[0][0]))
+    return 'Your split says <b>{}</b> for the dress. <a href="{}">{} real gown{} we re-opened on {} cost that or less, from {}</a>.'.format(
+        money(amt), ok[-1][1], len(ok), "" if len(ok) == 1 else "s", gdate, money(gowns[0][0]))
+
+
+def calc_data_budget(page, pages, finds):
+    """The wedding budget calculator: Zola's split (the page's calc.items) + our own real prices, read from the content files at every build."""
+    app, root = esc(app_link(load_site(), page)), root_of(page["path"])
+    c = page["calc"]
+    items = c["items"]
+    avgs = [i["zola_avg"] for i in items]
+    total, top = sum(avgs), max(avgs)
+    b0, g0 = c["default_budget"], c["default_guests"]
+    amt = dict(zip([i["key"] for i in items], budget_split(b0, avgs)))
+    by = lambda t: sorted((p for p in pages.values() if p["type"] == t), key=lambda p: p.get("order", 0))
+    ck = lambda p: CITY_NAMES.get(city_key(p), p.get("card_title", ""))
+    # dresses: every gown on the dress pages, cheapest first, with the page that lists it
+    gowns = sorted([g["price"], root + p["path"] + "/"] for p in by("dresses") for g in p["gowns"])
+    gdate = dates_txt([g.get("date_read") for p in by("dresses") for g in p["gowns"]])
+    real = {}
+    if gowns:
+        links = " &middot; ".join('<a href="@{}/">{} gowns, {} to {}</a>'.format(p["path"], len(p["gowns"]), money(min(g["price"] for g in p["gowns"])), money(max(g["price"] for g in p["gowns"])))
+                                  for p in by("dresses") if p["gowns"])
+        real["dress"] = "Real secondhand designer gowns, re-opened {}: {}".format(gdate, links)
+    vrows = []
+    for p in by("venues"):
+        flat = [v for v in p["venues"] if not v.get("per_person")]
+        if flat:
+            v = min(flat, key=lambda x: x["amount"])
+            mx = int(v.get("max_guests") or 0)
+            fit = (" (couple only)" if mx <= 2 else " (up to {} guests)".format(mx)) if mx else ""
+            vrows.append((v["amount"], '<a href="@{}/">{} {}</a>{}'.format(p["path"], ck(p), money(v["amount"]), fit), v["date_read"], fit))
+    if vrows:
+        vrows.sort()
+        real["venue"] = "The cheapest small room with a printed price, by city: {} (venues&rsquo; own pages, {})".format(", ".join(r[1] for r in vrows), dates_txt([r[2] for r in vrows]))
+    fl, ph = [], []
+    for city in CITY_ORDER:
+        f = (finds.get(city) or {}).get("florist")
+        if f and f.get("amount"):
+            fl.append((f["amount"], '<a href="{}" rel="noopener" target="_blank">{} {}</a>'.format(esc(f["url"]), CITY_NAMES[city], money(f["amount"])), f.get("date_read")))
+        g = (finds.get(city) or {}).get("photographer")
+        if g and g.get("amount"):
+            hrs = " ({} hour{})".format(g["hours"], "" if g["hours"] == 1 else "s") if g.get("hours") else ""
+            ph.append((g["amount"], '<a href="{}" rel="noopener" target="_blank">{} {}{}{}</a>'.format(esc(g["url"]), CITY_NAMES[city], "from " if g.get("from") else "", money(g["amount"]), hrs), g.get("date_read")))
+    if fl:
+        fl.sort()
+        real["flowers"] = "A bridal bouquet from a local florist: {} (florists&rsquo; own pages, {})".format(", ".join(r[1] for r in fl), dates_txt([r[2] for r in fl]))
+    if ph:
+        ph.sort()
+        real["photo"] = "A photographer&rsquo;s own package: {} ({})".format(", ".join(r[1] for r in ph), dates_txt([r[2] for r in ph]))
+    if pages.get("wedding-alcohol-calculator"):
+        real["bar"] = 'Buying the drinks yourself: <a href="@wedding-alcohol-calculator/">bottles and cases for your guest count</a>'
+    if pages.get("day-of-wedding-coordinator-cost"):
+        real["planning"] = 'A day-of coordinator instead of a full planner: <a href="@day-of-wedding-coordinator-cost/">what one costs in {}</a>'.format(
+            pages["day-of-wedding-coordinator-cost"]["last_checked"][:4])
+    rows = []
+    for i in items:
+        k = i["key"]
+        rows.append('<tr data-k="{k}"><th scope="row">{lab}<span class="calcb-sbar" aria-hidden="true"><i style="width:{w:.1f}%"></i></span></th>'
+                    '<td class="calcb-pct">{pct:.1f}%</td><td class="calcb-amt" data-amt="{k}">{a}</td></tr>'.format(
+                        k=k, lab=esc(i["label"]), w=100.0 * i["zola_avg"] / top, pct=100.0 * i["zola_avg"] / total, a=money(amt[k])))
+        if real.get(k):
+            rows.append('<tr class="calcb-realrow"><td colspan="3"><span class="calcb-real">{}</span></td></tr>'.format(real[k]))
+    lab = {i["key"]: i["label"] for i in items}
+    big = sorted(items, key=lambda i: -i["zola_avg"])[:6]
+    quote = "On a {} wedding budget, Zola&rsquo;s 2026 national averages split into {} and the dress {} ({:.0f}%) (Rachel&rsquo;s List, {}).".format(
+        money(b0), ", ".join("{} {} ({:.0f}%)".format(i["short"], money(amt[i["key"]]), 100.0 * i["zola_avg"] / total) for i in big[:5]),
+        money(amt["dress"]), 100.0 * next(i["zola_avg"] for i in items if i["key"] == "dress") / total, fmt_date(page["last_checked"]))
+    zpg = int(b0 / g0 + 0.5)  # Zola's average budget over its average guest count (arithmetic)
+    pg = budget_pg(b0, g0, amt["catering"] + amt["bar"], zpg)
+    summ = budget_summary(amt)
+    court = sorted((p["fee_total"], '<a href="@{}/">{} ${:,}</a>'.format(p["path"], esc(p["card_title"]), p["fee_total"])) for p in by("courthouse"))
+    pk = (by("packages") or [None])[0]
+    spend = []
+    if court:
+        spend.append('<li><b>Skip the venue</b>A courthouse wedding costs {} to {} in fees: {} (each clerk&rsquo;s own page, {}). Your split gives the venue <span data-amt="venue">{}</span>.</li>'.format(
+            "${:,}".format(court[0][0]), "${:,}".format(court[-1][0]), ", ".join(x[1] for x in court), dates_txt([p["last_checked"] for p in by("courthouse")]), money(amt["venue"])))
+    if pk:
+        main = sorted(x["amount"] for x in pk["cards"] if x["city"] != "las-vegas")
+        vg = sorted(x["amount"] for x in pk["cards"] if x["city"] == "las-vegas")
+        vtxt = ", plus {} Las Vegas chapel{} from {}".format(len(vg), "" if len(vg) == 1 else "s", money(vg[0])) if vg else ""
+        spend.append('<li><b>A package</b><a href="@{}/">{} elopement and micro wedding packages</a> in our five cities cost {} to {}{} (the providers&rsquo; own pages, {}).</li>'.format(
+            pk["path"], len(main), money(main[0]), money(main[-1]), vtxt, fmt_date(pk["last_checked"])))
+    hub = (by("hub") or [None])[0]
+    if hub and vrows:
+        spend.append('<li><b>A small room</b><a href="@{}/">Small and micro venues</a> that print their own price in five cities, from {}{}.</li>'.format(hub["path"], money(vrows[0][0]), vrows[0][3]))
+    src_rows = "".join('<tr><th scope="row">{}</th><td>{}</td><td class="src">{} to {}</td></tr>'.format(esc(i["label"]), money(i["zola_avg"]), money(i["zola_low"]), money(i["zola_high"])) for i in items)
+    zc, zf = c["source"], c["survey"]
+    outside = ", ".join("{} {}".format(esc(o["label"]), money(o["zola_avg"])) for o in c["outside"])
+    sources = ('<details class="src" id="sources"><summary>Sources: Zola&rsquo;s 2026 averages, and the pages behind our prices</summary>'
+               '<table class="tbl"><thead><tr><th scope="col">Item</th><th scope="col">Zola&rsquo;s 2026 average</th><th scope="col">Typical range</th></tr></thead><tbody>{rows}</tbody></table>'
+               '<p class="note">Item averages, their ranges and the costs outside the day ({outside}): Zola, <a href="{zu}" rel="noopener">{zn}</a>, last updated {zd}, read {zr}. '
+               'They add up to {tot}, more than Zola&rsquo;s {b0} average wedding, so the calculator uses each item&rsquo;s share of {tot}, times your budget. '
+               'The {b0} average and {g0} guests: Zola, <a href="{fu}" rel="noopener">{fn}</a> ({fs}), last updated {fd}, read {fr}. '
+               'Our own prices link to the page each one came from, with the day we read it (<a href="@how-we-check/">how we check</a>).</p></details>').format(
+        rows=src_rows, outside=outside, zu=esc(zc["url"]), zn=esc(zc["title"]), zd=fmt_date(zc["updated"]), zr=fmt_date(zc["date_read"]), tot=money(total), b0=money(b0), g0=g0,
+        fu=esc(zf["url"]), fn=esc(zf["title"]), fs=esc(zf["sample"]), fd=fmt_date(zf["updated"]), fr=fmt_date(zf["date_read"]))
+    n_ok = len([g for g in gowns if g[0] <= amt["dress"]])
+    return {
+        "html": {"rows": "".join(rows), "total": money(b0), "summary": summ, "per_guest": pg, "quote": quote, "outside": outside,
+                 "dress_line": budget_dress_line(amt["dress"], gowns, gdate) if gowns else "",
+                 "cta_dress": cta_html(page, app, "dress", label="Show me dresses under {}".format(money(amt["dress"])) if n_ok else None),
+                 "spend_less": '<section><h2>Spend <em>less</em> on the biggest line</h2><ul class="tipl">{}</ul></section>'.format("".join(spend)) if spend else "",
+                 "sources": sources},
+        "items": [[i["key"], i["zola_avg"]] for i in items], "gowns": gowns, "gowns_date": gdate, "slug": page["path"],
+        "def_budget": b0, "def_guests": g0, "zola_pg": zpg, "max_budget": c["max_budget"], "max_guests": c["max_guests"],
+    }
+
+
+def budget_pg(b, g, food, zola_pg):
+    return "Per guest: <b>{}</b> (Zola&rsquo;s average: {}). Food and drink per guest in this split: <b>{}</b>.".format(
+        money(int(b / g + 0.5)), money(zola_pg), money(int(food / g + 0.5)))
+
+
+def budget_summary(amt):
+    return "Venue <b>{}</b> &middot; catering <b>{}</b> &middot; flowers <b>{}</b> &middot; dress <b>{}</b>. All 15 lines below.".format(
+        money(amt["venue"]), money(amt["catering"]), money(amt["flowers"]), money(amt["dress"]))
+
+
+
+CALC_DATA = {"alcohol": calc_data_alcohol, "budget": calc_data_budget}
 
 
 # ----------------------------------------------------------------------------- structured data

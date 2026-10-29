@@ -212,6 +212,11 @@
    "note": "$60 to $236 in official fees, cheapest city first."
   },
   {
+   "path": "wedding-budget-calculator",
+   "label": "Wedding budget calculator",
+   "note": "Your budget split into 15 items from Zola's 2026 averages, with real prices next to the dress, venue, photos and flowers."
+  },
+  {
    "path": "how-we-check",
    "label": "How we check every price"
   }

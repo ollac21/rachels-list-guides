@@ -1,0 +1,144 @@
+{
+ "path": "photo-booth-rental-cost",
+ "type": "cost",
+ "medium": "cost",
+ "order": 18,
+ "title": "Photo Booth Rental Cost: Real Wedding Prices (2026)",
+ "description": "Photo booth rental costs $361 to $605 on average (Thumbtack). Real booths' own packages: $300 to $1,100 for 2 to 3 hours, checked Oct 29, 2026.",
+ "h1": "Photo booth rental cost",
+ "h1_em": "rental cost",
+ "eyebrow": "Photo booths · real prices",
+ "refresh_note": "Cost pages are re-checked monthly.",
+ "answer_html": "<p>As of Oct 29, 2026, renting a photo booth costs <strong class=\"big\">$361 to $605</strong> on average (<a href=\"https://www.thumbtack.com/p/photo-booth-rentals-prices\" rel=\"noopener\">Thumbtack</a>); <a href=\"https://www.checkcherry.com/articles/235-how-much-does-a-photo-booth-rental-cost-a-2026-pricing-guide\" rel=\"noopener\">Check Cherry</a>&rsquo;s bookings put the typical event at about $681 (updated Aug 10, 2026). Booths that publish their own prices ask $300 to $1,100 for 2 to 3 hours.</p>",
+ "oneliner": "As of Oct 29, 2026, renting a photo booth costs $361 to $605 on average (Thumbtack); booths' own packages run $300 to $1,100 for 2 to 3 hours.",
+ "facts_heading": "What a photo booth <em>costs</em>, source by source",
+ "table": {
+  "headers": [
+   "Who",
+   "Price, in their words",
+   "Source"
+  ],
+  "rows": [
+   {
+    "th": "Thumbtack<br><small>national average range</small>",
+    "td": "&ldquo;The national average cost of renting a photo booth ranges from around $361-$605, according to Thumbtack data.&rdquo; &middot; Hourly: &ldquo;They may charge between $125 and $200 per hour, with packages starting at two or three hours minimum.&rdquo;",
+    "src": "<a href=\"https://www.thumbtack.com/p/photo-booth-rentals-prices\" rel=\"noopener\">Thumbtack</a><br>page updated Oct 28, 2026; read Oct 29, 2026",
+    "amount": 361,
+    "source_url": "https://www.thumbtack.com/p/photo-booth-rentals-prices",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Check Cherry<br><small>booking data, about 118,000 rentals</small>",
+    "td": "&ldquo;the typical event runs about $681&rdquo; &middot; &ldquo;Half of all rentals land between $452 and $1,022&rdquo; &middot; &ldquo;a classic open-air booth sits near $615 in the middle, while a glam or mirror booth sits near $950&rdquo;",
+    "src": "<a href=\"https://www.checkcherry.com/articles/235-how-much-does-a-photo-booth-rental-cost-a-2026-pricing-guide\" rel=\"noopener\">Check Cherry</a><br>page updated Aug 10, 2026; read Oct 29, 2026",
+    "amount": 681,
+    "source_url": "https://www.checkcherry.com/articles/235-how-much-does-a-photo-booth-rental-cost-a-2026-pricing-guide",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Check Cherry<br><small>median total by rental length</small>",
+    "td": "2 hours or less: $495 &middot; 3 hours: $699 &middot; 4 hours: $800 &middot; 5 or more hours: $993",
+    "src": "<a href=\"https://www.checkcherry.com/articles/235-how-much-does-a-photo-booth-rental-cost-a-2026-pricing-guide\" rel=\"noopener\">Check Cherry</a><br>page updated Aug 10, 2026; read Oct 29, 2026",
+    "amount": 495,
+    "source_url": "https://www.checkcherry.com/articles/235-how-much-does-a-photo-booth-rental-cost-a-2026-pricing-guide",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Photo Booths Arizona LLC<br><small>3 hours</small>",
+    "td": "&ldquo;Digital Essence Package $300 includes 3 hours&rdquo; &middot; &ldquo;Signature Backdrop Package $400 includes 3 hours&rdquo; &middot; &ldquo;Prestige Keepsake Package $600 includes 3 hours&rdquo; (the $600 package is the one that lists prints)",
+    "src": "<a href=\"https://photo-booths-arizona.checkcherry.com/reservation\" rel=\"noopener\">Photo Booths Arizona LLC</a><br>read Oct 29, 2026",
+    "amount": 300,
+    "source_url": "https://photo-booths-arizona.checkcherry.com/reservation",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Spread Moore Love Photo Booths<br><small>3 hours</small>",
+    "td": "&ldquo;Digital Experience $400 includes 3 hours&rdquo; (no prints) &middot; &ldquo;Print Experience $550 includes 3 hours&rdquo; &middot; &ldquo;+$125 per additional hour&rdquo;",
+    "src": "<a href=\"https://spread-moore-love-photo-booths.checkcherry.com/reservation\" rel=\"noopener\">Spread Moore Love Photo Booths</a><br>read Oct 29, 2026",
+    "amount": 400,
+    "source_url": "https://spread-moore-love-photo-booths.checkcherry.com/reservation",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Snap Savvy Booths<br><small>Wedding Package</small>",
+    "td": "&ldquo;Wedding Package $500 includes 2 hours, 30 minutes +$100 per additional hour&rdquo;",
+    "src": "<a href=\"https://snap-savvy-booths.checkcherry.com/reservation\" rel=\"noopener\">Snap Savvy Booths</a><br>read Oct 29, 2026",
+    "amount": 500,
+    "source_url": "https://snap-savvy-booths.checkcherry.com/reservation",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "SBJamesPhotography, Baton Rouge<br><small>2 or 3 hours, prints included</small>",
+    "td": "&ldquo;two hours $650 2 hours of coverage&rdquo; &middot; &ldquo;THREE hours $750 3 hours of coverage&rdquo; &middot; &ldquo;Additional hour $150&rdquo;",
+    "src": "<a href=\"https://suzette-james.squarespace.com/photoboothinvestment\" rel=\"noopener\">SBJamesPhotography</a><br>read Oct 29, 2026",
+    "amount": 650,
+    "source_url": "https://suzette-james.squarespace.com/photoboothinvestment",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Crown Photo Booth Rental<br><small>3 hours</small>",
+    "td": "&ldquo;Classic Package (Digital) $800 includes 3 hours&rdquo; &middot; &ldquo;Premium Package (Prints included) $1,100 includes 3 hours&rdquo; &middot; &ldquo;+$110 per additional hour&rdquo;",
+    "src": "<a href=\"https://crown-photo-booth.checkcherry.com/reservation\" rel=\"noopener\">Crown Photo Booth Rental</a><br>read Oct 29, 2026",
+    "amount": 800,
+    "source_url": "https://crown-photo-booth.checkcherry.com/reservation",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "FunFoto<br><small>Wedding Package</small>",
+    "td": "&ldquo;Wedding Package | 3 Hours &mdash; $900&rdquo; with &ldquo;Unlimited instant 2x6 photo prints&rdquo; &middot; &ldquo;+$150 per additional hour&rdquo;",
+    "src": "<a href=\"https://funfoto-booth.checkcherry.com/reservation\" rel=\"noopener\">FunFoto</a><br>read Oct 29, 2026",
+    "amount": 900,
+    "source_url": "https://funfoto-booth.checkcherry.com/reservation",
+    "date_read": "2026-10-29"
+   }
+  ]
+ },
+ "facts_note": "Prices are each business&rsquo;s own published price on the day we read it; quotes for your date can differ. Check Cherry also makes the booking pages several of these booths use.",
+ "ideas": [],
+ "faq": [
+  {
+   "q": "How much does a photo booth rental cost?",
+   "a": "As of Oct 29, 2026, Thumbtack puts the national average at $361 to $605. Check Cherry's booking data from about 118,000 rentals puts the typical event at about $681, with half of all rentals between $452 and $1,022 (updated Aug 10, 2026). Booths that publish their own prices ask $300 to $1,100 for 2 to 3 hours."
+  },
+  {
+   "q": "How much does a photo booth cost per hour?",
+   "a": "Thumbtack says some companies charge $125 to $200 per hour, with packages starting at two or three hours minimum. On the booths' own pages, an extra hour costs $75 to $150."
+  },
+  {
+   "q": "How many hours of photo booth do I need?",
+   "a": "Most packages here are 2 to 3 hours. In Check Cherry's data the median rental totals $495 for 2 hours or less, $699 for 3 hours, $800 for 4 hours and $993 for 5 or more hours."
+  },
+  {
+   "q": "Why do photo booth prices differ so much?",
+   "a": "Booth type and prints. Check Cherry puts a classic open-air booth near $615 and a glam or mirror booth near $950. Prints add to the price: Crown Photo Booth Rental asks $800 digital and $1,100 with prints; Spread Moore Love asks $400 digital and $550 with prints."
+  },
+  {
+   "q": "What does a wedding photo booth package include?",
+   "a": "Snap Savvy Booths' Wedding Package is $500 for 2 hours 30 minutes; FunFoto's is $900 for 3 hours with an on-site attendant and unlimited 2x6 prints. Crown, Spread Moore Love and SBJamesPhotography list setup and teardown, an on-site attendant and a backdrop."
+  }
+ ],
+ "related": [
+  {
+   "path": "day-of-wedding-coordinator-cost",
+   "label": "Day-of wedding coordinator cost"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "micro-wedding-venues",
+   "label": "Micro wedding venues: compare cities"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-29",
+ "first_published": "2026-10-29"
+}

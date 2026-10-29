@@ -139,6 +139,11 @@
    "label": "Courthouse wedding in San Diego"
   },
   {
+   "path": "photo-booth-rental-cost",
+   "label": "Photo booth rental cost",
+   "note": "$361 to $605 on average; real booths' own packages and hours."
+  },
+  {
    "path": "how-we-check",
    "label": "How we check every price"
   }

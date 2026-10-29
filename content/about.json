@@ -1,0 +1,83 @@
+{
+ "path": "about",
+ "type": "trust",
+ "medium": "hub",
+ "order": 17,
+ "title": "About Rachel's List: Wedding Deals in the US and Canada",
+ "description": "Rachel's List finds wedding dresses, decor and venues for less, matched to the photos you love, every week. US and Canada. Checked Oct 29, 2026.",
+ "h1": "About Rachel's List",
+ "h1_em": "Rachel's List",
+ "eyebrow": "US and Canada · wedding deals · no affiliate links",
+ "refresh_note": "Reviewed with every refresh.",
+ "answer_html": "<p>Rachel's List finds wedding dresses, decor and venues for less, matched to the photos a bride loves, every week. Rachel's List (rachelslist.co) is a US and Canada wedding-deals service, not the Australian freelance job board of the same name (rachelslist.com.au). As of Oct 29, 2026, these guides have <strong>no affiliate links</strong>: we earn nothing from these sellers.</p>",
+ "oneliner": "What Rachel's List is: a US and Canada wedding-deals service (rachelslist.co), not the Australian freelance job board rachelslist.com.au. No affiliate links.",
+ "facts_heading": "How Rachel's List <em>works</em>",
+ "table": {
+  "headers": [
+   "Step",
+   "What happens",
+   "How often"
+  ],
+  "rows": [
+   {
+    "th": "1. Tap the styles you love",
+    "td": "In the app, tap the wedding photos you love. They make your Dream Board.",
+    "src": "Once, free to start"
+   },
+   {
+    "th": "2. Rachel's List searches",
+    "td": "Poshmark, Etsy and venues, for the looks you tap: dresses, decor, and venues with the price from their own site.",
+    "src": "Every week"
+   },
+   {
+    "th": "3. New finds on your board",
+    "td": "Each find shows the price now and the seller's original price.",
+    "src": "Every Tuesday"
+   }
+  ]
+ },
+ "facts_note": "These guides are free and use the same rules: every price links to the page it came from and shows the day we read it. <a href=\"@how-we-check/\">How we check every price</a>.",
+ "ideas": [],
+ "faq": [
+  {
+   "q": "What is Rachel's List?",
+   "a": "Rachel's List finds wedding dresses, decor and venues for less, matched to the photos a bride loves, every week. It is a wedding-deals service for the US and Canada, at rachelslist.co."
+  },
+  {
+   "q": "Is Rachel's List the Australian freelance job board?",
+   "a": "No. Rachel's List (rachelslist.co) is a US and Canada wedding-deals service, not the Australian freelance job board of the same name (rachelslist.com.au)."
+  },
+  {
+   "q": "How does Rachel's List find deals?",
+   "a": "You tap the styles you love. Rachel's List searches Poshmark, Etsy and venues every week for the looks you tap, and new finds land on your board every Tuesday. Free to start."
+  },
+  {
+   "q": "Do you earn money from the sellers or venues on these pages?",
+   "a": "No. There are no affiliate links, and we earn nothing from any seller or venue listed. The only button on a page leads to Rachel's List, our own app, free to start."
+  },
+  {
+   "q": "Where do the prices in the guides come from?",
+   "a": "Courthouse fees come from the county or city clerk's own web page and are quoted word for word. Venue and photographer prices come from their own websites. Dress prices come from the Poshmark listing, re-opened on the day shown. See <a href=\"@how-we-check/\">how we check every price</a>."
+  }
+ ],
+ "related": [
+  {
+   "path": "",
+   "label": "All the guides"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  },
+  {
+   "path": "wedding-budget-calculator",
+   "label": "Wedding budget calculator"
+  },
+  {
+   "path": "wedding-alcohol-calculator",
+   "label": "Wedding alcohol calculator"
+  }
+ ],
+ "last_checked": "2026-10-29",
+ "first_published": "2026-10-29"
+}

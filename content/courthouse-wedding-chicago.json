@@ -232,7 +232,8 @@
   {
    "title": "Send the license back",
    "text": "Within 10 days, by mail or in person. A certified copy of your certificate is $15.",
-   "fee": "$15"
+   "fee": "$15",
+   "fee_note": "optional copy"
   }
  ],
  "tips": [

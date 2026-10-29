@@ -35,13 +35,18 @@ AI_BOTS = ["Googlebot", "Bingbot", "OAI-SearchBot", "GPTBot", "ChatGPT-User", "C
 # ----------------------------------------------------------------------------- the button
 # page type -> (the button, the small header link, the phone bar)
 LABELS = {
-    "courthouse": ("Show me dresses in my size", "Dresses in my size", "Show me dresses in my size"),
-    "dresses": ("Show me gowns in my size", "Gowns in my size", "Show me gowns in my size"),
-    "home": ("Find my dress, flowers &amp; venue for less", "Find my dress &amp; venue", "Find my dress, flowers &amp; venue for less"),
-    "packages": ("Find my dress &amp; flowers for less", "Find my dress &amp; flowers", "Find my dress &amp; flowers for less"),
+    "courthouse": ("Show me dresses in my size", "Dresses in my size", "Show me dresses in my size", "More dresses like these, in my size"),
+    "dresses": ("Show me gowns in my size", "Gowns in my size", "Show me gowns in my size", "More gowns like these, in my size"),
+    "home": ("Find my dress &amp; venue for less", "Find my dress &amp; venue", "Find my dress &amp; venue for less", "Find my dress &amp; venue for less"),
+    "packages": ("Find my dress &amp; flowers for less", "Find my dress &amp; flowers", "Find my dress &amp; flowers for less", "Find my dress &amp; flowers for less"),
 }
-DEFAULT_LABELS = ("Find my venue, dress &amp; decor for less", "Find my venue &amp; dress", "Find my venue, dress &amp; decor for less")
-SIZED = {"courthouse": "Show me dresses in size {s}", "dresses": "Show me gowns in size {s}"}  # the button after she taps her size
+DEFAULT_LABELS = ("Find my venue &amp; dress for less", "Find my venue &amp; dress", "Find my venue &amp; dress for less", "More venues like these, for less")
+BOARD_LABEL = "Start my Dream Board"  # the button under the board and at the end
+# page type -> (what she taps first, the button text after she has tapped; {s} = her size or style)
+PICKED = {"courthouse": ("size", "Show me dresses in size {s}"), "dresses": ("size", "Show me gowns in size {s}"),
+          "venues": ("style", "Find my {s} venue &amp; dress for less"), "hub": ("style", "Find my {s} venue &amp; dress for less"),
+          "packages": ("style", "Find my {s} dress &amp; flowers for less"), "home": ("style", "Find my {s} dress &amp; venue for less")}
+CATCH = "No affiliate links: we earn nothing from these sellers"
 FINE = "Free &middot; 90 seconds &middot; no card"
 BOARD_HEAD = {
     "courthouse": "Want more like these, in <em>your</em> size?",
@@ -57,7 +62,7 @@ END_LINE = {
     "dresses": "Tell Rachel's List your size and the shapes you love. It checks Poshmark and Etsy every week. Free to start.",
 }
 END_LINE_DEFAULT = "Rachel's List searches Poshmark, Etsy and venues every week for the looks you tap. Free to start."
-BOARD_CAP = "Her Dream Board in the app (a screen recording)."
+BOARD_CAP = "A Dream Board in the app (screen recording). &ldquo;Saved&rdquo; = the sellers' original prices minus the finds' prices."
 BANDS = [("2-4", "2&ndash;4"), ("6-8", "6&ndash;8"), ("10-12", "10&ndash;12"), ("14+", "14+")]
 STYLES = [("boho-garden", "Boho"), ("classic-elegant", "Classic"), ("modern-minimal", "Modern"),
           ("rustic-barn", "Rustic"), ("beach", "Beach"), ("vintage", "Vintage")]
@@ -215,26 +220,29 @@ def has_photo(url):
     return photo_for(url)[0] is not None
 
 
-def ph_card(url, price, name, sub="", attrs="", eager=False, cta="strip"):
-    """A small square photo card: the item's own photo, its price on it, a line under it; a tap opens the listing."""
+def ph_card(url, price, name, sub="", attrs="", eager=False, cta="strip", line=""):
+    """A small square photo card: the item's own photo, its price on it, its name and one line under it; a tap opens the listing."""
     img = img_tag(url, name, 200, 200, eager)
     return ('<a class="ph{noimg}" href="{url}" target="_blank" rel="noopener" data-cta="{cta}" data-item{attrs}>'
             '<span class="ph-img">{img}<span class="ph-t">{name}</span><span class="ph-p">{price}</span></span>'
-            '<span class="ph-c">{sub}</span></a>').format(
-        noimg="" if img else " noimg", url=esc(url), cta=cta, attrs=attrs, img=img, name=esc(name), price=price, sub=esc(sub))
+            '<span class="ph-c"><b>{line}</b><span>{sub}</span></span></a>').format(
+        noimg="" if img else " noimg", url=esc(url), cta=cta, attrs=attrs, img=img, name=esc(name), price=price, sub=esc(sub), line=esc(line or name))
 
 
 def strip_wrap(cards, label, groups="", none="No find in that size this week. The button sets your size: Rachel watches for yours every Tuesday."):
-    return ('<div class="swrap"><p class="strip-h">{}</p><div class="pstrip" data-strip data-groups="{}">{}</div>'
-            '<p class="fnone">{}</p></div>').format(label, groups, "".join(cards), none)
+    return ('<div class="swrap"><p class="strip-h">{}</p><div class="pstrip{}" data-strip data-groups="{}">{}</div>'
+            '<p class="fnone">{}</p></div>').format(label, " c4" if len(cards) == 4 else "", groups, "".join(cards), none)
 
 
 # ----------------------------------------------------------------------------- the button blocks
 def cta_html(page, app, pos):
-    lab = labels_for(page)[0]
-    sized = ' data-base="{}" data-sized="{}"'.format(lab, SIZED[page["type"]]) if page["type"] in SIZED else ""
-    return '<div class="cta"{}><a class="rl-btn" href="{}" data-cta="{}" data-app{}><span class="lbl">{}</span></a><p class="fine">{}</p></div>'.format(
-        ' id="first-cta"' if pos == "first" else "", app, pos, sized, lab, FINE)
+    labels = labels_for(page)
+    lab = {"mid": labels[3], "board": BOARD_LABEL, "end": BOARD_LABEL}.get(pos, labels[0])
+    pk = PICKED.get(page["type"])
+    tpl = ' data-pick="{}" data-base="{}" data-tpl="{}"'.format(pk[0], lab, pk[1]) if pk and pos in ("first", "mid") else ""
+    catch = '<p class="catch">{}</p>'.format(CATCH) if pos == "first" else ""
+    return '<div class="cta"{}><a class="rl-btn" href="{}" data-cta="{}" data-app{}><span class="lbl">{}</span></a><p class="fine">{}</p>{}</div>'.format(
+        ' id="first-cta"' if pos == "first" else "", app, pos, tpl, lab, FINE, catch)
 
 
 def btn_row(page, app, pos):
@@ -249,15 +257,20 @@ def pick_chips(kind):
     return '<div class="fchips pick" data-group="{}" data-toggle><span class="lbl">{}</span>{}</div>'.format(kind, label, b)
 
 
-def packages_head(page):
-    """The bridge for the packages page, from what the providers' own lists say they include."""
+def packages_gap(page):
+    """What the providers' own lists leave out, counted from their `includes` text."""
     cards = [c for c in page.get("cards", []) if c["city"] != "las-vegas"]
     inc = [(c.get("includes") or "").lower() for c in cards]
     n = len(cards)
     dress = sum(1 for t in inc if "dress" in t or "gown" in t)
     flowers = sum(1 for t in inc if any(k in t for k in ("bouquet", "floral", "flower")))
-    lead = "No package here lists a dress" if dress == 0 else "Only {} of {} packages list a dress".format(dress, n)
-    return "{} and {} of {} leave flowers out. Rachel's List finds both <em>for less</em>".format(lead, n - flowers, n)
+    lead = "None of these lists a dress" if dress == 0 else "Only {} of {} list a dress".format(dress, n)
+    return "{} and {} of {} leave flowers out".format(lead, n - flowers, n)
+
+
+def packages_head(page):
+    """The bridge for the packages page, from what the providers' own lists say they include."""
+    return packages_gap(page).replace("None of these lists", "No package here lists") + ". Rachel's List finds both <em>for less</em>"
 
 
 def board_block(page, app, root, pos="board"):
@@ -275,14 +288,26 @@ def answer_wrap(inner):
     return '<div class="answer" id="answer"><!--answer-->{}<!--/answer--></div>'.format(inner)
 
 
+def whole_day(page):
+    """The courthouse fees plus the cheapest dress and the bouquet we found: one real number for a whole courthouse day (each part from its own page)."""
+    cd = load_cdresses().get("dresses", [])
+    ff = ROOT / "research" / "flow-finds.json"
+    bq = (load_json(ff)["cities"].get(city_key(page), {}) or {}).get("bouquet") if ff.exists() else None
+    if not cd or not bq:
+        return ""
+    dress = min(d["price"] for d in cd)
+    return '<p class="a-sub">With a {} dress and a {} bouquet we found: about <b>{}</b> in all.</p>'.format(
+        money(dress), esc(bq["price_display"]), money(page["fee_total"] + dress + bq["amount"]))
+
+
 def answer_courthouse(page):
     city = page["card_title"]
     year = page["last_checked"][:4]
     return answer_wrap(
         '<p class="a-lead">A courthouse wedding in {city} costs <b class="a-big">${fee:,}</b> in {year}'
-        '<span class="a-parts">{parts}</span></p>'
+        '<span class="a-parts">{parts}</span></p>{day}'
         '<p class="a-meta">{pin}<span>{where} &middot; {when}</span></p>'.format(
-            city=esc(city), fee=page["fee_total"], year=year, parts=esc(page["fee_parts"]), pin=ico("i-pin"),
+            city=esc(city), fee=page["fee_total"], year=year, parts=esc(page["fee_parts"]), pin=ico("i-pin"), day=whole_day(page),
             where=esc(page["where"]), when=esc(page.get("when_short") or page["when"])))
 
 
@@ -296,14 +321,17 @@ def venue_stats(page):
 def answer_venues(page):
     vs, flat, ten = venue_stats(page)
     city = CITY_NAMES.get(city_key(page), "")
-    lo, hi = min(v["amount"] for v in flat), max(v["amount"] for v in flat)
+    prices = [v["amount"] for v in flat]
+    lo, hi = min(prices), max(prices)
     year = page["last_checked"][:4]
     out = ('<p class="a-lead"><b class="a-big">{n}</b> small venues in {city} print their price in {year}: from <b>{lo}</b> to <b>{hi}</b></p>').format(
         n=len(vs), city=esc(city), year=year, lo=money(lo), hi=money(hi))
+    bits = []
     if ten:
         v = min(ten, key=lambda x: x["amount"])
-        out += '<p class="a-sub">Cheapest room for 10 or more guests: <b>{}</b>, <a href="{}" rel="noopener" target="_blank">{}</a>.</p>'.format(money(v["amount"]), esc(v["url"]), esc(v["name"]))
-    return answer_wrap(out)
+        bits.append('For 10+ guests the cheapest is <b>{}</b> (<a href="{}" rel="noopener" target="_blank">{}</a>).'.format(money(v["amount"]), esc(v["url"]), esc(v["name"])))
+    bits.append("Middle price <b>{}</b>; {} of {} under $1,000.".format(money(statistics.median(prices)), sum(1 for p in prices if p < 1000), len(prices)))
+    return answer_wrap(out + '<p class="a-sub">{}</p>'.format(" ".join(bits)))
 
 
 def micro_pick(venues):
@@ -315,29 +343,30 @@ def micro_pick(venues):
 
 
 def answer_hub(page, pages):
-    best, bycity = None, []
+    best = None
     for c in CITY_ORDER:
         p = next((x for x in pages.values() if x["type"] == "venues" and city_key(x) == c), None)
         pick = micro_pick(p["venues"]) if p else None
         if pick:
             best = pick["amount"] if best is None else min(best, pick["amount"])
-            bycity.append("{} from {}".format(CITY_NAMES[c], money(pick["amount"])))
     year = page["last_checked"][:4]
     allp = sorted(v["amount"] for p in pages.values() if p["type"] == "venues" for v in p["venues"] if not v.get("per_person"))
-    return answer_wrap('<p class="a-lead">A venue for 10 or more guests starts at <b class="a-big">{lo}</b> in {year}; the middle printed price in our five cities is <b>{mid}</b>.</p>'
-                       '<p class="a-sub">The cheapest room for 10+ guests: {by}.</p>'.format(lo=money(best), mid=money(statistics.median(allp)), year=year, by=", ".join(bycity)))
+    lo = min(allp)
+    return answer_wrap('<p class="a-lead">A venue for 10 or more guests starts at <b class="a-big">{best}</b> in {year}; the middle price in our five cities is <b>{mid}</b>.</p>'
+                       '<p class="a-sub">{u} of {n} priced venues are under $1,000 and {f} are $5,000 or less. The {lo} one is a chapel for two.</p>'.format(
+        best=money(best), mid=money(statistics.median(allp)), year=year, n=len(allp), u=sum(1 for a in allp if a < 1000), f=sum(1 for a in allp if a <= 5000), lo=money(lo)))
 
 
 def answer_packages(page, pages=None):
     cards = page["cards"]
     main = [c for c in cards if c["city"] != "las-vegas"]
+    vegas = [c for c in cards if c["city"] == "las-vegas"]
     amts = sorted(c["amount"] for c in main)
     year = page["last_checked"][:4]
-    out = ('<p class="a-lead"><b class="a-big">{n}</b> elopement and micro wedding packages in our five cities print their price in {year}: from <b>{lo}</b> to <b>{hi}</b>; {u} are under $1,000</p>').format(
+    out = ('<p class="a-lead"><b class="a-big">{n}</b> elopement and micro wedding packages in our five cities print their price in {year}: <b>{lo}</b> to <b>{hi}</b>; {u} are under $1,000</p>').format(
         n=len(main), year=year, lo=money(amts[0]), hi=money(amts[-1]), u=sum(1 for a in amts if a < 1000))
-    fees = [f["amount"] for p in (pages or {}).values() if p["type"] == "courthouse" for f in p["facts"] if f["key"] == "license_fee" and f.get("amount") is not None]
-    if fees:
-        out += '<p class="a-sub">The marriage license is extra unless a card says it is in the price: ${:,} to ${:,} by county (<a href="@courthouse-wedding-chicago/">courthouse guides</a>).</p>'.format(min(fees), max(fees))
+    vg = " Two Las Vegas chapels start at {}.".format(money(min(c["amount"] for c in vegas))) if vegas else ""
+    out += '<p class="a-sub">Middle price <b>{}</b>.{} {}.</p>'.format(money(statistics.median(amts)), vg, packages_gap(page))
     return answer_wrap(out)
 
 
@@ -346,14 +375,25 @@ def answer_dresses(page):
     sizes = [int(re.search(r"\d+", str(x["size"])).group()) for x in g if re.search(r"\d+", str(x["size"]))]
     year = page["last_checked"][:4]
     return answer_wrap('<p class="a-lead"><b class="a-big">{n}</b> secondhand designer wedding gowns, {lo} to {hi}, on Poshmark in {year}: sizes {a} to {b}.</p>'
-                       '<p class="a-sub">Each was re-opened on {d} and was still for sale at the price shown.</p>'.format(
-        n=len(g), lo=money(min(x["price"] for x in g)), hi=money(max(x["price"] for x in g)), year=year, a=min(sizes), b=max(sizes), d=fmt_date(page["last_checked"])))
+                       '<p class="a-sub">Each re-opened {d}, still for sale at this price. &ldquo;orig.&rdquo; = the seller\'s original price.</p>'.format(
+        n=len(g), lo=money(min(x["price"] for x in g)), hi=money(max(x["price"] for x in g)), year=year, a=min(sizes), b=max(sizes), d=fmt_short(page["last_checked"])))
 
 
 def answer_generic(page):
     ah = re.sub(r'<p class="sub">.*?</p>', "", page["answer_html"], flags=re.S)
     ah = re.sub(r'<p class="hook">.*?</p>', "", ah, flags=re.S)
     return answer_wrap(ah)
+
+
+def answer_home(page, pages):
+    year = page["last_checked"][:4]
+    court = [p["fee_total"] for p in pages.values() if p["type"] == "courthouse"]
+    flat = [v["amount"] for p in pages.values() if p["type"] == "venues" for v in p["venues"] if not v.get("per_person")]
+    gowns = [g["price"] for p in pages.values() if p["type"] == "dresses" for g in p["gowns"]]
+    n = len([p for p in pages.values() if p["path"] not in ("", "/") and p["type"] != "trust"])
+    return answer_wrap('<p class="a-lead">Real wedding prices in {y}: a courthouse wedding costs <b>${a:,} to ${b:,}</b> in fees, a small venue starts at <b>{v}</b>, a secondhand designer gown at <b>{g}</b>.</p>'
+                       '<p class="a-sub">{n} free guides; each price is copied from its source page and dated {d}. <a href="@how-we-check/">How we check</a>.</p>'.format(
+        y=year, a=min(court), b=max(court), v=money(min(flat)), g=money(min(gowns)), n=n, d=fmt_date(page["last_checked"])))
 
 
 def render_answer(page, pages=None):
@@ -368,6 +408,8 @@ def render_answer(page, pages=None):
         return answer_packages(page, pages)
     if t == "dresses":
         return answer_dresses(page)
+    if t == "home":
+        return answer_home(page, pages)
     return answer_generic(page)
 
 
@@ -393,7 +435,8 @@ def gown_item(g):
 
 
 def cd_item(d):
-    return {"url": d["url"], "price": d["price"], "old": d.get("old_price"), "brand": d["name"], "model": d["style"], "name": "{} {}".format(d["name"], d["style"]),
+    name = d["name"] if d["style"].lower() in d["name"].lower() else "{} {}".format(d["name"], d["style"])
+    return {"url": d["url"], "price": d["price"], "old": d.get("old_price"), "brand": d["name"], "model": d["style"], "name": name,
             "size": str(d["size"]), "band": d["band"], "kind": "dress"}
 
 
@@ -406,8 +449,10 @@ def venue_item(v):
 
 def card_item(c, hub_fit=None):
     mx = int((hub_fit or {}).get(c["name"]) or 0)
+    city = CITY_NAMES.get(c["city"], "Las Vegas" if c["city"] == "las-vegas" else "")
+    fit = ("couple only" if 0 < mx <= 2 else "up to {} guests".format(mx)) if mx else ""
     return {"url": c["url"], "price": c["amount"], "pp": False, "name": c["name"], "max": mx, "kind": "card", "city": c["city"],
-            "sub": CITY_NAMES.get(c["city"], "Las Vegas" if c["city"] == "las-vegas" else "")}
+            "sub": "{} · {}".format(city, fit) if fit else city}
 
 
 def price_txt(it):
@@ -416,13 +461,16 @@ def price_txt(it):
 
 def strip_card(it, attrs="", eager=False):
     if it["kind"] in ("gown", "dress"):
-        sub = ("{} · size {}".format(it["prefix"], it["size"]) if it.get("prefix") else "Size {}".format(it["size"])) + (" · was {}".format(money(it["old"])) if it.get("old") and not it.get("prefix") else "")
-        return ph_card(it["url"], money(it["price"]), it["name"], sub, ' data-band="{}"{}'.format(it["band"], attrs), eager)
-    return ph_card(it["url"], price_txt(it), it["name"], it.get("sub", ""), ' data-max="{}" data-amt="{}"{}'.format(it.get("max", 0), 999999 if it.get("pp") else int(it["price"]), attrs), eager)
+        sub = "Size {}".format(it["size"]) + (" · orig. {}".format(money(it["old"])) if it.get("old") else "")
+        if it.get("tag"):
+            sub = it["tag"]
+        return ph_card(it["url"], money(it["price"]), it["name"], sub, ' data-band="{}"{}'.format(it["band"], attrs), eager, line=it["brand"])
+    sub = it.get("tag") or it.get("sub", "")
+    return ph_card(it["url"], price_txt(it), it["name"], sub, ' data-max="{}" data-amt="{}"{}'.format(it.get("max", 0), 999999 if it.get("pp") else int(it["price"]), attrs), eager)
 
 
-def pick_strip(items, n=4, floor=3):
-    """The cheapest items with a photo (no photo shown twice), up to n; if photos are short, the cheapest text cards bring it to `floor`."""
+def pick_strip(items, n=6, floor=4):
+    """The cheapest items that have a photo (no photo shown twice), then the cheapest others as text cards, so the row has at least `floor` cards."""
     chosen, seen = [], set()
     for it in sorted(items, key=lambda x: x["price"]):
         src = photo_for(it["url"])[0]
@@ -433,27 +481,11 @@ def pick_strip(items, n=4, floor=3):
         if len(chosen) == n:
             return chosen
     for it in sorted(items, key=lambda x: x["price"]):
-        if len(chosen) >= floor:
+        if len(chosen) >= max(floor, min(n, len(chosen))) and len(chosen) >= floor:
             break
         if it not in chosen:
             chosen.append(it)
     return chosen
-
-
-def fill_with_dresses(pk, seed=0, n=6):
-    """A venue or package page shows its own items first, then real dresses (they are what the button finds), up to n cards."""
-    need = n - len(pk)
-    if need <= 0:
-        return pk
-    pool = sorted((dict(cd_item(d), prefix="Dress") for d in load_cdresses().get("dresses", []) if has_photo(d["url"])), key=lambda x: x["price"])
-    out, step = list(pk), max(1, len(pool) // max(need, 1))
-    k = 0
-    while len(out) < n and pool and k < len(pool) * 2:
-        it = pool[(seed + k * step) % len(pool)]
-        if it not in out:
-            out.append(it)
-        k += 1
-    return out
 
 
 def band_defaults(items, rot=0, n=6):
@@ -485,10 +517,10 @@ def first_screen(page, site, pages, app, root):
         if t == "courthouse":
             items, cd = courthouse_items(page)
             rot = CITY_ORDER.index(city_key(page)) if city_key(page) in CITY_ORDER else 0
-            label = "Courthouse-ready dresses, still for sale"
+            label = "Courthouse dresses, still for sale"
         else:
             items = [gown_item(g) for g in page["gowns"]]
-            rot, label = 0, "Real gowns, each re-opened {} and still for sale".format(fmt_short(page["last_checked"]))
+            rot, label = 0, "Real gowns, still for sale"
         pk = band_defaults(items, rot)
         cards = [strip_card(it, " data-def" if it in pk else "", eager=it in pk) for it in sorted(items, key=lambda x: (x not in pk, pk.index(x) if x in pk else 0, x["price"]))]
         strip = strip_wrap(cards, label, "size")
@@ -505,11 +537,10 @@ def first_screen(page, site, pages, app, root):
         if t == "home":
             pk = items
         else:
-            own = hub_strip(items) if t == "hub" else pick_strip(items, 4)
-            pk = fill_with_dresses(own, seed=list(pages).index(page["path"]) if page["path"] in pages else 0)
+            pk = hub_strip(items) if t == "hub" else pick_strip(items, 6, 4)
         cards = [strip_card(it, " data-def", eager=True) for it in pk]
-        label = {"venues": "Real venues and dresses, each from its own page", "hub": "The cheapest rooms, and dresses to match",
-                 "packages": "Real packages and dresses, each from its own page", "home": "Real finds this week, each from its own page"}.get(t, "Real finds")
+        label = {"venues": "Real venues with a printed price", "hub": "Real rooms for 10+ guests, from each city", "packages": "Real packages with a printed price",
+                 "home": "Real finds this week"}.get(t, "Real finds")
         strip = strip_wrap(cards, label)
         chips = pick_chips("style")
     STRIPS[page["path"]] = (len(pk), sum(1 for it in pk if has_photo(it["url"])))
@@ -517,28 +548,35 @@ def first_screen(page, site, pages, app, root):
 
 
 def hub_items(page, pages):
-    fit = {v["name"]: v.get("max_guests") for p in pages.values() if p["type"] == "venues" for v in p["venues"]}
-    return [card_item(c, fit) for c in page["cards"]]
+    """Every venue on the five city pages (the hub shows the best of each city, the photos come from all of them)."""
+    out = []
+    for c in CITY_ORDER:
+        vp = next((x for x in pages.values() if x["type"] == "venues" and city_key(x) == c), None)
+        for v in (vp["venues"] if vp else []):
+            if v.get("per_person"):
+                continue
+            it = venue_item(v)
+            it["city"] = c
+            it["sub"] = "{} · {}".format(CITY_NAMES[c], it["sub"].lower() if it["sub"] else "")
+            out.append(it)
+    return out
 
 
 def hub_strip(items):
-    """The cheapest card with a photo in each city, then the cheapest other cards with a photo."""
+    """Rooms for 10 or more guests only (the answer says so): the cheapest with a photo first, one per city where it can, then text cards."""
+    room = [x for x in items if (x.get("max") or 0) >= 10]
     out, seen = [], set()
     for c in CITY_ORDER:
-        for it in sorted((x for x in items if x["city"] == c), key=lambda x: x["price"]):
+        for it in sorted((x for x in room if x["city"] == c), key=lambda x: x["price"]):
             src = photo_for(it["url"])[0]
             if src and src not in seen:
                 seen.add(src)
                 out.append(it)
                 break
-    for it in sorted(items, key=lambda x: x["price"]):
-        src = photo_for(it["url"])[0]
-        if len(out) < 4 and src and src not in seen:
-            seen.add(src)
+    for it in pick_strip(room, 6, 4):
+        if it not in out and len(out) < 6:
             out.append(it)
-    if len(out) < 3:
-        out += [x for x in sorted(items, key=lambda x: x["price"]) if x not in out][:3 - len(out)]
-    return sorted(out, key=lambda x: x["price"])[:4]
+    return sorted(out, key=lambda x: x["price"])[:6]
 
 
 def home_items(pages):
@@ -546,23 +584,22 @@ def home_items(pages):
     g5 = next((p for p in pages.values() if p["path"] == "wedding-dresses-under-500"), None)
     if g5:
         gs = sorted(g5["gowns"], key=lambda g: g["price"] - g["old_price"])  # the biggest gap first
-        out += [dict(gown_item(g), price=g["price"]) for g in gs if has_photo(g["url"])][:2]
-    court = next((p for p in pages.values() if p["path"] == "courthouse-wedding-chicago"), None)
-    cds = load_cdresses().get("dresses", [])
-    cds = [d for d in cds if has_photo(d["url"])]
+        out += [dict(gown_item(g), tag="Gown · Poshmark") for g in gs if has_photo(g["url"])][:2]
+    cds = [d for d in load_cdresses().get("dresses", []) if has_photo(d["url"])]
     if cds:
-        out.append(cd_item(sorted(cds, key=lambda d: d["price"])[1]))
-    for path in ("small-wedding-venues-houston", "small-wedding-venues-new-york"):
+        out.append(dict(cd_item(sorted(cds, key=lambda d: d["price"])[1]), tag="Dress · Poshmark"))
+    for path, city in (("small-wedding-venues-houston", "Houston"), ("small-wedding-venues-new-york", "New York")):
         p = pages.get(path)
         if p:
             v = [venue_item(x) for x in p["venues"] if has_photo(x["url"]) and not x.get("per_person")]
             if v:
-                out.append(sorted(v, key=lambda x: x["price"])[0])
+                out.append(dict(sorted(v, key=lambda x: x["price"])[0], tag="Venue · " + city))
     pk = pages.get("elopement-packages")
     if pk:
         c = [card_item(x) for x in pk["cards"] if x["city"] != "las-vegas" and has_photo(x["url"])]
         if c:
-            out.append(sorted(c, key=lambda x: x["price"])[0])
+            it = sorted(c, key=lambda x: x["price"])[0]
+            out.append(dict(it, tag="Package · " + it["sub"]))
     return out
 
 
@@ -570,7 +607,7 @@ def home_items(pages):
 def render_steps(page):
     items = []
     for i, s in enumerate(page["steps5"], 1):
-        fee = '<span class="sfee">{}</span>'.format(esc(s["fee"])) if s.get("fee") else "<span></span>"
+        fee = '<span class="sfee">{}{}</span>'.format(esc(s["fee"]), '<small>{}</small>'.format(esc(s["fee_note"])) if s.get("fee_note") else "") if s.get("fee") else "<span></span>"
         items.append('<li><span class="sn">{}</span><div class="sb"><b>{}</b><span>{}</span></div>{}</li>'.format(i, esc(s["title"]), esc(s["text"]), fee))
     note = ' <i>({})</i>'.format(esc(page["where_note"])) if page.get("where_note") else ""
     wh = ('<ul class="a-rows wh"><li>{}<span><b>Where</b>{}{}</span></li><li>{}<span><b>When</b>{}</span></li></ul>'.format(
@@ -620,16 +657,27 @@ def find_row(icon, title, sub, price, url, small=""):
             '<span class="fp">{}{}</span></a></li>').format(" has-img" if img else "", esc(url), lead, esc(title), esc(sub), small, esc(price))
 
 
+def grid_cards(items, pk, more_after=None):
+    """The list below the first-screen row: cards in price order; the ones already in the row stay out of the way until she picks a size."""
+    pkurls = {p["url"] for p in pk}
+    rest = [it for it in sorted(items, key=lambda x: x["price"]) if it["url"] not in pkurls]
+    cards = [dress_card(it, " data-more" if (more_after is not None and i >= more_after) else "") for i, it in enumerate(rest)]
+    skip = [dress_card(it, " data-skipdef") for it in sorted(items, key=lambda x: x["price"]) if it["url"] in pkurls]
+    return cards, skip, len(items)
+
+
 def render_courthouse_grid(page, app):
     items, cd = courthouse_items(page)
-    cards = [dress_card(it) for it in sorted(items, key=lambda x: x["price"])]
+    rot = CITY_ORDER.index(city_key(page)) if city_key(page) in CITY_ORDER else 0
+    cards, skip, n = grid_cards(items, band_defaults(items, rot), more_after=6)
     dd = fmt_short(cd["date_read"]) if cd.get("date_read") else "Oct 28"
     lead = "Short, midi and simple white dresses, each re-opened on {} and still for sale. Tap your size above, or open any one.".format(dd)
     return ('<section><h2>{head}</h2><p class="sec-lead">{lead}</p><div class="fwrap" data-groups="size"><p class="fstate" hidden></p>'
-            '<div class="dgrid">{body}</div><p class="fnone">No dress in that size this week. The button sets your size: Rachel watches for yours every Tuesday.</p></div>'
+            '<div class="dgrid">{body}</div><button type="button" class="fc showmore" data-more-btn>Show all {n} dresses</button>'
+            '<p class="fnone">No dress in that size this week. The button sets your size: Rachel watches for yours every Tuesday.</p></div>'
             '<p class="srcnote">Dresses are Poshmark listings; each photo and price links to the seller\'s own page.</p></section>').format(
         head=page["look_heading"].replace("look,", "<em>look</em>,") if page.get("look_heading") else "Your courthouse look, for less",
-        lead=lead, body=grid_with_button(cards, btn_row(page, app, "mid")))
+        lead=lead, body=grid_with_button(cards, btn_row(page, app, "mid")) + "".join(skip), n=n)
 
 
 def render_courthouse_finds(page):
@@ -712,7 +760,8 @@ def render_cards_section(page, app, pages=None):
         if page["type"] == "packages":
             inc_l = (c.get("includes") or "").lower()
             fl = [("Officiant", ("officiant", "minister")), ("Photos", ("photo",)), ("License", ("license",)), ("Flowers", ("bouquet", "floral", "flower"))]
-            flags = '<ul class="flags">{}</ul>'.format("".join('<li class="{}">{} {}</li>'.format("y" if any(k in inc_l for k in ks) else "n", "&#10003;" if any(k in inc_l for k in ks) else "&ndash;", n) for n, ks in fl))
+            named = [n for n, ks in fl if any(k in inc_l for k in ks)]
+            flags = '<ul class="flags">{}</ul>'.format("".join('<li class="y">&#10003; {}</li>'.format(n) for n in named)) if named else ""
         mx = fit.get(c["name"]) or 0
         tag = '<span class="v-fits">{}</span>'.format("Destination: Las Vegas") if c["city"] == "las-vegas" else (
             '<span class="v-fits">{}</span>'.format(esc(CITY_NAMES.get(c["city"], ""))) if page["type"] == "packages" and c["city"] else (
@@ -733,19 +782,19 @@ def render_cards_section(page, app, pages=None):
                 links += '<a class="citylink" data-for="{c}" href="@{path}/" hidden>See all {n} {name} venues &rarr;</a>'.format(c=c, path=vp["path"], n=len(vp["venues"]), name=CITY_NAMES[c])
     return ('<section><h2>{head}</h2><p class="sec-lead">{intro}</p><div class="fwrap" data-groups="city"><div class="fchips" data-group="city"><span class="lbl">City</span>{chips}</div>{links}'
             '{legend}<div class="vlist">{body}</div><p class="fnone">Nothing listed for this city yet.</p></div></section>').format(
-        legend='<p class="srcnote legend">&#10003; named on the provider\'s own page &middot; &ndash; not named there</p>' if page["type"] == "packages" else "",
+        legend='<p class="srcnote legend">&#10003; = named on the provider\'s own page; what is not ticked is not named there</p>' if page["type"] == "packages" else "",
         head=page.get("facts_heading", "Prices, cheapest first"), intro=page.get("facts_intro", ""), chips="".join(chips), links=links,
         body=grid_with_button(out, btn_row(page, app, "mid")))
 
 
 # ----------------------------------------------------------------------------- dresses
 def render_gowns(page, app):
-    items = sorted((gown_item(g) for g in page["gowns"]), key=lambda x: (x["price"], -(x.get("old") or 0)))
-    cards = [dress_card(it) for it in items]
+    items = [gown_item(g) for g in page["gowns"]]
+    cards, skip, n = grid_cards(items, band_defaults(items, 0))
     other = '<p class="srcnote">{} Other price band: <a href="@{}/">{}</a>.</p>'.format(esc(page.get("facts_intro", "")), *(("wedding-dresses-under-1000", "gowns from $501 to $1,000") if "500" in page["path"] else ("wedding-dresses-under-500", "gowns at $500 or less")))
     return ('<section class="gowns-sec"><h2>{head}</h2><div class="fwrap" data-groups="size"><p class="fstate" hidden></p><div class="dgrid big">{body}</div>'
             '<p class="fnone">No gown in that size this week. The button sets your size: Rachel watches for yours every Tuesday.</p></div>{other}</section>').format(
-        head=page.get("facts_heading") or "This week's <em>gowns</em>", body=grid_with_button(cards, btn_row(page, app, "mid")), other=other)
+        head=page.get("facts_heading") or "This week's <em>gowns</em>", body=grid_with_button(cards, btn_row(page, app, "mid")) + "".join(skip), other=other)
 
 
 def render_safe(page):
@@ -883,7 +932,8 @@ def h1_html(page):
 def checked_line(page):
     src = ' &middot; <a href="#sources">official sources</a>' if page["type"] == "courthouse" else (
         ' &middot; <a href="@how-we-check/">no one pays to be listed</a>' if page["type"] in ("venues", "hub", "packages", "dresses", "home") else "")
-    return '<p class="checked">Last checked: <time datetime="{}">{}</time>{}</p>'.format(page["last_checked"], fmt_date(page["last_checked"]), src)
+    orig = ""
+    return '<p class="checked">Last checked: <time datetime="{}">{}</time>{}{}</p>'.format(page["last_checked"], fmt_date(page["last_checked"]), src, orig)
 
 
 def render_page(page, site, pages, finds):
@@ -900,7 +950,7 @@ def render_page(page, site, pages, finds):
         mid = [render_home_menu(page, pages), board]
         tail = []
     elif t == "courthouse":
-        mid = [render_courthouse_grid(page, app), render_courthouse_finds(page), board, render_steps(page), render_tips(page)]
+        mid = [render_courthouse_grid(page, app), render_steps(page), render_courthouse_finds(page), board, render_tips(page)]
         tail = [render_faq(page), end, render_related(page, pages)]
     elif t == "venues":
         mid = [render_venues_list(page, app), board, render_payless(page)]
@@ -922,9 +972,11 @@ def finish_page(page, site, pages, body, root, app):
     ld = "\n".join('<script type="application/ld+json">{}</script>'.format(
         json.dumps(b, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")) for b in jsonld_blocks(page, site, pages))
     lab = labels_for(page)
-    sized = ' data-base="{}" data-sized="{}"'.format(lab[2], SIZED[page["type"]]) if page["type"] in SIZED else ""
-    sticky = '<a href="{}" data-cta="sticky" data-app{}><span class="lbl">{}</span><small>Free &middot; no card</small></a>'.format(app, sized, lab[2])
-    hdsized = ' data-base="{}" data-sized="{}"'.format(lab[1], "Dresses in size {s}" if page["type"] == "courthouse" else "Gowns in size {s}") if page["type"] in SIZED else ""
+    pk = PICKED.get(page["type"])
+    stp = ' data-pick="{}" data-base="{}" data-tpl="{}"'.format(pk[0], lab[2], pk[1]) if pk else ""
+    sticky = '<a href="{}" data-cta="sticky" data-app{}><span class="lbl">{}</span><small>Free &middot; no card</small></a>'.format(app, stp, lab[2])
+    hd = {"courthouse": "Dresses in size {s}", "dresses": "Gowns in size {s}"}.get(page["type"])
+    hdp = ' data-pick="size" data-base="{}" data-tpl="{}"'.format(lab[1], hd) if hd else ""
     html_ = fill(template("base.html"),
                  title=esc(page["title"]), description=esc(page["description"]),
                  canonical=page_url(site, page["path"]), base_url=site["base_url"], root=root,
@@ -933,7 +985,7 @@ def finish_page(page, site, pages, body, root, app):
                  slug=page["path"].strip("/") or "home", medium=page["medium"],
                  main_class=" home" if page["type"] == "home" else "", body_class=("is-home " if page["type"] == "home" else "") + "t-" + page["type"],
                  stickyhtml=sticky,
-                 hdlink='<a class="hd-link" href="{}" data-cta="header" data-app{}><span class="lbl">{}</span> &rarr;</a>'.format(app, hdsized, lab[1]))
+                 hdlink='<a class="hd-link" href="{}" data-cta="header" data-app{}><span class="lbl">{}</span> &rarr;</a>'.format(app, hdp, lab[1]))
     return html_
 
 

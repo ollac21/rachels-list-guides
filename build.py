@@ -244,13 +244,15 @@ def strip_wrap(cards, label, groups="", none="No find in that size this week. Th
 
 
 # ----------------------------------------------------------------------------- the button blocks
-def cta_html(page, app, pos, label=None):
+def cta_html(page, app, pos, label=None, first=None):
+    """The button. `pos` is its data-cta position (one per button on a page); `first` = the first-screen button (id first-cta + the catch line)."""
+    first = (pos == "first") if first is None else first
     lab = label or labels_for(page)[0]
-    pk = picked_for(page)
+    pk = picked_for(page) if not label else None
     tpl = ' data-pick="{}" data-base="{}" data-tpl="{}"'.format(pk[0], lab, pk[1]) if pk else ""
-    catch = '<p class="catch">{}</p>'.format(CATCH) if pos == "first" else ""
+    catch = '<p class="catch">{}</p>'.format(CATCH) if first else ""
     return '<div class="cta"{}><a class="rl-btn" href="{}" data-cta="{}" data-app{}><span class="lbl">{}</span></a><p class="fine">{}</p>{}</div>'.format(
-        ' id="first-cta"' if pos == "first" else "", app, pos, tpl, lab, FINE, catch)
+        ' id="first-cta"' if first else "", app, pos, tpl, lab, FINE, catch)
 
 
 def btn_row(page, app, pos, root="../"):
@@ -285,10 +287,51 @@ def packages_head(page):
     return packages_gap(page).replace("None of these lists", "No package here lists") + ". Rachel's List finds both <em>for less</em>"
 
 
+CTX = {"pages": {}, "finds": {}, "skip": set()}  # set by render_page: the board's finds read the same content files as the page
+
+
+def board_finds(page):
+    """Three real finds for the board (desktop): a dress, a bouquet and photos, each already on our guides with its source page and date.
+    Reused, never new: the cheapest gown (this page's on a dress page, a courthouse dress on a courthouse page), the city's florist and
+    photographer from _finds.json (the cheapest across cities elsewhere). Finds the page already lists in its own finds block are skipped."""
+    pages, finds, skip = CTX["pages"], CTX["finds"], CTX["skip"]
+    city, t = city_key(page), page["type"]
+    rows = []
+    if t == "courthouse":
+        ds = sorted((d for d in load_cdresses().get("dresses", []) if has_photo(d["url"]) and d["url"] not in skip), key=lambda d: d["price"])
+        if ds:
+            d = ds[0]
+            rows.append(find_row("i-dress", "A courthouse dress", "{}, {}, size {}, on Poshmark".format(d["name"], d["style"], d["size"]), money(d["price"]), d["url"], cta="board-find"))
+    else:
+        src = [page] if t == "dresses" else [p for p in pages.values() if p["type"] == "dresses"]
+        gs = sorted((g for p in src for g in p.get("gowns", []) if g.get("price") and has_photo(g["url"]) and g["url"] not in skip), key=lambda g: g["price"])
+        if gs:
+            g = gs[0]
+            rows.append(find_row("i-dress", "A designer wedding gown", "{}, size {}, on Poshmark{}".format(
+                g["brand"], str(g["size"]).replace("US ", ""), ", seller's original {}".format(money(g["old_price"])) if g.get("old_price") else ""), money(g["price"]), g["url"], cta="board-find"))
+
+    def pick(kind):
+        mine = (finds.get(city) or {}).get(kind) if city else None
+        if mine and mine.get("amount") and mine["url"] not in skip:
+            return dict(mine, city=city)
+        alls = sorted((dict(v[kind], city=c) for c, v in finds.items() if (v.get(kind) or {}).get("amount") and v[kind]["url"] not in skip), key=lambda x: x["amount"])
+        return alls[0] if alls else None
+    f = pick("florist")
+    if f:
+        rows.append(find_row("i-flowers", "A bridal bouquet", "{}, {}: {}".format(f["name"], CITY_NAMES.get(f["city"], f["city"]), clean_item(f["item"])), money(f["amount"]), f["url"], cta="board-find"))
+    x = pick("photographer")
+    if x:
+        rows.append(find_row("i-photo", "Wedding photos", "{}, {}: {}".format(x["name"], CITY_NAMES.get(x["city"], x["city"]), x["package"]), money(x["amount"]), x["url"],
+                             '<small class="from">from </small>' if x.get("from") else "", cta="board-find"))
+    if not rows:
+        return ""
+    return '<div class="cb-finds"><p class="strip-h">Real finds on our guides &middot; tap to open</p><ul class="finds">{}</ul></div>'.format("".join(rows))
+
+
 def board_block(page, app, root, pos="board"):
-    """The app in action: the real Dream Board (screen recording, unblurred), 3 steps, the button."""
+    """The app in action: the real Dream Board (screen recording, unblurred), 3 real finds (desktop), 3 steps, the button."""
     head = packages_head(page) if page["type"] == "packages" else page.get("board_head") or BOARD_HEAD.get(page["type"], BOARD_HEAD["home"])
-    return fill(template("board.html"), heading=head, root=root, cta=cta_html(page, app, pos), cap=BOARD_CAP)
+    return fill(template("board.html"), heading=head, root=root, cta=cta_html(page, app, pos), cap=BOARD_CAP, finds=board_finds(page))
 
 
 def end_block(page, app, root):
@@ -574,6 +617,7 @@ def first_screen(page, site, pages, app, root):
         strip = strip_wrap(cards, label, groups, none="Nothing with a photo matches that. The list below has every one.", ndef=len(pk))
         chips = pick_chips({"venues": "guests", "hub": "guests", "packages": "budget"}.get(t, "style"))
     STRIPS[page["path"]] = (len(pk), sum(1 for it in pk if has_photo(it["url"])))
+    CTX["skip"].update(it["url"] for it in pk)  # the board shows finds other than the first-screen row
     bridge = '<p class="bridge">{}. Rachel&rsquo;s List finds both <em>for less</em>.</p>'.format(packages_gap(page)) if t == "packages" else ""
     return "\n".join(head + [strip, checked_line(page), chips, bridge, cta_html(page, app, "first")])
 
@@ -681,11 +725,11 @@ def clean_item(text):
     return t[:60]
 
 
-def find_row(icon, title, sub, price, url, small=""):
+def find_row(icon, title, sub, price, url, small="", cta="find"):
     img = img_tag(url, title, 64, 64)
     lead = '<span class="fimg">{}</span>'.format(img) if img else ico(icon)
-    return ('<li><a class="frow{}" href="{}" rel="noopener" target="_blank" data-cta="find">{}<span><b>{}</b><span class="fm">{}</span></span>'
-            '<span class="fp">{}{}</span></a></li>').format(" has-img" if img else "", esc(url), lead, esc(title), esc(sub), small, esc(price))
+    return ('<li><a class="frow{}" href="{}" rel="noopener" target="_blank" data-cta="{}">{}<span><b>{}</b><span class="fm">{}</span></span>'
+            '<span class="fp">{}{}</span></a></li>').format(" has-img" if img else "", esc(url), cta, lead, esc(title), esc(sub), small, esc(price))
 
 
 def grid_cards(items, pk, more_after=None):
@@ -834,11 +878,15 @@ def render_cards_section(page, app, pages=None):
 # ----------------------------------------------------------------------------- dresses
 def render_gowns(page, app):
     items = [gown_item(g) for g in page["gowns"]]
-    cards, skip, n = grid_cards(items, pick_strip(items, 6, 6))
+    pk = pick_strip(items, 6, 6)
+    tail = max(0, len(items) - len(pk) - 6)  # the cards after the board; on desktop they sit 3 to a row, so a short last row waits behind "Show all"
+    more_after = 6 + tail - tail % 3 if tail % 3 else None
+    cards, skip, n = grid_cards(items, pk, more_after=more_after)
+    more = '<button type="button" class="fc showmore" data-more-btn>Show all {} gowns</button>'.format(n) if more_after is not None else ""
     other = '<p class="srcnote">{} Other price band: <a href="@{}/">{}</a>.</p>'.format(esc(page.get("facts_intro", "")), *(("wedding-dresses-under-1000", "gowns from $501 to $1,000") if "500" in page["path"] else ("wedding-dresses-under-500", "gowns at $500 or less")))
-    return ('<section class="gowns-sec"><h2>{head}</h2><div class="fwrap" data-groups="size"><p class="fstate" hidden></p><div class="dgrid big">{body}</div>'
+    return ('<section class="gowns-sec"><h2>{head}</h2><div class="fwrap" data-groups="size"><p class="fstate" hidden></p><div class="dgrid big">{body}</div>{more}'
             '<p class="fnone">No gown in that size this week. The button sets your size: Rachel watches for yours every Tuesday.</p></div>{other}</section>').format(
-        head=page.get("facts_heading") or "This week's <em>gowns</em>", body=grid_with_button(cards, btn_row(page, app, "mid", root_of(page["path"]))) + "".join(skip), other=other)
+        more=more, head=page.get("facts_heading") or "This week's <em>gowns</em>", body=grid_with_button(cards, btn_row(page, app, "mid", root_of(page["path"]))) + "".join(skip), other=other)
 
 
 def render_safe(page):
@@ -858,21 +906,37 @@ def render_faq(page):
     return '<section class="faq"><h2>Questions people <em>ask</em></h2>{}</section>'.format(items) if items else ""
 
 
+TOOL_NOTE = {"wedding-alcohol-calculator": "Bottles, cases and cost for your guest count",
+             "wedding-budget-calculator": "Your budget split into venue, food, dress and more"}
+
+
+def free_tools(page, pages):
+    """A small card with our free calculators, so every guide links at least one (a calculator links the other one)."""
+    calcs = sorted((p for p in pages.values() if p["type"] == "calculator" and p["path"] != page["path"]), key=lambda x: (x.get("order", 0), x["path"]))
+    if not calcs:
+        return ""
+    links = "".join('<a href="@{}/" data-cta="tools">{}<span>{}</span></a>'.format(p["path"], esc(p["h1"]), esc(TOOL_NOTE.get(p["path"], p.get("oneliner", "")))) for p in calcs)
+    return '<aside class="tools" aria-label="Free tools"><p class="tools-h">Free tools</p><div class="tools-l">{}</div></aside>'.format(links)
+
+
 def render_related(page, pages):
     links = page.get("related") or []
+    tools = free_tools(page, pages)
+    tool_paths = {p["path"] for p in pages.values() if p["type"] == "calculator"} if tools else set()
     items = []
     for r in links:
         tgt = pages.get(r["path"])
-        if not tgt:
+        if not tgt or r["path"] in tool_paths:
             continue
         note = r.get("note", tgt.get("oneliner", ""))
         if tgt["type"] == "courthouse" and page["type"] == "venues":
             note = "{} in fees. Steps and fees, from the official pages.".format("${:,}".format(tgt["fee_total"]))
         items.append('<li><a href="@{}">{}<span>{}</span></a></li>'.format(
             r["path"] + "/" if r["path"] else "", esc(r["label"]), esc(note)))
-    if not items:
+    if not items and not tools:
         return ""
-    return '<section class="related"><h2>More <em>guides</em></h2><ul>{}</ul></section>'.format("".join(items))
+    lst = '<ul>{}</ul>'.format("".join(items)) if items else ""
+    return '<section class="related"><h2>More <em>guides</em></h2>{}{}</section>'.format(tools, lst)
 
 
 def render_home_menu(page, pages):
@@ -910,7 +974,7 @@ def render_home_menu(page, pages):
         amt = [x["amount"] for x in c if x.get("city") != "las-vegas"]
         out.append(card("i-gift", "Elopement packages", pack[0]["path"], "{} packages from {} with the price on the provider's own page.".format(len(c), money(min(x["amount"] for x in c))) if amt else "Packages with the price on the provider's own page.",
                         [(pack[0]["path"], "All {} packages <b>from {}</b>".format(len(c), money(min(x["amount"] for x in c))))]))
-    return '<section class="menu" id="menu"><h2>Pick your <em>guide</em></h2><div class="hgrid">{}</div></section>'.format("".join(out))
+    return '<section class="menu" id="menu"><h2>Pick your <em>guide</em></h2><div class="hgrid">{}</div>{}</section>'.format("".join(out), free_tools(page, pages))
 
 
 def render_trust_table(page):
@@ -1005,7 +1069,12 @@ def alcohol_html(r, d):
                                                              "full bar" if r["bar"] == "full" else "beer and wine", plural(r["pace"], "drink an hour", "drinks an hour"))
     if r["capped"]:
         cap += " (capped at {})".format(join_and([plural(d["max_guests"], "guest", "guests") if c == "guests" else plural(d["max_hours"], "hour", "hours") for c in r["capped"]]))
-    head = " &middot; ".join("<b>{:,}</b> {} of {}".format(x["n"], x["unit"].replace(" of 24", ""), x["key"]) for x in r["rows"])
+    tiles = "".join('<li><b>{:,}</b><span>{} of {}</span></li>'.format(x["n"], x["unit"].replace(" of 24", ""), x["key"]) for x in r["rows"] if x["key"] != "sparkling")
+    if r["priced"]:
+        tiles += '<li class="calc-tc"><b>{}</b><span>{}</span></li>'.format(cents(r["total"]), join_and(r["priced"]) + " cost" if r["missing"] else "total cost")
+    else:
+        tiles += '<li class="calc-tc"><b>&ndash;</b><span>cost: add prices</span></li>'
+    head = '<ul class="calc-tiles">{}</ul>'.format(tiles)
     body = "".join('<tr><th scope="row">{}</th><td>{}</td><td>{}</td><td{}>{}</td></tr>'.format(
         x["name"], x["served"], x["buy"], "" if x["cost"] is not None else ' class="calc-na"', cents(x["cost"]) if x["cost"] is not None else "add a price") for x in r["rows"])
     if r["priced"]:
@@ -1024,7 +1093,7 @@ def alcohol_html(r, d):
     if r["missing"] and r["priced"]:
         cost += " Add a price for {} under Change prices for the full total.".format(join_and(r["missing"]))
     foot = '<tr><th scope="row">Total</th><td>{}</td><td></td><td>{}</td></tr>'.format(plural(r["drinks"], "drink", "drinks"), cents(r["total"]) if r["priced"] else "")
-    return ('<p class="calc-cap">{}</p><p class="calc-head">{}</p><table class="calc-out"><thead><tr><th scope="col">Drink</th><th scope="col">Served</th>'
+    return ('<p class="calc-cap">{}</p>{}<table class="calc-out"><thead><tr><th scope="col">Drink</th><th scope="col">Served</th>'
             '<th scope="col">Buy</th><th scope="col">Cost</th></tr></thead><tbody>{}</tbody><tfoot>{}</tfoot></table><p class="calc-cost">{}</p>').format(cap, head, body, foot, cost)
 
 
@@ -1071,10 +1140,13 @@ def calc_data_alcohol(page, pages, finds):
         dates.append(x["date_read"])
         fr.append(find_row("i-photo", "Wedding photos", "{}, {}: {}".format(x["name"], CITY_NAMES.get(x["city"], x["city"]), x["package"]), money(x["amount"]), x["url"],
                            '<small class="from">from </small>' if x.get("from") else ""))
-    finds_html = ""
+    app = esc(app_link(load_site(), page))
+    nxt = cta_html(page, app, "calc-next", label="Bar&rsquo;s done. See this week&rsquo;s deals on the rest of your list", first=True)
+    finds_html = '<section class="calc-finds">{}</section>'.format(nxt)
     if fr:
+        CTX["skip"].update(html.unescape(u) for u in re.findall(r'class="frow[^"]*" href="([^"]+)"', "".join(fr)))  # the board shows other finds
         finds_html = ('<section class="calc-finds"><h2>The rest of your list, <em>for less</em></h2><ul class="finds">{}</ul>'
-                      '<p class="srcnote">The cheapest of each on our guides, from the seller&rsquo;s or shop&rsquo;s own page, read {}.</p></section>').format("".join(fr), fmt_short(max(dates)))
+                      '<p class="srcnote">The cheapest of each on our guides, from the seller&rsquo;s or shop&rsquo;s own page, read {}.</p>{}</section>').format("".join(fr), fmt_short(max(dates)), nxt)
     return {"wine_price": d["wine_price"], "beer_price": d["beer_price"],
             **{s["key"]: s.get("amount", s.get("value")) for s in page["sources"]},
             "html": {"static_result": alcohol_html(res, d), "less": less, "sources": srcs, "finds": finds_html,
@@ -1202,7 +1274,8 @@ def calc_data_budget(page, pages, finds):
     return {
         "html": {"rows": "".join(rows), "total": money(b0), "summary": summ, "per_guest": pg, "quote": quote, "outside": outside,
                  "dress_line": budget_dress_line(amt["dress"], gowns, gdate) if gowns else "",
-                 "cta_dress": cta_html(page, app, "dress", label="Show me dresses under {}".format(money(amt["dress"])) if n_ok else None),
+                 "cta_dress": cta_html(page, app, "calc-dress", label="Show me dresses under {}".format(money(amt["dress"])) if n_ok else None, first=True),
+                 "tiles": budget_tiles(amt, zpg),
                  "spend_less": '<section><h2>Spend <em>less</em> on the biggest line</h2><ul class="tipl">{}</ul></section>'.format("".join(spend)) if spend else "",
                  "sources": sources},
         "items": [[i["key"], i["zola_avg"]] for i in items], "gowns": gowns, "gowns_date": gdate, "slug": page["path"],
@@ -1215,6 +1288,13 @@ def budget_pg(b, g, food, zola_pg):
         money(int(b / g + 0.5)), money(zola_pg), money(int(food / g + 0.5)))
 
 
+def budget_tiles(amt, pg):
+    """The four big numbers at the top of the result card; the page's JS updates the data-amt ones and #b-pgt."""
+    t = '<li><b data-amt="{k}">{v}</b><span>{lab}</span></li>'
+    return "".join(t.format(k=k, v=money(amt[k]), lab=lab) for k, lab in (("venue", "venue"), ("catering", "catering"), ("dress", "dress"))) + \
+        '<li><b id="b-pgt">{}</b><span>per guest</span></li>'.format(money(pg))
+
+
 def budget_summary(amt):
     return "Venue <b>{}</b> &middot; catering <b>{}</b> &middot; flowers <b>{}</b> &middot; dress <b>{}</b>. All 15 lines below.".format(
         money(amt["venue"]), money(amt["catering"]), money(amt["flowers"]), money(amt["dress"]))
@@ -1225,6 +1305,20 @@ CALC_DATA = {"alcohol": calc_data_alcohol, "budget": calc_data_budget}
 
 
 # ----------------------------------------------------------------------------- structured data
+ORG_DESC = "Rachel's List finds real wedding deals (dresses, venues, decor) matched to a bride's Pinterest board, every week."
+ORG_NOT = ("A US/Canada wedding-deals service at rachelslist.co; not the Australian freelance-writing job board "
+           "Rachel's List (rachelslist.com.au).")
+NOT_LINE = "Rachel's List is a wedding-deals service (rachelslist.co). We are not the Australian freelance job board of the same name."
+
+
+def org(logo=None):
+    o = {"@type": "Organization", "name": "Rachel's List", "url": "https://rachelslist.co/", "description": ORG_DESC,
+         "disambiguatingDescription": ORG_NOT, "areaServed": ["US", "CA"]}
+    if logo:
+        o["logo"] = {"@type": "ImageObject", "url": logo}
+    return o
+
+
 def jsonld_blocks(page, site, pages):
     url = page_url(site, page["path"])
     h1 = page["h1"]
@@ -1232,9 +1326,7 @@ def jsonld_blocks(page, site, pages):
         "@context": "https://schema.org", "@type": "Article", "headline": h1[:110],
         "description": page["description"], "dateModified": page["last_checked"],
         "datePublished": page.get("first_published", page["last_checked"]),
-        "author": {"@type": "Organization", "name": "Rachel's List", "url": "https://rachelslist.co/"},
-        "publisher": {"@type": "Organization", "name": "Rachel's List", "url": "https://rachelslist.co/",
-                      "logo": {"@type": "ImageObject", "url": site["base_url"] + "/rachel-avatar-400.jpg"}},
+        "author": org(), "publisher": org(site["base_url"] + "/rachel-avatar-400.jpg"),
         "mainEntityOfPage": url, "image": site["base_url"] + "/rachel-avatar-400.jpg", "inLanguage": "en-US"}]
     crumbs = [{"@type": "ListItem", "position": 1, "name": "Rachel's List Guides", "item": site["base_url"] + "/"}]
     if page["path"] not in ("", "/"):
@@ -1286,6 +1378,7 @@ def checked_line(page):
 
 
 def render_page(page, site, pages, finds):
+    CTX.update(pages=pages, finds=finds, skip=set())
     root = root_of(page["path"])
     app = esc(app_link(site, page))
     t = page["type"]
@@ -1339,6 +1432,7 @@ def finish_page(page, site, pages, body, root, app):
                  slug=page["path"].strip("/") or "home", medium=page["medium"],
                  main_class=" home" if page["type"] == "home" else "", body_class=("is-home " if page["type"] == "home" else "") + "t-" + page["type"],
                  stickyhtml=sticky,
+                 footnote='<p class="disamb">{}</p>'.format(esc(NOT_LINE)) if page["type"] in ("home", "trust") else "",
                  hdlink='<a class="hd-link" href="{}" data-cta="header" data-app{}><span class="lbl">{}</span> &rarr;</a>'.format(app, hdp, lab[1]))
     return html_
 
@@ -1356,7 +1450,7 @@ def write_site_files(site, pages):
         robots += ["User-agent: " + b, "Allow: /", ""]
     robots.append("Sitemap: {}/sitemap.xml".format(site["base_url"]))
     (DOCS / "robots.txt").write_text("\n".join(robots) + "\n", encoding="utf-8")
-    lines = ["# Rachel's List Guides", "",
+    lines = ["# Rachel's List Guides", "", "> " + ORG_DESC + " " + ORG_NOT, "",
              "> Real wedding prices, each one checked on the official or seller's own page and dated. "
              "Courthouse fees, small and micro wedding venues, elopement packages and secondhand designer wedding dresses in Houston, Chicago, New York, Dallas and Los Angeles. "
              + calc_intro(pages) +

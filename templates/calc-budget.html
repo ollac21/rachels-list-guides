@@ -1,4 +1,6 @@
 <section class="calc calcb" id="calc" aria-label="Your budget and guest count">
+<div class="calc-grid">
+<div class="calc-l">
 <form class="calc-form calcb-form" id="b-form" novalidate>
 <div class="calc-row calcb-row">
 <div class="calc-in"><label for="b-budget">Total budget ($)</label><input id="b-budget" name="budget" type="number" inputmode="numeric" min="1" step="1" value="36000" autocomplete="off"></div>
@@ -7,10 +9,13 @@
 </div>
 </form>
 <p class="calcb-def">Filled in with Zola&rsquo;s 2026 averages: a $36,000 wedding, 145 guests.</p>
-<p class="calcb-sum" id="b-sum" aria-live="polite">{{summary}}</p>
-</section>
-{{cta}}
-<section class="calcb-res" id="split">
+<p class="calc-bar"><button type="button" class="calc-share" id="b-copy">Copy a link to this split</button> <span class="note" id="b-copied" role="status"></span></p>
+</div>
+<div class="calc-r calcb-res" id="split">
+<div class="calc-res">
+<ul class="calc-tiles" aria-live="polite">{{tiles}}</ul>
+<p class="calcb-dress" id="b-dress">{{dress_line}}</p>
+<div id="b-dress-cta">{{cta_dress}}</div>
 <h2>Your budget, <em>item by item</em></h2>
 <p class="calcb-msg" id="b-msg" role="status" hidden></p>
 <p class="calcb-pg" id="b-pg">{{per_guest}}</p>
@@ -21,9 +26,9 @@
 <tfoot><tr><th scope="row">Total</th><td></td><td id="b-total">{{total}}</td></tr></tfoot>
 </table>
 <p class="calc-note">Zola&rsquo;s 2026 national averages for each item, scaled so they add up to your total; amounts are rounded to the dollar. Averages, not a quote: your city and guest list change every line. Not in the split, because they are paid outside the day (Zola&rsquo;s averages): {{outside}}.</p>
-<p class="calcb-dress" id="b-dress">{{dress_line}}</p>
-<div id="b-dress-cta">{{cta_dress}}</div>
-<p class="calc-bar"><button type="button" class="calc-share" id="b-copy">Copy a link to this split</button> <span class="note" id="b-copied" role="status"></span></p>
+</div>
+</div>
+</div>
 <p class="calcb-quote">{{quote}}</p>
 </section>
 {{spend_less}}
@@ -55,7 +60,7 @@ Array.prototype.forEach.call(document.querySelectorAll("[data-amt]"),function(el
 byId("b-total").textContent=fmt(b);
 var mm=byId("b-msg");mm.hidden=!msg.length;mm.textContent=msg.join(" ");
 var pg=byId("b-pg");if(g>0){pg.hidden=false;pg.innerHTML="Per guest: <b>"+fmt(Math.floor(b/g+0.5))+"</b> (Zola’s average: "+fmt(D.zola_pg)+"). Food and drink per guest in this split: <b>"+fmt(Math.floor((m.catering+m.bar)/g+0.5))+"</b>."}else pg.hidden=true;
-byId("b-sum").innerHTML="Venue <b>"+fmt(m.venue)+"</b> &middot; catering <b>"+fmt(m.catering)+"</b> &middot; flowers <b>"+fmt(m.flowers)+"</b> &middot; dress <b>"+fmt(m.dress)+"</b>. All 15 lines below.";
+var pt=byId("b-pgt");if(pt)pt.textContent=g>0?fmt(Math.floor(b/g+0.5)):"\u2013";
 if(D.gowns.length){byId("b-dress").innerHTML=dressLine(m.dress);
 var n=D.gowns.filter(function(x){return x[0]<=m.dress}).length,l=document.querySelector("#b-dress-cta .lbl");if(l)l.textContent=n?"Show me dresses under "+fmt(m.dress):"Find my dress & venue for less"}
 if(user&&!ok){try{history.replaceState(null,"",location.pathname+location.hash)}catch(e){}}

@@ -1,5 +1,7 @@
 <section class="calc" id="calc" aria-labelledby="calc-h">
 <h2 id="calc-h">Your bar, <em>your numbers</em></h2>
+<div class="calc-grid">
+<div class="calc-l">
 <form class="calc-form" id="calc-form" action="#" onsubmit="return false" novalidate>
 <div class="calc-row">
 <div class="calc-in"><label for="c-guests">Guests who drink</label><input id="c-guests" name="guests" type="number" inputmode="numeric" min="1" max="{{max_guests}}" step="1" value="100" autocomplete="off"></div>
@@ -18,15 +20,17 @@
 <p class="note">Wine and beer: US average store prices for {{price_month}} (BLS, <a href="#sources">sources</a>). No government average exists for liquor or sparkling, so type your store's price.</p>
 </details>
 </form>
+</div>
+<div class="calc-r">
 <div class="calc-res" id="calc-res" aria-live="polite">{{static_result}}</div>
 <noscript><p class="note">Turn on JavaScript to use your own numbers. The list above is for 100 guests and 4 hours.</p></noscript>
 <p class="calc-bar"><button type="button" class="calc-share" id="c-share" hidden>Copy a link to this list</button> <span class="note" id="c-shared" role="status" hidden></span></p>
 <p class="calc-note">Serve only guests 21 and over. Buying it yourself? Ask your venue first whether you may bring your own alcohol and who must serve it: <a href="@micro-wedding-venues/">small venues by city</a>.</p>
-<p class="calc-next">Bar: done. Next, your dress, flowers and decor, for less.</p>
-{{cta}}
+</div>
+</div>
 </section>
-<section class="calc-less"><h2>Ways the bar <em>costs less</em></h2><ul class="calc-list">{{less}}</ul></section>
 {{finds}}
+<section class="calc-less"><h2>Ways the bar <em>costs less</em></h2><ul class="calc-list">{{less}}</ul></section>
 {{board}}
 <section class="calc-src" id="sources"><h2>Where these numbers <em>come from</em></h2><p class="note">Every number the calculator uses, the page it comes from and the day we read it. Wine and beer prices are the US Bureau of Labor Statistics average for {{price_month}}; we re-read them when the next month is published.</p>{{sources}}</section>
 <script type="application/json" id="calc-data">{{data}}</script>
@@ -58,7 +62,9 @@ function pl(x,one,many){return n(x)+" "+(x===1?one:many)}
 function ja(a){return a.length===1?a[0]:a.slice(0,-1).join(", ")+" and "+a[a.length-1]}
 var cap="For "+pl(r.guests,"guest","guests")+" &middot; "+pl(r.hours,"hour","hours")+" &middot; "+(r.bar==="full"?"full bar":"beer and wine")+" &middot; "+pl(r.pace,"drink an hour","drinks an hour");
 if(r.capped.length)cap+=" (capped at "+ja(r.capped.map(function(k){return k==="guests"?pl(D.max_guests,"guest","guests"):pl(D.max_hours,"hour","hours")}))+")";
-var head=r.rows.map(function(x){return "<b>"+n(x.n)+"</b> "+x.unit.replace(" of 24","")+" of "+x.key}).join(" &middot; ");
+var tiles=r.rows.filter(function(x){return x.key!=="sparkling"}).map(function(x){return "<li><b>"+n(x.n)+"</b><span>"+x.unit.replace(" of 24","")+" of "+x.key+"</span></li>"}).join("");
+tiles+=r.priced.length?'<li class="calc-tc"><b>'+c(r.total)+'</b><span>'+(r.missing.length?ja(r.priced)+" cost":"total cost")+'</span></li>':'<li class="calc-tc"><b>&ndash;</b><span>cost: add prices</span></li>';
+var head='<ul class="calc-tiles">'+tiles+'</ul>';
 var body=r.rows.map(function(x){return '<tr><th scope="row">'+x.name+'</th><td>'+x.served+'</td><td>'+x.buy+'</td><td'+(x.cost!==null?'':' class="calc-na"')+'>'+(x.cost!==null?c(x.cost):"add a price")+'</td></tr>'}).join("");
 var cost;
 if(r.priced.length){var what=ja(r.priced);cost=what.charAt(0).toUpperCase()+what.slice(1)+": <b>"+c(r.total)+"</b>";
@@ -69,7 +75,7 @@ else cost+=", at your prices."}
 else cost="Type prices under Change prices for a cost.";
 if(r.missing.length&&r.priced.length)cost+=" Add a price for "+ja(r.missing)+" under Change prices for the full total.";
 var foot='<tr><th scope="row">Total</th><td>'+pl(r.drinks,"drink","drinks")+'</td><td></td><td>'+(r.priced.length?c(r.total):"")+'</td></tr>';
-return '<p class="calc-cap">'+cap+'</p><p class="calc-head">'+head+'</p><table class="calc-out"><thead><tr><th scope="col">Drink</th><th scope="col">Served</th><th scope="col">Buy</th><th scope="col">Cost</th></tr></thead><tbody>'+body+'</tbody><tfoot>'+foot+'</tfoot></table><p class="calc-cost">'+cost+'</p>';
+return '<p class="calc-cap">'+cap+'</p>'+head+'<table class="calc-out"><thead><tr><th scope="col">Drink</th><th scope="col">Served</th><th scope="col">Buy</th><th scope="col">Cost</th></tr></thead><tbody>'+body+'</tbody><tfoot>'+foot+'</tfoot></table><p class="calc-cost">'+cost+'</p>';
 }
 </script>
 <script>

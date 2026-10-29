@@ -280,8 +280,8 @@ details.src[open]>summary::before{content:"\2212 "}
   .pstrip{grid-template-columns:repeat(6,1fr);gap:10px}
   .ph-c{font-size:12px}
   .fchips.pick{margin:12px 0;padding:0;flex-wrap:wrap}
-  .cta{max-width:440px}
-  .dgrid{grid-template-columns:repeat(4,1fr);gap:12px}
+  .cta{max-width:440px;margin-left:auto;margin-right:auto}
+  .dgrid{grid-template-columns:repeat(3,1fr);gap:14px}
   .dgrid.big{grid-template-columns:repeat(3,1fr)}
   .finds{grid-template-columns:1fr 1fr}
   .cb{padding:26px 30px}
@@ -369,3 +369,70 @@ details.src[open]>summary::before{content:"\2212 "}
 .calcb-quote{font-size:13px;color:var(--mute);line-height:1.45;border-left:3px solid var(--blush-deep);padding-left:10px;margin:0 0 6px}
 html:not(.js) #b-copy{display:none}
 @media (max-width:359px){.calcb-row{grid-template-columns:1fr 1fr}.calcb-go{grid-column:1/-1}.calcb-split{font-size:14px}}
+
+/* ---- result tiles (calculators): the big numbers at the top of the result card ---- */
+.calc-tiles{list-style:none;margin:6px 0 12px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.calc-tiles li{background:var(--blush);border-radius:14px;padding:11px 12px 10px;line-height:1.1;min-width:0}
+.calc-tiles li:last-child:nth-child(odd){grid-column:1 / -1}
+.calc-tiles b{display:block;font-family:var(--display);font-size:36px;font-weight:600;font-variant-numeric:lining-nums;white-space:nowrap;line-height:1;letter-spacing:-.01em}
+.calc-tiles span{display:block;font-size:12.5px;font-weight:500;color:#4a4442;margin-top:5px;line-height:1.25}
+.calc-tiles .calc-tc{background:var(--ink);color:#fff}
+.calc-tiles .calc-tc span{color:rgba(255,255,255,.82)}
+.calcb-res .calc-res{padding:14px 14px 12px}
+.calcb-res .calcb-dress{margin:4px 0 10px}
+.calcb-res h2{margin-top:26px}
+.calc-finds .cta{margin-top:14px}
+
+/* ---- free tools: the calculators, linked from every guide ---- */
+.tools{margin:10px 0 12px;padding:14px 14px 14px;border-radius:16px;background:var(--blush)}
+.tools-h{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep);margin:0 0 8px}
+.tools-l{display:grid;gap:8px}
+.tools a{display:block;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid var(--hairline);text-decoration:none;color:var(--ink);font-weight:600}
+.tools a span{display:block;font-weight:400;font-size:14px;color:var(--mute)}
+.tools a:hover{border-color:var(--rose)}
+.menu .tools{margin-top:14px}
+.disamb{font-size:13px;color:var(--mute);margin:0 0 10px}
+
+/* ---- the board: 3 real finds beside the phone (desktop only; the phone layout stays as it was) ---- */
+.cb-finds{display:none}
+@media (min-width:900px){
+  .tools-l{grid-template-columns:1fr 1fr}
+  .cb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"phone head" "phone finds" "phone steps" "phone cta";grid-template-rows:auto auto auto 1fr;column-gap:34px;padding:0;overflow:hidden}
+  .cb-main{display:contents}
+  .cb .phone{grid-area:phone;align-self:stretch;margin:0;padding:30px 24px;background:var(--blush);display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .cb .phone-frame{width:236px}
+  .cb .phone figcaption{max-width:280px;font-size:12px}
+  .cb h2{grid-area:head;font-size:36px;line-height:1.06;margin:30px 30px 14px 0}
+  .cb-finds{display:block;grid-area:finds;margin:0 30px 6px 0}
+  .cb-finds .finds{grid-template-columns:1fr;gap:8px;margin-top:6px}
+  .cb-finds .frow{padding:8px 12px;gap:12px}
+  .cb-finds .frow.has-img{grid-template-columns:52px 1fr auto}
+  .cb-finds .fimg{width:52px;height:52px}
+  .cb-finds .frow b{font-size:14.5px}
+  .cb-finds .frow .fm{font-size:12.5px}
+  .cb-finds .frow .fp{font-size:24px}
+  .cb-steps{grid-area:steps;margin:12px 30px 18px 0;gap:10px}
+  .cb-steps li{font-size:16px}
+  .cb>.cta{grid-area:cta;margin:0 30px 30px 0;max-width:none;align-self:start}
+}
+
+/* ---- calculators on a wide screen: inputs left, the result card right (sticky while she types) ---- */
+@media (min-width:1024px){
+  .t-calculator main.wrap,.t-calculator .site-head .wrap,.t-calculator .site-foot .wrap{max-width:1080px}
+  .calc-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px;align-items:start}
+  .calc-l,.calc-r{position:sticky;top:72px;align-self:start}
+  .calcb .calc-grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+  .calcb .calc-l .calcb-row{grid-template-columns:1fr 1fr}
+  .calcb .calc-l .calcb-go{grid-column:1 / -1}
+  .calc-form{margin-top:0}
+  .calc-res{padding:20px 22px 14px}
+  .calcb-res .calc-res{padding:22px 24px 14px}
+  .calc-tiles{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:10px}
+  .calc-tiles li:last-child:nth-child(odd){grid-column:auto}
+  .calc-tiles li{padding:14px 14px 12px}
+  .calc-tiles b{font-size:42px}
+  .calc-tiles span{font-size:13px}
+  .calc-finds .finds{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .calc-finds .frow{align-content:start}
+  .calc-finds .cta{max-width:560px}
+}

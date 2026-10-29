@@ -13,8 +13,8 @@
  "oneliner": "Lowest verified micro wedding venue price $197 (Houston); three cheapest venues in each of five cities.",
  "card_title": "Compare the five cities",
  "card_line": "Lowest verified price $197 (Houston)",
- "facts_heading": "The three cheapest venues in <em>each city</em>",
- "facts_intro": "From each city's venue page, where every venue has its own price, guest count and quote. Open a city for the full list.",
+ "facts_heading": "The cheapest room for 10+ guests in <em>each city</em>",
+ "facts_intro": "Tap a city for its three cheapest, or open its page for all of them. Each price is read from the venue's own page.",
  "table": {
   "headers": [
    "Venue",
@@ -240,7 +240,7 @@
   },
   {
    "q": "Is $5,000 enough for a wedding?",
-   "a": "For a small group it can be: all 45 venue prices on our city pages are $8,900 or less, before the dress, flowers, photos and food. A 100-guest wedding is a different budget, because these pages price small groups only."
+   "a": "For a small group, yes: 43 of the 44 priced venues on our city pages are $5,000 or less and 23 are under $1,000, before the dress, flowers, photos and food. A 100-guest wedding is a different budget, because these pages price small groups only."
   }
  ],
  "related": [

@@ -14,7 +14,7 @@
  "card_title": "Under $500",
  "card_line": "20 gowns, from $65",
  "facts_heading": "This week's <em>gowns</em>",
- "facts_intro": "Each gown was re-opened on Oct 28, 2026 and was still for sale at this price. Tap a card to open its Poshmark listing in a new tab. Shipping and tax are not included.",
+ "facts_intro": "Tap a card to open its Poshmark listing in a new tab.",
  "gowns": [
   {
    "title": "Hayley Paige Apollo Ivory Strapless Sweetheart Ball Gown size 6 nwt",
@@ -239,11 +239,11 @@
   },
   {
    "q": "Is it safe to buy a wedding dress secondhand?",
-   "a": "Each listing states its own condition, so read the notes and the seller's photos before you buy. We re-open every listing on Oct 28, 2026 and drop any that is sold or has changed price."
+   "a": "Condition is described on each Poshmark listing page, not here, so read the notes and the seller's photos before you buy. We re-open every listing on Oct 28, 2026 and drop any that is sold or has changed price."
   },
   {
    "q": "How do I know a secondhand wedding dress will fit?",
-   "a": "Sizes on this page are exactly what each seller lists, and bridal sizing often differs from street sizing. Compare the seller's measurements with yours, and tap the dresses you love in Rachel's List so she can watch Poshmark and Etsy for your size every week."
+   "a": "Sizes on this page are exactly what each seller lists, and bridal sizing often differs from street sizing. Ask the seller for the bust, waist and hip measurements of the dress and compare them with yours."
   },
   {
    "q": "What does \"seller's original\" mean?",
@@ -251,7 +251,7 @@
   },
   {
    "q": "How often is this list updated?",
-   "a": "Every Tuesday. We re-open each gown, drop the ones that are sold or repriced, and change the date at the top. The list you see was last checked on Oct 28, 2026."
+   "a": "Weekly. We re-open each gown, drop the ones that are sold or repriced, and change the date at the top. This list was last checked on Oct 28, 2026."
   }
  ],
  "related": [

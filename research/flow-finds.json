@@ -1,0 +1,103 @@
+{
+  "date_read": "2026-10-28",
+  "cities": {
+    "chicago": {
+      "bouquet": {
+        "name": "Paris312",
+        "url": "https://paris312.com/products/minimal-bridesmaid-bouquet",
+        "item": "Minimal bouquet, Petit size (about 10.5 in tall, 10 in wide): white baby's breath with white satin ribbon. Sold as a bridesmaid bouquet, small enough for a courthouse bride. Delivery in Chicago and suburbs.",
+        "price_display": "$52",
+        "amount": 52,
+        "quote": "Regular Bouquet - $80.00 Petit Bouquet - $52.00",
+        "date_read": "2026-10-28"
+      },
+      "photo_spot": {
+        "name": "Millennium Park",
+        "url": "https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html",
+        "hours_quote": "Open Daily 6 a.m. - 11 p.m.",
+        "free_quote": "Admission is FREE",
+        "date_read": "2026-10-28"
+      },
+      "lunch": null
+    },
+    "new-york": {
+      "bouquet": {
+        "name": "City Blossoms",
+        "url": "https://cityblossoms.com/products/hand-tied-bouquet-white",
+        "item": "Hand-Tied Bouquet - White (Classic size, the smallest of three): soft neutral whites with touches of fresh green, no vase. Shop at 62 Trinity Place, Lower Manhattan; same-day delivery in Manhattan and Brooklyn.",
+        "price_display": "$120",
+        "amount": 120,
+        "quote": "Hand-Tied Bouquet - White Regular price $120.00",
+        "date_read": "2026-10-28"
+      },
+      "photo_spot": {
+        "name": "Brooklyn Bridge Park",
+        "url": "https://www.brooklynbridgepark.org/",
+        "hours_quote": "We Are Open 7 Days a Week | 6AM - 1AM",
+        "free_quote": "Entry is Free!",
+        "date_read": "2026-10-28"
+      },
+      "lunch": null
+    },
+    "houston": {
+      "bouquet": {
+        "name": "Elegance Flowers",
+        "url": "https://eleganceflowers.net/houston-elegance-flowers/nosegay-bouquet-4.html",
+        "item": "Nosegay Bouquet #4: white baby's breath bouquet tied with a satin ribbon, Standard size. Shop at 10613 Bellaire Blvd. #A-136, Houston. Read via WebFetch only (the site blocks curl).",
+        "price_display": "$40",
+        "amount": 40,
+        "quote": "$40 Arrangement size Standard Bouquet will be delivered approximately as pictured.",
+        "date_read": "2026-10-28"
+      },
+      "photo_spot": {
+        "name": "Discovery Green",
+        "url": "https://www.discoverygreen.com/visit",
+        "hours_quote": "The park is open daily 6 am-11 pm",
+        "free_quote": "Admission is always free",
+        "date_read": "2026-10-28"
+      },
+      "lunch": {
+        "name": "Grotto Downtown (private rooms: Enoteca seats up to 24)",
+        "url": "https://images.getbento.com/accounts/fe2210da04b358bed82d0430bab7b113/media/lsIIwzwT0SSzQIPcIKrt_GRDT%20Banquet%20Menu%2010.16.25.pdf",
+        "item": "Grotto Downtown banquet menu PDF (restaurant's own, lists www.GrottoDowntown.com, stamped 9/25): set lunch menu, soda, iced tea and coffee included; tax, suggested gratuity and banquet fee not included; menus and prices subject to change.",
+        "price_display": "$40 per person",
+        "amount": 40,
+        "per_person": true,
+        "quote": "GROTTO DOWNTOWN LUNCH MENU $40 per person",
+        "date_read": "2026-10-28"
+      }
+    },
+    "dallas": {
+      "bouquet": null,
+      "photo_spot": {
+        "name": "Klyde Warren Park",
+        "url": "https://klydewarrenpark.org/klyde-warren-faqs",
+        "hours_quote": "Klyde Warren Park is open from 6 AM to 11 PM daily.",
+        "free_quote": "Is Klyde Warren Park free? Yes! The activities held in Klyde Warren Park are free and open to the public.",
+        "date_read": "2026-10-28"
+      },
+      "lunch": {
+        "name": "Y.O. Ranch Steakhouse (West End, 702 Ross Ave.)",
+        "url": "https://www.yoranchsteakhouse.com/private-dining-menus/",
+        "item": "Banquets & Lunch Menu 1 for the private dining rooms: soup or salad, choice of six mains, dessert; soft drinks and tea included; plus tax and gratuity.",
+        "price_display": "$39 per person",
+        "amount": 39,
+        "per_person": true,
+        "quote": "$39 PER PERSON + TAX & GRATUITY | SOFT DRINKS & TEA INCLUDED",
+        "date_read": "2026-10-28"
+      }
+    },
+    "los-angeles": {
+      "bouquet": null,
+      "photo_spot": {
+        "name": "Gloria Molina Grand Park (formerly Grand Park)",
+        "url": "https://grandparkla.org/visit",
+        "hours_quote": "Open daily from 5:30am to 10:00pm.",
+        "free_quote": "Gloria Molina Grand Park provides free and low cost programming year round and is open daily for casual activities like picnics, splash pad play dates, lunch breaks, exercise, meditation, and more.",
+        "date_read": "2026-10-28",
+        "note": "The official site says the park is open to everyone and has free programming, but no official page found says 'free admission' in so many words."
+      },
+      "lunch": null
+    }
+  }
+}

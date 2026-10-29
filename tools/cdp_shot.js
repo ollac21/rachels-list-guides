@@ -59,6 +59,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       const r = await S("Page.captureScreenshot", clip ? { format: "png", clip: { x: 0, y: clip.y, width: W, height: clip.h, scale: 1 }, captureBeyondViewport: true } : { format: "png" });
       fs.writeFileSync(path.join(outdir, file), Buffer.from(r.data, "base64"));
     };
+    if (args.includes("--noshots")) { console.log(JSON.stringify({ url, w: W, ...report })); return; }
     const screens = [];
     for (let n = 0; n < SCREENS; n++) {
       const y = n * H; if (y >= total) break;

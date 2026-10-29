@@ -205,39 +205,44 @@
  "fee_total": 70,
  "fee_parts": "$60 license + $10 ceremony",
  "where": "119 W. Randolph St., lower level",
- "where_note": "Marriage and Civil Union Court",
+ "where_note": "Marriage and Civil Union Court. You get the license first, at 118 N. Clark St., Room 120.",
  "when": "Tuesday to Friday, 9 a.m.–12 p.m. and 2–4 p.m. No appointment.",
  "steps5": [
   {
    "title": "Get your license",
    "text": "Both of you, together, with photo ID, at 118 N. Clark St., Room 120. Start the form online first.",
-   "fee": "$60"
+   "fee": "$60",
+   "src": 5
   },
   {
    "title": "Wait 1 day",
    "text": "The license starts the day after you get it and lasts 60 days (Chicago and suburban Cook County only).",
-   "fee": ""
+   "fee": "",
+   "src": 2
   },
   {
    "title": "Pick your day",
    "text": "Tuesday to Friday, no appointment. Saturdays 9–12 by appointment.",
-   "fee": ""
+   "fee": "",
+   "src": 8
   },
   {
    "title": "Get married",
    "text": "A Cook County judge marries you at 119 W. Randolph St. (lower level). Bring the license, your ID and the fee.",
-   "fee": "$10"
+   "fee": "$10",
+   "src": 6
   },
   {
    "title": "Send the license back",
    "text": "Within 10 days, by mail or in person. Certified copies of your certificate are extra: $15.",
-   "fee": ""
+   "fee": "",
+   "src": 10
   }
  ],
  "tips": [
   {
-   "h": "What to wear",
-   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Bring a light jacket or wrap."
+   "h": "What to wear and carry",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Add a small hand-tied bouquet and a light jacket or wrap. Real finds, each re-opened on its own page on Oct 28 and still for sale:"
   },
   {
    "h": "Best time to go",
@@ -245,7 +250,11 @@
   },
   {
    "h": "Photo spots",
-   "t": "Use the building: the front steps, a staircase, a big window. Ask the court if photos are allowed inside before you plan them, then walk a few minutes for a second backdrop."
+   "t": "Use the building: the front steps, a staircase, a big window (ask the court first if photos are allowed inside). For a second backdrop, Millennium Park is free to enter and open daily 6 a.m. to 11 p.m.",
+   "link": {
+    "url": "https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html",
+    "label": "Millennium Park, official page"
+   }
   },
   {
    "h": "Who to bring",
@@ -253,7 +262,11 @@
   },
   {
    "h": "Celebrate after",
-   "t": "Call a restaurant a week ahead and ask for a table for your group. Order a set menu so the bill is no surprise."
+   "t": "Call a restaurant a week ahead and ask for a table for your group, and order a set menu so the bill is no surprise. Want a private room?",
+   "link": {
+    "url": "@small-wedding-venues-chicago/",
+    "label": "See small venues in Chicago, with prices."
+   }
   }
  ],
  "look_heading": "Your Chicago courthouse look, for less"

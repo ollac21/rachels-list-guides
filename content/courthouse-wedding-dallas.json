@@ -210,39 +210,44 @@
  "fee_total": 161,
  "fee_parts": "$81 license + $80 ceremony",
  "where": "Justice of the Peace court 2-2, Mesquite",
- "where_note": "cash only, by appointment",
+ "where_note": "Cash only, by appointment. You get the license first, at 500 Elm St., Suite 2100.",
  "when": "Weekdays by appointment. License office: 500 Elm St., Suite 2100, Mon–Fri, 8 a.m.–4:30 p.m.",
  "steps5": [
   {
    "title": "Apply online",
    "text": "Fill in the Dallas County application first and write down the order number it gives you.",
-   "fee": ""
+   "fee": "",
+   "src": 10
   },
   {
    "title": "Get your license",
    "text": "Both of you at the County Clerk, 500 Elm St., Suite 2100, with photo ID, your Social Security numbers and that order number. No personal checks.",
-   "fee": "$81"
+   "fee": "$81",
+   "src": 10
   },
   {
    "title": "Wait 72 hours",
    "text": "Before the ceremony. A district judge can waive it; a Twogether in Texas certificate also skips it and takes $60 off the license.",
-   "fee": ""
+   "fee": "",
+   "src": 4
   },
   {
    "title": "Book a Justice of the Peace",
    "text": "Each court sets its own fee: JP 5-1 charges $60, JP 2-2 $80 and JP 3-1 $150. Appointment required; the first two are cash only.",
-   "fee": "$80"
+   "fee": "$80",
+   "src": 1
   },
   {
    "title": "Get married in time",
    "text": "Hold the ceremony within 90 days of the day the license was issued, or it expires.",
-   "fee": ""
+   "fee": "",
+   "src": 5
   }
  ],
  "tips": [
   {
-   "h": "What to wear",
-   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Bring a light jacket or wrap."
+   "h": "What to wear and carry",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Add a small hand-tied bouquet and a light jacket or wrap. Real finds, each re-opened on its own page on Oct 28 and still for sale:"
   },
   {
    "h": "Best time to go",
@@ -250,7 +255,11 @@
   },
   {
    "h": "Photo spots",
-   "t": "Use the building: the front steps, a staircase, a big window. Ask the court if photos are allowed inside before you plan them, then walk a few minutes for a second backdrop."
+   "t": "Use the building: the front steps, a staircase, a big window (ask the court first if photos are allowed inside). For a second backdrop, Klyde Warren Park is open daily 6 a.m. to 11 p.m. and its activities are free.",
+   "link": {
+    "url": "https://klydewarrenpark.org/klyde-warren-faqs",
+    "label": "Klyde Warren Park, official page"
+   }
   },
   {
    "h": "Who to bring",
@@ -258,7 +267,11 @@
   },
   {
    "h": "Celebrate after",
-   "t": "Call a restaurant a week ahead and ask for a table for your group. Order a set menu so the bill is no surprise."
+   "t": "Call a restaurant a week ahead and ask for a table for your group, and order a set menu so the bill is no surprise. Want a private room?",
+   "link": {
+    "url": "@small-wedding-venues-dallas/",
+    "label": "See small venues in Dallas, with prices."
+   }
   }
  ],
  "look_heading": "Your Dallas courthouse look, for less"

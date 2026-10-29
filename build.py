@@ -51,9 +51,9 @@ END_LINE = {
     "dresses": "Tell me your size and the shapes you love. I check Poshmark and Etsy every week.",
 }
 END_LINE_DEFAULT = "I search Poshmark and Etsy every week for the looks you tap. Free to start."
-PRICE_LINE = ('<p class="price-line"><b>Free:</b> your board and your first finds &middot; every new find each week: '
-              '$9.92/month billed yearly ($119), or $24/month &middot; no card to start</p>')
-PRICE_LINE_CA = PRICE_LINE.replace("</p>", '<span class="ca">Canada: C$159/year or C$33/month.</span></p>')
+PRICE_LINE = ('<p class="price-line"><b>Free: your board and your first finds. No card to start.</b>'
+              '<span>Every new find, each week: $9.92/month billed yearly ($119), or $24/month.</span></p>')
+PRICE_LINE_CA = PRICE_LINE.replace("</p>", '<span>Canada: C$159/year or C$33/month.</span></p>')
 SAMPLE_CAP = "A sample board in the app."
 
 
@@ -158,7 +158,7 @@ def ico(name):
 # ----------------------------------------------------------------------------- the button blocks
 def cta_html(page, app, pos, fine=True):
     return ('<div class="cta"><a class="rl-btn" href="{}" data-cta="{}">{}</a>{}</div>'.format(
-        app, pos, labels_for(page)[0], '<p class="fine">About 90 seconds, in your browser. No download.</p>' if fine else ""))
+        app, pos, labels_for(page)[0], '<p class="fine">About 90 seconds, in your browser. No affiliate links: we earn nothing from these sellers.</p>' if fine else ""))
 
 
 def board_block(page, app, root, pos):
@@ -231,7 +231,11 @@ def render_steps(page):
     items = []
     for i, s in enumerate(page["steps5"], 1):
         fee = '<span class="sfee">{}</span>'.format(esc(s["fee"])) if s.get("fee") else "<span></span>"
-        items.append('<li><span class="sn">{}</span><div class="sb"><b>{}</b><span>{}</span></div>{}</li>'.format(i, esc(s["title"]), esc(s["text"]), fee))
+        src = ""
+        if s.get("src") is not None:
+            f = page["facts"][s["src"]]
+            src = ' <a class="sl" href="{}" rel="noopener" data-cta="source">official page</a>'.format(esc(f["source_url"]))
+        items.append('<li><span class="sn">{}</span><div class="sb"><b>{}</b><span>{}{}</span></div>{}</li>'.format(i, esc(s["title"]), esc(s["text"]), src, fee))
     return '<section><h2>Do it in <em>{} steps</em></h2><ol class="steps5">{}</ol>{}</section>'.format(len(items), "".join(items), sources_details(page))
 
 
@@ -274,26 +278,27 @@ def courthouse_dress_cards(page, cd):
     for d in dresses:
         was = '<s><span class="vh">seller\'s original </span>{}</s>'.format(money(d["old_price"])) if d.get("old_price") else ""
         cards.append(
-            ('<a class="dcard" data-item data-band="{band}"{top} href="{url}" rel="noopener" data-cta="dress">{icon}'
+            ('<a class="dcard" data-item data-band="{band}"{top} href="{url}" rel="noopener" target="_blank" data-cta="dress"><span class="d-out" aria-hidden="true">&nearr;</span>'
              '<span class="d-price"><span class="price">{price}</span>{was}</span>'
              '<span class="d-name">{name}</span><span class="d-meta">Size {size} &middot; {style}</span></a>').format(
-                band=esc(d["band"]), top=" data-top" if d["id"] in top else "", url=esc(d["url"]), icon=ico("i-dress").replace('class="ico"', 'class="ico d-ico"'),
+                band=esc(d["band"]), top=" data-top" if d["id"] in top else "", url=esc(d["url"]), 
                 price=money(d["price"]), was=was, name=esc(d["name"]), size=esc(d["size"]), style=esc(d["style"])))
     return cards
 
 
 def find_row(icon, title, sub, price, url, small=""):
-    return ('<li><a class="frow" href="{}" rel="noopener" data-cta="find">{}<span><b>{}</b><span class="fm">{}</span></span>'
+    return ('<li><a class="frow" href="{}" rel="noopener" target="_blank" data-cta="find">{}<span><b>{}</b><span class="fm">{}</span></span>'
             '<span class="fp">{}{}</span></a></li>').format(esc(url), ico(icon), esc(title), esc(sub), small, esc(price))
 
 
-def render_look(page, finds, cd, app):
+def render_finds(page, finds, cd, app):
+    """The real finds for the first tip: size chips + the dress cards, then the bouquet (and a short photo package where one exists)."""
     city = city_key(page)
     f = finds.get(city, {})
     rows = []
     fl = f.get("florist")
     if fl:
-        rows.append(find_row("i-flowers", "A bridal bouquet", "{}: {}".format(fl["name"], fl["item"]), money(fl["amount"]), fl["url"],
+        rows.append(find_row("i-flowers", fl.get("title", "A bridal bouquet"), "{}: {}".format(fl["name"], fl["item"]), money(fl["amount"]), fl["url"],
                              '<small class="from">from </small>' if fl.get("from") else ""))
     ph = f.get("photographer")
     if ph and (ph.get("hours") or 9) <= 1 and ph["amount"] <= 500:  # FLOW-SPEC: a 1-hour courthouse session, or leave it out
@@ -301,19 +306,24 @@ def render_look(page, finds, cd, app):
                              '<small class="from">from </small>' if ph.get("from") else ""))
     cards = courthouse_dress_cards(page, cd)
     cards.append('<a class="dcard dmore" href="{}" data-cta="grid"><b>Not your size?</b><span>Rachel checks Poshmark and Etsy every Tuesday.</span><em>Show me my size &rarr;</em></a>'.format(app))
-    dd = fmt_short(cd["date_read"]) if cd.get("date_read") else "Oct 28"
-    lead = "Real finds, each re-opened on its own page on {} and still for sale. Tap your size.".format(dd)
-    return ('<section><h2>{head}</h2><p class="sec-lead">{lead}</p>'
-            '<div class="fwrap" data-topmode>{chips}<div class="dgrid">{cards}</div></div>'
-            '<ul class="finds">{rows}</ul>'
-            '<p class="srcnote">Dresses are Poshmark listings; each links to the seller\'s own page.</p></section>').format(
-        head=page["look_heading"].replace("look,", "<em>look</em>,") if page.get("look_heading") else "Your courthouse look, for less",
-        lead=lead, chips=size_chips(), cards="".join(cards), rows="".join(rows))
+    return ('<div class="fwrap" data-topmode>{chips}<div class="dgrid">{cards}</div></div><ul class="finds">{rows}</ul>'
+            '<p class="srcnote">Dresses are Poshmark listings and open in a new tab, each at the seller\'s own page. Prices as read on {d}.</p>').format(
+        chips=size_chips(), cards="".join(cards), rows="".join(rows), d=fmt_short(cd["date_read"]) if cd.get("date_read") else "Oct 28")
 
 
-def render_tips(page):
-    lis = "".join("<li><b>{}</b>{}</li>".format(esc(t["h"]), esc(t["t"])) for t in page.get("tips", []))
-    return '<section><h2>Make the day feel like a <em>wedding</em></h2><ul class="tipl">{}</ul></section>'.format(lis) if lis else ""
+def tip_html(t, extra=""):
+    link = ' <a href="{}" rel="noopener">{}</a>'.format(esc(t["link"]["url"]), esc(t["link"]["label"])) if t.get("link") else ""
+    return "<li><b>{}</b>{}{}{}</li>".format(esc(t["h"]), esc(t["t"]), link, extra)
+
+
+def render_ideas(page, finds, cd, app, board):
+    """FLOW-SPEC 3 + 5 merged (round 2): the tips come first, the real finds sit inside the first tip, the button follows them."""
+    tips = page.get("tips", [])
+    first, rest = tips[:1], tips[1:]
+    top = "".join(tip_html(t, render_finds(page, finds, cd, app)) for t in first)
+    tail = "".join(tip_html(t) for t in rest)
+    return ('<section><h2>Make the day feel like a <em>wedding</em>, for less</h2><ul class="tipl">{}</ul></section>{}'
+            '<section><ul class="tipl">{}</ul></section>').format(top, board, tail)
 
 
 # ----------------------------------------------------------------------------- venues, packages, hub
@@ -390,7 +400,7 @@ def gown_name(g):
 
 def gown_card(g, more=False):
     size = str(g["size"]).replace("US ", "")
-    return ('<a class="dcard" data-item data-band="{band}"{more} href="{url}" rel="noopener" data-cta="dress"><span class="d-price"><span class="price">{price}</span>'
+    return ('<a class="dcard" data-item data-band="{band}"{more} href="{url}" rel="noopener" target="_blank" data-cta="dress"><span class="d-price"><span class="price">{price}</span>'
             '<s><span class="vh">seller\'s original </span>{old}</s></span><span class="d-name">{brand} &middot; {model}</span>'
             '<span class="d-meta">Size {size}</span><span class="d-go">View on Poshmark &rarr;</span></a>').format(
         band=band_of_size(size), more=" data-more" if more else "", url=esc(g["url"]), price=money(g["price"]), old=money(g["old_price"]),
@@ -593,7 +603,7 @@ def render_page(page, site, pages, finds):
             render_home_menu(page, pages), board_block(page, app, root, "mid")])
         return finish_page(page, site, pages, internal(body, root), root, app)
     if t == "courthouse":
-        mid = [render_steps(page), render_look(page, finds, cd, app), board_block(page, app, root, "mid"), render_tips(page)]
+        mid = [render_steps(page), render_ideas(page, finds, cd, app, board_block(page, app, root, "mid"))]
     elif t == "venues":
         mid = [render_venues_list(page, app, root), render_payless(page)]
     elif t in ("hub", "packages"):

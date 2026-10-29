@@ -204,39 +204,44 @@
  "fee_total": 60,
  "fee_parts": "$35 license + $25 ceremony",
  "where": "A City Clerk office in any borough",
- "where_note": "by appointment",
+ "where_note": "License first, then the ceremony: you book both online.",
  "when": "Monday to Friday, arrive 8:30 a.m.–3:15 p.m. Appointment only, no walk-ins.",
  "steps5": [
   {
    "title": "Book online",
    "text": "Project Cupid (nyc.gov/cupid) or by phone. The City Clerk offices take no walk-ins.",
-   "fee": ""
+   "fee": "",
+   "src": 5
   },
   {
    "title": "Get your license",
    "text": "Both of you at a borough office with photo ID. You leave with it the same day if your documents are complete.",
-   "fee": "$35"
+   "fee": "$35",
+   "src": 10
   },
   {
    "title": "Wait 24 hours",
    "text": "Before the ceremony. A judge's waiver is possible, at no fee. The license is usually valid 60 days.",
-   "fee": ""
+   "fee": "",
+   "src": 2
   },
   {
    "title": "Get married",
    "text": "At any of the five borough offices, 8:30 a.m.–3:15 p.m., Monday to Friday. Bring the license, one witness over 18 and your photo ID.",
-   "fee": "$25"
+   "fee": "$25",
+   "src": 7
   },
   {
    "title": "Take your certificate home",
    "text": "You get your Marriage Certificate the same day.",
-   "fee": ""
+   "fee": "",
+   "src": 9
   }
  ],
  "tips": [
   {
-   "h": "What to wear",
-   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Bring a light jacket or wrap."
+   "h": "What to wear and carry",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Add a small hand-tied bouquet and a light jacket or wrap. Real finds, each re-opened on its own page on Oct 28 and still for sale:"
   },
   {
    "h": "Best time to go",
@@ -244,7 +249,11 @@
   },
   {
    "h": "Photo spots",
-   "t": "Use the building: the front steps, a staircase, a big window. Ask the court if photos are allowed inside before you plan them, then walk a few minutes for a second backdrop."
+   "t": "Use the building: the front steps, a staircase, a big window (ask the court first if photos are allowed inside). For a second backdrop, Brooklyn Bridge Park is free and open seven days a week, 6 a.m. to 1 a.m.",
+   "link": {
+    "url": "https://www.brooklynbridgepark.org/",
+    "label": "Brooklyn Bridge Park, official page"
+   }
   },
   {
    "h": "Who to bring",
@@ -252,7 +261,11 @@
   },
   {
    "h": "Celebrate after",
-   "t": "Call a restaurant a week ahead and ask for a table for your group. Order a set menu so the bill is no surprise."
+   "t": "Call a restaurant a week ahead and ask for a table for your group, and order a set menu so the bill is no surprise. Want a private room?",
+   "link": {
+    "url": "@small-wedding-venues-new-york/",
+    "label": "See small venues in New York, with prices."
+   }
   }
  ],
  "look_heading": "Your New York courthouse look, for less"

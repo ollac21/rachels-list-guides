@@ -267,6 +267,11 @@
   {
    "path": "wedding-dresses-under-500",
    "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "day-of-wedding-coordinator-cost",
+   "label": "Day-of wedding coordinator cost",
+   "note": "$764 on average; real coordinators' own prices."
   }
  ],
  "last_checked": "2026-10-28",

@@ -1,0 +1,148 @@
+{
+ "path": "day-of-wedding-coordinator-cost",
+ "type": "cost",
+ "medium": "cost",
+ "order": 17,
+ "title": "Day-of Wedding Coordinator Cost: Real Prices (2026)",
+ "description": "A day-of wedding coordinator costs about $764 on average (Thumbtack) or $800 to $3,000 (Zola). Plus real coordinators' own prices, checked Oct 29, 2026.",
+ "h1": "Day-of wedding coordinator cost",
+ "h1_em": "coordinator",
+ "eyebrow": "Wedding coordinators · real prices",
+ "refresh_note": "Cost pages are re-checked monthly.",
+ "answer_html": "<p>As of Oct 29, 2026, a day-of wedding coordinator costs about <strong class=\"big\">$764</strong> on average (<a href=\"https://www.thumbtack.com/p/wedding-coordinator-cost\" rel=\"noopener\">Thumbtack</a>). <a href=\"https://www.zola.com/expert-advice/how-much-do-wedding-coordinators-cost\" rel=\"noopener\">Zola</a> puts day-of coordination at $800 to $3,000 (updated Feb 19, 2026). Real coordinators print $800 for 8 hours (<a href=\"https://sites.google.com/view/joyousgatherings/pricing/day-of-only-coordination\" rel=\"noopener\">Joyous Gatherings</a>) and $1,695 (<a href=\"https://completewedo.com/chicago/day-of-coordination/\" rel=\"noopener\">Complete Weddings + Events</a>, Chicago).</p>",
+ "oneliner": "As of Oct 29, 2026, a day-of wedding coordinator costs about $764 on average (Thumbtack); Zola puts it at $800 to $3,000.",
+ "facts_heading": "What a day-of coordinator <em>costs</em>, source by source",
+ "table": {
+  "headers": [
+   "Who",
+   "Price, in their words",
+   "Source"
+  ],
+  "rows": [
+   {
+    "th": "Thumbtack<br><small>national average, day-of coordinator</small>",
+    "td": "&ldquo;Expect to pay around $764 (national average) for a day of wedding coordinator.&rdquo;",
+    "src": "<a href=\"https://www.thumbtack.com/p/wedding-coordinator-cost\" rel=\"noopener\">Thumbtack</a><br>page updated Oct 28, 2026; read Oct 29, 2026",
+    "amount": 764,
+    "source_url": "https://www.thumbtack.com/p/wedding-coordinator-cost",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Thumbtack<br><small>national range, any wedding coordinator</small>",
+    "td": "&ldquo;The national average cost of hiring a wedding coordinator ranges from around $781-$1,495, according to Thumbtack data.&rdquo;",
+    "src": "<a href=\"https://www.thumbtack.com/p/wedding-coordinator-cost\" rel=\"noopener\">Thumbtack</a><br>page updated Oct 28, 2026; read Oct 29, 2026",
+    "amount": 781,
+    "source_url": "https://www.thumbtack.com/p/wedding-coordinator-cost",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Zola<br><small>day-of coordination</small>",
+    "td": "&ldquo;At $800 to $3,000, day-of coordination offers the most budget-friendly way to get professional support.&rdquo; Day-of coordinators &ldquo;start working with you about 4 to 6 weeks before your wedding&rdquo;.",
+    "src": "<a href=\"https://www.zola.com/expert-advice/how-much-do-wedding-coordinators-cost\" rel=\"noopener\">Zola</a><br>page updated Feb 19, 2026; read Oct 29, 2026",
+    "amount": 800,
+    "source_url": "https://www.zola.com/expert-advice/how-much-do-wedding-coordinators-cost",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Zola<br><small>partial planning, for comparison</small>",
+    "td": "&ldquo;Expect to invest $1,500 to $6,000 for partial planning services.&rdquo;",
+    "src": "<a href=\"https://www.zola.com/expert-advice/how-much-do-wedding-coordinators-cost\" rel=\"noopener\">Zola</a><br>page updated Feb 19, 2026; read Oct 29, 2026",
+    "amount": 1500,
+    "source_url": "https://www.zola.com/expert-advice/how-much-do-wedding-coordinators-cost",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "The Charlotte Bride<br><small>Charlotte coordinators&rsquo; prices</small>",
+    "td": "&ldquo;Day-of Coordination: $750&ndash;$3,500&rdquo; &middot; &ldquo;Partial Planning: $2,750&ndash;$6,000&rdquo; &middot; &ldquo;Full-Service Planning: $4,250&ndash;$10,000+&rdquo;",
+    "src": "<a href=\"https://thecharlottebride.beehiiv.com/p/charlotte-wedding-coordinator-planner-costs-what-you-ll-actually-pay-in-2026\" rel=\"noopener\">The Charlotte Bride</a><br>page dated Mar 3, 2026; read Oct 29, 2026",
+    "amount": 750,
+    "source_url": "https://thecharlottebride.beehiiv.com/p/charlotte-wedding-coordinator-planner-costs-what-you-ll-actually-pay-in-2026",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Joyous Gatherings (Joy Madden)<br><small>day-of only, Tier 1 and Tier 2</small>",
+    "td": "Tier 1: &ldquo;$800 Includes: Prices are included up to 75 people&rdquo;, &ldquo;8 hours wedding-day coverage&rdquo;, &ldquo;Lead and one assistant included&rdquo;. Tier 2: &ldquo;$1,000&rdquo;, with &ldquo;Two locations on Day of event&rdquo; and &ldquo;Rehearsal Coverage&rdquo;.",
+    "src": "<a href=\"https://sites.google.com/view/joyousgatherings/pricing/day-of-only-coordination\" rel=\"noopener\">Joyous Gatherings</a><br>read Oct 29, 2026",
+    "amount": 800,
+    "source_url": "https://sites.google.com/view/joyousgatherings/pricing/day-of-only-coordination",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Complete Weddings + Events, Chicago<br><small>day-of coordination</small>",
+    "td": "&ldquo;Complete Weddings + Events provides day-of coordination for $1,695 with a package that you can customize&rdquo; &middot; &ldquo;On average, couples spend $1,850 on coordination in the Chicago area.&rdquo;",
+    "src": "<a href=\"https://completewedo.com/chicago/day-of-coordination/\" rel=\"noopener\">Complete Weddings + Events (Chicago)</a><br>read Oct 29, 2026",
+    "amount": 1695,
+    "source_url": "https://completewedo.com/chicago/day-of-coordination/",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Complete Weddings + Events, Seattle<br><small>day-of, 6 to 10 hours</small>",
+    "td": "&ldquo;A day-of wedding coordinator packages range from six to ten hours typically costs between $1,595 and $2,695 depending on the date and location of event(s).&rdquo;",
+    "src": "<a href=\"https://completewedo.com/seattle/faq/how-much-does-a-day-of-coordinator-cost/\" rel=\"noopener\">Complete Weddings + Events (Seattle)</a><br>page dated Apr 21, 2025; read Oct 29, 2026",
+    "amount": 1595,
+    "source_url": "https://completewedo.com/seattle/faq/how-much-does-a-day-of-coordinator-cost/",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "Stephanie Gatton Events, New York City<br><small>month-of coordination</small>",
+    "td": "&ldquo;MONTH-OF COORDINATION PACKAGES START AT $3,500.&rdquo; &middot; &ldquo;Most of my couples invest anywhere between $3,500-$4,500 on month-of coordination.&rdquo;",
+    "src": "<a href=\"https://stephanie-gatton.squarespace.com/moc\" rel=\"noopener\">Stephanie Gatton Events</a><br>read Oct 29, 2026",
+    "amount": 3500,
+    "source_url": "https://stephanie-gatton.squarespace.com/moc",
+    "date_read": "2026-10-29"
+   }
+  ]
+ },
+ "facts_note": "Prices are each business&rsquo;s own published price on the day we read it; quotes for your date can differ.",
+ "ideas": [],
+ "faq": [
+  {
+   "q": "How much does a day-of wedding coordinator cost?",
+   "a": "As of Oct 29, 2026, Thumbtack puts the national average at about $764 and Zola puts day-of coordination at $800 to $3,000 (updated Feb 19, 2026). Coordinators who print their own price ask $800 (Joyous Gatherings, 8 hours), $1,695 (Complete Weddings + Events, Chicago) and $1,595 to $2,695 (the same company in Seattle)."
+  },
+  {
+   "q": "When does a day-of coordinator start working with you?",
+   "a": "Zola says day-of coordinators start about 4 to 6 weeks before the wedding, to learn your plans, meet your vendors and build the timeline. Joyous Gatherings starts planning 4 to 8 weeks out for its $800 tier and 2 to 3 months out for its $1,000 tier."
+  },
+  {
+   "q": "How much is a partial or full wedding planner?",
+   "a": "Zola puts partial planning at $1,500 to $6,000 (updated Feb 19, 2026). In Charlotte, The Charlotte Bride lists partial planning at $2,750 to $6,000 and full-service planning at $4,250 to $10,000+ (Mar 3, 2026)."
+  },
+  {
+   "q": "How many hours does a day-of coordinator work?",
+   "a": "Joyous Gatherings includes 8 hours of wedding-day coverage in both its $800 and $1,000 tiers. Complete Weddings + Events says its day-of packages run six to ten hours, at $1,595 to $2,695 in Seattle."
+  },
+  {
+   "q": "What does month-of coordination cost?",
+   "a": "Stephanie Gatton Events, a New York City coordinator, says its month-of packages start at $3,500 and most couples invest $3,500 to $4,500; it starts five weeks before the wedding date."
+  }
+ ],
+ "related": [
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "micro-wedding-venues",
+   "label": "Micro wedding venues: compare cities"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "courthouse-wedding-los-angeles",
+   "label": "Courthouse wedding in Los Angeles"
+  },
+  {
+   "path": "courthouse-wedding-san-diego",
+   "label": "Courthouse wedding in San Diego"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-29",
+ "first_published": "2026-10-29"
+}

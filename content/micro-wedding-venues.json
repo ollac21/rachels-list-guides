@@ -267,6 +267,11 @@
   {
    "path": "elopement-packages",
    "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "day-of-wedding-coordinator-cost",
+   "label": "Day-of wedding coordinator cost",
+   "note": "$764 on average; real coordinators' own prices."
   }
  ],
  "last_checked": "2026-10-28",

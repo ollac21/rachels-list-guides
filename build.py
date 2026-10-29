@@ -39,6 +39,7 @@ LABELS = {
     "dresses": ("Show me gowns in my size", "Gowns in my size", "Show me gowns in my size"),
     "home": ("Find my dress &amp; venue for less", "Find my dress &amp; venue", "Find my dress &amp; venue for less"),
     "packages": ("Find my dress &amp; flowers for less", "Find my dress &amp; flowers", "Find my dress &amp; flowers for less"),
+    "cost": ("Find my dress &amp; venue for less", "Find my dress &amp; venue", "Find my dress &amp; venue for less"),
 }
 DEFAULT_LABELS = ("Find my venue for less", "Find my venue", "Find my venue for less")
 # page type -> (what she taps first, the button text after she has tapped; {s} = her size or style)

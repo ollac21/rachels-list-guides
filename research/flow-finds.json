@@ -3,12 +3,12 @@
   "cities": {
     "chicago": {
       "bouquet": {
-        "name": "Paris312",
-        "url": "https://paris312.com/products/minimal-bridesmaid-bouquet",
-        "item": "Minimal bouquet, Petit size (about 10.5 in tall, 10 in wide): white baby's breath with white satin ribbon. Sold as a bridesmaid bouquet, small enough for a courthouse bride. Delivery in Chicago and suburbs.",
-        "price_display": "$52",
-        "amount": 52,
-        "quote": "Regular Bouquet - $80.00 Petit Bouquet - $52.00",
+        "name": "Leo's Metropolitan Florist",
+        "url": "https://southchicagoflorist.com/chicago-leos-metropolitan-florist/baby-breath-bridesmaid.html",
+        "item": "Baby Breath Bridesmaid: small white baby's-breath bouquet (Standard size $35; Deluxe $45; Premium $55), listed under Occasion: Wedding, Color: White. Sold as a bridesmaid bouquet, simple enough for a courthouse bride. Shop at 407 E 71st St, Chicago; delivery, in-store pickup on some dates. Read via WebFetch only (the site blocks curl).",
+        "price_display": "$35",
+        "amount": 35,
+        "quote": "$35 Arrangement size Standard Bouquet will be delivered approximately as pictured.",
         "date_read": "2026-10-28"
       },
       "photo_spot": {
@@ -68,7 +68,15 @@
       }
     },
     "dallas": {
-      "bouquet": null,
+      "bouquet": {
+        "name": "1-800-Flowers Dallas (local shop, 3380 Belt Line Rd, Dallas)",
+        "url": "https://www.1800flowersdallas.com/all-white-bridal-bouquet/",
+        "item": "All White Bridal Bouquet: white roses, white mini calla lilies and variegated pittosporum with a white satin ribbon, about 12 in x 12 in; page lists small, medium and large sizes with $140.00 shown. Pickup or delivery; order at least two weeks ahead. Franchise shop of the 1-800-Flowers network. Cheapest local Dallas bouquet page found, above the $100 target.",
+        "price_display": "$140",
+        "amount": 140,
+        "quote": "All White Bridal Bouquet $ 140.00",
+        "date_read": "2026-10-28"
+      },
       "photo_spot": {
         "name": "Klyde Warren Park",
         "url": "https://klydewarrenpark.org/klyde-warren-faqs",
@@ -88,14 +96,22 @@
       }
     },
     "los-angeles": {
-      "bouquet": null,
+      "bouquet": {
+        "name": "Conroy's Flowers (Los Angeles, 374 S La Cienega Blvd)",
+        "url": "https://www.conroysflowersbeverlyhills.com/all-white-petite-bouquet/",
+        "item": "All White Petite Bouquet: 5 white roses and 3 white miniature calla lilies with variegated pittosporum and a white satin ribbon, about 7 in x 7 in. The shop suggests it for the mother of the bride or groom or as a toss bouquet, so it is a very small bridal bouquet. Pickup or delivery; order at least two weeks ahead.",
+        "price_display": "$55",
+        "amount": 55,
+        "quote": "All White Petite Bouquet $ 55.00",
+        "date_read": "2026-10-28"
+      },
       "photo_spot": {
         "name": "Gloria Molina Grand Park (formerly Grand Park)",
-        "url": "https://grandparkla.org/visit",
-        "hours_quote": "Open daily from 5:30am to 10:00pm.",
-        "free_quote": "Gloria Molina Grand Park provides free and low cost programming year round and is open daily for casual activities like picnics, splash pad play dates, lunch breaks, exercise, meditation, and more.",
+        "url": "https://grandparkla.org/faq",
+        "hours_quote": "Enjoy the park during park hours (5:30 am to 10:00 pm daily)",
+        "free_quote": "The park is open to everyone. Gloria Molina Grand Park plans free programming for the public year-round",
         "date_read": "2026-10-28",
-        "note": "The official site says the park is open to everyone and has free programming, but no official page found says 'free admission' in so many words."
+        "note": "Official pages say the park is open to everyone with free year-round programming; no official page found says 'free admission' in so many words."
       },
       "lunch": null
     }

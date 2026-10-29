@@ -202,7 +202,7 @@
  "fee_total": 181,
  "fee_parts": "$81 license + $100 ceremony",
  "where": "A Harris County Justice of the Peace court",
- "where_note": "Precinct 1, cash only. You get the license first, at 201 Caroline, Suite 330.",
+ "where_note": "Precinct 1, cash only. Two stops: the license first, at 201 Caroline, Suite 330; the ceremony 72 hours later (waived with a Twogether in Texas certificate).",
  "when": "Weekdays by appointment; walk-ins depend on the judge. License office: Mon–Fri, 8 a.m.–4:30 p.m.",
  "steps5": [
   {
@@ -266,5 +266,12 @@
    }
   }
  ],
- "look_heading": "Your Houston courthouse look, for less"
+ "look_heading": "Your Houston courthouse look, for less",
+ "call": {
+  "who": "Harris County Clerk, Personal Records",
+  "label": "713-274-8686",
+  "tel": "+17132748686",
+  "url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+  "date_read": "2026-10-28"
+ }
 }

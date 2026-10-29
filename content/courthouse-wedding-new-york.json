@@ -204,7 +204,7 @@
  "fee_total": 60,
  "fee_parts": "$35 license + $25 ceremony",
  "where": "A City Clerk office in any borough",
- "where_note": "License first, then the ceremony: you book both online.",
+ "where_note": "Two steps: the license first, then the ceremony at least 24 hours later. You book both online.",
  "when": "Monday to Friday, arrive 8:30 a.m.–3:15 p.m. Appointment only, no walk-ins.",
  "steps5": [
   {
@@ -268,5 +268,12 @@
    }
   }
  ],
- "look_heading": "Your New York courthouse look, for less"
+ "look_heading": "Your New York courthouse look, for less",
+ "call": {
+  "who": "311, or 212-NEW-YORK",
+  "label": "212-639-9675",
+  "tel": "+12126399675",
+  "url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+  "date_read": "2026-10-28"
+ }
 }

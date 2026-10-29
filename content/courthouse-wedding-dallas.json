@@ -210,7 +210,7 @@
  "fee_total": 161,
  "fee_parts": "$81 license + $80 ceremony",
  "where": "Justice of the Peace court 2-2, Mesquite",
- "where_note": "Cash only, by appointment. You get the license first, at 500 Elm St., Suite 2100.",
+ "where_note": "Cash only, by appointment. Two stops: the license first, at 500 Elm St., Suite 2100; the ceremony 72 hours later.",
  "when": "Weekdays by appointment. License office: 500 Elm St., Suite 2100, Mon–Fri, 8 a.m.–4:30 p.m.",
  "steps5": [
   {
@@ -274,5 +274,13 @@
    }
   }
  ],
- "look_heading": "Your Dallas courthouse look, for less"
+ "look_heading": "Your Dallas courthouse look, for less",
+ "fee_extra": "A certified copy is $10 extra.",
+ "call": {
+  "who": "Dallas County Clerk",
+  "label": "(214) 653-7099",
+  "tel": "+12146537099",
+  "url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+  "date_read": "2026-10-28"
+ }
 }

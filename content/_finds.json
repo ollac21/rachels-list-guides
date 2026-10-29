@@ -99,6 +99,16 @@
    "from": true,
    "date_read": "2026-10-28",
    "quote": "-Bridal bouquet- $125-$350 ($200 average)"
+  },
+  "lunch": {
+   "name": "Y.O. Ranch Steakhouse",
+   "url": "https://www.yoranchsteakhouse.com/private-dining-menus/",
+   "item": "set lunch menu in its private dining rooms, soft drinks and tea included, plus tax and gratuity",
+   "price_display": "$39 per person",
+   "amount": 39,
+   "per_person": true,
+   "date_read": "2026-10-28",
+   "quote": "$39 PER PERSON + TAX & GRATUITY | SOFT DRINKS & TEA INCLUDED"
   }
  },
  "los-angeles": {
@@ -115,13 +125,14 @@
    "from": true
   },
   "florist": {
-   "name": "Hanamate Floral Design",
-   "url": "https://hanamate.com/products/dark-element-fresh-rose-bouquet",
-   "item": "bridal bouquet, customizable",
-   "price_display": "$98.00 USD",
-   "amount": 98,
+   "name": "Conroy's Flowers",
+   "url": "https://www.conroysflowersbeverlyhills.com/all-white-petite-bouquet/",
+   "item": "all-white petite bouquet, about 7 inches (order two weeks ahead)",
+   "price_display": "$55",
+   "amount": 55,
+   "title": "A petite bouquet",
    "date_read": "2026-10-28",
-   "quote": "Delicate Bouquets for Bride / Bridesmaids (Customize) Regular price $98.00 USD"
+   "quote": "All White Petite Bouquet $ 55.00"
   }
  }
 }

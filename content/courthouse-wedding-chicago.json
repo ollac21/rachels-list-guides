@@ -205,7 +205,7 @@
  "fee_total": 70,
  "fee_parts": "$60 license + $10 ceremony",
  "where": "119 W. Randolph St., lower level",
- "where_note": "Marriage and Civil Union Court. You get the license first, at 118 N. Clark St., Room 120.",
+ "where_note": "Marriage and Civil Union Court. Two stops: the license first, at 118 N. Clark St., Room 120; the ceremony from the next day.",
  "when": "Tuesday to Friday, 9 a.m.–12 p.m. and 2–4 p.m. No appointment.",
  "steps5": [
   {
@@ -269,5 +269,13 @@
    }
   }
  ],
- "look_heading": "Your Chicago courthouse look, for less"
+ "look_heading": "Your Chicago courthouse look, for less",
+ "fee_extra": "A certified copy of your certificate is $15 extra.",
+ "call": {
+  "who": "Cook County Clerk",
+  "label": "(312) 603-5656",
+  "tel": "+13126035656",
+  "url": "https://www.cookcountyclerkil.gov/contact-us",
+  "date_read": "2026-10-28"
+ }
 }

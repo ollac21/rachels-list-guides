@@ -33,7 +33,7 @@ AI_BOTS = ["Googlebot", "Bingbot", "OAI-SearchBot", "GPTBot", "ChatGPT-User", "C
 # ----------------------------------------------------------------------------- the button (FLOW-SPEC: one first-person promise per page)
 # page type -> (the button, the small header link, the phone bar)
 LABELS = {
-    "courthouse": ("Show me courthouse dresses in my size", "Dresses in my size", "Show me courthouse dresses in my size"),
+    "courthouse": ("Show me courthouse dresses in my size", "Dresses from {min}", "Show me courthouse dresses in my size"),
     "dresses": ("Show me gowns in my size", "Gowns in my size", "Show me gowns in my size"),
 }
 DEFAULT_LABELS = ("Find my dress &amp; decor for less", "Find my dress &amp; decor", "Find my dress &amp; decor for less")
@@ -52,7 +52,7 @@ END_LINE = {
 }
 END_LINE_DEFAULT = "I search Poshmark and Etsy every week for the looks you tap. Free to start."
 PRICE_LINE = ('<p class="price-line"><b>Free: your board and your first finds. No card to start.</b>'
-              '<span>Every new find, each week: $9.92/month billed yearly ($119), or $24/month.</span></p>')
+              '<span>After that, every new find each week: $9.92/month billed yearly ($119), or $24/month.</span></p>')
 PRICE_LINE_CA = PRICE_LINE.replace("</p>", '<span>Canada: C$159/year or C$33/month.</span></p>')
 SAMPLE_CAP = "A sample board in the app."
 
@@ -156,15 +156,19 @@ def ico(name):
 
 
 # ----------------------------------------------------------------------------- the button blocks
+SIZED = {"courthouse": "Show me courthouse dresses in size {s}", "dresses": "Show me gowns in size {s}"}
+
+
 def cta_html(page, app, pos, fine=True):
-    return ('<div class="cta"><a class="rl-btn" href="{}" data-cta="{}">{}</a>{}</div>'.format(
-        app, pos, labels_for(page)[0], '<p class="fine">About 90 seconds, in your browser. No affiliate links: we earn nothing from these sellers.</p>' if fine else ""))
+    sized = ' data-base="{}" data-sized="{}"'.format(labels_for(page)[0], SIZED[page["type"]]) if page["type"] in SIZED else ""
+    return ('<div class="cta"><a class="rl-btn" href="{}" data-cta="{}"{}>{}</a>{}</div>'.format(
+        app, pos, sized, labels_for(page)[0], '<p class="fine">About 90 seconds, in your browser.</p>' if fine else ""))
 
 
 def board_block(page, app, root, pos):
-    """The button block: the real board in a phone frame, 3 steps, the price line, the button."""
+    """The button block: the real board in a phone frame, 3 steps, the button, the price line, one fine-print line."""
     return fill(template("board.html"), heading=BOARD_HEAD.get(page["type"], BOARD_HEAD["home"]), root=root, price=PRICE_LINE,
-                cta=cta_html(page, app, pos), cap=SAMPLE_CAP)
+                cta=cta_html(page, app, pos, fine=False), cap=SAMPLE_CAP)
 
 
 def end_block(page, app, root):
@@ -180,12 +184,13 @@ def answer_wrap(inner):
 def answer_courthouse(page):
     city = page["card_title"]
     year = page["last_checked"][:4]
-    note = ' <i>({})</i>'.format(esc(page["where_note"])) if page.get("where_note") else ""
+    note = '<i>{}</i>'.format(esc(page["where_note"])) if page.get("where_note") else ""
     return answer_wrap(
         '<p class="a-lead">A courthouse wedding in {city} costs <b class="a-big">${fee:,}</b> in {year}'
-        '<span class="a-parts">{parts}</span></p>'
+        '<span class="a-parts">{parts}{extra}</span></p>'
         '<ul class="a-rows"><li>{i1}<span><b>Where</b>{where}{note}</span></li><li>{i2}<span><b>When</b>{when}</span></li></ul>'.format(
-            city=esc(city), fee=page["fee_total"], year=year, parts=esc(page["fee_parts"]), i1=ico("i-pin"), i2=ico("i-cal"),
+            city=esc(city), fee=page["fee_total"], year=year, parts=esc(page["fee_parts"]),
+            extra=(" &middot; " + esc(page["fee_extra"])) if page.get("fee_extra") else "", i1=ico("i-pin"), i2=ico("i-cal"),
             where=esc(page["where"]), note=note, when=esc(page["when"])))
 
 
@@ -248,7 +253,11 @@ def sources_details(page):
     unk = ""
     if page.get("facts_note_list"):
         items = "; ".join(x[0].lower() + x[1:] for x in page["facts_note_list"])
-        unk = '<p class="note unk"><b>Not on the official pages, so call to check:</b> {}.</p>'.format(esc(items))
+        call = ""
+        if page.get("call"):
+            c = page["call"]
+            call = ' Call {} on <a href="tel:{}" data-cta="call">{}</a> (<a href="{}" rel="noopener">official page</a>).'.format(esc(c["who"]), esc(c["tel"]), esc(c["label"]), esc(c["url"]))
+        unk = '<p class="note unk"><b>Not on the official pages, so call to check:</b> {}.{}</p>'.format(esc(items), call)
     return ('{}<details class="src" id="sources"><summary>Where these fees come from: the {}\'s own pages, read {}</summary>{}</details>').format(
         unk, esc(page["office"]), fmt_short(max(f["date_read"] for f in page["facts"])), t)
 
@@ -286,9 +295,9 @@ def courthouse_dress_cards(page, cd):
     return cards
 
 
-def find_row(icon, title, sub, price, url, small=""):
+def find_row(icon, title, sub, price, url, small="", after=""):
     return ('<li><a class="frow" href="{}" rel="noopener" target="_blank" data-cta="find">{}<span><b>{}</b><span class="fm">{}</span></span>'
-            '<span class="fp">{}{}</span></a></li>').format(esc(url), ico(icon), esc(title), esc(sub), small, esc(price))
+            '<span class="fp">{}{}{}</span></a></li>').format(esc(url), ico(icon), esc(title), esc(sub), small, esc(price), after)
 
 
 def render_finds(page, finds, cd, app):
@@ -304,8 +313,11 @@ def render_finds(page, finds, cd, app):
     if ph and (ph.get("hours") or 9) <= 1 and ph["amount"] <= 500:  # FLOW-SPEC: a 1-hour courthouse session, or leave it out
         rows.append(find_row("i-photo", "Courthouse photos", "{}: {}".format(ph["name"], ph["package"]), money(ph["amount"]), ph["url"],
                              '<small class="from">from </small>' if ph.get("from") else ""))
+    lu = f.get("lunch")
+    if lu:
+        rows.append(find_row("i-dinner", "A set lunch for your group", "{}: {}".format(lu["name"], lu["item"]), money(lu["amount"]), lu["url"],
+                             '', '<small class="from">per person</small>'))
     cards = courthouse_dress_cards(page, cd)
-    cards.append('<a class="dcard dmore" href="{}" data-cta="grid"><b>Not your size?</b><span>Rachel checks Poshmark and Etsy every Tuesday.</span><em>Show me my size &rarr;</em></a>'.format(app))
     return ('<div class="fwrap" data-topmode>{chips}<div class="dgrid">{cards}</div></div><ul class="finds">{rows}</ul>'
             '<p class="srcnote">Dresses are Poshmark listings and open in a new tab, each at the seller\'s own page. Prices as read on {d}.</p>').format(
         chips=size_chips(), cards="".join(cards), rows="".join(rows), d=fmt_short(cd["date_read"]) if cd.get("date_read") else "Oct 28")
@@ -612,7 +624,7 @@ def render_page(page, site, pages, finds):
         mid = [render_gowns(page, app, root), render_safe(page)]
     else:  # trust
         mid = [render_trust_table(page)]
-    tail = [render_faq(page), render_related(page, pages), end]
+    tail = [render_faq(page), end, render_related(page, pages)]
     if t == "trust":
         tail = [render_faq(page), board_block(page, app, root, "mid"), render_related(page, pages)]
     body = "\n".join(head + mid + tail)
@@ -623,6 +635,8 @@ def finish_page(page, site, pages, body, root, app):
     ld = "\n".join('<script type="application/ld+json">{}</script>'.format(
         json.dumps(b, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")) for b in jsonld_blocks(page, site, pages))
     lab = labels_for(page)
+    if "{min}" in lab[1]:
+        lab = (lab[0], lab[1].replace("{min}", money(min(d["price"] for d in load_cdresses().get("dresses", [{"price": 0}])))), lab[2])
     html_ = fill(template("base.html"),
                  title=esc(page["title"]), description=esc(page["description"]),
                  canonical=page_url(site, page["path"]), base_url=site["base_url"], root=root,
@@ -757,7 +771,7 @@ def check(do_links=True):
             problems.append("{}: {} buttons (need 1 to 3)".format(w, n_btn))
         if "utm_campaign=" + (p["path"].strip("/") or "home") not in h or "utm_medium=" + p["medium"] not in h:
             problems.append("{}: the button link lacks its utm tags".format(w))
-        if re.search(r"\{[a-z_]+\}", re.sub(r"(?is)<(script|style)\b.*?</\1>", "", h)):
+        if re.search(r"\{(?!s\})[a-z_]+\}", re.sub(r"(?is)<(script|style)\b.*?</\1>", "", h)):
             problems.append("{}: an unfilled {{placeholder}} is left in the page".format(w))
         if "{{" in h:
             problems.append("{}: an unfilled {{{{placeholder}}}} is left in the page".format(w))

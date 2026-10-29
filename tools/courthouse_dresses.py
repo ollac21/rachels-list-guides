@@ -13,17 +13,17 @@ from dresses import reopen  # noqa: E402
 
 # pool id -> (size band, short name, one-phrase style read from the title)
 PICKS = [
-    ("553d473b6adf4c35", "2-4", "Two Sisters", "lace mini"),
-    ("6f341754d445e495", "2-4", "White satin mini", "satin mini"),
-    ("4255c2e22c409dcd", "2-4", "Few Moda", "top and skirt set"),
-    ("795ef496f2cf40be", "6-8", "Angel Biba", "crochet sundress"),
+    ("553d473b6adf4c35", "2-4", "Two Sisters", "white lace mini"),
+    ("6f341754d445e495", "2-4", "White satin mini", "square neck, gloves"),
+    ("4255c2e22c409dcd", "2-4", "Few Moda", "ivory top and skirt set"),
+    ("795ef496f2cf40be", "6-8", "Angel Biba", "white crochet sundress"),
     ("089c100b836ece7d", "6-8", "Reformation", "cream maxi"),
-    ("95aa7abfd8282ab4", "10-12", "The Limited", "sleeveless dress"),
-    ("c48fe95a5748504d", "10-12", "White beaded maxi", "beaded maxi"),
-    ("b161c22da1d1e4a0", "14+", "Azazie", "satin mini"),
-    ("5383ac670c49511b", "14+", "Adrianna Papell", "sheath"),
-    ("f2ddf004c892dd93", "14+", "David's Bridal", "lace midi"),
-    ("367af18c872d8ed3", "14+", "Jessica London", "lace tea-length"),
+    ("95aa7abfd8282ab4", "10-12", "The Limited", "white sleeveless dress"),
+    ("c48fe95a5748504d", "10-12", "White beaded maxi", "beaded bodice"),
+    ("b161c22da1d1e4a0", "14+", "Azazie", "white satin mini"),
+    ("5383ac670c49511b", "14+", "Adrianna Papell", "white sleeveless sheath"),
+    ("f2ddf004c892dd93", "14+", "David's Bridal", "white lace midi"),
+    ("367af18c872d8ed3", "14+", "Jessica London", "ivory lace tea-length"),
 ]
 
 

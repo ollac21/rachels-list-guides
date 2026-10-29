@@ -270,5 +270,12 @@
    }
   }
  ],
- "look_heading": "Your Los Angeles courthouse look, for less"
+ "look_heading": "Your Los Angeles courthouse look, for less",
+ "call": {
+  "who": "LA County Recorder/County Clerk",
+  "label": "(800) 201-8999",
+  "tel": "+18002018999",
+  "url": "https://lavote.gov/contact-us/branch-office-locations",
+  "date_read": "2026-10-28"
+ }
 }

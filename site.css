@@ -56,7 +56,7 @@ main{padding-top:4px}
 .a-rows li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15.5px;line-height:1.4}
 .a-rows .ico{color:var(--rose-deep);margin-top:2px}
 .a-rows b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep);font-weight:600}
-.a-rows i{font-style:normal;color:var(--mute);font-size:14px}
+.a-rows i{display:block;font-style:normal;color:var(--mute);font-size:14px;line-height:1.4;margin-top:1px}
 .a-src{font-size:13px;color:var(--mute);margin-top:12px!important}
 .a-src a{color:var(--mute)}
 
@@ -297,3 +297,4 @@ q.quote::before{content:"\201C"}q.quote::after{content:"\201D"}
 .tipl>li>.fwrap,.tipl>li>.finds,.tipl>li>.srcnote{display:block}
 .tipl>li>.fwrap{margin-top:10px}
 .tipl>li>.finds{display:grid}
+.from{font-family:var(--ui);font-size:11.5px;font-weight:500;color:var(--mute);display:block;line-height:1.1}.frow .fp{min-width:46px}

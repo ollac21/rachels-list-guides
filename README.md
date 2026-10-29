@@ -11,5 +11,5 @@ The spec is `marketing/GUIDES-SPEC.md` in the Rachel's List engine repo.
 - Refresh: dress pages every Tuesday (`dresses.py`, then `make_content.py`); venue pages and the hub monthly; courthouse pages every 3 months.
 - No affiliate links, no seller or venue photos. The one hero photo per page is licensed stock (Pexels License), credited in an HTML comment above it and in `content/_site.json`.
 - `GUIDES-CONVERSION.md`: the evidence (finding, source link, number, what we do) behind the step from a guide page into the app; `research/conversion/*.json` holds each verified quote. `tools/make_conversion_doc.py` rebuilds it.
-- `img/dream-board.mp4|webm|-poster.jpg`: the looping real Dream Board (cut from the app recording; sellers' photos blurred); `img/style-*.jpg`, `img/dress-*.jpg`: the app's own AI-made style and gown-shape pictures for the tap-a-look strip.
+- `img/dream-board.mp4|webm|-poster.jpg`: the looping real Dream Board (cut from the app recording); `img/style-*.jpg`, `img/dress-*.jpg`: the app's own AI-made style and gown-shape pictures for the tap-a-look strip.
 - `review/round-N/` and `review/final/` hold the phone (390 px) and desktop (1440 px) screenshots of the design rounds.

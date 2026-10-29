@@ -28,15 +28,6 @@
    "date_read": "2026-10-28"
   },
   {
-   "title": "Vera Wang Gown Size 10",
-   "url": "https://poshmark.com/listing/Vera-Wang-Gown-Size-10-6adf8e127aaa64a334ba5b99",
-   "price": 450,
-   "old_price": 1695,
-   "size": "US 10",
-   "brand": "Vera Wang",
-   "date_read": "2026-10-28"
-  },
-  {
    "title": "NWT DaVinci Bridal Wedding Dress Size 12 Ivory/White Satin Beaded Corset Train",
    "url": "https://poshmark.com/listing/NWT-DaVinci-Bridal-Wedding-Dress-Size-12-IvoryWhite-Satin-Beaded-Corset-Train-6adfd3d1f93b2ac6ea4a509b",
    "price": 195,
@@ -136,15 +127,6 @@
    "date_read": "2026-10-28"
   },
   {
-   "title": "BHLDN Casey Dress",
-   "url": "https://poshmark.com/listing/BHLDN-CaseyDress-6adfb49384874814d479ae59",
-   "price": 250,
-   "old_price": 750,
-   "size": "US 2",
-   "brand": "BHLDN",
-   "date_read": "2026-10-28"
-  },
-  {
    "title": "Tadashi Shoji Bridal Adela strapless gown ivory primrose Lace Women's size 10",
    "url": "https://poshmark.com/listing/Tadashi-Shoji-Bridal-Adela-strapless-gown-ivory-primrose-Lace-Womens-size-10-6adfd4dca6935897659a017e",
    "price": 210,
@@ -169,15 +151,6 @@
    "old_price": 800,
    "size": "US 16",
    "brand": "Galina Signature",
-   "date_read": "2026-10-28"
-  },
-  {
-   "title": "Jenny Yoo White Asymmetrical One-Shoulder Gown",
-   "url": "https://poshmark.com/listing/Jenny-Yoo-White-Asymmetrical-OneShoulder-Gown-6ae03671721f585563965d90",
-   "price": 130,
-   "old_price": 399,
-   "size": "US 12",
-   "brand": "Jenny Yoo",
    "date_read": "2026-10-28"
   }
  ],
@@ -282,15 +255,6 @@
    "date_read": "2026-10-28"
   },
   {
-   "title": "Birdy Bridal Soreya Wedding Dress Black Floral Wedding Gown 18 US NEW",
-   "url": "https://poshmark.com/listing/Birdy-Bridal-Soreya-Wedding-Dress-Black-Floral-Wedding-Gown-18-US-NEW-6aded59c8974d00324cc4c3d",
-   "price": 650,
-   "old_price": 999,
-   "size": "US 18",
-   "brand": "Birdy Grey",
-   "date_read": "2026-10-28"
-  },
-  {
    "title": "Alfred Angelo Bridal Wedding Gown in White Size 18 NWT",
    "url": "https://poshmark.com/listing/Alfred-Angelo-Bridal-Wedding-Gown-in-White-Size-18-NWT-6adcff864fcf2674c0a5a92c",
    "price": 1000,
@@ -323,6 +287,62 @@
     "state": "available",
     "price": 650.0,
     "original": 1500.0
+   }
+  },
+  {
+   "title": "Vera Wang Gown Size 10",
+   "url": "https://poshmark.com/listing/Vera-Wang-Gown-Size-10-6adf8e127aaa64a334ba5b99",
+   "price": 450,
+   "old_price": 1695,
+   "size": "US 10",
+   "brand": "Vera Wang",
+   "date_read": "2026-10-28",
+   "live": {
+    "available": true,
+    "state": "photo",
+    "why": "the photo shows two black dresses, not this gown"
+   }
+  },
+  {
+   "title": "BHLDN Casey Dress",
+   "url": "https://poshmark.com/listing/BHLDN-CaseyDress-6adfb49384874814d479ae59",
+   "price": 250,
+   "old_price": 750,
+   "size": "US 2",
+   "brand": "BHLDN",
+   "date_read": "2026-10-28",
+   "live": {
+    "available": true,
+    "state": "photo",
+    "why": "the photo is a catalogue picture pasted twice"
+   }
+  },
+  {
+   "title": "Jenny Yoo White Asymmetrical One-Shoulder Gown",
+   "url": "https://poshmark.com/listing/Jenny-Yoo-White-Asymmetrical-OneShoulder-Gown-6ae03671721f585563965d90",
+   "price": 130,
+   "old_price": 399,
+   "size": "US 12",
+   "brand": "Jenny Yoo",
+   "date_read": "2026-10-28",
+   "live": {
+    "available": true,
+    "state": "photo",
+    "why": "the photo has the carousel arrows in it"
+   }
+  },
+  {
+   "title": "Birdy Bridal Soreya Wedding Dress Black Floral Wedding Gown 18 US NEW",
+   "url": "https://poshmark.com/listing/Birdy-Bridal-Soreya-Wedding-Dress-Black-Floral-Wedding-Gown-18-US-NEW-6aded59c8974d00324cc4c3d",
+   "price": 650,
+   "old_price": 999,
+   "size": "US 18",
+   "brand": "Birdy Grey",
+   "date_read": "2026-10-28",
+   "live": {
+    "available": true,
+    "state": "photo",
+    "why": "a black dress"
    }
   }
  ],

@@ -72,7 +72,7 @@ function ok(k,v,it){if(k==="size")return it.getAttribute("data-band")===v;if(k==
 if(k==="fits")return +it.getAttribute("data-max")>=+v;if(k==="budget")return +it.getAttribute("data-amt")<+v;return true}
 function active(groups){return Object.keys(state).filter(function(k){return FILT[k]&&state[k]&&state[k]!=="all"&&(!groups||groups.indexOf(k)>-1)})}
 function fits(it,act){return act.every(function(k){return ok(k,state[k],it)})}
-function apply(){var inRow={};
+function apply(){var inRow={};setTimeout(pickline,0);
 $("[data-strip]").forEach(function(s){var g=(s.getAttribute("data-groups")||"").split(" "),act=active(g),shown=0;
 $("[data-item]",s).forEach(function(it){var show=act.length?(fits(it,act)&&shown<6):it.hasAttribute("data-def");if(show){shown++;inRow[it.getAttribute("href")]=1}it.hidden=!show});
 var n=s.parentNode.querySelector(".fnone");if(n)n.classList.toggle("on",!shown)});
@@ -82,7 +82,7 @@ var none=$(".fnone",w)[0];if(none)none.classList.toggle("on",!n);
 var mb=$("[data-more-btn]",w)[0];if(mb)mb.hidden=!!act.length||more;
 var st=$(".fstate",w)[0];if(st){if(act[0]==="size"){st.hidden=false;st.innerHTML=n+" in size "+LBL.size+" &middot; <button type=\"button\" data-reset=\"size\">show all sizes</button>"}else st.hidden=true}})}
 function decorate(){$("a[data-app]").forEach(function(a){var h=a.getAttribute("href").replace(/&(size|style)=[^&]*/g,"");
-["size","style"].forEach(function(k){if(state[k]&&state[k]!=="all")h+="&"+k+"="+encodeURIComponent(state[k])});a.setAttribute("href",h);
+[["size","size"],["style","style"],["fits","guests"],["budget","budget"]].forEach(function(p){var k=p[0];if(state[k]&&state[k]!=="all")h+="&"+p[1]+"="+encodeURIComponent(state[k])});a.setAttribute("href",h);
 var k=a.getAttribute("data-pick");if(k){var l=a.querySelector(".lbl")||a;l.innerHTML=state[k]&&state[k]!=="all"?a.getAttribute("data-tpl").replace("{s}",LBL[k]):a.getAttribute("data-base")}})}
 function sync(k){$(".fchips").forEach(function(g){if(g.getAttribute("data-group")!==k)return;$(".fc",g).forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-v")===state[k]?"true":"false")})});
 if(k==="city"){$(".citylink").forEach(function(a){a.hidden=a.getAttribute("data-for")!==state[k]})}}
@@ -92,6 +92,8 @@ state[k]=v;LBL[k]=k==="style"?b.textContent.toLowerCase():b.textContent;sync(k);
 document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest("[data-reset],[data-more-btn]");if(!t)return;
 if(t.hasAttribute("data-more-btn")){more=true;apply();cap("guide_filter",{slug:slug,group:"more",value:"open"});return}
 state.size="all";sync("size");apply();decorate()});
+function pickline(){var p=$(".pickline")[0];if(!p)return;if(!state.size||state.size==="all"){p.hidden=true;return}
+var n=$("[data-strip] [data-item]").filter(function(it){return it.getAttribute("data-band")===state.size}).length;p.hidden=false;p.innerHTML="<b>"+n+"</b> in size "+LBL.size+" on this page"+(n>6?": the first six are above, the rest in the list below.":", shown above.")}
 sync("size");apply();decorate();
 /* the sources list opens when a link points at it */
 function openHash(){var h=location.hash&&document.getElementById(location.hash.slice(1));if(h&&h.tagName==="DETAILS")h.open=true}
@@ -102,9 +104,8 @@ $("video.board-v").forEach(function(v){if(!("IntersectionObserver"in window)||(w
 new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var p=v.play();p&&p.catch&&p.catch(function(){})}else v.pause()})},{threshold:.25}).observe(v)});
 /* the phone bar: once the first-screen button has scrolled away, and never while a page button is on screen */
 var s=document.getElementById("sticky"),aft=document.body.getAttribute("data-sticky"),aftEl=aft&&document.querySelector(aft),seen=new Set();
-if(s){var f=function(){var past=aftEl?aftEl.getBoundingClientRect().bottom<0:window.scrollY>600;if(past&&seen.size===0)s.classList.add("on");else s.classList.remove("on")};
-window.addEventListener("scroll",f,{passive:true});f();
-if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)seen.add(x.target);else seen.delete(x.target)});f()});$(".rl-btn").forEach(function(b){io.observe(b)})}}
+if(s){var f=function(){var past=aftEl?aftEl.getBoundingClientRect().bottom<0:window.scrollY>600;if(past)s.classList.add("on");else s.classList.remove("on")};
+window.addEventListener("scroll",f,{passive:true});f()}
 })();
 </script>
 </body>

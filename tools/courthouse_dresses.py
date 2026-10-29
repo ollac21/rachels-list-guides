@@ -23,7 +23,6 @@ PICKS = [
     ("089c100b836ece7d", "6-8", "Reformation", "cream tie-strap maxi"),
     ("95aa7abfd8282ab4", "10-12", "The Limited", "sleeveless dress"),
     ("6b779d8b4a9b928d", "10-12", "Marina", "long-sleeve gown"),
-    ("afcb293a6d7e6b67", "10-12", "Jenny Yoo", "one-shoulder gown"),
     ("c48fe95a5748504d", "10-12", "White maxi dress", "maxi"),
     ("ad7547ca9213fa41", "14+", "Merry's", "satin off-the-shoulder"),
     ("b161c22da1d1e4a0", "14+", "Azazie", "satin mini"),

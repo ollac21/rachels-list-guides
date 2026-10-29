@@ -56,7 +56,7 @@ if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))posthog.init("{{posthog
 <nav><a href="{{root}}how-we-check/">How we check</a><a href="https://rachelslist.co/privacy">Privacy</a><a href="https://rachelslist.co/">Rachel's List app</a></nav>
 <p>No affiliate links: we earn nothing from these sellers or venues. &copy; Rachel's List</p>
 </div></footer>
-<div class="sticky" id="sticky"><a href="{{app_url}}" data-cta="sticky"><span>{{btnsticky}}</span><small>Free &middot; no card &middot; then $9.92/month billed yearly</small></a></div>
+<div class="sticky" id="sticky">{{stickyhtml}}</div>
 <script>
 (function(){
 var slug="{{slug}}",medium="{{medium}}";

@@ -298,3 +298,15 @@ q.quote::before{content:"\201C"}q.quote::after{content:"\201D"}
 .tipl>li>.fwrap{margin-top:10px}
 .tipl>li>.finds{display:grid}
 .from{font-family:var(--ui);font-size:11.5px;font-weight:500;color:var(--mute);display:block;line-height:1.1}.frow .fp{min-width:46px}
+
+/* courthouse pages: frozen at round 1 (owner's decision); these rules restore that round's look where later rounds changed shared rules */
+.t-courthouse .hero img{aspect-ratio:16/6}
+.t-courthouse .a-rows i{display:inline;color:var(--mute);font-size:14px;line-height:inherit;margin:0}
+.t-courthouse .price-line{font-size:13.5px;line-height:1.45;margin:0 0 12px;padding:10px 12px;border-radius:12px;background:var(--blush);color:var(--ink);text-align:left}
+.t-courthouse .price-line b{display:inline;font-size:inherit;color:inherit}
+.t-courthouse .price-line span{display:inline;margin:0}
+.t-courthouse .price-line .ca{display:block;color:var(--mute);font-size:12.5px;margin-top:2px}
+.t-courthouse .endb .price-line{background:#fff;margin:2px 0 0;font-size:16px;line-height:1.4}
+.t-courthouse .from{display:inline;font-family:inherit;font-size:80%;font-weight:inherit;color:inherit;line-height:inherit}
+@media (min-width:900px){.t-courthouse .hero img{aspect-ratio:3.4/1}}
+@media (max-width:720px){.t-courthouse .sticky a{flex-direction:row;min-height:0;height:48px;padding:0 12px;gap:0}}

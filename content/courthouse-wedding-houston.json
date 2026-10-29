@@ -201,45 +201,40 @@
  "first_published": "2026-10-28",
  "fee_total": 181,
  "fee_parts": "$81 license + $100 ceremony",
- "where": "A Harris County Justice of the Peace court",
- "where_note": "Precinct 1, cash only. Two stops: the license first, at 201 Caroline, Suite 330; the ceremony 72 hours later (waived with a Twogether in Texas certificate).",
+ "where": "Harris County Justice of the Peace court",
+ "where_note": "Precinct 1, cash only",
  "when": "Weekdays by appointment; walk-ins depend on the judge. License office: Mon–Fri, 8 a.m.–4:30 p.m.",
  "steps5": [
   {
    "title": "Get your license",
    "text": "Both of you in person at a Harris County Clerk office with photo ID. Downtown: 201 Caroline, Suite 330. It is $181 if neither ID shows Texas residency.",
-   "fee": "$81",
-   "src": 11
+   "fee": "$81"
   },
   {
    "title": "Wait 72 hours",
    "text": "Before the ceremony. A Twogether in Texas course certificate skips the wait and takes up to $60 off the license.",
-   "fee": "",
-   "src": 6
+   "fee": ""
   },
   {
    "title": "Book your judge",
    "text": "Justice of the Peace, Precinct 1, Place 1: weekday slots by appointment; walk-ins depend on the judge. Saturdays $200 when available.",
-   "fee": "",
-   "src": 5
+   "fee": ""
   },
   {
    "title": "Get married",
    "text": "Bring the license and the fee in cash.",
-   "fee": "$100",
-   "src": 2
+   "fee": "$100"
   },
   {
    "title": "Return the license",
    "text": "The officiant signs within 90 days of the issue date; send the signed license to the Clerk to be recorded.",
-   "fee": "",
-   "src": 7
+   "fee": ""
   }
  ],
  "tips": [
   {
-   "h": "What to wear and carry",
-   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Add a small hand-tied bouquet and a light jacket or wrap. Real finds, each re-opened on its own page on Oct 28 and still for sale:"
+   "h": "What to wear",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy in a courthouse hallway and looks great in photos. Bring a light jacket or wrap."
   },
   {
    "h": "Best time to go",
@@ -247,11 +242,7 @@
   },
   {
    "h": "Photo spots",
-   "t": "Use the building: the front steps, a staircase, a big window (ask the court first if photos are allowed inside). For a second backdrop, Discovery Green downtown is free and open daily 6 a.m. to 11 p.m.",
-   "link": {
-    "url": "https://www.discoverygreen.com/visit",
-    "label": "Discovery Green, official page"
-   }
+   "t": "Use the building: the front steps, a staircase, a big window. Ask the court if photos are allowed inside before you plan them, then walk a few minutes for a second backdrop."
   },
   {
    "h": "Who to bring",
@@ -259,19 +250,8 @@
   },
   {
    "h": "Celebrate after",
-   "t": "Call a restaurant a week ahead and ask for a table for your group, and order a set menu so the bill is no surprise. Want a private room?",
-   "link": {
-    "url": "@small-wedding-venues-houston/",
-    "label": "See small venues in Houston, with prices."
-   }
+   "t": "Call a restaurant a week ahead and ask for a table for your group. Order a set menu so the bill is no surprise."
   }
  ],
- "look_heading": "Your Houston courthouse look, for less",
- "call": {
-  "who": "Harris County Clerk, Personal Records",
-  "label": "713-274-8686",
-  "tel": "+17132748686",
-  "url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
-  "date_read": "2026-10-28"
- }
+ "look_heading": "Your Houston courthouse look, for less"
 }

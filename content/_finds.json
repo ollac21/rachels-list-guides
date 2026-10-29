@@ -13,14 +13,13 @@
    "from": true
   },
   "florist": {
-   "name": "Elegance Flowers",
-   "url": "https://eleganceflowers.net/houston-elegance-flowers/nosegay-bouquet-4.html",
-   "item": "white baby's breath nosegay, standard size",
-   "price_display": "$40",
-   "amount": 40,
+   "name": "KVITKAFA",
+   "url": "https://www.kvitkafa.com/bridal-bouquets",
+   "item": "Burgundy bridal bouquet (pre-order)",
+   "price_display": "$180.00",
+   "amount": 180,
    "date_read": "2026-10-28",
-   "quote": "$40 Arrangement size Standard Bouquet will be delivered approximately as pictured.",
-   "title": "A small bouquet"
+   "quote": "Bridal Bouquet \"Burgundy\" Price $180.00 Pre-Order"
   }
  },
  "chicago": {
@@ -45,14 +44,13 @@
    "from": true
   },
   "florist": {
-   "name": "Paris312",
-   "url": "https://paris312.com/products/minimal-bridesmaid-bouquet",
-   "item": "small white baby's breath bouquet, about 10 inches, delivered in Chicago",
-   "price_display": "$52.00",
-   "amount": 52,
+   "name": "Flowers for Dreams",
+   "url": "https://flowersfordreams.com/collections/self-service-wedding-flowers?filter.p.m.weddings.style=Lush&filter.p.m.weddings.palette=White+%26+Cream",
+   "item": "bridal bouquet, white and cream (self-service shop)",
+   "price_display": "$200.00",
+   "amount": 200,
    "date_read": "2026-10-28",
-   "quote": "Petit Bouquet - $52.00",
-   "title": "A small bouquet"
+   "quote": "Bridal Bouquet $200.00"
   }
  },
  "new-york": {
@@ -68,14 +66,13 @@
    "quote": "CITY HALL PACKAGE 2 This package is limited to City Hall Weddings Ceremony + 30 minute shoot in immediate surrounding area * ceremony must be 30 minutes or under includes a mix of both color and black and white editing $500 50+ fully edited images"
   },
   "florist": {
-   "name": "City Blossoms",
-   "url": "https://cityblossoms.com/products/hand-tied-bouquet-white",
-   "item": "white hand-tied bouquet, classic size (Lower Manhattan)",
-   "price_display": "$120.00",
-   "amount": 120,
+   "name": "NYC Flower Pop",
+   "url": "https://sites.google.com/view/nycflowerpop",
+   "item": "elopement bouquet, 8 to 10 inch, seasonal (pickup)",
+   "price_display": "$150",
+   "amount": 150,
    "date_read": "2026-10-28",
-   "quote": "Hand-Tied Bouquet - White Regular price $120.00",
-   "title": "A hand-tied bouquet"
+   "quote": "Same-Day Elopement Flowers Convenient pickup from Union Square the evening before or day of your ceremony -- just minutes from Manhattan City Hall. $150 8-10\" SEASONAL BOUQUET"
   }
  },
  "dallas": {
@@ -99,16 +96,6 @@
    "from": true,
    "date_read": "2026-10-28",
    "quote": "-Bridal bouquet- $125-$350 ($200 average)"
-  },
-  "lunch": {
-   "name": "Y.O. Ranch Steakhouse",
-   "url": "https://www.yoranchsteakhouse.com/private-dining-menus/",
-   "item": "set lunch menu in its private dining rooms, soft drinks and tea included, plus tax and gratuity",
-   "price_display": "$39 per person",
-   "amount": 39,
-   "per_person": true,
-   "date_read": "2026-10-28",
-   "quote": "$39 PER PERSON + TAX & GRATUITY | SOFT DRINKS & TEA INCLUDED"
   }
  },
  "los-angeles": {
@@ -125,14 +112,13 @@
    "from": true
   },
   "florist": {
-   "name": "Conroy's Flowers",
-   "url": "https://www.conroysflowersbeverlyhills.com/all-white-petite-bouquet/",
-   "item": "all-white petite bouquet, about 7 inches (order two weeks ahead)",
-   "price_display": "$55",
-   "amount": 55,
-   "title": "A petite bouquet",
+   "name": "Hanamate Floral Design",
+   "url": "https://hanamate.com/products/dark-element-fresh-rose-bouquet",
+   "item": "bridal bouquet, customizable",
+   "price_display": "$98.00 USD",
+   "amount": 98,
    "date_read": "2026-10-28",
-   "quote": "All White Petite Bouquet $ 55.00"
+   "quote": "Delicate Bouquets for Bride / Bridesmaids (Customize) Regular price $98.00 USD"
   }
  }
 }

@@ -277,6 +277,10 @@
    "path": "photo-booth-rental-cost",
    "label": "Photo booth rental cost",
    "note": "$361 to $605 on average; real booths' own packages and hours."
+  },
+  {
+   "path": "wedding-alcohol-calculator",
+   "label": "Wedding alcohol calculator: bottles and cost for your guest count"
   }
  ],
  "last_checked": "2026-10-28",

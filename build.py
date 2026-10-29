@@ -158,6 +158,8 @@ def city_key(page):
 
 
 def labels_for(page):
+    if page.get("labels"):  # a page may name its own (button, header link, phone bar), e.g. a calculator
+        return tuple(page["labels"])
     if page["type"] == "venues":
         city = CITY_NAMES.get(city_key(page), "")
         return ("Find my {} venue for less".format(city), "Find my venue", "Find my {} venue for less".format(city))
@@ -285,12 +287,12 @@ def packages_head(page):
 
 def board_block(page, app, root, pos="board"):
     """The app in action: the real Dream Board (screen recording, unblurred), 3 steps, the button."""
-    head = packages_head(page) if page["type"] == "packages" else BOARD_HEAD.get(page["type"], BOARD_HEAD["home"])
+    head = packages_head(page) if page["type"] == "packages" else page.get("board_head") or BOARD_HEAD.get(page["type"], BOARD_HEAD["home"])
     return fill(template("board.html"), heading=head, root=root, cta=cta_html(page, app, pos), cap=BOARD_CAP)
 
 
 def end_block(page, app, root):
-    return fill(template("endblock.html"), root=root, line=END_LINE.get(page["type"], END_LINE_DEFAULT), cta=cta_html(page, app, "end"))
+    return fill(template("endblock.html"), root=root, line=page.get("end_line") or END_LINE.get(page["type"], END_LINE_DEFAULT), cta=cta_html(page, app, "end"))
 
 
 # ----------------------------------------------------------------------------- the answer (first screen)
@@ -416,7 +418,7 @@ def answer_home(page, pages):
     court = [p["fee_total"] for p in pages.values() if p["type"] == "courthouse"]
     flat = [v["amount"] for p in pages.values() if p["type"] == "venues" for v in p["venues"] if not v.get("per_person")]
     gowns = [g["price"] for p in pages.values() if p["type"] == "dresses" for g in p["gowns"]]
-    n = len([p for p in pages.values() if p["path"] not in ("", "/") and p["type"] != "trust"])
+    n = len([p for p in pages.values() if p["path"] not in ("", "/") and p["type"] not in ("trust", "calculator")])
     days = day_totals(pages)
     whole = "A whole courthouse day, dress and bouquet included: about <b>{} to {}</b>. ".format(money(min(days)), money(max(days))) if days else ""
     return answer_wrap('<p class="a-lead">Real wedding prices in {y}, each from its own source page:</p>'
@@ -921,6 +923,168 @@ def render_trust_table(page):
     return '<section><h2>{}</h2><table class="tbl"><thead><tr>{}</tr></thead><tbody>{}</tbody></table>{}</section>'.format(page.get("facts_heading", ""), head, rows, note)
 
 
+# ----------------------------------------------------------------------------- calculators (shared: one page type, one render function)
+# A calculator page: "type": "calculator", "medium": "calculator", "calc_template": "calc-<name>.html", "calc_data": "<name>",
+# optional "labels" (button, header link, phone bar), "board_head", "end_line".
+# render_calculator fills templates/<calc_template> with {{data}} (JSON for the page's own inline script = page["calc"] + what
+# CALC_DATA[<name>] returns), {{root}}, {{cta}} (the first button, id="first-cta": the template places it under its result),
+# {{board}} (the Dream Board block) and every string CALC_DATA returns under "html" (static result, tables, finds).
+# Each calculator keeps its own JS inside its template; no "{{" may appear in that JS (fill() and --check both read it).
+def calc_intro(pages):
+    names = [p["h1"][0].lower() + p["h1"][1:] for p in sorted(pages.values(), key=lambda x: x.get("order", 0)) if p["type"] == "calculator"]
+    return "Free calculators: {}. ".format(", ".join(names)) if names else ""
+
+
+def render_calculator(page, pages, finds, app="", root="../"):
+    got = dict(CALC_DATA[page["calc_data"]](page, pages, finds))
+    parts = got.pop("html", {})
+    blob = dict(page.get("calc", {}))
+    blob.update(got)
+    data = json.dumps(blob, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    return fill(template(page["calc_template"]), data=data, root=root, cta=cta_html(page, app, "first"),
+                board=board_block(page, app, root), **parts)
+
+
+def cents(x):
+    """Whole dollars, half up (the page's JS rounds the same way: Math.floor(x + 0.5))."""
+    return "${:,}".format(int(x + 0.5))
+
+
+def plural(n, one, many):
+    return "{:,} {}".format(n, one if n == 1 else many)
+
+
+def alcohol_calc(inp, d):
+    """The alcohol calculator's formula. Its JS twin (rlAlcCalc in templates/calc-alcohol.html) must give the same result."""
+    try:
+        g, h = int(float(inp.get("guests"))), int(float(inp.get("hours")))
+    except (TypeError, ValueError):
+        return None
+    if g <= 0 or h <= 0:
+        return None
+    capped = []
+    if g > d["max_guests"]:
+        g = d["max_guests"]
+        capped.append("guests")
+    if h > d["max_hours"]:
+        h = d["max_hours"]
+        capped.append("hours")
+    pace = d["pace_heavy"] if inp.get("pace") == 2 else d["pace_average"]
+    drinks = g * h * pace
+    sp = d["split_bw"] if inp.get("bar") == "bw" else d["split_full"]
+    share = lambda pct: (drinks * pct + 50) // 100  # servings of one kind, rounded half up, in whole numbers
+    up = lambda a, b: -(-a // b)
+    rows = []
+
+    def add(key, name, served, s1, s2, buy, b1, b2, price):
+        rows.append({"key": key, "name": name, "served": plural(served, s1, s2), "buy": plural(buy, b1, b2), "n": buy, "unit": b2 if buy != 1 else b1,
+                     "cost": buy * price if isinstance(price, (int, float)) else None})
+    w = share(sp["wine"])
+    add("wine", "Wine", w, "glass", "glasses", up(w, d["wine_glasses"]), "bottle", "bottles", inp.get("p_wine"))
+    if sp.get("liquor"):
+        lq = share(sp["liquor"])
+        add("liquor", "Liquor", lq, "pour", "pours", up(lq, d["liquor_pours"]), "bottle", "bottles", inp.get("p_liquor"))
+    b = share(sp["beer"])
+    add("beer", "Beer", b, "can", "cans", up(b, d["beer_case"]), "case of 24", "cases of 24", inp.get("p_beer"))
+    if inp.get("toast"):
+        add("sparkling", "Sparkling (toast)", g, "flute", "flutes", up(g, d["sparkling_flutes"]), "bottle", "bottles", inp.get("p_spark"))
+    priced = [r for r in rows if r["cost"] is not None]
+    return {"guests": g, "hours": h, "pace": pace, "bar": "bw" if inp.get("bar") == "bw" else "full", "toast": bool(inp.get("toast")),
+            "drinks": drinks, "rows": rows, "total": sum(r["cost"] for r in priced), "priced": [r["key"] for r in priced],
+            "missing": [r["key"] for r in rows if r["cost"] is None], "capped": capped,
+            "avg": {"wine": inp.get("p_wine") == d["wine_price"], "beer": inp.get("p_beer") == d["beer_price"]}}
+
+
+def join_and(words):
+    return words[0] if len(words) == 1 else ", ".join(words[:-1]) + " and " + words[-1]
+
+
+def alcohol_html(r, d):
+    """The result block. Its JS twin (rlAlcHtml) writes the same string, so the page reads the same before and after the script runs."""
+    cap = "For {} &middot; {} &middot; {} &middot; {}".format(plural(r["guests"], "guest", "guests"), plural(r["hours"], "hour", "hours"),
+                                                             "full bar" if r["bar"] == "full" else "beer and wine", plural(r["pace"], "drink an hour", "drinks an hour"))
+    if r["capped"]:
+        cap += " (capped at {})".format(join_and([plural(d["max_guests"], "guest", "guests") if c == "guests" else plural(d["max_hours"], "hour", "hours") for c in r["capped"]]))
+    head = " &middot; ".join("<b>{:,}</b> {} of {}".format(x["n"], x["unit"].replace(" of 24", ""), x["key"]) for x in r["rows"])
+    body = "".join('<tr><th scope="row">{}</th><td>{}</td><td>{}</td><td{}>{}</td></tr>'.format(
+        x["name"], x["served"], x["buy"], "" if x["cost"] is not None else ' class="calc-na"', cents(x["cost"]) if x["cost"] is not None else "add a price") for x in r["rows"])
+    if r["priced"]:
+        what = join_and(r["priced"])
+        cost = "{}: <b>{}</b>".format(what[0].upper() + what[1:], cents(r["total"]))
+        avg = [k for k in r["priced"] if r["avg"].get(k)]
+        yours = [k for k in r["priced"] if k not in avg]
+        if avg and not yours:
+            cost += ", at US average store prices (BLS, {}).".format(d["price_month"])
+        elif avg:
+            cost += ": {} at US average store prices (BLS, {}), {} at your price.".format(join_and(avg), d["price_month"], join_and(yours))
+        else:
+            cost += ", at your prices."
+    else:
+        cost = "Type prices under Change prices for a cost."
+    if r["missing"] and r["priced"]:
+        cost += " Add a price for {} under Change prices for the full total.".format(join_and(r["missing"]))
+    foot = '<tr><th scope="row">Total</th><td>{}</td><td></td><td>{}</td></tr>'.format(plural(r["drinks"], "drink", "drinks"), cents(r["total"]) if r["priced"] else "")
+    return ('<p class="calc-cap">{}</p><p class="calc-head">{}</p><table class="calc-out"><thead><tr><th scope="col">Drink</th><th scope="col">Served</th>'
+            '<th scope="col">Buy</th><th scope="col">Cost</th></tr></thead><tbody>{}</tbody><tfoot>{}</tfoot></table><p class="calc-cost">{}</p>').format(cap, head, body, foot, cost)
+
+
+def calc_data_alcohol(page, pages, finds):
+    d = {s["key"]: s.get("amount", s.get("value")) for s in page["sources"]}
+    d.update({k: v for k, v in page.get("calc", {}).items()})
+    ex = dict(d["example"], p_wine=d["wine_price"], p_beer=d["beer_price"])
+    res = alcohol_calc(ex, d)
+    bw = alcohol_calc(dict(ex, bar="bw"), d)
+    toast = alcohol_calc(dict(ex, toast=True), d)
+    liquor_n = next(x["n"] for x in res["rows"] if x["key"] == "liquor")
+    even = (bw["total"] - res["total"]) / liquor_n  # the liquor price per bottle where beer and wine only costs the same as the full bar
+    w_bw = next(x for x in bw["rows"] if x["key"] == "wine")
+    b_bw = next(x for x in bw["rows"] if x["key"] == "beer")
+    sp = next(x for x in toast["rows"] if x["key"] == "sparkling")
+    less = ('<li><b>Beer and wine only.</b> No liquor to buy: for {g} guests and {h} hours, {wb} of wine and {bb} of beer, about {c} at {m} average prices. '
+            'That is cheaper than the full bar when your liquor costs more than about {e} a bottle.</li>'
+            '<li><b>A shorter bar.</b> Each hour less is one drink less per guest: {g} fewer drinks for {g} guests.</li>'
+            '<li><b>A toast only if you want one.</b> It adds {sp} for {g} guests ({f} flutes a bottle).</li>').format(
+        g=ex["guests"], h=ex["hours"], wb=w_bw["buy"], bb=b_bw["buy"].replace(" of 24", ""), c=cents(bw["total"]), m=d["price_month"],
+        e=cents(even), sp=sp["buy"], f=d["sparkling_flutes"])
+    rows = []
+    for s in page["sources"]:
+        note = '<br><span class="note">{}</span>'.format(esc(s["note"])) if s.get("note") else ""
+        rows.append('<tr><th scope="row">{}<br><b class="calc-used">{}</b></th><td>&ldquo;{}&rdquo;{}</td><td class="src"><a href="{}" rel="noopener">{}</a><br>read {}</td></tr>'.format(
+            esc(s["what"]), esc(s["shown"]), esc(s["quote"]), note, esc(s["source_url"]), esc(s["source_name"]), fmt_short(s["date_read"])))
+    srcs = '<table class="tbl"><thead><tr><th scope="col">What we use</th><th scope="col">The page says</th><th scope="col">Source</th></tr></thead><tbody>{}</tbody></table>'.format("".join(rows))
+    fr = []
+    gowns = sorted((g for p in pages.values() if p["type"] == "dresses" for g in p["gowns"] if g.get("price")), key=lambda g: g["price"])
+    dates = []
+    if gowns:
+        g = gowns[0]
+        dates.append(g["date_read"])
+        fr.append(find_row("i-dress", "A designer wedding gown", "{}, size {}, on Poshmark{}".format(g["brand"], g["size"], ", seller's original {}".format(money(g["old_price"])) if g.get("old_price") else ""),
+                           money(g["price"]), g["url"]))
+    fl = sorted((dict(v["florist"], city=c) for c, v in finds.items() if v.get("florist", {}).get("amount")), key=lambda x: x["amount"])
+    if fl:
+        f = fl[0]
+        dates.append(f["date_read"])
+        fr.append(find_row("i-flowers", "A bridal bouquet", "{}, {}: {}".format(f["name"], CITY_NAMES.get(f["city"], f["city"]), clean_item(f["item"])), money(f["amount"]), f["url"]))
+    ph = sorted((dict(v["photographer"], city=c) for c, v in finds.items() if v.get("photographer", {}).get("amount")), key=lambda x: x["amount"])
+    if ph:
+        x = ph[0]
+        dates.append(x["date_read"])
+        fr.append(find_row("i-photo", "Wedding photos", "{}, {}: {}".format(x["name"], CITY_NAMES.get(x["city"], x["city"]), x["package"]), money(x["amount"]), x["url"],
+                           '<small class="from">from </small>' if x.get("from") else ""))
+    finds_html = ""
+    if fr:
+        finds_html = ('<section class="calc-finds"><h2>The rest of your list, <em>for less</em></h2><ul class="finds">{}</ul>'
+                      '<p class="srcnote">The cheapest of each on our guides, from the seller&rsquo;s or shop&rsquo;s own page, read {}.</p></section>').format("".join(fr), fmt_short(max(dates)))
+    return {"wine_price": d["wine_price"], "beer_price": d["beer_price"],
+            **{s["key"]: s.get("amount", s.get("value")) for s in page["sources"]},
+            "html": {"static_result": alcohol_html(res, d), "less": less, "sources": srcs, "finds": finds_html,
+                     "wine_price": "{:.2f}".format(d["wine_price"]), "beer_price": "{:.2f}".format(d["beer_price"]),
+                     "price_month": d["price_month"], "max_guests": d["max_guests"], "max_hours": d["max_hours"]}}
+
+
+CALC_DATA = {"alcohol": calc_data_alcohol}
+
+
 # ----------------------------------------------------------------------------- structured data
 def jsonld_blocks(page, site, pages):
     url = page_url(site, page["path"])
@@ -945,6 +1109,10 @@ def jsonld_blocks(page, site, pages):
         blocks.append({"@context": "https://schema.org", "@type": "HowTo", "name": "How to get married at the courthouse in {}".format(page.get("card_title", "")),
                        "totalTime": "P2D", "estimatedCost": {"@type": "MonetaryAmount", "currency": "USD", "value": str(page["fee_total"])},
                        "step": [{"@type": "HowToStep", "position": n + 1, "name": s["title"], "text": s["text"]} for n, s in enumerate(page["steps5"])]})
+    if page["type"] == "calculator":
+        blocks.append({"@context": "https://schema.org", "@type": "WebApplication", "name": h1, "url": url,
+                       "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "isAccessibleForFree": True,
+                       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}})
     items = []
     if page["type"] == "venues":
         items = [(v["name"], v["url"]) for v in page["venues"]]
@@ -973,7 +1141,7 @@ def h1_html(page):
 
 def checked_line(page):
     src = ' &middot; <a href="#sources">official sources</a>' if page["type"] == "courthouse" else (
-        ' &middot; <a href="@how-we-check/">no one pays to be listed</a>' if page["type"] in ("venues", "hub", "packages", "dresses", "home") else "")
+        ' &middot; <a href="@how-we-check/">no one pays to be listed</a>' if page["type"] in ("venues", "hub", "packages", "dresses", "home", "calculator") else "")
     orig = ""
     return '<p class="checked">Last checked: <time datetime="{}">{}</time>{}{}</p>'.format(page["last_checked"], fmt_date(page["last_checked"]), src, orig)
 
@@ -982,8 +1150,10 @@ def render_page(page, site, pages, finds):
     root = root_of(page["path"])
     app = esc(app_link(site, page))
     t = page["type"]
-    if t == "trust":  # the trust page has no photos to show: the answer, then the table
-        head = ['<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])), "<h1>{}</h1>".format(h1_html(page)), checked_line(page), render_answer(page, pages), cta_html(page, app, "first")]
+    if t in ("trust", "calculator"):  # no photos to show: the answer, then the table (trust) or the tool (calculator)
+        head = ['<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])), "<h1>{}</h1>".format(h1_html(page)), checked_line(page), render_answer(page, pages)]
+        if t == "trust":  # a calculator's template places its own first button ({{cta}}), right under its result
+            head.append(cta_html(page, app, "first"))
     else:
         head = [first_screen(page, site, pages, app, root)]
     board = board_block(page, app, root)
@@ -1002,6 +1172,9 @@ def render_page(page, site, pages, finds):
         tail = [render_faq(page), end, render_related(page, pages)]
     elif t == "dresses":
         mid = [render_gowns(page, app), render_safe(page)]
+        tail = [render_faq(page), end, render_related(page, pages)]
+    elif t == "calculator":
+        mid = [render_calculator(page, pages, finds, app, root)]
         tail = [render_faq(page), end, render_related(page, pages)]
     else:  # trust
         mid = [render_trust_table(page)]
@@ -1047,6 +1220,7 @@ def write_site_files(site, pages):
     lines = ["# Rachel's List Guides", "",
              "> Real wedding prices, each one checked on the official or seller's own page and dated. "
              "Courthouse fees, small and micro wedding venues, elopement packages and secondhand designer wedding dresses in Houston, Chicago, New York, Dallas and Los Angeles. "
+             + calc_intro(pages) +
              "No affiliate links. Built by Rachel's List (https://rachelslist.co).", "", "## Pages", ""]
     for p in sorted(pages.values(), key=lambda x: (x["path"] not in ("", "/"), x.get("order", 0), x["path"])):
         lines.append("- [{}]({}): {} (checked {})".format(p["h1"], page_url(site, p["path"]), p["oneliner"], fmt_date(p["last_checked"])))
@@ -1156,7 +1330,7 @@ def check(do_links=True):
             problems.append("{}: no button on the first screen".format(w))
         if re.search(r"\$9\.92|billed yearly|\$24/month|/month|per month", re.sub(r"(?is)<script\b.*?</script>", "", h)):
             problems.append("{}: a subscription price is on the page (the pages show only 'Free to start')".format(w))
-        if p["type"] != "trust" and STRIPS.get(p["path"], (0, 0))[1] < 4:
+        if p["type"] not in ("trust", "calculator") and STRIPS.get(p["path"], (0, 0))[1] < 4:
             warnings.append("{}: only {} real photos in the first-screen row (wanted 4 to 6)".format(w, STRIPS.get(p["path"], (0, 0))[1]))
         if "utm_campaign=" + (p["path"].strip("/") or "home") not in h or "utm_medium=" + p["medium"] not in h:
             problems.append("{}: the button link lacks its utm tags".format(w))

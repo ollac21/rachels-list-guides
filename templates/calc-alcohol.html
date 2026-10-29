@@ -1,0 +1,108 @@
+<section class="calc" id="calc" aria-labelledby="calc-h">
+<h2 id="calc-h">Your bar, <em>your numbers</em></h2>
+<form class="calc-form" id="calc-form" action="#" onsubmit="return false" novalidate>
+<div class="calc-row">
+<div class="calc-in"><label for="c-guests">Guests who drink</label><input id="c-guests" name="guests" type="number" inputmode="numeric" min="1" max="{{max_guests}}" step="1" value="100" autocomplete="off"></div>
+<div class="calc-in"><label for="c-hours">Bar hours</label><input id="c-hours" name="hours" type="number" inputmode="numeric" min="1" max="{{max_hours}}" step="1" value="4" autocomplete="off"></div>
+</div>
+<div class="calc-chips" role="group" aria-labelledby="c-bar-l"><span class="lbl" id="c-bar-l">Bar</span><button type="button" class="fc" data-k="bar" data-v="full" aria-pressed="true">Full bar</button><button type="button" class="fc" data-k="bar" data-v="bw" aria-pressed="false">Beer &amp; wine</button></div>
+<div class="calc-chips" role="group" aria-labelledby="c-pace-l"><span class="lbl" id="c-pace-l">Pace</span><button type="button" class="fc" data-k="pace" data-v="1" aria-pressed="true">1 drink an hour</button><button type="button" class="fc" data-k="pace" data-v="2" aria-pressed="false">2 (heavy)</button></div>
+<label class="calc-check" for="c-toast"><input type="checkbox" id="c-toast" name="toast"> Champagne toast, one flute each</label>
+<details class="calc-prices"><summary>Change prices</summary>
+<div class="calc-row">
+<div class="calc-in"><label for="c-p-wine">Wine, a bottle ($)</label><input id="c-p-wine" type="number" inputmode="decimal" min="0" step="0.01" value="{{wine_price}}" autocomplete="off"></div>
+<div class="calc-in"><label for="c-p-beer">Beer, a case of 24 ($)</label><input id="c-p-beer" type="number" inputmode="decimal" min="0" step="0.01" value="{{beer_price}}" autocomplete="off"></div>
+<div class="calc-in"><label for="c-p-liquor">Liquor, a bottle ($)</label><input id="c-p-liquor" type="number" inputmode="decimal" min="0" step="0.01" placeholder="your price" autocomplete="off"></div>
+<div class="calc-in"><label for="c-p-spark">Sparkling, a bottle ($)</label><input id="c-p-spark" type="number" inputmode="decimal" min="0" step="0.01" placeholder="your price" autocomplete="off"></div>
+</div>
+<p class="note">Wine and beer: US average store prices for {{price_month}} (BLS, <a href="#sources">sources</a>). No government average exists for liquor or sparkling, so type your store's price.</p>
+</details>
+</form>
+<div class="calc-res" id="calc-res" aria-live="polite">{{static_result}}</div>
+<noscript><p class="note">Turn on JavaScript to use your own numbers. The list above is for 100 guests and 4 hours.</p></noscript>
+<p class="calc-bar"><button type="button" class="calc-share" id="c-share" hidden>Copy a link to this list</button> <span class="note" id="c-shared" role="status" hidden></span></p>
+<p class="calc-note">Serve only guests 21 and over. Buying it yourself? Ask your venue first whether you may bring your own alcohol and who must serve it: <a href="@micro-wedding-venues/">small venues by city</a>.</p>
+<p class="calc-next">Bar: done. Next, your dress, flowers and decor, for less.</p>
+{{cta}}
+</section>
+<section class="calc-less"><h2>Ways the bar <em>costs less</em></h2><ul class="calc-list">{{less}}</ul></section>
+{{finds}}
+{{board}}
+<section class="calc-src" id="sources"><h2>Where these numbers <em>come from</em></h2><p class="note">Every number the calculator uses, the page it comes from and the day we read it. Wine and beer prices are the US Bureau of Labor Statistics average for {{price_month}}; we re-read them when the next month is published.</p>{{sources}}</section>
+<script type="application/json" id="calc-data">{{data}}</script>
+<script>
+/* the formula: a pure function (no page access), tested with node against build.py's alcohol_calc */
+function rlAlcCalc(i,D){
+var g=Math.floor(+i.guests),h=Math.floor(+i.hours),capped=[];
+if(!(g>0)||!(h>0))return null;
+if(g>D.max_guests){g=D.max_guests;capped.push("guests")}
+if(h>D.max_hours){h=D.max_hours;capped.push("hours")}
+var pace=i.pace===2?D.pace_heavy:D.pace_average,drinks=g*h*pace,sp=i.bar==="bw"?D.split_bw:D.split_full,rows=[];
+function share(p){return Math.floor((drinks*p+50)/100)}
+function up(a,b){return Math.ceil(a/b)}
+function pl(n,one,many){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,",")+" "+(n===1?one:many)}
+function add(key,name,served,s1,s2,buy,b1,b2,price){rows.push({key:key,name:name,served:pl(served,s1,s2),buy:pl(buy,b1,b2),n:buy,unit:buy!==1?b2:b1,cost:(typeof price==="number"&&isFinite(price))?buy*price:null})}
+var w=share(sp.wine);add("wine","Wine",w,"glass","glasses",up(w,D.wine_glasses),"bottle","bottles",i.p_wine);
+if(sp.liquor){var lq=share(sp.liquor);add("liquor","Liquor",lq,"pour","pours",up(lq,D.liquor_pours),"bottle","bottles",i.p_liquor)}
+var b=share(sp.beer);add("beer","Beer",b,"can","cans",up(b,D.beer_case),"case of 24","cases of 24",i.p_beer);
+if(i.toast)add("sparkling","Sparkling (toast)",g,"flute","flutes",up(g,D.sparkling_flutes),"bottle","bottles",i.p_spark);
+var priced=[],missing=[],total=0;
+rows.forEach(function(r){if(r.cost!==null){priced.push(r.key);total+=r.cost}else missing.push(r.key)});
+return {guests:g,hours:h,pace:pace,bar:i.bar==="bw"?"bw":"full",toast:!!i.toast,drinks:drinks,rows:rows,total:total,priced:priced,missing:missing,capped:capped,avg:{wine:i.p_wine===D.wine_price,beer:i.p_beer===D.beer_price}};
+}
+/* the result block: the same string build.py's alcohol_html writes into the page */
+function rlAlcHtml(r,D){
+function n(x){return String(x).replace(/\B(?=(\d{3})+(?!\d))/g,",")}
+function c(x){return "$"+n(Math.floor(x+0.5))}
+function pl(x,one,many){return n(x)+" "+(x===1?one:many)}
+function ja(a){return a.length===1?a[0]:a.slice(0,-1).join(", ")+" and "+a[a.length-1]}
+var cap="For "+pl(r.guests,"guest","guests")+" &middot; "+pl(r.hours,"hour","hours")+" &middot; "+(r.bar==="full"?"full bar":"beer and wine")+" &middot; "+pl(r.pace,"drink an hour","drinks an hour");
+if(r.capped.length)cap+=" (capped at "+ja(r.capped.map(function(k){return k==="guests"?pl(D.max_guests,"guest","guests"):pl(D.max_hours,"hour","hours")}))+")";
+var head=r.rows.map(function(x){return "<b>"+n(x.n)+"</b> "+x.unit.replace(" of 24","")+" of "+x.key}).join(" &middot; ");
+var body=r.rows.map(function(x){return '<tr><th scope="row">'+x.name+'</th><td>'+x.served+'</td><td>'+x.buy+'</td><td'+(x.cost!==null?'':' class="calc-na"')+'>'+(x.cost!==null?c(x.cost):"add a price")+'</td></tr>'}).join("");
+var cost;
+if(r.priced.length){var what=ja(r.priced);cost=what.charAt(0).toUpperCase()+what.slice(1)+": <b>"+c(r.total)+"</b>";
+var avg=r.priced.filter(function(k){return r.avg[k]}),yours=r.priced.filter(function(k){return !r.avg[k]});
+if(avg.length&&!yours.length)cost+=", at US average store prices (BLS, "+D.price_month+").";
+else if(avg.length)cost+=": "+ja(avg)+" at US average store prices (BLS, "+D.price_month+"), "+ja(yours)+" at your price.";
+else cost+=", at your prices."}
+else cost="Type prices under Change prices for a cost.";
+if(r.missing.length&&r.priced.length)cost+=" Add a price for "+ja(r.missing)+" under Change prices for the full total.";
+var foot='<tr><th scope="row">Total</th><td>'+pl(r.drinks,"drink","drinks")+'</td><td></td><td>'+(r.priced.length?c(r.total):"")+'</td></tr>';
+return '<p class="calc-cap">'+cap+'</p><p class="calc-head">'+head+'</p><table class="calc-out"><thead><tr><th scope="col">Drink</th><th scope="col">Served</th><th scope="col">Buy</th><th scope="col">Cost</th></tr></thead><tbody>'+body+'</tbody><tfoot>'+foot+'</tfoot></table><p class="calc-cost">'+cost+'</p>';
+}
+</script>
+<script>
+(function(){
+var el=function(id){return document.getElementById(id)},D=JSON.parse(el("calc-data").textContent),form=el("calc-form");
+if(!form)return;
+var st={bar:"full",pace:1},timer=null,lastSent="",slug="wedding-alcohol-calculator";
+function cap(n,p){try{window.posthog&&posthog.capture(n,p)}catch(x){}}
+function num(x){var v=x.value.trim();if(v==="")return null;var f=parseFloat(v);return isFinite(f)&&f>=0?f:null}
+function inputs(){return {guests:el("c-guests").value,hours:el("c-hours").value,bar:st.bar,pace:st.pace,toast:el("c-toast").checked,p_wine:num(el("c-p-wine")),p_beer:num(el("c-p-beer")),p_liquor:num(el("c-p-liquor")),p_spark:num(el("c-p-spark"))}}
+function chips(){Array.prototype.forEach.call(document.querySelectorAll(".calc-chips .fc"),function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-v")===String(st[b.getAttribute("data-k")])))})}
+function query(){return "?guests="+encodeURIComponent(el("c-guests").value)+"&hours="+encodeURIComponent(el("c-hours").value)+"&bar="+st.bar+"&pace="+st.pace+"&toast="+(el("c-toast").checked?1:0)}
+function render(user){var r=rlAlcCalc(inputs(),D);
+el("calc-res").innerHTML=r?rlAlcHtml(r,D):'<p class="calc-empty">Type your guests and hours.</p>';
+if(!user)return;
+try{history.replaceState(null,"",location.pathname+query())}catch(x){}
+if(!r)return;
+clearTimeout(timer);timer=setTimeout(function(){var k=[r.guests,r.hours,r.bar,r.pace,r.toast].join("|");if(k===lastSent)return;lastSent=k;
+cap("guide_calculate",{slug:slug,guests:r.guests,hours:r.hours,bar:r.bar,pace:r.pace,toast:r.toast})},1500)}
+var q=new URLSearchParams(location.search);
+if(q.get("guests"))el("c-guests").value=q.get("guests");
+if(q.get("hours"))el("c-hours").value=q.get("hours");
+if(q.get("bar")==="bw")st.bar="bw";
+if(q.get("pace")==="2")st.pace=2;
+if(q.get("toast")==="1")el("c-toast").checked=true;
+chips();render(false);
+form.addEventListener("input",function(){render(true)});
+form.addEventListener("change",function(){render(true)});
+form.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".calc-chips .fc");if(!b)return;var k=b.getAttribute("data-k"),v=b.getAttribute("data-v");st[k]=k==="pace"?+v:v;chips();render(true)});
+var sh=el("c-share"),msg=el("c-shared");sh.hidden=false;
+sh.addEventListener("click",function(){try{history.replaceState(null,"",location.pathname+query())}catch(x){}
+var u=location.href,show=function(t){msg.hidden=false;msg.textContent=t};
+if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(function(){show("Link copied.")},function(){show(u)});else show(u);
+cap("guide_calc_share",{slug:slug})});
+})();
+</script>

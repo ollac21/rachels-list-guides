@@ -1,0 +1,116 @@
+{
+ "path": "courthouse-wedding-cost",
+ "type": "cost",
+ "medium": "cost",
+ "order": 19,
+ "title": "Courthouse Wedding Cost in 6 US Cities (2026)",
+ "description": "A courthouse wedding costs $60 to $236 in official fees (license + ceremony) in 6 US cities, from each clerk's own page. Checked Oct 29, 2026.",
+ "h1": "Courthouse wedding cost in 6 US cities",
+ "h1_em": "6 US cities",
+ "eyebrow": "Courthouse weddings · official fees",
+ "refresh_note": "Courthouse fees are re-checked every 3 months.",
+ "answer_html": "<p>In 2026, a courthouse wedding costs <strong class=\"big\">$60 to $236</strong> in official fees across six US cities: $60 in New York, $70 in Chicago, $126 in Los Angeles, $161 in Dallas, $181 in Houston and $236 in San Diego (license plus ceremony, clerks&rsquo; pages read Oct 29, 2026).</p>",
+ "oneliner": "In 2026, a courthouse wedding costs $60 (New York) to $236 (San Diego) in official fees, license plus ceremony, checked Oct 29, 2026.",
+ "facts_heading": "Each city&rsquo;s <em>fees</em>, cheapest first",
+ "table": {
+  "headers": [
+   "City",
+   "Fees (license + ceremony)",
+   "Official source"
+  ],
+  "rows": [
+   {
+    "th": "<a href=\"@courthouse-wedding-new-york/\">New York</a><br><small>NYC City Clerk</small>",
+    "td": "<b>$60</b>: $35 license + $25 ceremony<br><small>Wait: 24 hours after you receive the license &middot; Valid: Usually 60 days (180 days for active military)</small>",
+    "src": "NYC City Clerk: <a href=\"https://portal.311.nyc.gov/article/?kanumber=KA-02115\" rel=\"noopener\">license fee</a> &middot; <a href=\"https://portal.311.nyc.gov/article/?kanumber=KA-02124\" rel=\"noopener\">ceremony fee</a><br>read Oct 29, 2026",
+    "amount": 60,
+    "source_url": "https://portal.311.nyc.gov/article/?kanumber=KA-02115",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "<a href=\"@courthouse-wedding-chicago/\">Chicago</a><br><small>Cook County Clerk</small>",
+    "td": "<b>$70</b>: $60 license + $10 ceremony (a certified copy is $15 more, if you want one)<br><small>Wait: 1 day after the license is issued &middot; Valid: 60 days from the date of issuance</small>",
+    "src": "Cook County Clerk: <a href=\"https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses\" rel=\"noopener\">license fee</a> &middot; <a href=\"https://www.cookcountycourtil.gov/case-type/marriage-and-civil-union\" rel=\"noopener\">ceremony fee</a> &middot; <a href=\"https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-certificates\" rel=\"noopener\">certified copy</a><br>read Oct 29, 2026",
+    "amount": 70,
+    "source_url": "https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-licenses",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "<a href=\"@courthouse-wedding-los-angeles/\">Los Angeles</a><br><small>LA County Registrar-Recorder/County Clerk</small>",
+    "td": "<b>$126</b>: $91 license + $35 ceremony<br><small>Valid: 90 days</small>",
+    "src": "LA County Registrar-Recorder/County Clerk: <a href=\"https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees\" rel=\"noopener\">fees</a><br>read Oct 29, 2026",
+    "amount": 126,
+    "source_url": "https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "<a href=\"@courthouse-wedding-dallas/\">Dallas</a><br><small>Dallas County Clerk</small>",
+    "td": "<b>$161</b>: $81 license + $80 ceremony<br><small>Wait: 72 hours after the license is issued (a district judge can waive it) &middot; Valid: 90 days from the day it is issued</small>",
+    "src": "Dallas County Clerk: <a href=\"https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php\" rel=\"noopener\">license fee</a> &middot; <a href=\"https://www.dallascounty.org/government/jpcourts/2-2/weddings.php\" rel=\"noopener\">ceremony fee</a><br>read Oct 29, 2026",
+    "amount": 161,
+    "source_url": "https://www.dallascounty.org/government/county-clerk/vital-records/faqs.php",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "<a href=\"@courthouse-wedding-houston/\">Houston</a><br><small>Harris County Clerk</small>",
+    "td": "<b>$181</b>: $81 license + $100 ceremony<br><small>Wait: 72 hours &middot; Valid: 90 days from the date it is issued</small>",
+    "src": "Harris County Clerk: <a href=\"https://www.cclerk.hctx.net/PersonalRecords.aspx\" rel=\"noopener\">license fee</a> &middot; <a href=\"https://jp.hctx.net/1-1/Documents/Wedding%20Information%20Document.pdf\" rel=\"noopener\">ceremony fee</a><br>read Oct 29, 2026",
+    "amount": 181,
+    "source_url": "https://www.cclerk.hctx.net/PersonalRecords.aspx",
+    "date_read": "2026-10-29"
+   },
+   {
+    "th": "<a href=\"@courthouse-wedding-san-diego/\">San Diego</a><br><small>San Diego County Assessor/Recorder/County Clerk</small>",
+    "td": "<b>$236</b>: $129 license + $107 ceremony<br><small>Wait: You can marry as soon as the license is issued &middot; Valid: 90 days, with no extensions; the ceremony must be in California</small>",
+    "src": "San Diego County Assessor/Recorder/County Clerk: <a href=\"https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html\" rel=\"noopener\">fees</a><br>read Oct 29, 2026",
+    "amount": 236,
+    "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+    "date_read": "2026-10-29"
+   }
+  ]
+ },
+ "facts_note": "Each total is the license fee plus the civil ceremony fee, as each city page shows it, with the steps, ID and booking rules there.",
+ "ideas": [],
+ "faq": [
+  {
+   "q": "How much does a courthouse wedding cost?",
+   "a": "In 2026, from $60 in New York City to $236 in San Diego in official fees, license plus ceremony, across the six cities we checked on each clerk's own page (re-read Oct 29, 2026): $60 in New York, $70 in Chicago, $126 in Los Angeles, $161 in Dallas, $181 in Houston and $236 in San Diego."
+  },
+  {
+   "q": "Which city has the cheapest courthouse wedding?",
+   "a": "New York: $35 license + $25 ceremony = $60. Chicago is next at $70 ($60 license + $10 ceremony)."
+  },
+  {
+   "q": "Is the courthouse wedding cost just the marriage license?",
+   "a": "No. The totals here add the marriage license and the civil ceremony fee. The license alone runs $35 in New York to $129 in San Diego (public license)."
+  },
+  {
+   "q": "What else can you pay at a courthouse wedding?",
+   "a": "Extras on the official pages (read Oct 29, 2026): in Chicago a certified copy is $15 (<a href=\"https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-certificates\" rel=\"noopener\">Cook County Clerk</a>); a county witness is $20 in Los Angeles (<a href=\"https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees\" rel=\"noopener\">LA County</a>) and $58 in San Diego, where card payments add $2.50 (<a href=\"https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html\" rel=\"noopener\">San Diego County</a>) and a certified copy is $19 (<a href=\"https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/birth-death-marriage-certificate/marriage-certificate.html\" rel=\"noopener\">San Diego County</a>)."
+  },
+  {
+   "q": "Can you get married the same day at the courthouse?",
+   "a": "In San Diego, yes: the county says you can marry as soon as the license is issued. New York has a 24-hour wait, Chicago 1 day, and Houston and Dallas 72 hours (in Dallas a district judge can waive it). The Los Angeles pages do not state a waiting period."
+  }
+ ],
+ "related": [
+  {
+   "path": "day-of-wedding-coordinator-cost",
+   "label": "Day-of wedding coordinator cost"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-29",
+ "first_published": "2026-10-29"
+}

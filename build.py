@@ -35,18 +35,17 @@ AI_BOTS = ["Googlebot", "Bingbot", "OAI-SearchBot", "GPTBot", "ChatGPT-User", "C
 # ----------------------------------------------------------------------------- the button
 # page type -> (the button, the small header link, the phone bar)
 LABELS = {
-    "courthouse": ("Show me dresses in my size", "Dresses in my size", "Show me dresses in my size", "More dresses like these, in my size"),
-    "dresses": ("Show me gowns in my size", "Gowns in my size", "Show me gowns in my size", "More gowns like these, in my size"),
-    "home": ("Find my dress &amp; venue for less", "Find my dress &amp; venue", "Find my dress &amp; venue for less", "Find my dress &amp; venue for less"),
-    "packages": ("Find my dress &amp; flowers for less", "Find my dress &amp; flowers", "Find my dress &amp; flowers for less", "Find my dress &amp; flowers for less"),
+    "courthouse": ("Show me dresses in my size", "Dresses in my size", "Show me dresses in my size"),
+    "dresses": ("Show me gowns in my size", "Gowns in my size", "Show me gowns in my size"),
+    "home": ("Find my dress &amp; venue for less", "Find my dress &amp; venue", "Find my dress &amp; venue for less"),
+    "packages": ("Find my dress &amp; flowers for less", "Find my dress &amp; flowers", "Find my dress &amp; flowers for less"),
 }
-DEFAULT_LABELS = ("Find my venue &amp; dress for less", "Find my venue &amp; dress", "Find my venue &amp; dress for less", "More venues like these, for less")
-BOARD_LABEL = "Start my Dream Board"  # the button under the board and at the end
+DEFAULT_LABELS = ("Find my venue for less", "Find my venue", "Find my venue for less")
 # page type -> (what she taps first, the button text after she has tapped; {s} = her size or style)
 PICKED = {"courthouse": ("size", "Show me dresses in size {s}"), "dresses": ("size", "Show me gowns in size {s}"),
-          "venues": ("style", "Find my {s} venue &amp; dress for less"), "hub": ("style", "Find my {s} venue &amp; dress for less"),
+          "venues": ("style", "Find my {s} venue for less"), "hub": ("style", "Find my {s} venue for less"),
           "packages": ("style", "Find my {s} dress &amp; flowers for less"), "home": ("style", "Find my {s} dress &amp; venue for less")}
-CATCH = "No affiliate links: we earn nothing from these sellers"
+CATCH = "Free to start. You tap the styles you love; no affiliate links, we earn nothing from these sellers."
 FINE = "Free &middot; 90 seconds &middot; no card"
 BOARD_HEAD = {
     "courthouse": "Want more like these, in <em>your</em> size?",
@@ -62,7 +61,7 @@ END_LINE = {
     "dresses": "Tell Rachel's List your size and the shapes you love. It checks Poshmark and Etsy every week. Free to start.",
 }
 END_LINE_DEFAULT = "Rachel's List searches Poshmark, Etsy and venues every week for the looks you tap. Free to start."
-BOARD_CAP = "A Dream Board in the app (screen recording). &ldquo;Saved&rdquo; = the sellers' original prices minus the finds' prices."
+BOARD_CAP = "Finds on a Dream Board in the app (screen recording): the price now, the seller's original price struck through."
 BANDS = [("2-4", "2&ndash;4"), ("6-8", "6&ndash;8"), ("10-12", "10&ndash;12"), ("14+", "14+")]
 STYLES = [("boho-garden", "Boho"), ("classic-elegant", "Classic"), ("modern-minimal", "Modern"),
           ("rustic-barn", "Rustic"), ("beach", "Beach"), ("vintage", "Vintage")]
@@ -159,7 +158,17 @@ def city_key(page):
 
 
 def labels_for(page):
+    if page["type"] == "venues":
+        city = CITY_NAMES.get(city_key(page), "")
+        return ("Find my {} venue for less".format(city), "Find my venue", "Find my {} venue for less".format(city))
     return LABELS.get(page["type"], DEFAULT_LABELS)
+
+
+def picked_for(page):
+    p = PICKED.get(page["type"])
+    if p and page["type"] == "venues":
+        return (p[0], p[1].replace("venue", "{} venue".format(CITY_NAMES.get(city_key(page), ""))))
+    return p
 
 
 def ico(name):
@@ -236,10 +245,9 @@ def strip_wrap(cards, label, groups="", none="No find in that size this week. Th
 
 # ----------------------------------------------------------------------------- the button blocks
 def cta_html(page, app, pos):
-    labels = labels_for(page)
-    lab = {"mid": labels[3], "board": BOARD_LABEL, "end": BOARD_LABEL}.get(pos, labels[0])
-    pk = PICKED.get(page["type"])
-    tpl = ' data-pick="{}" data-base="{}" data-tpl="{}"'.format(pk[0], lab, pk[1]) if pk and pos in ("first", "mid") else ""
+    lab = labels_for(page)[0]
+    pk = picked_for(page)
+    tpl = ' data-pick="{}" data-base="{}" data-tpl="{}"'.format(pk[0], lab, pk[1]) if pk else ""
     catch = '<p class="catch">{}</p>'.format(CATCH) if pos == "first" else ""
     return '<div class="cta"{}><a class="rl-btn" href="{}" data-cta="{}" data-app{}><span class="lbl">{}</span></a><p class="fine">{}</p>{}</div>'.format(
         ' id="first-cta"' if pos == "first" else "", app, pos, tpl, lab, FINE, catch)
@@ -252,7 +260,7 @@ def btn_row(page, app, pos):
 
 def pick_chips(kind):
     """The small first tap before the ask: her dress size or her style. It sets &size= / &style= on every button."""
-    opts, label = (BANDS, "Your size") if kind == "size" else (STYLES, "Your style")
+    opts, label = (BANDS, "Tap your size") if kind == "size" else (STYLES, "Tap your style")
     b = "".join('<button type="button" class="fc" data-v="{}" aria-pressed="false">{}</button>'.format(v, t) for v, t in opts)
     return '<div class="fchips pick" data-group="{}" data-toggle><span class="lbl">{}</span>{}</div>'.format(kind, label, b)
 
@@ -305,9 +313,10 @@ def answer_courthouse(page):
     year = page["last_checked"][:4]
     return answer_wrap(
         '<p class="a-lead">A courthouse wedding in {city} costs <b class="a-big">${fee:,}</b> in {year}'
-        '<span class="a-parts">{parts}</span></p>{day}'
+        '<span class="a-parts">{parts}{extra}</span></p>{day}'
         '<p class="a-meta">{pin}<span>{where} &middot; {when}</span></p>'.format(
             city=esc(city), fee=page["fee_total"], year=year, parts=esc(page["fee_parts"]), pin=ico("i-pin"), day=whole_day(page),
+            extra=esc(" · " + page["fee_extra"]) if page.get("fee_extra") else "",
             where=esc(page["where"]), when=esc(page.get("when_short") or page["when"])))
 
 
@@ -324,13 +333,15 @@ def answer_venues(page):
     prices = [v["amount"] for v in flat]
     lo, hi = min(prices), max(prices)
     year = page["last_checked"][:4]
-    out = ('<p class="a-lead"><b class="a-big">{n}</b> small venues in {city} print their price in {year}: from <b>{lo}</b> to <b>{hi}</b></p>').format(
-        n=len(vs), city=esc(city), year=year, lo=money(lo), hi=money(hi))
-    bits = []
+    out = ('<p class="a-lead"><b class="a-big">{n}</b> small venues in {city} print their price in {year}: <b>{lo}</b> to <b>{hi}</b>, the middle <b>{mid}</b></p>').format(
+        n=len(vs), city=esc(city), year=year, lo=money(lo), hi=money(hi), mid=money(statistics.median(prices)))
+    bits = ["{} of {} are under $1,000.".format(sum(1 for p in prices if p < 1000), len(prices))]
     if ten:
         v = min(ten, key=lambda x: x["amount"])
         bits.append('For 10+ guests the cheapest is <b>{}</b> (<a href="{}" rel="noopener" target="_blank">{}</a>).'.format(money(v["amount"]), esc(v["url"]), esc(v["name"])))
-    bits.append("Middle price <b>{}</b>; {} of {} under $1,000.".format(money(statistics.median(prices)), sum(1 for p in prices if p < 1000), len(prices)))
+    two = [x for x in flat if 0 < (x.get("max_guests") or 0) <= 2]
+    if two:
+        bits.append("{} is for two people.".format(money(min(x["amount"] for x in two))))
     return answer_wrap(out + '<p class="a-sub">{}</p>'.format(" ".join(bits)))
 
 
@@ -366,7 +377,7 @@ def answer_packages(page, pages=None):
     out = ('<p class="a-lead"><b class="a-big">{n}</b> elopement and micro wedding packages in our five cities print their price in {year}: <b>{lo}</b> to <b>{hi}</b>; {u} are under $1,000</p>').format(
         n=len(main), year=year, lo=money(amts[0]), hi=money(amts[-1]), u=sum(1 for a in amts if a < 1000))
     vg = " Two Las Vegas chapels start at {}.".format(money(min(c["amount"] for c in vegas))) if vegas else ""
-    out += '<p class="a-sub">Middle price <b>{}</b>.{} {}.</p>'.format(money(statistics.median(amts)), vg, packages_gap(page))
+    out += '<p class="a-sub">Middle price <b>{}</b>.{} {} packages in all.</p>'.format(money(statistics.median(amts)), vg, len(cards))
     return answer_wrap(out)
 
 
@@ -385,15 +396,30 @@ def answer_generic(page):
     return answer_wrap(ah)
 
 
+def day_totals(pages):
+    out = []
+    cd = load_cdresses().get("dresses", [])
+    ff = ROOT / "research" / "flow-finds.json"
+    fc = load_json(ff)["cities"] if ff.exists() else {}
+    for p in pages.values():
+        if p["type"] == "courthouse" and cd:
+            bq = (fc.get(city_key(p)) or {}).get("bouquet")
+            if bq:
+                out.append(p["fee_total"] + min(d["price"] for d in cd) + bq["amount"])
+    return out
+
+
 def answer_home(page, pages):
     year = page["last_checked"][:4]
     court = [p["fee_total"] for p in pages.values() if p["type"] == "courthouse"]
     flat = [v["amount"] for p in pages.values() if p["type"] == "venues" for v in p["venues"] if not v.get("per_person")]
     gowns = [g["price"] for p in pages.values() if p["type"] == "dresses" for g in p["gowns"]]
     n = len([p for p in pages.values() if p["path"] not in ("", "/") and p["type"] != "trust"])
-    return answer_wrap('<p class="a-lead">Real wedding prices in {y}: a courthouse wedding costs <b>${a:,} to ${b:,}</b> in fees, a small venue starts at <b>{v}</b>, a secondhand designer gown at <b>{g}</b>.</p>'
+    days = day_totals(pages)
+    whole = " A whole courthouse day with a dress and a bouquet: about <b>{} to {}</b>.".format(money(min(days)), money(max(days))) if days else ""
+    return answer_wrap('<p class="a-lead">Real wedding prices in {y}: a courthouse wedding costs <b>${a:,} to ${b:,}</b> in fees, a small venue starts at <b>{v}</b>, a secondhand designer gown at <b>{g}</b>.{w}</p>'
                        '<p class="a-sub">{n} free guides; each price is copied from its source page and dated {d}. <a href="@how-we-check/">How we check</a>.</p>'.format(
-        y=year, a=min(court), b=max(court), v=money(min(flat)), g=money(min(gowns)), n=n, d=fmt_date(page["last_checked"])))
+        y=year, a=min(court), b=max(court), v=money(min(flat)), g=money(min(gowns)), n=n, d=fmt_date(page["last_checked"]), w=whole))
 
 
 def render_answer(page, pages=None):
@@ -521,7 +547,7 @@ def first_screen(page, site, pages, app, root):
         else:
             items = [gown_item(g) for g in page["gowns"]]
             rot, label = 0, "Real gowns, still for sale"
-        pk = band_defaults(items, rot)
+        pk = band_defaults(items, rot) if t == "courthouse" else pick_strip(items, 6, 6)
         cards = [strip_card(it, " data-def" if it in pk else "", eager=it in pk) for it in sorted(items, key=lambda x: (x not in pk, pk.index(x) if x in pk else 0, x["price"]))]
         strip = strip_wrap(cards, label, "size")
         chips = pick_chips("size")
@@ -544,7 +570,8 @@ def first_screen(page, site, pages, app, root):
         strip = strip_wrap(cards, label)
         chips = pick_chips("style")
     STRIPS[page["path"]] = (len(pk), sum(1 for it in pk if has_photo(it["url"])))
-    return "\n".join(head + [strip, checked_line(page), chips, cta_html(page, app, "first")])
+    bridge = '<p class="bridge">{}. Rachel&rsquo;s List finds both <em>for less</em>.</p>'.format(packages_gap(page)) if t == "packages" else ""
+    return "\n".join(head + [strip, checked_line(page), chips, bridge, cta_html(page, app, "first")])
 
 
 def hub_items(page, pages):
@@ -583,12 +610,12 @@ def home_items(pages):
     out = []
     g5 = next((p for p in pages.values() if p["path"] == "wedding-dresses-under-500"), None)
     if g5:
-        gs = sorted(g5["gowns"], key=lambda g: g["price"] - g["old_price"])  # the biggest gap first
+        gs = sorted(g5["gowns"], key=lambda g: g["price"])
         out += [dict(gown_item(g), tag="Gown · Poshmark") for g in gs if has_photo(g["url"])][:2]
-    cds = [d for d in load_cdresses().get("dresses", []) if has_photo(d["url"])]
+    cds = [d for d in load_cdresses().get("dresses", []) if has_photo(d["url"]) and "lace" in d["style"]]
     if cds:
-        out.append(dict(cd_item(sorted(cds, key=lambda d: d["price"])[1]), tag="Dress · Poshmark"))
-    for path, city in (("small-wedding-venues-houston", "Houston"), ("small-wedding-venues-new-york", "New York")):
+        out.append(dict(cd_item(sorted(cds, key=lambda d: d["price"])[0]), tag="Dress · Poshmark"))
+    for path, city in (("small-wedding-venues-houston", "Houston"), ("small-wedding-venues-dallas", "Dallas")):
         p = pages.get(path)
         if p:
             v = [venue_item(x) for x in p["venues"] if has_photo(x["url"]) and not x.get("per_person")]
@@ -600,7 +627,7 @@ def home_items(pages):
         if c:
             it = sorted(c, key=lambda x: x["price"])[0]
             out.append(dict(it, tag="Package · " + it["sub"]))
-    return out
+    return sorted(out, key=lambda x: x["price"])
 
 
 # ----------------------------------------------------------------------------- courthouse
@@ -660,7 +687,7 @@ def find_row(icon, title, sub, price, url, small=""):
 def grid_cards(items, pk, more_after=None):
     """The list below the first-screen row: cards in price order; the ones already in the row stay out of the way until she picks a size."""
     pkurls = {p["url"] for p in pk}
-    rest = [it for it in sorted(items, key=lambda x: x["price"]) if it["url"] not in pkurls]
+    rest = [it for it in sorted(items, key=lambda x: (not has_photo(x["url"]), x["price"])) if it["url"] not in pkurls]
     cards = [dress_card(it, " data-more" if (more_after is not None and i >= more_after) else "") for i, it in enumerate(rest)]
     skip = [dress_card(it, " data-skipdef") for it in sorted(items, key=lambda x: x["price"]) if it["url"] in pkurls]
     return cards, skip, len(items)
@@ -790,7 +817,7 @@ def render_cards_section(page, app, pages=None):
 # ----------------------------------------------------------------------------- dresses
 def render_gowns(page, app):
     items = [gown_item(g) for g in page["gowns"]]
-    cards, skip, n = grid_cards(items, band_defaults(items, 0))
+    cards, skip, n = grid_cards(items, pick_strip(items, 6, 6))
     other = '<p class="srcnote">{} Other price band: <a href="@{}/">{}</a>.</p>'.format(esc(page.get("facts_intro", "")), *(("wedding-dresses-under-1000", "gowns from $501 to $1,000") if "500" in page["path"] else ("wedding-dresses-under-500", "gowns at $500 or less")))
     return ('<section class="gowns-sec"><h2>{head}</h2><div class="fwrap" data-groups="size"><p class="fstate" hidden></p><div class="dgrid big">{body}</div>'
             '<p class="fnone">No gown in that size this week. The button sets your size: Rachel watches for yours every Tuesday.</p></div>{other}</section>').format(
@@ -950,7 +977,7 @@ def render_page(page, site, pages, finds):
         mid = [render_home_menu(page, pages), board]
         tail = []
     elif t == "courthouse":
-        mid = [render_courthouse_grid(page, app), render_steps(page), render_courthouse_finds(page), board, render_tips(page)]
+        mid = [render_steps(page), render_courthouse_grid(page, app), render_courthouse_finds(page), board, render_tips(page)]
         tail = [render_faq(page), end, render_related(page, pages)]
     elif t == "venues":
         mid = [render_venues_list(page, app), board, render_payless(page)]
@@ -972,7 +999,7 @@ def finish_page(page, site, pages, body, root, app):
     ld = "\n".join('<script type="application/ld+json">{}</script>'.format(
         json.dumps(b, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")) for b in jsonld_blocks(page, site, pages))
     lab = labels_for(page)
-    pk = PICKED.get(page["type"])
+    pk = picked_for(page)
     stp = ' data-pick="{}" data-base="{}" data-tpl="{}"'.format(pk[0], lab[2], pk[1]) if pk else ""
     sticky = '<a href="{}" data-cta="sticky" data-app{}><span class="lbl">{}</span><small>Free &middot; no card</small></a>'.format(app, stp, lab[2])
     hd = {"courthouse": "Dresses in size {s}", "dresses": "Gowns in size {s}"}.get(page["type"])

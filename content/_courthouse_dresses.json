@@ -63,18 +63,6 @@
    "date_read": "2026-10-28"
   },
   {
-   "id": "07930663af342bfc",
-   "band": "6-8",
-   "name": "Rachel Allan",
-   "style": "fit-and-flare mini",
-   "size": "6",
-   "price": 69.0,
-   "old_price": null,
-   "url": "https://poshmark.com/listing/Rachel-Allan-Womens-Beaded-Prom-Or-Bridal-VNeck-Dress-Size-6-398-Fit-Flare-6adfd019105c5885abbafce3",
-   "source": "Poshmark",
-   "date_read": "2026-10-28"
-  },
-  {
    "id": "795ef496f2cf40be",
    "band": "6-8",
    "name": "Angel Biba",
@@ -207,5 +195,16 @@
    "date_read": "2026-10-28"
   }
  ],
- "dropped": []
+ "dropped": [
+  {
+   "id": "2aaa48a1dab14ccd",
+   "name": "Monnie West",
+   "live": {
+    "available": false,
+    "state": "error:HTTP Error 404: Not Found",
+    "price": null,
+    "original": null
+   }
+  }
+ ]
 }

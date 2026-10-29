@@ -13,8 +13,8 @@
  "oneliner": "Lowest verified micro wedding venue price $197 (Houston); three cheapest venues in each of five cities.",
  "card_title": "Compare the five cities",
  "card_line": "Lowest verified price $197 (Houston)",
- "facts_heading": "The cheapest room for 10+ guests in <em>each city</em>",
- "facts_intro": "Tap a city for its three cheapest, or open its page for all of them. Each price is read from the venue's own page.",
+ "facts_heading": "The three cheapest in <em>each city</em>",
+ "facts_intro": "A chapel for two is marked &ldquo;couple only&rdquo;; the answer above is for 10 or more guests. Tap a city for its three cheapest, or open its page for all of them. Each price is read from the venue's own page.",
  "table": {
   "headers": [
    "Venue",
@@ -224,11 +224,11 @@
  "faq": [
   {
    "q": "What would be considered a micro wedding?",
-   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed next to the 45 prices on our city pages run from 2 to 175 people. Every venue listed prints its price for a small, micro, weekday or elopement booking."
+   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed next to the prices on our city pages run from 2 to 175 people. Every venue listed prints its price for a small, micro, weekday or elopement booking."
   },
   {
    "q": "What is a normal cost for a wedding venue?",
-   "a": "The middle printed price across the 45 venues on our city pages is $875; they run from $197 (The Courthouse Wedding Chapel, Houston, couple only) to $8,900 (County Line Event Center, Houston, packages for up to 50 guests), each from the venue's own website on Oct 28, 2026."
+   "a": "The middle printed price across the 44 venues on our city pages that print one flat price is $875; they run from $197 (The Courthouse Wedding Chapel, Houston, couple only) to $8,900 (County Line Event Center, Houston, packages for up to 50 guests), each from the venue's own website on Oct 28, 2026."
   },
   {
    "q": "Is 100 guests a micro wedding?",

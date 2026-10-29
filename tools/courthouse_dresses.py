@@ -18,7 +18,7 @@ PICKS = [
     ("6f341754d445e495", "2-4", "White satin mini", "satin mini"),
     ("ca75182260e0f8f5", "2-4", "Tadashi Shoji", "beaded lace cocktail"),
     ("8ca2dcd52e7d0148", "6-8", "Eliza J", "lace dress"),
-    ("07930663af342bfc", "6-8", "Rachel Allan", "fit-and-flare mini"),
+    ("2aaa48a1dab14ccd", "6-8", "Monnie West", "ivory lace midi"),
     ("795ef496f2cf40be", "6-8", "Angel Biba", "crochet handkerchief hem"),
     ("089c100b836ece7d", "6-8", "Reformation", "cream tie-strap maxi"),
     ("95aa7abfd8282ab4", "10-12", "The Limited", "sleeveless dress"),

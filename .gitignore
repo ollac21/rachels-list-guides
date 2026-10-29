@@ -1,2 +1,5 @@
 .cache/
 __pycache__/
+review/conv-*/*.png
+review/conv-*/*.txt
+!review/conv-*/SCORES.md

@@ -208,6 +208,7 @@
  "where": "An LA County office (main: 12400 Imperial Hwy., Norwalk)",
  "where_note": "appointment only",
  "when": "Appointment only. The Norwalk office is open Monday to Friday, 8 a.m.–5 p.m.",
+ "when_short": "Mon–Fri, appointment only",
  "steps5": [
   {
    "title": "Apply online",

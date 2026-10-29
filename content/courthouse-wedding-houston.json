@@ -204,6 +204,7 @@
  "where": "Harris County Justice of the Peace court",
  "where_note": "Precinct 1, cash only",
  "when": "Weekdays by appointment; walk-ins depend on the judge. License office: Mon–Fri, 8 a.m.–4:30 p.m.",
+ "when_short": "weekdays, by appointment",
  "steps5": [
   {
    "title": "Get your license",

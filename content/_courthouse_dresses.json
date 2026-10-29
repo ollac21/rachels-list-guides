@@ -15,18 +15,6 @@
    "date_read": "2026-10-28"
   },
   {
-   "id": "6f341754d445e495",
-   "band": "2-4",
-   "name": "White satin mini",
-   "style": "satin mini",
-   "size": "2",
-   "price": 180.0,
-   "old_price": 200.0,
-   "url": "https://poshmark.com/listing/Elegant-White-Satin-Bridal-Mini-Dress-with-Sheer-Gloves-6ade943d1b53fe639437a8c9",
-   "source": "Poshmark",
-   "date_read": "2026-10-28"
-  },
-  {
    "id": "4255c2e22c409dcd",
    "band": "2-4",
    "name": "Few Moda",
@@ -39,10 +27,58 @@
    "date_read": "2026-10-28"
   },
   {
+   "id": "6f341754d445e495",
+   "band": "2-4",
+   "name": "White satin mini",
+   "style": "satin mini",
+   "size": "2",
+   "price": 180.0,
+   "old_price": 200.0,
+   "url": "https://poshmark.com/listing/Elegant-White-Satin-Bridal-Mini-Dress-with-Sheer-Gloves-6ade943d1b53fe639437a8c9",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "ca75182260e0f8f5",
+   "band": "2-4",
+   "name": "Tadashi Shoji",
+   "style": "beaded lace cocktail",
+   "size": "4",
+   "price": 99.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Tadashi-Shoji-Sequin-Bead-Lace-Cocktail-Dress-Womens-4-Cream-Beige-Mother-Bride-6adf4f641a166dc8d448e6fc",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "8ca2dcd52e7d0148",
+   "band": "6-8",
+   "name": "Eliza J",
+   "style": "lace dress",
+   "size": "6",
+   "price": 22.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Eliza-J-Dress-Womens-6-Blush-Pink-Ivory-Lace-Shabbic-Floral-34-Sleeve-Bridal-6adfac1fb9f4ea23e4332132",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "07930663af342bfc",
+   "band": "6-8",
+   "name": "Rachel Allan",
+   "style": "fit-and-flare mini",
+   "size": "6",
+   "price": 69.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Rachel-Allan-Womens-Beaded-Prom-Or-Bridal-VNeck-Dress-Size-6-398-Fit-Flare-6adfd019105c5885abbafce3",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
    "id": "795ef496f2cf40be",
    "band": "6-8",
    "name": "Angel Biba",
-   "style": "crochet sundress",
+   "style": "crochet handkerchief hem",
    "size": "6",
    "price": 32.0,
    "old_price": 75.0,
@@ -54,7 +90,7 @@
    "id": "089c100b836ece7d",
    "band": "6-8",
    "name": "Reformation",
-   "style": "cream maxi",
+   "style": "cream tie-strap maxi",
    "size": "8",
    "price": 50.0,
    "old_price": null,
@@ -75,14 +111,50 @@
    "date_read": "2026-10-28"
   },
   {
+   "id": "6b779d8b4a9b928d",
+   "band": "10-12",
+   "name": "Marina",
+   "style": "long-sleeve gown",
+   "size": "10",
+   "price": 115.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Marina-White-Boat-Neck-Embellished-Long-Sleeve-Gown-US-10-6adf7a8223cd1ee25bd2e93b",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "afcb293a6d7e6b67",
+   "band": "10-12",
+   "name": "Jenny Yoo",
+   "style": "one-shoulder gown",
+   "size": "12",
+   "price": 130.0,
+   "old_price": 399.0,
+   "url": "https://poshmark.com/listing/Jenny-Yoo-White-Asymmetrical-OneShoulder-Gown-6ae03671721f585563965d90",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
    "id": "c48fe95a5748504d",
    "band": "10-12",
-   "name": "White beaded maxi",
-   "style": "beaded maxi",
+   "name": "White maxi dress",
+   "style": "maxi",
    "size": "10",
    "price": 65.0,
    "old_price": null,
    "url": "https://poshmark.com/listing/Wedding-Maxi-Dress-in-White-Like-New-6adfa9c7b55223217ef461a4",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "ad7547ca9213fa41",
+   "band": "14+",
+   "name": "Merry's",
+   "style": "satin off-the-shoulder",
+   "size": "16",
+   "price": 95.0,
+   "old_price": null,
+   "url": "https://poshmark.com/listing/Merrys-Satin-Wedding-Dress-Women-16-Bridal-Princesscore-Corset-OfftheShoulder-6adfb1639fd4b9b213239c1a",
    "source": "Poshmark",
    "date_read": "2026-10-28"
   },
@@ -99,18 +171,6 @@
    "date_read": "2026-10-28"
   },
   {
-   "id": "5383ac670c49511b",
-   "band": "14+",
-   "name": "Adrianna Papell",
-   "style": "sheath",
-   "size": "18",
-   "price": 100.0,
-   "old_price": 179.0,
-   "url": "https://poshmark.com/listing/Adrianna-Papell-White-Sleeveless-Sheath-Wedding-Dress-6adbb01d83b26cc4c7ac499a",
-   "source": "Poshmark",
-   "date_read": "2026-10-28"
-  },
-  {
    "id": "f2ddf004c892dd93",
    "band": "14+",
    "name": "David's Bridal",
@@ -119,6 +179,18 @@
    "price": 100.0,
    "old_price": 215.0,
    "url": "https://poshmark.com/listing/Davids-Bridal-Lace-Midi-Dress-in-White-Women-6adfb7ff24cc876735b59247",
+   "source": "Poshmark",
+   "date_read": "2026-10-28"
+  },
+  {
+   "id": "5383ac670c49511b",
+   "band": "14+",
+   "name": "Adrianna Papell",
+   "style": "sheath",
+   "size": "18",
+   "price": 100.0,
+   "old_price": 179.0,
+   "url": "https://poshmark.com/listing/Adrianna-Papell-White-Sleeveless-Sheath-Wedding-Dress-6adbb01d83b26cc4c7ac499a",
    "source": "Poshmark",
    "date_read": "2026-10-28"
   },

@@ -206,6 +206,7 @@
  "where": "A City Clerk office in any borough",
  "where_note": "by appointment",
  "when": "Monday to Friday, arrive 8:30 a.m.–3:15 p.m. Appointment only, no walk-ins.",
+ "when_short": "Mon–Fri, appointment only",
  "steps5": [
   {
    "title": "Book online",

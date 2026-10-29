@@ -7,7 +7,7 @@
  "description": "Micro and small wedding venue prices in 5 US cities, from $197 to $1,000, each quoted from the venue's own site. Checked Oct 28, 2026.",
  "h1": "Micro wedding venues: real prices by city",
  "h1_em": "real prices",
- "eyebrow": "Houston · Chicago · New York · Dallas · Los Angeles",
+ "eyebrow": "Five US cities · venue prices",
  "refresh_note": "Refreshed monthly.",
  "answer_html": "<p>As of Oct 28, 2026, the lowest micro or small wedding venue price we verified is <strong>$197</strong> (The Courthouse Wedding Chapel, Houston). By city: Houston from $197, Chicago from $400, New York from $595, Dallas from $250, Los Angeles from $320. Every price comes from the venue's own website.</p>",
  "oneliner": "Lowest verified micro wedding venue price $197 (Houston); three cheapest venues in each of five cities.",
@@ -224,15 +224,15 @@
  "faq": [
   {
    "q": "What would be considered a micro wedding?",
-   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed next to the 44 prices on our city pages run from 2 to 175 people. Every venue listed prints its price for a small, micro, weekday or elopement booking."
+   "a": "There is no official cutoff, so we use each venue's own words: the guest limits printed next to the 45 prices on our city pages run from 2 to 175 people. Every venue listed prints its price for a small, micro, weekday or elopement booking."
   },
   {
    "q": "What is a normal cost for a wedding venue?",
-   "a": "We do not quote an average, because an average hides what each venue prints. Across 5 cities the verified prices run from $197 (The Courthouse Wedding Chapel, Houston) to $8,900 (County Line Event Center, Houston), each from the venue's own website on Oct 28, 2026."
+   "a": "The middle printed price across the 45 venues on our city pages is $875; they run from $197 (The Courthouse Wedding Chapel, Houston, couple only) to $8,900 (County Line Event Center, Houston, packages for up to 50 guests), each from the venue's own website on Oct 28, 2026."
   },
   {
    "q": "Is 100 guests a micro wedding?",
-   "a": "Not by the venues on this page: the largest guest limit printed next to a price here is 175 people. Venues that host 100 guests price a different kind of day, so we list them only when they print a small-group price."
+   "a": "Usually not: there is no official cutoff, but the guest limits printed next to the prices on our city pages run from 2 to 175 people, and 34 of the 42 limits are 50 or fewer. A venue that hosts 100 guests prices a different kind of day, so we list one only when it prints a small-group price."
   },
   {
    "q": "What is a realistic budget for a small wedding?",
@@ -240,7 +240,7 @@
   },
   {
    "q": "Is $5,000 enough for a wedding?",
-   "a": "For a small group it can be: all 44 venue prices on our city pages are $8,900 or less, before the dress, flowers, photos and food. A 100-guest wedding is a different budget, because these pages price small groups only."
+   "a": "For a small group it can be: all 45 venue prices on our city pages are $8,900 or less, before the dress, flowers, photos and food. A 100-guest wedding is a different budget, because these pages price small groups only."
   }
  ],
  "related": [
@@ -451,6 +451,25 @@
    "sub": "Los Angeles",
    "detail": "0 to 4 guests (5 to 15 guests $550) · license and ceremony, lowest tier (+$50 on weekends)",
    "includes": ""
+  }
+ ],
+ "pay_less_heading": "How to pay <em>less</em> for a small venue",
+ "pay_less": [
+  {
+   "h": "Book a weekday",
+   "t": "Many venues print a lower price for Monday to Thursday. Open your city to see each venue&#x27;s weekday and weekend price."
+  },
+  {
+   "h": "Ask for the room only",
+   "t": "A package adds an officiant, photos or decor you may not need, and its price shows it. Ask what the room costs on its own."
+  },
+  {
+   "h": "Book fewer hours",
+   "t": "A ceremony and a toast fit in an hour or two. Several venues here sell one-hour and two-hour slots."
+  },
+  {
+   "h": "Ask what comes on top",
+   "t": "Fees, deposits, taxes and extra hours can sit on top of the printed price. Ask for the total in writing before you pay a deposit."
   }
  ]
 }

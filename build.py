@@ -15,6 +15,7 @@ import html
 import json
 import os
 import re
+import statistics
 import shutil
 import sys
 import urllib.error
@@ -213,15 +214,62 @@ def answer_venues(page):
     vs, flat, ten = venue_stats(page)
     city = CITY_NAMES.get(city_key(page), "")
     lo, hi = min(v["amount"] for v in flat), max(v["amount"] for v in flat)
-    gs = [v["max_guests"] for v in vs if v.get("max_guests")]
-    g = ""
     year = page["last_checked"][:4]
-    out = ('<p class="a-lead"><b class="a-big">{n}</b> small venues in {city} print their price in {year}: from <b>{lo}</b> to <b>{hi}</b>{g}</p>').format(
-        n=len(vs), city=esc(city), year=year, lo=money(lo), hi=money(hi), g=g)
-    if ten:
-        v = min(ten, key=lambda x: x["amount"])
-        out += '<p>Cheapest room for 10 or more: <b>{}</b>, <a href="{}" rel="noopener">{}</a>.</p>'.format(money(v["amount"]), esc(v["url"]), esc(v["name"]))
+    out = ('<p class="a-lead"><b class="a-big">{n}</b> small venues in {city} print their price in {year}: from <b>{lo}</b> to <b>{hi}</b></p>').format(
+        n=len(vs), city=esc(city), year=year, lo=money(lo), hi=money(hi))
+    rows, used = [], set()
+    for t in (10, 20, 50):  # the cheapest room for 10, 20 and 50 guests; a venue is shown once
+        fits = sorted((v for v in flat if (v.get("max_guests") or 0) >= t and v["name"] not in used), key=lambda x: x["amount"])
+        if fits:
+            v = fits[0]
+            used.add(v["name"])
+            rows.append('<li><span class="as-p">{}</span><span class="as-t"><b>{}+ guests: <a href="{}" rel="noopener" target="_blank">{}</a></b>'
+                        '<span>{} &middot; {}</span></span></li>'.format(money(v["amount"]), t, esc(v["url"]), esc(v["name"]), esc(v["guests"]), esc(v["price_for"])))
+    if rows:
+        out += '<p class="a-sub">The cheapest rooms that fit:</p><ul class="a-stats">{}</ul>'.format("".join(rows))
     return answer_wrap(out)
+
+
+def answer_hub(page, pages):
+    floors, best = [], None
+    for c in CITY_ORDER:
+        p = next((x for x in pages.values() if x["type"] == "venues" and city_key(x) == c), None)
+        if not p:
+            continue
+        flat = [v for v in p["venues"] if not v.get("per_person")]
+        ten = [v for v in flat if (v.get("max_guests") or 0) >= 10]
+        two = [v for v in flat if 0 < (v.get("max_guests") or 0) <= 2]
+        if ten:
+            m = min(v["amount"] for v in ten)
+            best = m if best is None else min(best, m)
+        sub = "couple only from {}".format(money(min(v["amount"] for v in two))) if two else "{} venues".format(len(p["venues"]))
+        floors.append('<li><a href="@{}/"><span>{}</span><b>{}</b><small>10+ guests, {}</small></a></li>'.format(
+            p["path"], CITY_NAMES[c], "from " + money(min(v["amount"] for v in ten)) if ten else "see the list", sub))
+    year = page["last_checked"][:4]
+    return answer_wrap('<p class="a-lead">A venue for 10 or more guests starts at <b class="a-big">{lo}</b> in {year}, depending on the city. Tap yours:</p>'
+                       '<ul class="a-floors">{f}</ul>'.format(lo=money(best), year=year, f="".join(floors)))
+
+
+def answer_packages(page):
+    cards = page["cards"]
+    main = [c for c in cards if c["city"] != "las-vegas"]
+    amts = sorted(c["amount"] for c in main)
+    vegas = [c["amount"] for c in cards if c["city"] == "las-vegas"]
+    year = page["last_checked"][:4]
+    out = ('<p class="a-lead"><b class="a-big">{n}</b> packages in our five cities print their price in {year}: from <b>{lo}</b> to <b>{hi}</b>, the middle one <b>{mid}</b></p>').format(
+        n=len(main), year=year, lo=money(amts[0]), hi=money(amts[-1]), mid=money(statistics.median(amts)))
+    if vegas:
+        out += '<p class="a-sub">Two Las Vegas chapels are listed last: {} and {}.</p>'.format(money(min(vegas)), money(max(vegas)))
+    return answer_wrap(out)
+
+
+def answer_dresses(page):
+    g = page["gowns"]
+    sizes = [int(re.search(r"\d+", str(x["size"])).group()) for x in g if re.search(r"\d+", str(x["size"]))]
+    year = page["last_checked"][:4]
+    return answer_wrap('<p class="a-lead"><b class="a-big">{n}</b> secondhand designer wedding gowns, {lo} to {hi}, on Poshmark in {year}: sizes {a} to {b}.</p>'
+                       '<p class="a-sub">Each was re-opened on {d} and was still for sale at the price shown.</p>'.format(
+        n=len(g), lo=money(min(x["price"] for x in g)), hi=money(max(x["price"] for x in g)), year=year, a=min(sizes), b=max(sizes), d=fmt_date(page["last_checked"])))
 
 
 def answer_generic(page):
@@ -230,12 +278,18 @@ def answer_generic(page):
     return answer_wrap(ah)
 
 
-def render_answer(page):
+def render_answer(page, pages=None):
     t = page["type"]
     if t == "courthouse":
         return answer_courthouse(page)
     if t == "venues":
         return answer_venues(page)
+    if t == "hub":
+        return answer_hub(page, pages)
+    if t == "packages":
+        return answer_packages(page)
+    if t == "dresses":
+        return answer_dresses(page)
     return answer_generic(page)
 
 
@@ -336,16 +390,17 @@ def render_tips(page):
 # ----------------------------------------------------------------------------- venues, packages, hub
 def venue_card(v):
     pp = v.get("per_person")
-    price = money(v["amount"])
     unit = "per person" if pp else ""
+    mx = int(v.get("max_guests") or 0)
+    fits = '<span class="v-fits">{}</span>'.format("Couple only" if 0 < mx <= 2 else "Up to {} guests".format(mx)) if mx else ""
     inc = '<p class="v-inc">{}</p>'.format(esc(v["includes"])) if v.get("includes") else ""
     return ('<article class="vcard" data-item data-max="{mx}" data-amt="{amt}"><div class="v-top">'
-            '<h3 class="v-name"><a href="{url}" rel="noopener">{name}</a><span class="v-area">{area}</span></h3>'
+            '<h3 class="v-name">{fits}<a href="{url}" rel="noopener" target="_blank">{name}</a><span class="v-area">{area}</span></h3>'
             '<div class="v-price">{price}<small>{unit}</small></div></div>'
             '<p class="v-for">{guests} &middot; {pf}</p>{inc}'
-            '<p class="v-src"><a href="{url}" rel="noopener" data-cta="venue">Venue\'s own page</a> &middot; read {date}</p></article>').format(
-        mx=int(v.get("max_guests") or 0), amt=999999 if pp else int(v["amount"]), url=esc(v["url"]), name=esc(v["name"]), area=esc(v.get("area", "")),
-        price=price, unit=esc(unit), guests=esc(v["guests"]), pf=esc(v["price_for"]), inc=inc, date=fmt_short(v["date_read"]))
+            '<p class="v-src"><a href="{url}" rel="noopener" target="_blank" data-cta="venue">Venue\'s own page</a> &middot; read {date}</p></article>').format(
+        mx=mx, amt=999999 if pp else int(v["amount"]), url=esc(v["url"]), name=esc(v["name"]), area=esc(v.get("area", "")), fits=fits,
+        price=money(v["amount"]), unit=esc(unit), guests=esc(v["guests"]), pf=esc(v["price_for"]), inc=inc, date=fmt_short(v["date_read"]))
 
 
 def venue_chips():
@@ -363,22 +418,21 @@ def interleave(cards, block, after):
 
 def render_venues_list(page, app, root):
     cards = [venue_card(v) for v in page["venues"]]
-    block = board_block(page, app, root, "mid")
     return ('<section><h2>{head}</h2><p class="sec-lead">{intro}</p>'
             '<div class="fwrap">{chips}<div class="vlist">{body}</div><p class="fnone">No venue matches both filters. Choose &ldquo;Any&rdquo; on one of them.</p></div>'
             '{note}</section>').format(note=('<p class="srcnote">{}</p>'.format(esc(page["facts_note"])) if page.get("facts_note") else ""),
         head=page.get("facts_heading") or "Venues with a <em>printed price</em>, cheapest first", intro=page.get("facts_intro", ""),
-        chips=venue_chips(), body=interleave(cards, block, 4))
+        chips=venue_chips(), body="".join(cards)) + board_block(page, app, root, "mid")
 
 
 def render_payless(page):
     if not page.get("pay_less"):
         return ""
     lis = "".join("<li><b>{}</b>{}</li>".format(esc(t["h"]), t["t"]) for t in page["pay_less"])
-    return '<section><h2>How to pay <em>less</em> for a small venue</h2><ul class="tipl">{}</ul></section>'.format(lis)
+    return '<section><h2>{}</h2><ul class="tipl">{}</ul></section>'.format(page.get("pay_less_heading", "How to pay <em>less</em> for a small venue"), lis)
 
 
-def render_cards_section(page, app, root):
+def render_cards_section(page, app, root, pages=None):
     """Hub and packages: a city chooser, then cards cheapest first, the button after the 4th."""
     cards = page.get("cards", [])
     cities = [c for c in CITY_ORDER + ["las-vegas"] if any(x["city"] == c for x in cards)]
@@ -387,15 +441,23 @@ def render_cards_section(page, app, root):
     out = []
     for c in cards:
         det = '<p class="v-for">{}</p>'.format(esc(c["detail"])) if c.get("detail") else ""
+        tag = '<span class="v-fits">{}</span>'.format("Destination: Las Vegas") if c["city"] == "las-vegas" else (
+            '<span class="v-fits">{}</span>'.format(esc(CITY_NAMES.get(c["city"], ""))) if page["type"] == "packages" and c["city"] else "")
         inc = '<p class="v-inc">Includes: {}</p>'.format(esc(c["includes"])) if c.get("includes") else ""
-        out.append(('<article class="vcard" data-item data-city="{city}"><div class="v-top"><h3 class="v-name"><a href="{url}" rel="noopener">{name}</a>'
+        out.append(('<article class="vcard" data-item data-city="{city}"><div class="v-top"><h3 class="v-name">{tag}<a href="{url}" rel="noopener" target="_blank">{name}</a>'
                     '<span class="v-area">{sub}</span></h3><div class="v-price">{price}</div></div>{det}{inc}'
-                    '<p class="v-src"><a href="{url}" rel="noopener" data-cta="venue">Their own page</a> &middot; read {date}</p></article>').format(
-            city=esc(c["city"]), url=esc(c["url"]), name=esc(c["name"]), sub=esc(c.get("sub", "")), price=esc(c["price_display"]), det=det, inc=inc, date=fmt_short(c["date_read"])))
-    return ('<section><h2>{head}</h2><p class="sec-lead">{intro}</p><div class="fwrap"><div class="fchips" data-group="city"><span class="lbl">City</span>{chips}</div>'
+                    '<p class="v-src"><a href="{url}" rel="noopener" target="_blank" data-cta="venue">Their own page</a> &middot; read {date}</p></article>').format(
+            city=esc(c["city"]), url=esc(c["url"]), name=esc(c["name"]), sub=esc(c.get("sub", "")), price=esc(c["price_display"]), det=det, inc=inc, tag=tag, date=fmt_short(c["date_read"])))
+    links = ""
+    if page["type"] == "hub":
+        for c in CITY_ORDER:
+            vp = next((x for x in (pages or {}).values() if x["type"] == "venues" and city_key(x) == c), None)
+            if vp:
+                links += '<a class="citylink" data-for="{c}" href="@{path}/" hidden>See all {n} {name} venues &rarr;</a>'.format(c=c, path=vp["path"], n=len(vp["venues"]), name=CITY_NAMES[c])
+    return ('<section><h2>{head}</h2><p class="sec-lead">{intro}</p><div class="fwrap"><div class="fchips" data-group="city"><span class="lbl">City</span>{chips}</div>{links}'
             '<div class="vlist">{body}</div><p class="fnone">Nothing listed for this city yet.</p></div></section>').format(
-        head=page.get("facts_heading", "Prices, cheapest first"), intro=page.get("facts_intro", ""), chips="".join(chips),
-        body=interleave(out, board_block(page, app, root, "mid"), 4))
+        head=page.get("facts_heading", "Prices, cheapest first"), intro=page.get("facts_intro", ""), chips="".join(chips), links=links,
+        body="".join(out)) + board_block(page, app, root, "mid")
 
 
 # ----------------------------------------------------------------------------- dresses
@@ -407,21 +469,22 @@ def gown_name(g):
 
 def gown_card(g, more=False):
     size = str(g["size"]).replace("US ", "")
-    return ('<a class="dcard" data-item data-band="{band}"{more} href="{url}" rel="noopener" target="_blank" data-cta="dress"><span class="d-price"><span class="price">{price}</span>'
-            '<s><span class="vh">seller\'s original </span>{old}</s></span><span class="d-name">{brand} &middot; {model}</span>'
-            '<span class="d-meta">Size {size}</span><span class="d-go">View on Poshmark &rarr;</span></a>').format(
+    return ('<a class="dcard" data-item data-band="{band}"{more} href="{url}" rel="noopener" target="_blank" data-cta="dress"><span class="d-price"><span class="price">{price}</span></span>'
+            '<span class="d-orig">seller\'s original <s>{old}</s></span><span class="d-name">{brand} &middot; {model}</span>'
+            '<span class="d-meta">Size {size}</span><span class="d-go">View on Poshmark &nearr;</span></a>').format(
         band=band_of_size(size), more=" data-more" if more else "", url=esc(g["url"]), price=money(g["price"]), old=money(g["old_price"]),
         brand=esc(g["brand"]), model=esc(g.get("model") or g["title"]), size=esc(size))
 
 
 def render_gowns(page, app, root):
     g = page["gowns"]
-    cards = [gown_card(x, more=n >= 12) for n, x in enumerate(g)]
-    more = "" if len(g) <= 12 else '<button type="button" class="fc showmore" data-more-btn>Show the other {} gowns</button>'.format(len(g) - 12)
-    body = interleave(cards, '<div class="gfull">{}</div>'.format(board_block(page, app, root, "mid")), 6)
+    cards = [gown_card(x) for x in g]
+    more = ""
+    body = "".join(cards)
+    other = '<p class="srcnote">Other price band: <a href="@{}/">{}</a>.</p>'.format(*(("wedding-dresses-under-1000", "gowns from $501 to $1,000") if "500" in page["path"] else ("wedding-dresses-under-500", "gowns at $500 or less")))
     return ('<section><h2>{head}</h2><p class="sec-lead">{intro}</p><div class="fwrap" data-limit="12">{chips}<div class="dgrid big">{body}</div>{more}'
-            '<p class="fnone">No gown in that size this week. Rachel watches for yours every Tuesday: tap the button.</p></div></section>').format(
-        head=page.get("facts_heading", "This week's <em>gowns</em>"), intro=page.get("facts_intro", ""), chips=size_chips("Size"), body=body, more=more)
+            '<p class="fnone">No gown in that size this week. Rachel watches for yours every Tuesday: the button below sets your size.</p></div>{other}</section>').format(other=other,
+        head=page.get("facts_heading", "This week's <em>gowns</em>"), intro=page.get("facts_intro", ""), chips=size_chips("Size"), body=body, more=more) + board_block(page, app, root, "mid")
 
 
 def render_safe(page):
@@ -586,7 +649,8 @@ def render_hero(page, site, root):
 
 
 def checked_line(page):
-    src = ' &middot; <a href="#sources">official sources</a>' if page["type"] == "courthouse" else ""
+    src = ' &middot; <a href="#sources">official sources</a>' if page["type"] == "courthouse" else (
+        ' &middot; <a href="@how-we-check/">no one pays to be listed</a>' if page["type"] in ("venues", "hub", "packages") else "")
     return '<p class="checked">Last checked: <time datetime="{}">{}</time>{}</p>'.format(page["last_checked"], fmt_date(page["last_checked"]), src)
 
 
@@ -597,7 +661,7 @@ def render_page(page, site, pages, finds):
     cd = load_cdresses()
     head = [render_hero(page, site, root),
             '<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])),
-            "<h1>{}</h1>".format(h1_html(page)), checked_line(page), render_answer(page)]
+            "<h1>{}</h1>".format(h1_html(page)), checked_line(page), render_answer(page, pages)]
     trust = ('<p class="trust">Every price on this page links to the page it came from and shows the day we read it. '
              'No affiliate links: we earn nothing from these sellers or venues. <a href="@how-we-check/">How we check</a>.</p>')
     end = end_block(page, app, root)
@@ -606,7 +670,7 @@ def render_page(page, site, pages, finds):
             '<div class="home-top">{}<div class="home-copy">{}</div></div>'.format(
                 render_hero(page, site, root),
                 "\n".join(['<p class="rl-eyebrow">{}</p>'.format(esc(page["eyebrow"])), "<h1>{}</h1>".format(h1_html(page)),
-                           checked_line(page), render_answer(page), render_chips(page)])),
+                           checked_line(page), render_answer(page, pages), render_chips(page)])),
             render_home_menu(page, pages), board_block(page, app, root, "mid")])
         return finish_page(page, site, pages, internal(body, root), root, app)
     if t == "courthouse":
@@ -614,7 +678,7 @@ def render_page(page, site, pages, finds):
     elif t == "venues":
         mid = [render_venues_list(page, app, root), render_payless(page)]
     elif t in ("hub", "packages"):
-        mid = [render_cards_section(page, app, root), render_payless(page)]
+        mid = [render_cards_section(page, app, root, pages), render_payless(page)]
     elif t == "dresses":
         mid = [render_gowns(page, app, root), render_safe(page)]
     else:  # trust
@@ -642,8 +706,9 @@ def finish_page(page, site, pages, body, root, app):
                  last_checked=page["last_checked"], jsonld=ld, posthog_key=site["posthog_key"],
                  posthog_host=site["posthog_host"], app_url=app, body=body,
                  slug=page["path"].strip("/") or "home", medium=page["medium"],
-                 main_class=" home" if page["type"] == "home" else "", body_class=("is-home " if page["type"] == "home" else "") + "t-" + page["type"],
-                 btnhead=lab[1], btnsticky=lab[2], stickyhtml=sticky)
+                 main_class=" home" if page["type"] == "home" else "", body_class=("is-home " if page["type"] == "home" else "") + "t-" + page["type"] + ('" data-sticky="#board' if page["type"] in ("venues", "hub", "packages") else ""),
+                 btnhead=lab[1], btnsticky=lab[2], stickyhtml=sticky,
+                 hdlink="" if page["type"] in ("venues", "hub", "packages") else '<a class="hd-link" href="{}" data-cta="header">{} &rarr;</a>'.format(app, lab[1]))
     return html_
 
 

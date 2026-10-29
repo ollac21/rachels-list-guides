@@ -14,7 +14,7 @@
  "card_title": "16 packages",
  "card_line": "$350 to $4,775, each from the provider's own page",
  "facts_heading": "Packages with a <em>printed price</em>, cheapest first",
- "facts_intro": "Only packages whose provider prints the price on its own website. Read what each includes: officiant, photographer, flowers and permits differ.",
+ "facts_intro": "Five cities first, cheapest to dearest; the two Las Vegas chapels last. Each card says what the provider's own page includes.",
  "table": {
   "headers": [
    "Package",
@@ -236,7 +236,7 @@
  "faq": [
   {
    "q": "Is eloping cheaper than having a wedding?",
-   "a": "On this page the 16 packages print prices from $159 to $4,775, each from the provider's own website on Oct 28, 2026. A package replaces a venue, an officiant and sometimes photos, so compare it with the venue prices on our city pages."
+   "a": "On this page the 15 packages print prices from $159 to $4,775, each from the provider's own website on Oct 28, 2026. A package replaces a venue, an officiant and sometimes photos, so compare it with the venue prices on our city pages."
   },
   {
    "q": "Does eloping make you legally married?",
@@ -244,7 +244,7 @@
   },
   {
    "q": "What is the average budget for an elopement?",
-   "a": "We do not quote an average. The packages here run $159 to $4,775, and they include different things, so read the Includes line on each row before you compare."
+   "a": "The middle printed price of the 13 packages in our five cities is $949; they run $350 to $4,775, and two Las Vegas chapels are $159 and $249. They include different things, so read the Includes line on each card before you compare."
   },
   {
    "q": "Is $5,000 enough for a wedding?",
@@ -399,20 +399,8 @@
    "amount": 3499,
    "source_url": "https://www.poptheknot.com/chicago-elopement-packages/",
    "date_read": "2026-10-28",
-   "sub": "Pop The Knot · Chicago",
-   "city": "chicago",
-   "detail": "25 guests or fewer",
-   "includes": "location guidance, officiant, photographer, bouquet and boutonniere, planning"
-  },
-  {
-   "name": "Pop The Knot Experience",
-   "url": "https://www.poptheknot.com/los-angeles-elopement-packages/",
-   "price_display": "$3,499",
-   "amount": 3499,
-   "source_url": "https://www.poptheknot.com/los-angeles-elopement-packages/",
-   "date_read": "2026-10-28",
-   "sub": "Pop The Knot · Los Angeles",
-   "city": "los-angeles",
+   "sub": "Pop The Knot · Chicago and Los Angeles",
+   "city": "chicago los-angeles",
    "detail": "25 guests or fewer",
    "includes": "location guidance, officiant, photographer, bouquet and boutonniere, planning"
   },
@@ -463,6 +451,29 @@
    "city": "las-vegas",
    "detail": "chapel seats about 25 to 30",
    "includes": "chapel, music, rose bouquet and boutonniere, 4 digital photos"
+  }
+ ],
+ "pay_less_heading": "What to ask before you book a <em>package</em>",
+ "pay_less": [
+  {
+   "h": "Is the license included?",
+   "t": "A package may cover the ceremony but not the marriage license fee. The county sets that fee: see the courthouse guide for your city."
+  },
+  {
+   "h": "Who is the officiant?",
+   "t": "Ask if a licensed officiant is part of the price, and whether a short ceremony is the same price as a longer one."
+  },
+  {
+   "h": "What do the photos include?",
+   "t": "Look for the number of hours and the number of edited images, and whether you get the files."
+  },
+  {
+   "h": "What is left out?",
+   "t": "Flowers, decor, travel, permits and taxes are often priced apart. Ask for the full total in writing."
+  },
+  {
+   "h": "How many guests, and what if the weather turns?",
+   "t": "Ask the guest limit and the cancellation and rain plan before you pay a deposit."
   }
  ]
 }

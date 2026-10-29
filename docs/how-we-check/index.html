@@ -98,7 +98,7 @@ document.documentElement.classList.add("js");
 /* filters: chips narrow the cards; with no chip chosen a box shows its top picks or its first N */
 $(".fwrap").forEach(function(w){
 var items=$("[data-item]",w),none=$(".fnone",w)[0],state={},open=false,lim=+w.getAttribute("data-limit")||0,topmode=w.hasAttribute("data-topmode"),btn=$("[data-more-btn]",w)[0];
-function ok(k,v,it){if(k==="band")return it.getAttribute("data-band")===v;if(k==="city")return it.getAttribute("data-city")===v;
+function ok(k,v,it){if(k==="band")return it.getAttribute("data-band")===v;if(k==="city")return(it.getAttribute("data-city")||"").split(" ").indexOf(v)>-1;
 if(k==="fits")return +it.getAttribute("data-max")>=+v;if(k==="budget")return +it.getAttribute("data-amt")<+v;return true}
 function apply(){var act=Object.keys(state).filter(function(k){return state[k]!=="all"}),n=0,shown=0;
 items.forEach(function(it){var show=act.every(function(k){return ok(k,state[k],it)});
@@ -108,6 +108,7 @@ if(none)none.classList.toggle("on",!shown);if(btn)btn.hidden=!!act.length||open}
 $(".fchips",w).forEach(function(g){var k=g.getAttribute("data-group");state[k]="all";
 g.addEventListener("click",function(e){var b=e.target.closest("button.fc");if(!b)return;
 $(".fc",g).forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});state[k]=b.getAttribute("data-v");apply();
+if(k==="city"){$(".citylink",w).forEach(function(a){a.hidden=a.getAttribute("data-for")!==state[k]})}
 if(k==="band"){$("a[data-cta]").forEach(function(a){var h=a.getAttribute("href").replace(/&size=[^&]*/,"");a.setAttribute("href",state[k]==="all"?h:h+"&size="+state[k]);
 if(a.hasAttribute("data-sized")){a.textContent=state[k]==="all"?a.getAttribute("data-base"):a.getAttribute("data-sized").replace("{s}",b.textContent)}})}cap("guide_filter",{slug:slug,group:k,value:state[k]})})});
 if(btn)btn.addEventListener("click",function(){open=true;apply();cap("guide_filter",{slug:slug,group:"more",value:"open"})});
@@ -117,8 +118,8 @@ function openHash(){var h=location.hash&&document.getElementById(location.hash.s
 window.addEventListener("hashchange",openHash);openHash();
 $("details.src").forEach(function(d){d.addEventListener("toggle",function(){if(d.open)cap("guide_sources_open",{slug:slug})})});
 /* the phone bar: once she has scrolled past the answer, and never while a page button is on screen */
-var s=document.getElementById("sticky"),ans=document.getElementById("answer"),seen=new Set();
-if(s){var f=function(){var past=ans?ans.getBoundingClientRect().bottom<0:window.scrollY>300;if(past&&seen.size===0)s.classList.add("on");else s.classList.remove("on")};
+var s=document.getElementById("sticky"),ans=document.getElementById("answer"),seen=new Set(),aft=document.body.getAttribute("data-sticky"),aftEl=aft&&document.querySelector(aft);
+if(s){var f=function(){var past=aftEl?aftEl.getBoundingClientRect().bottom<0:(ans?ans.getBoundingClientRect().bottom<0:window.scrollY>300);if(past&&seen.size===0)s.classList.add("on");else s.classList.remove("on")};
 window.addEventListener("scroll",f,{passive:true});f();
 if("IntersectionObserver"in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)seen.add(x.target);else seen.delete(x.target)});f()});$(".rl-btn").forEach(function(b){io.observe(b)})}}
 })();

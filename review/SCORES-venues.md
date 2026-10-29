@@ -11,4 +11,4 @@ Diagnosis: review/venues-diagnosis.md. Screenshots: review/venues-r2 (= round 2)
 | 4 | 6-5-7-4 | 7-7-6-3 | 7-6-7-4 | 69 |
 
 The 4-round limit was reached; >= 8 everywhere was not (answer 6-7, engagement 5-7, trust 6-8, tap 3-4).
-After round 4 (not re-reviewed): the answer rows say "Seats up to N" and what the price buys, the mid-list strip and the second end block are gone (one button block after the tips), the Houston "Texas" FAQ is retitled.
+After round 4 (not re-reviewed): the answer rows say "Seats up to N" and show the true cheapest room for each group size (10+, 20+, 50+), a venue that is the cheapest for several sizes shown once (so Chicago and New York show one row, Houston two, Dallas two, Los Angeles two); the mid-list strip and the second end block are gone (one button block after the tips); the Houston "Texas" FAQ is retitled.

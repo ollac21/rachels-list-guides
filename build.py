@@ -239,14 +239,14 @@ def answer_venues(page):
         n=len(vs), city=esc(city), year=year, lo=money(lo), hi=money(hi))
     rows, used = [], set()
     for t in (10, 20, 50):  # the cheapest room for 10, 20 and 50 guests; a venue is shown once
-        fits = sorted((v for v in flat if (v.get("max_guests") or 0) >= t and v["name"] not in used), key=lambda x: x["amount"])
-        if fits:
+        fits = sorted((v for v in flat if (v.get("max_guests") or 0) >= t), key=lambda x: x["amount"])
+        if fits and fits[0]["name"] not in used:  # the true cheapest for this size; a venue that is also the cheapest for a smaller size is shown once
             v = fits[0]
             used.add(v["name"])
             rows.append('<li><span class="as-p">{}</span><span class="as-t"><em>{}</em><b><a href="{}" rel="noopener" target="_blank">{}</a></b>'
                         '<span>{}</span></span></li>'.format(money(v["amount"]), ("Seats up to {}".format(v["max_guests"]) if v.get("max_guests") else "For {}+ guests".format(t)), esc(v["url"]), esc(v["name"]), esc(v["price_for"])))
     if rows:
-        out += '<p class="a-sub">The cheapest rooms for 10, 20 and 50 guests:</p><ul class="a-stats">{}</ul>'.format("".join(rows))
+        out += '<p class="a-sub">The cheapest room for each group size:</p><ul class="a-stats">{}</ul>'.format("".join(rows))
     return answer_wrap(out)
 
 

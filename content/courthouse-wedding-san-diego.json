@@ -1,0 +1,398 @@
+{
+ "path": "courthouse-wedding-san-diego",
+ "type": "courthouse",
+ "medium": "courthouse",
+ "order": 6,
+ "title": "Courthouse Wedding in San Diego: Real Cost & Steps (2026)",
+ "description": "Courthouse wedding in San Diego: $236 in fees: license $129 + ceremony $107, per the county clerk. ID, booking and witness steps. Checked Oct 29, 2026.",
+ "h1": "Courthouse wedding in San Diego",
+ "h1_em": "San Diego",
+ "eyebrow": "San Diego · County Assessor/Recorder/County Clerk",
+ "refresh_note": "Courthouse pages are re-checked every 3 months.",
+ "answer_html": "<p>As of Oct 29, 2026, a courthouse wedding in San Diego costs <strong class=\"big\">$236</strong> in official fees: <strong>$129</strong> for the public marriage license and <strong>$107</strong> for the civil ceremony (San Diego County Assessor/Recorder/County Clerk). You can marry as soon as the license is issued.</p>",
+ "oneliner": "$236 in fees: license $129 + ceremony $107 (San Diego County Assessor/Recorder/County Clerk), checked Oct 29, 2026.",
+ "card_title": "San Diego",
+ "card_line": "$236 in fees",
+ "office": "San Diego County Assessor/Recorder/County Clerk",
+ "facts_heading": "The fees and the <em>steps</em>, from the official pages",
+ "facts_intro": "Copied word for word from the San Diego County Assessor/Recorder/County Clerk. Each row links to the page it came from.",
+ "facts": [
+  {
+   "key": "license_fee",
+   "label": "Marriage license fee (public license)",
+   "display": "$129",
+   "amount": 129,
+   "quote": "$129 Public Marriage License",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk",
+   "allin": true
+  },
+  {
+   "key": "license_fee_confidential",
+   "label": "Marriage license fee (confidential license)",
+   "display": "$144",
+   "amount": 144,
+   "quote": "$144 Confidential Marriage License",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "ceremony_fee",
+   "label": "Civil ceremony by the County Clerk",
+   "display": "$107",
+   "amount": 107,
+   "quote": "$107 Civil Ceremony",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk",
+   "allin": true
+  },
+  {
+   "key": "witness_fee",
+   "label": "Witness provided by the County Clerk",
+   "display": "$58",
+   "amount": 58,
+   "quote": "$58 Witness provided by the County Clerk",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "card_surcharge",
+   "label": "Paying by card",
+   "display": "$2.50 more (cash, check or money order also accepted)",
+   "amount": 2.5,
+   "quote": "Fees are payable by cash, check or money order, or credit/debit card. An additional $2.50 surcharge is applicable for card payments.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "refunds",
+   "label": "Refunds",
+   "display": "License fees are non-refundable",
+   "quote": "License fees are non-refundable.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "copy_fee",
+   "label": "Certified copy of the marriage certificate",
+   "display": "$19 each",
+   "amount": 19,
+   "quote": "$19 for each marriage certificate",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/birth-death-marriage-certificate/marriage-certificate.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "appointment_only",
+   "label": "Appointments",
+   "display": "Marriage licenses and civil ceremonies by appointment only",
+   "quote": "Our office issues marriage licenses and performs civil ceremonies by appointment only.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "how_far_ahead",
+   "label": "How far ahead you can book",
+   "display": "Up to 7 weeks ahead; appointments fill up quickly",
+   "quote": "Appointments are available up to 7 weeks in advance and fill up quickly.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "one_visit",
+   "label": "License and ceremony in one visit",
+   "display": "Yes: book a “License and Ceremony” appointment",
+   "quote": "You may obtain a marriage license and have a civil ceremony at the same time by selecting a “License and Ceremony” appointment type.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "waiting",
+   "label": "Waiting period",
+   "display": "You can marry as soon as the license is issued",
+   "quote": "Parties can get married as soon as the marriage license is issued.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "validity",
+   "label": "How long the license is valid",
+   "display": "90 days, with no extensions; the ceremony must be in California",
+   "quote": "A marriage license is valid for 90 days with NO extensions. A ceremony must take place within 90 days of the license issuance and within the State of California.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "both_present",
+   "label": "Who must attend",
+   "display": "Both of you, together",
+   "quote": "Both parties must appear together at their appointment.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "id_needed",
+   "label": "ID you bring",
+   "display": "A valid, current government photo ID for each of you (driver's license, passport, military ID or state ID); with an expired ID the license cannot be issued",
+   "quote": "Both parties must present valid and current government-issued photo ID. / The ID must be current - if it is expired, the marriage license cannot be issued.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "age",
+   "label": "Age",
+   "display": "Both of you 18 or older",
+   "quote": "Both parties must be 18 years old or older.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "residency",
+   "label": "Residency",
+   "display": "No residency requirement",
+   "quote": "There is no residency requirement.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "language",
+   "label": "Language",
+   "display": "Both of you must read, speak and understand English or Spanish",
+   "quote": "Both parties must be able to read, speak, and understand English or Spanish.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "witness_public",
+   "label": "Witness, public license",
+   "display": "At least one witness present at the ceremony",
+   "quote": "Must have at least one witness present at the ceremony.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "witness_confidential",
+   "label": "Witness, confidential license",
+   "display": "No witnesses required at the ceremony; you must already live together as spouses and sign to that under penalty of perjury",
+   "quote": "No witnesses are required to be present at the ceremony. / Couples must be living together as spouses at the time they apply for the marriage license and must sign under penalty of perjury attesting to that fact.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "offices",
+   "label": "Where the county marries you",
+   "display": "County Administration Center, Chula Vista Office, San Marcos Office or Santee Office",
+   "quote": "You can make an appointment for a License and/or Civil Ceremony for the following locations: County Administration Center Chula Vista Office San Marcos Office Santee Office",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "main_office",
+   "label": "Main office: address and hours",
+   "display": "County Administration Center, 1600 Pacific Highway, Suite 260, San Diego, CA 92101; Monday to Friday, 8:00 a.m. to 5:00 p.m.",
+   "quote": "1600 Pacific Highway, Suite 260 San Diego, CA 92101 Recorder/Clerk Services: Monday through Friday, 8:00am - 5:00pm",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/about/locations.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "parking",
+   "label": "Parking at the County Administration Center",
+   "display": "Free underground parking for up to 3 hours during business hours, garage entrance on Ash Street; regular fees after 5 p.m. and on weekends",
+   "quote": "you can use the free underground parking with a garage entrance on Ash Street. Free parking is available for up to 3 hours during business hours",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/about/locations.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "saturday",
+   "label": "Saturdays",
+   "display": "One Saturday a month, only at the Santee office (10144 Mission Gorge Rd.), 9:00 a.m. to 3:00 p.m., appointment required; next: November 14 and December 12, 2026",
+   "quote": "Saturday business hours occur once a month, only at our East County Office & Archives in Santee, located at 10144 Mission Gorge Rd., Santee, CA 92071. / Business hours are 9:00am to 3:00pm / November 14, 2026 / December 12, 2026",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony/saturday-schedule.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "closed_day",
+   "label": "No marriage services (County Administration Center)",
+   "display": "Wednesday, December 2, 2026",
+   "quote": "Due to scheduled Secretary of State Apostille services, marriage services will not be available on the following dates: County Administration Center ... Wednesday, December 2, 2026",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony/scheduled-dates-impacting-ceremony-areas.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "outdoor",
+   "label": "Outdoor ceremony",
+   "display": "At the County Administration Center, in Waterfront Park, under County Parks and Recreation rules; it may be moved to the East Plaza",
+   "quote": "Outdoor ceremonies held at the County Administration Center take place within the Waterfront Park and are subject to County Parks and Recreation rules. / For the CAC, your outdoor ceremony may be moved to the East Plaza to ensure events in the park do not disrupt your ceremony.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "guests",
+   "label": "Guests",
+   "display": "Outdoor: no limit. Indoor, per the county's FAQ: County Administration Center 20 to 30, Chula Vista 15, San Marcos 15, Santee 20",
+   "quote": "For outdoor ceremonies, there is no limit to the number of guests you may have. / County Administration Center 20 to 30 guests Chula Vista Office 15 guests San Marcos Office 15 guests Santee Office 20 guests",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "decor",
+   "label": "What you cannot bring",
+   "display": "Floral arrangements, backdrops, arches or furniture, live musicians or amplified music, confetti, flower petals, bird seed or rice, open alcohol (champagne included), anything that needs setup",
+   "quote": "outside décor and custom setups are not permitted at Recorder/County Clerk ceremony locations. This policy includes, but is not limited to: Floral arrangements or decorations for the arbor or ceremony area Backdrops, arches, or furniture Live musicians or amplified music Tossing materials (such as confetti, flower petals, bird seed, or rice) Open containers of alcohol (including champagne) and alcohol consumption Any equipment or items that require setup or breakdown time",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  },
+  {
+   "key": "registration",
+   "label": "After the ceremony",
+   "display": "Your officiant signs the license and returns it to the office; registering it may take up to 10 business days; a copy is not sent to you automatically",
+   "quote": "After the ceremony, the marriage license must be signed by your officiant and returned to our office for registration. Registering the license may take up to 10 business days. / One will not automatically be sent to you.",
+   "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
+   "date_read": "2026-10-29",
+   "source_name": "San Diego County Assessor/Recorder/County Clerk"
+  }
+ ],
+ "steps": [
+  "Book an appointment with the San Diego County Clerk, up to 7 weeks ahead; a “License and Ceremony” appointment does both in one visit.",
+  "After booking, complete the county's online marriage license application.",
+  "Go together, each with a current government photo ID, and pay $129 for a public license or $144 for a confidential one.",
+  "Have the civil ceremony ($107) indoors or outdoors in Waterfront Park; a public license needs at least one witness (or the county's, $58). You can marry as soon as the license is issued, and within 90 days.",
+  "The signed license is registered within up to 10 business days; order a certified copy ($19) if you need proof of marriage."
+ ],
+ "facts_note_list": [
+  "How long a ceremony appointment lasts",
+  "Separate hours for ceremonies (the pages give office hours only)",
+  "Walk-in or same-day service without an appointment",
+  "A street address for the outdoor West Arbor in Waterfront Park"
+ ],
+ "facts_note_head": "Not shown, because no official page states it:",
+ "ideas": [],
+ "faq": [
+  {
+   "q": "How much does a courthouse wedding cost in San Diego?",
+   "a": "As of Oct 29, 2026, the San Diego County Clerk charges $129 for a public marriage license ($144 for a confidential one) and $107 for a civil ceremony: $236 in all, or $251 with a confidential license. A county-provided witness is $58 more, and paying by card adds $2.50."
+  },
+  {
+   "q": "Can you get married at the courthouse in San Diego?",
+   "a": "In San Diego the County Clerk, not a court, marries you: by appointment only, at the County Administration Center or the Chula Vista, San Marcos or Santee office. At the County Administration Center you can also marry outdoors, in Waterfront Park."
+  },
+  {
+   "q": "How do you get a marriage license in San Diego County?",
+   "a": "Book an appointment (up to 7 weeks ahead), then fill in the county's online application. Both of you go together, each with a current government photo ID (an expired one is refused), and you must both be 18 or older. The license costs $129 (public) or $144 (confidential) and is valid for 90 days, with no extensions."
+  },
+  {
+   "q": "Can you get married the same day in San Diego?",
+   "a": "Yes, with a “License and Ceremony” appointment: the county says you can marry as soon as the license is issued. Appointments open up to 7 weeks ahead and fill up quickly, so book early."
+  },
+  {
+   "q": "Do you need a witness for a San Diego courthouse wedding?",
+   "a": "With a public license, at least one witness must be at the ceremony: bring your own, or the county provides one for $58. A confidential license needs no witness, but you must already live together as spouses to get one."
+  }
+ ],
+ "related": [
+  {
+   "path": "courthouse-wedding-los-angeles",
+   "label": "Courthouse wedding in Los Angeles"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-29",
+ "first_published": "2026-10-29",
+ "fee_total": 236,
+ "fee_parts": "$129 license + $107 ceremony",
+ "where": "A San Diego County office (main: 1600 Pacific Highway, Suite 260, San Diego)",
+ "where_note": "appointment only",
+ "when": "Appointment only. The main office is open Monday to Friday, 8 a.m.–5 p.m.; one Saturday a month in Santee, 9 a.m.–3 p.m.",
+ "when_short": "Mon–Fri, appointment only",
+ "steps5": [
+  {
+   "title": "Book your appointment",
+   "text": "Up to 7 weeks ahead; slots fill up quickly. Choose a “License and Ceremony” appointment to do both in one visit.",
+   "fee": ""
+  },
+  {
+   "title": "Fill in the application",
+   "text": "After you book, complete the county's online marriage license application (or bring the printable one).",
+   "fee": ""
+  },
+  {
+   "title": "Get your license",
+   "text": "Both of you, together, each with a current government photo ID (an expired ID is refused). $144 if you choose a confidential license.",
+   "fee": "$129"
+  },
+  {
+   "title": "Say your vows",
+   "text": "Indoors at one of the 4 county offices, or outdoors in Waterfront Park at the County Administration Center. A public license needs one witness: bring your own, or the county's is $58.",
+   "fee": "$107"
+  },
+  {
+   "title": "After the ceremony",
+   "text": "The license is signed and returned for registration (up to 10 business days). A certified copy is $19 and is not sent to you automatically.",
+   "fee": ""
+  }
+ ],
+ "tips": [
+  {
+   "h": "Say yes outside",
+   "t": "At the County Administration Center, outdoor ceremonies take place in Waterfront Park, with no limit on guests. The county may move you to the East Plaza when there is an event in the park, and weather can change the plan."
+  },
+  {
+   "h": "Leave the décor at home",
+   "t": "The county does not allow floral arrangements for the ceremony area, arches or backdrops, live or amplified music, confetti, petals or rice, or open alcohol, champagne included."
+  },
+  {
+   "h": "Park free",
+   "t": "The County Administration Center has free underground parking for up to 3 hours during business hours; the garage entrance is on Ash Street."
+  },
+  {
+   "h": "Need a Saturday?",
+   "t": "One Saturday a month, at the Santee office only, 9 a.m. to 3 p.m., by appointment. The next dates are November 14 and December 12, 2026."
+  },
+  {
+   "h": "Who to bring",
+   "t": "Indoor rooms hold 20 to 30 guests at the County Administration Center, 15 in Chula Vista and San Marcos and 20 in Santee (per the county's FAQ). A public license needs at least one witness."
+  },
+  {
+   "h": "What to wear",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy to wear for a county office ceremony and looks great in photos. Bring a light jacket or wrap for the park."
+  }
+ ],
+ "look_heading": "Your San Diego courthouse look, for less"
+}

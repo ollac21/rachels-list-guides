@@ -1,0 +1,398 @@
+{
+ "path": "courthouse-wedding-san-francisco",
+ "type": "courthouse",
+ "medium": "courthouse",
+ "order": 7,
+ "title": "Courthouse Wedding in San Francisco: Cost & Steps (2026)",
+ "description": "Courthouse wedding in San Francisco: $242 in fees: license $129 + ceremony $113, per the County Clerk. ID, booking, witness steps. Checked Oct 29, 2026.",
+ "h1": "Courthouse wedding in San Francisco",
+ "h1_em": "San Francisco",
+ "eyebrow": "San Francisco · Office of the County Clerk",
+ "refresh_note": "Courthouse pages are re-checked every 3 months.",
+ "answer_html": "<p>As of Oct 29, 2026, a courthouse wedding in San Francisco costs <strong class=\"big\">$242</strong> in official fees: <strong>$129</strong> for the marriage license and <strong>$113</strong> for the civil ceremony at City Hall (San Francisco Office of the County Clerk). The license is not sold on the day of your ceremony.</p>",
+ "oneliner": "$242 in fees: license $129 + ceremony $113 (San Francisco Office of the County Clerk), checked Oct 29, 2026.",
+ "card_title": "San Francisco",
+ "card_line": "$242 in fees",
+ "office": "San Francisco Office of the County Clerk",
+ "facts_heading": "The fees and the <em>steps</em>, from the official pages",
+ "facts_intro": "Copied word for word from the San Francisco Office of the County Clerk (the certified copy row: the Assessor-Recorder). Each row links to the page it came from.",
+ "facts": [
+  {
+   "key": "license_fee",
+   "label": "Marriage license fee (public license)",
+   "display": "$129",
+   "amount": 129,
+   "quote": "Public Marriage License......................................$129",
+   "source_url": "https://www.sf.gov/information--fees-county-clerk-services",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk",
+   "allin": true
+  },
+  {
+   "key": "license_fee_confidential",
+   "label": "Marriage license fee (confidential license)",
+   "display": "$129",
+   "amount": 129,
+   "quote": "Confidential Marriage License.............................$129",
+   "source_url": "https://www.sf.gov/information--fees-county-clerk-services",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "ceremony_fee",
+   "label": "Civil ceremony at City Hall",
+   "display": "$113 (City Hall, office hours, by appointment)",
+   "amount": 113,
+   "quote": "Civil Marriage Ceremony..........................................................$113 / (City Hall, office hours, by appointment)",
+   "source_url": "https://www.sf.gov/information--fees-county-clerk-services",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk",
+   "allin": true
+  },
+  {
+   "key": "fees_date",
+   "label": "When these fees started",
+   "display": "July 1, 2026 (the new fees)",
+   "quote": "*New Fees Below Effective July 1, 2026",
+   "source_url": "https://www.sf.gov/information--fees-county-clerk-services",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "offsite_fee",
+   "label": "Ceremony off site, on a weekend or on a holiday",
+   "display": "$336: $186 when you reserve + $150 to the commissioner at the ceremony",
+   "amount": 336,
+   "quote": "Civil Marriage Ceremony, offsite, weekends, holidays........$336 / (Fee at the time of reservation $186, commissioners fee at ceremony $150)",
+   "source_url": "https://www.sf.gov/information--fees-county-clerk-services",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "payment",
+   "label": "How you pay in person",
+   "display": "Cash, check, money order, cashier's check, debit or credit card, Apple Pay or Google Pay",
+   "quote": "Cash, checks, money orders, cashier's checks, all major debit and credit cards (Visa, Mastercard, Discover, American Express), Apple Pay, and Google Pay.",
+   "source_url": "https://www.sf.gov/information--fees-county-clerk-services",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "refunds",
+   "label": "Refunds and rescheduling",
+   "display": "A license appointment cannot be rescheduled, and there are no refunds",
+   "quote": "You can not reschedule an appointment for a marriage license. / There are no refunds.",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "appointment_license",
+   "label": "License appointment",
+   "display": "Appointment required; you submit the application when you book",
+   "quote": "You need an appointment to get a marriage license. You must submit a marriage license application when you book the appointment.",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "license_time",
+   "label": "How long the license appointment takes",
+   "display": "20 minutes to an hour",
+   "quote": "20 minutes to an hour",
+   "source_url": "https://www.sf.gov/step-by-step--get-married-san-francisco",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "both_present",
+   "label": "Who must attend",
+   "display": "Both of you",
+   "quote": "Both people getting married must go to the appointment",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "id_needed",
+   "label": "ID you bring",
+   "display": "An unexpired government photo ID for each of you (passport, driver's license, resident alien card or military ID); if it does not show your full legal name, a certified copy of your birth certificate or social security card that does",
+   "quote": "unexpired, government-issued photo ID (like a passport, driver's license, resident alien card, or military ID) / If your ID doesn't have your full legal name, bring a certified copy of your birth certificate or social security card that shows your full legal name.",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "age",
+   "label": "Age",
+   "display": "Both of you at least 18; different rules apply under 18",
+   "quote": "Only 2 unmarried persons who are at least 18 years of age with valid legal identification may apply for a marriage license in California. / If 1 person is a member of the military, under 18, in jail, or hospitalized, different rules apply.",
+   "source_url": "https://www.sf.gov/step-by-step--get-married-san-francisco",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "residency",
+   "label": "Residency and citizenship",
+   "display": "Not required",
+   "quote": "California residency and US citizenship are not requirements for marriage in California.",
+   "source_url": "https://www.sf.gov/step-by-step--get-married-san-francisco",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "previous_marriage",
+   "label": "If one of you was married before",
+   "display": "If it ended less than 90 days before your appointment, bring a certified copy of the divorce, annulment, termination or death record",
+   "quote": "If the marriage ended less than 90 days before your appointment, you must bring a certified copy of the divorce, annulment, termination or death record with you.",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "waiting",
+   "label": "Same-day license and ceremony",
+   "display": "The license is not sold on the day of your ceremony; bring the original license you already have",
+   "quote": "Bring your original government-issued marriage license on the day of your ceremony. They will not be available for purchase on the same day as your ceremony.",
+   "source_url": "https://www.sf.gov/have-civil-marriage-or-domestic-partnership-ceremony-city-hall",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "validity",
+   "label": "How long the license is valid",
+   "display": "90 days; you can marry anywhere in California",
+   "quote": "Once you get a marriage license, you can get married anywhere in California. Your license is valid for 90 days.",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "ceremony_booking",
+   "label": "City Hall ceremony",
+   "display": "By reservation, 6 guests or fewer; walk-ins are not allowed",
+   "quote": "Make a reservation for an in-person ceremony with 6 or fewer guests. Walk-ins are not allowed.",
+   "source_url": "https://www.sf.gov/have-civil-marriage-or-domestic-partnership-ceremony-city-hall",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "bigger_or_weekend",
+   "label": "More than 6 guests, or a weekend or holiday",
+   "display": "Book a space through City Hall Events",
+   "quote": "If you have more than 6 guests or want to get married on a weekend or a holiday, you need to book a space through City Hall Events.",
+   "source_url": "https://www.sf.gov/step-by-step--get-married-san-francisco",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "arrive",
+   "label": "When to arrive",
+   "display": "15 minutes before your ceremony appointment",
+   "quote": "Please arrive 15 minutes before your scheduled appointment.",
+   "source_url": "https://www.sf.gov/have-civil-marriage-or-domestic-partnership-ceremony-city-hall",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "ceremony_bring",
+   "label": "What you bring to the ceremony",
+   "display": "A photo ID for each of you and the original California license (photocopies are not accepted)",
+   "quote": "Valid, authentic, legal government-issued photo identification for each person / A valid, unexpired, marriage license issued by a California County. Photocopies are not acceptable.",
+   "source_url": "https://www.sf.gov/have-civil-marriage-or-domestic-partnership-ceremony-city-hall",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "witness_public",
+   "label": "Witness, public license",
+   "display": "1 witness at the ceremony",
+   "quote": "1 witness if you are presenting a public marriage license.",
+   "source_url": "https://www.sf.gov/have-civil-marriage-or-domestic-partnership-ceremony-city-hall",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "witness_confidential",
+   "label": "Confidential license",
+   "display": "No witness needed; you must be living together; only the two of you can get the record",
+   "quote": "you must be living together / no witnesses are required at the ceremony / marriage record is only available to the couple",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "main_office",
+   "label": "County Clerk: address and hours",
+   "display": "City Hall, Room 160, 1 Dr. Carlton B Goodlett Place, San Francisco, CA 94102; Monday to Friday, 8 a.m. to 4 p.m. (processing hours); closed on public holidays",
+   "quote": "City Hall, Room 160 / 1 Dr. Carlton B Goodlett Place / San Francisco, CA 94102 / Monday to Friday, 8 am to 4 pm, Processing hours / Closed on public holidays",
+   "source_url": "https://www.sf.gov/get-marriage-license",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "offsite_request",
+   "label": "A County Clerk commissioner at your own San Francisco spot",
+   "display": "Request it 30 to 60 days before the date, with a San Francisco license; you reserve the venue and get the permits",
+   "quote": "You must have a marriage license issued by San Francisco County before requesting a commissioner. / You are responsible for making your own wedding arrangements, including reserving a venue and getting permits. / You must submit your request no more than 60 days prior to the ceremony date, but no less than 30 days prior.",
+   "source_url": "https://www.sf.gov/request-commissioner-wedding-outside-city-hall",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "registration",
+   "label": "After the ceremony",
+   "display": "If a County Clerk commissioner married you, the office files the documents for you",
+   "quote": "If you were married by someone from the Office of the County Clerk, we will file the documents for you.",
+   "source_url": "https://www.sf.gov/step-by-step--get-married-san-francisco",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Office of the County Clerk"
+  },
+  {
+   "key": "copy_fee",
+   "label": "Certified copy of a public marriage certificate",
+   "display": "$19 each, from the Assessor-Recorder, 10 days after the license is recorded",
+   "amount": 19,
+   "quote": "you can get a copy of your marriage certificate 10 days after recording the license with our office. / payment in the amount of $19.00 for each certificate requested",
+   "source_url": "https://www.sf.gov/get-copy-your-marriage-certificate",
+   "date_read": "2026-10-29",
+   "source_name": "San Francisco Assessor-Recorder"
+  }
+ ],
+ "steps": [
+  "Book a marriage license appointment with the San Francisco County Clerk and submit the application when you book; it cannot be rescheduled and there are no refunds.",
+  "Go together to City Hall, Room 160, each with an unexpired government photo ID, and pay $129 (public or confidential license).",
+  "Reserve a City Hall civil ceremony for 6 guests or fewer; walk-ins are not allowed, and the license is not sold on your ceremony day.",
+  "Have the civil ceremony ($113) within 90 days of the license, with the original license and 1 witness for a public license.",
+  "A County Clerk commissioner files the documents for you; a certified copy of a public certificate is $19 from the Assessor-Recorder, 10 days after recording."
+ ],
+ "facts_note_list": [
+  "How far ahead you can book a license or ceremony appointment",
+  "How long a City Hall ceremony lasts",
+  "Separate hours for ceremonies (the pages give the clerk's processing hours only)",
+  "A price for a City Hall Events space (more than 6 guests, or a weekend or holiday)"
+ ],
+ "facts_note_head": "Not shown, because no official page states it:",
+ "ideas": [],
+ "faq": [
+  {
+   "q": "How much does a courthouse wedding cost in San Francisco?",
+   "a": "As of Oct 29, 2026, the San Francisco County Clerk charges $129 for a marriage license (public or confidential, the same price) and $113 for a civil ceremony at City Hall: $242 in all. These are the new fees in effect since July 1, 2026. A ceremony off site, on a weekend or on a holiday is $336 ($186 when you reserve, $150 to the commissioner at the ceremony)."
+  },
+  {
+   "q": "Can you get married at City Hall in San Francisco?",
+   "a": "Yes: a commissioner from the Office of the County Clerk marries you at City Hall, by reservation, with 6 guests or fewer; walk-ins are not allowed. For more than 6 guests, or a weekend or holiday, the county says to book a space through City Hall Events."
+  },
+  {
+   "q": "How do you get a marriage license in San Francisco?",
+   "a": "Book an appointment and submit the application when you book. Both of you go to City Hall, Room 160, each with an unexpired government photo ID; it takes 20 minutes to an hour. The license costs $129 and is valid for 90 days anywhere in California. You do not need to live in California or be a US citizen."
+  },
+  {
+   "q": "Can you get married the same day in San Francisco?",
+   "a": "Not at City Hall: the clerk says marriage licenses are not available for purchase on the same day as your ceremony. Get the license at an earlier appointment, then bring the original to your ceremony (photocopies are not accepted)."
+  },
+  {
+   "q": "Do you need a witness for a San Francisco City Hall wedding?",
+   "a": "With a public license, bring 1 witness. A confidential license needs no witness, but you must be living together, and only the two of you can get the record. Both licenses cost $129."
+  }
+ ],
+ "related": [
+  {
+   "path": "courthouse-wedding-los-angeles",
+   "label": "Courthouse wedding in Los Angeles"
+  },
+  {
+   "path": "courthouse-wedding-san-diego",
+   "label": "Courthouse wedding in San Diego"
+  },
+  {
+   "path": "wedding-dresses-under-500",
+   "label": "Designer wedding dresses, $500 or less"
+  },
+  {
+   "path": "elopement-packages",
+   "label": "Elopement and micro wedding packages"
+  },
+  {
+   "path": "day-of-wedding-coordinator-cost",
+   "label": "Day-of wedding coordinator cost",
+   "note": "$764 on average; real coordinators' own prices."
+  },
+  {
+   "path": "courthouse-wedding-cost",
+   "label": "Courthouse wedding cost in 7 US cities",
+   "note": "$60 to $242 in official fees, cheapest city first."
+  },
+  {
+   "path": "wedding-budget-calculator",
+   "label": "Wedding budget calculator",
+   "note": "Your budget split into 15 items from Zola's 2026 averages, with real prices next to the dress, venue, photos and flowers."
+  },
+  {
+   "path": "how-we-check",
+   "label": "How we check every price"
+  }
+ ],
+ "last_checked": "2026-10-29",
+ "first_published": "2026-10-29",
+ "fee_total": 242,
+ "fee_parts": "$129 license + $113 ceremony",
+ "where": "San Francisco City Hall, Room 160, 1 Dr. Carlton B Goodlett Place",
+ "where_note": "appointment only",
+ "when": "By appointment. The County Clerk's processing hours are Monday to Friday, 8 a.m.–4 p.m.; closed on public holidays.",
+ "when_short": "Mon–Fri, appointment only",
+ "steps5": [
+  {
+   "title": "Book your license appointment",
+   "text": "Book with the County Clerk and submit the marriage license application when you book. A license appointment cannot be rescheduled, and there are no refunds.",
+   "fee": ""
+  },
+  {
+   "title": "Get your license",
+   "text": "Both of you, at City Hall Room 160, each with an unexpired government photo ID; it takes 20 minutes to an hour. A confidential license is the same $129.",
+   "fee": "$129"
+  },
+  {
+   "title": "Reserve your ceremony",
+   "text": "A City Hall civil ceremony is by reservation, for 6 guests or fewer; walk-ins are not allowed. The license is not sold on your ceremony day, so get it first.",
+   "fee": ""
+  },
+  {
+   "title": "Say your vows at City Hall",
+   "text": "Arrive 15 minutes early with a photo ID each and the original license. A public license needs 1 witness; a confidential one needs none. Marry within 90 days of the license.",
+   "fee": "$113"
+  },
+  {
+   "title": "After the ceremony",
+   "text": "If a County Clerk commissioner married you, the office files the documents for you. A certified copy of a public certificate is $19 from the Assessor-Recorder, 10 days after recording.",
+   "fee": ""
+  }
+ ],
+ "tips": [
+  {
+   "h": "Keep it to 6",
+   "t": "A City Hall civil ceremony is for 6 guests or fewer. For a bigger group, or a weekend or holiday, the county sends you to City Hall Events to book a space."
+  },
+  {
+   "h": "Get the license first",
+   "t": "The license is not sold on your ceremony day, and it is valid for 90 days anywhere in California. Book the license appointment first, then the ceremony."
+  },
+  {
+   "h": "Arrive 15 minutes early",
+   "t": "Bring a photo ID each and the original license: the clerk does not accept photocopies. A public license needs 1 witness."
+  },
+  {
+   "h": "Your own spot in the city",
+   "t": "A County Clerk commissioner can marry you elsewhere in San Francisco for $336 ($186 when you reserve, $150 at the ceremony). Request it 30 to 60 days ahead; you reserve the venue and get the permits."
+  },
+  {
+   "h": "Pick a date you can keep",
+   "t": "A license appointment cannot be rescheduled, and there are no refunds."
+  },
+  {
+   "h": "What to wear",
+   "t": "A short or midi white dress, a slip dress or a jumpsuit is easy to wear for a City Hall ceremony and looks great in photos. Bring a light jacket or wrap."
+  }
+ ],
+ "look_heading": "Your San Francisco courthouse look, for less"
+}

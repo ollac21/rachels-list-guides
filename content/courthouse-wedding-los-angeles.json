@@ -194,6 +194,11 @@
    "note": "$236 in fees, from the county's own pages."
   },
   {
+   "path": "courthouse-wedding-san-francisco",
+   "label": "Courthouse wedding in San Francisco",
+   "note": "$242 in fees, from the County Clerk's own pages."
+  },
+  {
    "path": "wedding-dresses-under-500",
    "label": "Designer wedding dresses, $500 or less"
   },
@@ -208,8 +213,8 @@
   },
   {
    "path": "courthouse-wedding-cost",
-   "label": "Courthouse wedding cost in 6 US cities",
-   "note": "$60 to $236 in official fees, cheapest city first."
+   "label": "Courthouse wedding cost in 7 US cities",
+   "note": "$60 to $242 in official fees, cheapest city first."
   },
   {
    "path": "wedding-budget-calculator",

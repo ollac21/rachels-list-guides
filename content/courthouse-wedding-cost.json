@@ -3,14 +3,14 @@
  "type": "cost",
  "medium": "cost",
  "order": 19,
- "title": "Courthouse Wedding Cost in 6 US Cities (2026)",
- "description": "A courthouse wedding costs $60 to $236 in official fees (license + ceremony) in 6 US cities, from each clerk's own page. Checked Oct 29, 2026.",
- "h1": "Courthouse wedding cost in 6 US cities",
- "h1_em": "6 US cities",
+ "title": "Courthouse Wedding Cost in 7 US Cities (2026)",
+ "description": "A courthouse wedding costs $60 to $242 in official fees (license + ceremony) in 7 US cities, from each clerk's own page. Checked Oct 29, 2026.",
+ "h1": "Courthouse wedding cost in 7 US cities",
+ "h1_em": "7 US cities",
  "eyebrow": "Courthouse weddings · official fees",
  "refresh_note": "Courthouse fees are re-checked every 3 months.",
- "answer_html": "<p>In 2026, a courthouse wedding costs <strong class=\"big\">$60 to $236</strong> in official fees across six US cities: $60 in New York, $70 in Chicago, $126 in Los Angeles, $161 in Dallas, $181 in Houston and $236 in San Diego (license plus ceremony, clerks&rsquo; pages read Oct 29, 2026).</p>",
- "oneliner": "In 2026, a courthouse wedding costs $60 (New York) to $236 (San Diego) in official fees, license plus ceremony, checked Oct 29, 2026.",
+ "answer_html": "<p>In 2026, a courthouse wedding costs <strong class=\"big\">$60 to $242</strong> in official fees in seven US cities: New York $60, Chicago $70, Los Angeles $126, Dallas $161, Houston $181, San Diego $236 and San Francisco $242 (license plus ceremony, clerks&rsquo; pages read Oct 29, 2026).</p>",
+ "oneliner": "In 2026, a courthouse wedding costs $60 (New York) to $242 (San Francisco) in official fees, license plus ceremony, checked Oct 29, 2026.",
  "facts_heading": "Each city&rsquo;s <em>fees</em>, cheapest first",
  "table": {
   "headers": [
@@ -66,6 +66,14 @@
     "amount": 236,
     "source_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html",
     "date_read": "2026-10-29"
+   },
+   {
+    "th": "<a href=\"@courthouse-wedding-san-francisco/\">San Francisco</a><br><small>San Francisco Office of the County Clerk</small>",
+    "td": "<b>$242</b>: $129 license + $113 ceremony<br><small>Wait: The license is not sold on the day of your ceremony; bring the original license you already have &middot; Valid: 90 days; you can marry anywhere in California</small>",
+    "src": "San Francisco Office of the County Clerk: <a href=\"https://www.sf.gov/information--fees-county-clerk-services\" rel=\"noopener\">fees</a><br>read Oct 29, 2026",
+    "amount": 242,
+    "source_url": "https://www.sf.gov/information--fees-county-clerk-services",
+    "date_read": "2026-10-29"
    }
   ]
  },
@@ -74,7 +82,7 @@
  "faq": [
   {
    "q": "How much does a courthouse wedding cost?",
-   "a": "In 2026, from $60 in New York City to $236 in San Diego in official fees, license plus ceremony, across the six cities we checked on each clerk's own page (re-read Oct 29, 2026): $60 in New York, $70 in Chicago, $126 in Los Angeles, $161 in Dallas, $181 in Houston and $236 in San Diego."
+   "a": "In 2026, from $60 in New York City to $242 in San Francisco in official fees, license plus ceremony, across the seven cities we checked on each clerk's own page (re-read Oct 29, 2026): $60 in New York, $70 in Chicago, $126 in Los Angeles, $161 in Dallas, $181 in Houston, $236 in San Diego and $242 in San Francisco."
   },
   {
    "q": "Which city has the cheapest courthouse wedding?",
@@ -82,15 +90,15 @@
   },
   {
    "q": "Is the courthouse wedding cost just the marriage license?",
-   "a": "No. The totals here add the marriage license and the civil ceremony fee. The license alone runs $35 in New York to $129 in San Diego (public license)."
+   "a": "No. The totals here add the marriage license and the civil ceremony fee. The license alone runs $35 in New York to $129 in San Diego (public license) and San Francisco (public or confidential)."
   },
   {
    "q": "What else can you pay at a courthouse wedding?",
-   "a": "Extras on the official pages (read Oct 29, 2026): in Chicago a certified copy is $15 (<a href=\"https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-certificates\" rel=\"noopener\">Cook County Clerk</a>); a county witness is $20 in Los Angeles (<a href=\"https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees\" rel=\"noopener\">LA County</a>) and $58 in San Diego, where card payments add $2.50 (<a href=\"https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html\" rel=\"noopener\">San Diego County</a>) and a certified copy is $19 (<a href=\"https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/birth-death-marriage-certificate/marriage-certificate.html\" rel=\"noopener\">San Diego County</a>)."
+   "a": "Extras on the official pages (read Oct 29, 2026): in Chicago a certified copy is $15 (<a href=\"https://www.cookcountyclerkil.gov/vital-records/marriage-civil-union/marriage-certificates\" rel=\"noopener\">Cook County Clerk</a>); a county witness is $20 in Los Angeles (<a href=\"https://lavote.gov/home/county-clerk/marriage-licenses-ceremonies/fees/fees\" rel=\"noopener\">LA County</a>) and $58 in San Diego, where card payments add $2.50 (<a href=\"https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/marriage-license-civil-ceremony.html\" rel=\"noopener\">San Diego County</a>) and a certified copy is $19 (<a href=\"https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/birth-death-marriage-certificate/marriage-certificate.html\" rel=\"noopener\">San Diego County</a>). In San Francisco a ceremony off site, on a weekend or on a holiday is $336 (<a href=\"https://www.sf.gov/information--fees-county-clerk-services\" rel=\"noopener\">San Francisco County Clerk</a>), and a certified copy of a public marriage certificate is $19 (<a href=\"https://www.sf.gov/get-copy-your-marriage-certificate\" rel=\"noopener\">San Francisco Assessor-Recorder</a>)."
   },
   {
    "q": "Can you get married the same day at the courthouse?",
-   "a": "In San Diego, yes: the county says you can marry as soon as the license is issued. New York has a 24-hour wait, Chicago 1 day, and Houston and Dallas 72 hours (in Dallas a district judge can waive it). The Los Angeles pages do not state a waiting period."
+   "a": "In San Diego, yes: the county says you can marry as soon as the license is issued. In San Francisco, no: the County Clerk does not sell the license on the day of your ceremony. New York has a 24-hour wait, Chicago 1 day, and Houston and Dallas 72 hours (in Dallas a district judge can waive it). The Los Angeles pages do not state a waiting period."
   }
  ],
  "related": [
